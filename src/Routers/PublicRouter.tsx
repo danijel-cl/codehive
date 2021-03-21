@@ -11,7 +11,7 @@ export const PublicRouter = () => {
   return (
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route exact path="/reg" component={RegistrationPage} />
+      <Route exact path="/register" component={RegistrationPage} />
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/recover-password" component={RecoverPasswordPage} />
       <Route exact path="/account-activation" component={AccountActivationPage} />
