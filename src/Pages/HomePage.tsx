@@ -1,10 +1,8 @@
 import React from 'react';
-import '../fonts/fontawesome-5/css/all.css';
-import '../fonts/typography-font/typo.css';
-import '../fonts/icon-font/css/style.css';
-
+import Aos from 'aos';
 
 export const HomePage = () => {
+  Aos.init();
   return (
     <div>
     <div className="site-wrapper overflow-hidden ">
@@ -17,9 +15,9 @@ export const HomePage = () => {
             <div className="brand-logo">
               <a href="./index.html">
                 {/* light version logo (logo must be black)*/}
-                <img src="image/logo-main-black.png" alt="" className="light-version-logo default-logo" />
+                <img src="../image/logo-main-black.png" alt="" className="light-version-logo default-logo" />
                 {/* Dark version logo (logo must be White)*/}
-                <img src="image/logo-main-white.png" alt="" className="dark-version-logo" />
+                <img src="../image/logo-main-white.png" alt="" className="dark-version-logo" />
               </a>
             </div>
             <div className="collapse navbar-collapse" id="mobile-menu">
@@ -1124,6 +1122,6 @@ export const HomePage = () => {
     {/* Activation Script */}
     {/*  */}
   </div>
-  
+
   );
 };

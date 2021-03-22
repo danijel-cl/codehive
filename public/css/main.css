@@ -224,7 +224,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 
 /*=== Media Query ===*/
 /* ---------------------------
-  01.Component -> { Header } 
+  01.Component -> { Header }
 ------------------------------*/
 @media (min-width: 992px) {
   .header-btn {
@@ -516,11 +516,11 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  01.Component -> { Menu } 
+  01.Component -> { Menu }
 ------------------------------*/
 .main-menu {
   /* ----------------------
-  Custom toggle arrow 
+  Custom toggle arrow
 ------------------------*/
 }
 
@@ -1261,7 +1261,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  01.Component -> { Button } 
+  01.Component -> { Button }
 ------------------------------*/
 .btn {
   border-radius: 3px;
@@ -1321,7 +1321,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  01.Component -> { Lists } 
+  01.Component -> { Lists }
 ------------------------------*/
 /* List components */
 .list-overlapped-icon {
@@ -1426,7 +1426,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  01.Component -> { Background } 
+  01.Component -> { Background }
 ------------------------------*/
 .bg-image {
   background-size: cover;
@@ -1441,7 +1441,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 
 .pattern-1:before {
   content: "";
-  background-image: url(/image/patterns/pattern-1.png);
+  background-image: url('../image/patterns/pattern-1.png');
   left: -30px;
   top: -50%;
   transform: rotate(-180deg);
@@ -1455,7 +1455,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  01.Component -> { Form } 
+  01.Component -> { Form }
 ------------------------------*/
 .gr-check-input {
   margin-bottom: 20px;
@@ -1822,7 +1822,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
   flex-direction: column;
   text-align: center;
   color: #37474F;
-  background: url(../image/svg/upload-file.svg);
+  background: url('../image/svg/upload-file.svg');
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
@@ -1858,7 +1858,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  01.Component -> { Cards } 
+  01.Component -> { Cards }
 ------------------------------*/
 .feature-cardOne-adjustments .card-tag-list {
   display: flex;
@@ -1934,7 +1934,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  01.Component -> { Modal } 
+  01.Component -> { Modal }
 ------------------------------*/
 .modal.show .modal-dialog {
   pointer-events: visible;
@@ -1952,7 +1952,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  01.Component -> { Tab } 
+  01.Component -> { Tab }
 ------------------------------*/
 .search-nav-tab .active {
   background-color: transparent !important;
@@ -1964,7 +1964,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  01.Component -> { Acccordion } 
+  01.Component -> { Acccordion }
 ------------------------------*/
 .accordion-trigger.arrow-icon {
   position: relative;
@@ -1991,7 +1991,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  01.Component -> { Sidebar } 
+  01.Component -> { Sidebar }
 ------------------------------*/
 .dashboard-sidebar-wrapper {
   width: 290px;
@@ -2114,7 +2114,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  02.Utility -> { Color } 
+  02.Utility -> { Color }
 ------------------------------*/
 .bg-primary-opacity-visible {
   background-color: #00b074;
@@ -6817,7 +6817,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  02.Utility -> { Flex } 
+  02.Utility -> { Flex }
 ------------------------------*/
 .flex-all-center {
   display: flex;
@@ -6836,7 +6836,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  02.Utility -> { Grid } 
+  02.Utility -> { Grid }
 ------------------------------*/
 @media (min-width: 576px) {
   .row-sm {
@@ -6875,7 +6875,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  02.Utility -> { Shadows } 
+  02.Utility -> { Shadows }
 ------------------------------*/
 /*~~~~~ Normal Shadows ~~~~~*/
 .shadow-1 {
@@ -6927,7 +6927,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  02.Utility -> { Size } 
+  02.Utility -> { Size }
 ------------------------------*/
 /*~~~~~ Circle Sizes ~~~~~*/
 .circle-9 {
@@ -7585,7 +7585,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  02.Utility -> { Borders } 
+  02.Utility -> { Borders }
 ------------------------------*/
 .rounded-xs {
   border-radius: 3px;
@@ -7816,7 +7816,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  02.Utility -> { Common } 
+  02.Utility -> { Common }
 ------------------------------*/
 span, a {
   display: inline-block;
@@ -7881,14 +7881,14 @@ span, a {
 }
 
 /* ---------------------------
-  02.Utility -> { Tablet } 
+  02.Utility -> { Tablet }
 ------------------------------*/
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: #F4F5F8;
 }
 
 /* ---------------------------
-  02.Utility -> { Typography } 
+  02.Utility -> { Typography }
 ------------------------------*/
 p {
   font-size: 1.125rem;
@@ -8014,7 +8014,7 @@ p {
 }
 
 /* ---------------------------
-  03.Theme Utility -> { Hovers } 
+  03.Theme Utility -> { Hovers }
 ------------------------------*/
 /*~~~~~~~~~~~~~~~~
   All Hover Effects
@@ -8133,7 +8133,7 @@ a.hover-text-hitgray:hover {
 }
 
 /* ---------------------------
-  03.Theme Utility -> { Positioning } 
+  03.Theme Utility -> { Positioning }
 ------------------------------*/
 @media (min-width: 992px) {
   .position-lg-static {
@@ -8311,7 +8311,7 @@ a.hover-text-hitgray:hover {
 }
 
 /* ---------------------------
-  03.Theme Utility -> { Sizes } 
+  03.Theme Utility -> { Sizes }
 ------------------------------*/
 /* Theme Size Utilities */
 .min-h-100vh {
@@ -8429,7 +8429,7 @@ a.hover-text-hitgray:hover {
 }
 
 /* --------------------------------
-  03.Theme Utility -> { Typograpy } 
+  03.Theme Utility -> { Typograpy }
 -----------------------------------*/
 .letter-spacing-np09 {
   letter-spacing: -0.09px;
@@ -8444,7 +8444,7 @@ a.hover-text-hitgray:hover {
 }
 
 /* ---------------------------------
-  03.Theme Utility -> { Gradient } 
+  03.Theme Utility -> { Gradient }
 ------------------------------------*/
 .bg-gradient-1 {
   background-image: linear-gradient(to right, rgba(0, 176, 116, 0.1) 0%, rgba(88, 88, 0, 0.05) 100%);
@@ -8454,9 +8454,9 @@ a.hover-text-hitgray:hover {
   background-image: linear-gradient(180deg, #ffffff 0%, #f4f5f8 100%);
 }
 
-/* 
+/*
 ---------------------------------
--------> THEME CUSTOM STYLES 
+-------> THEME CUSTOM STYLES
 ---------------------------------
 */
 .btn-h-60 {
