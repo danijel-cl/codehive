@@ -18,6 +18,7 @@ Primary use:    Job Portal, Job Directory, Job Listing
 |--- 01.Component -> { Tab }
 |--- 01.Component -> { Acccordion }
 |--- 01.Component -> { Sidebar }
+|--- 01.Component -> { Select }
 |--- 02.Utility -> { Color }
 |--- 02.Utility -> { Flex }
 |--- 02.Utility -> { Grid }
@@ -2111,6 +2112,15 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 
 .sidebar-mobile-button[aria-expanded="true"]:after {
   content: "Sidebar Close";
+}
+
+/* ---------------------------
+  01.Component -> { Sidebar }
+------------------------------*/
+
+.custom-select{
+  border:0 !important;
+  box-shadow: none !important;
 }
 
 /* ---------------------------
