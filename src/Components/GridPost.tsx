@@ -6,7 +6,7 @@ const GridPost = () => {
       {/* Start Feature One */}
       <div className="bg-white px-8 pt-9 pb-7 rounded-4 mb-9 feature-cardOne-adjustments">
         <div className="d-block mb-7">
-          <a href="#"><img src="./image/l1/png/feature-brand-1.png" alt="" /></a>
+          <a href="#"><img src={process.env.PUBLIC_URL +"/resources/image/l1/png/feature-brand-1.png"} alt="" /></a>
         </div>
         <a href="#" className="font-size-3 d-block mb-0 text-gray">Google INC</a>
         <h2 className="mt-n4"><a className="font-size-7 text-black-2 font-weight-bold mb-4" href="./jobdetails.html">Product Designer</a></h2>

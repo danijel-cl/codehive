@@ -3,6 +3,7 @@ import Aos from 'aos';
 import StyledSelect from "../Components/Select";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer"
+import Search from "../Components/Search"
 
 export const HomePage = () => {
   Aos.init();
@@ -33,10 +34,7 @@ export const HomePage = () => {
                   <form action="/" className="search-form" data-aos="fade-up" data-aos-duration={800} data-aos-once="true">
                     <div className="filter-search-form-2 bg-white rounded-sm shadow-7 pr-8 py-7 pl-6">
                       <div className="filter-inputs">
-                        <div className="form-group position-relative">
-                          <input className="form-control focus-reset pl-13" type="text" id="keyword" placeholder="Type Job title, keywords" />
-                          <span className="h-100 w-px-50 pos-abs-tl d-flex align-items-center justify-content-center font-size-6"><i className="icon icon-zoom-2 text-primary font-weight-bold" /></span>
-                        </div>
+                        <Search />
                         {/* .select-city starts */}
                         <div className="pl-13 form-group position-relative">
                           <StyledSelect />
