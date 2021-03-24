@@ -14,7 +14,7 @@ export const HomePage = () => {
         <div className="site-wrapper overflow-hidden ">
           <div className="position-relative z-index-1 bg-squeeze pt-26 dark-mode-texts">
             <div className="pos-abs-tr h-100">
-              <img src="../../image/patterns/globe-pattern.png" alt="" className="h-100" />
+              <img src={process.env.PUBLIC_URL + "resources/image/patterns/globe-pattern.png"} alt="" className="h-100" />
             </div>
             <div className="container position-static">
               <div className="row position-relative align-items-center position-static">

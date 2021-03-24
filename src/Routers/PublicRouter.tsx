@@ -5,6 +5,8 @@ import { HomePage } from '../Pages/HomePage';
 
 import { LoginPage } from '../Pages/LoginPage';
 import { PostsPage } from '../Pages/PostsPage';
+import { PostDetailPage } from '../Pages/PostDetailPage';
+import { CompanyDetailPage } from '../Pages/CompanyDetailPage';
 import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 import { RegistrationPage } from '../Pages/RegistrationPage';
 
@@ -17,6 +19,8 @@ export const PublicRouter = () => {
       <Route exact path="/recover-password" component={RecoverPasswordPage} />
       <Route exact path="/account-activation" component={AccountActivationPage} />
       <Route exact path="/posts" component={PostsPage} />
+      <Route exact path="/posts/:id" component={PostDetailPage} />
+      <Route exact path="/companies/:id" component={CompanyDetailPage} />
       <Redirect from="*" to="/" />
     </Switch>
   );
