@@ -4,10 +4,16 @@ import StyledSelect from "../Components/Select";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer"
 import Search from "../Components/Search"
+import Category from "../Components/Category"
 
 export const HomePage = () => {
   Aos.init();
-
+  const categoryClassNames = {
+    category:"bg-white border border-color-2 rounded-4 pl-5 pt-10 pb-3 px-2 hover-shadow-2 mb-9 d-block w-100 text-center",
+    icon:"text-white bg-green square-70 rounded-4 mb-7 font-size-7 text-center mx-auto",
+    text:"font-size-5 font-weight-semibold text-black-2 line-height-1",
+    subtext:"font-size-4 font-weight-normal text-gray"
+  }
   return (
     <div>
         <Navbar />
@@ -88,114 +94,81 @@ export const HomePage = () => {
                 <div className="row justify-content-center" data-aos="fade-right" data-aos-duration={800} data-aos-once="true">
                   {/* Single Category */}
                   <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <a href="#" className="bg-white border border-color-2 rounded-4 pl-5 pt-10 pb-3 px-2 hover-shadow-2 mb-9 d-block w-100 text-center">
-                      <div className="text-white bg-blue square-70 rounded-4 mb-7 font-size-7 text-center mx-auto">
-                        <i className="fa fa-briefcase" />
-                      </div>
-                      {/* Category Content */}
-                      <div>
-                        <h5 className="font-size-5 font-weight-semibold text-black-2 line-height-1">Business Development</h5>
-                        <p className="font-size-4 font-weight-normal text-gray"><span>415</span> Vacancy</p>
-                      </div>
-                    </a>
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-user"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                    />
                   </div>
                   {/* End Single Category */}
                   {/* Single Category */}
                   <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <a href="#" className="bg-white border border-color-2 rounded-4 pl-5 pt-10 pb-3 px-2 hover-shadow-2 mb-9 d-block w-100 text-center">
-                      <div className="text-white bg-spray square-70 rounded-4 mb-7 font-size-7 text-center mx-auto">
-                        <i className="fa fa-headset" />
-                      </div>
-                      {/* Category Content */}
-                      <div>
-                        <h5 className="font-size-5 font-weight-semibold text-black-2 line-height-1">Customer Service</h5>
-                        <p className="font-size-4 font-weight-normal text-gray"><span>415</span> Vacancy</p>
-                      </div>
-                    </a>
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-user"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                    />
                   </div>
                   {/* End Single Category */}
                   {/* Single Category */}
                   <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <a href="#" className="bg-white border border-color-2 rounded-4 pl-5 pt-10 pb-3 px-2 hover-shadow-2 mb-9 d-block w-100 text-center">
-                      <div className="text-white bg-coral square-70 rounded-4 mb-7 font-size-7 text-center mx-auto">
-                        <i className="fa fa-layer-group" />
-                      </div>
-                      {/* Category Content */}
-                      <div>
-                        <h5 className="font-size-5 font-weight-semibold text-black-2 line-height-1">Development</h5>
-                        <p className="font-size-4 font-weight-normal text-gray"><span>415</span> Vacancy</p>
-                      </div>
-                    </a>
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-user"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                    />
                   </div>
                   {/* End Single Category */}
                   {/* Single Category */}
                   <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <a href="#" className="bg-white border border-color-2 rounded-4 pl-5 pt-10 pb-3 px-2 hover-shadow-2 mb-9 d-block w-100 text-center">
-                      <div className="text-white bg-red square-70 rounded-4 mb-7 font-size-7 text-center mx-auto">
-                        <i className="fa fa-pen-nib" />
-                      </div>
-                      {/* Category Content */}
-                      <div>
-                        <h5 className="font-size-5 font-weight-semibold text-black-2 line-height-1">Design</h5>
-                        <p className="font-size-4 font-weight-normal text-gray"><span>415</span> Vacancy</p>
-                      </div>
-                    </a>
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-user"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                    />
                   </div>
                   {/* End Single Category */}
                   {/* Single Category */}
                   <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <a href="#" className="bg-white border border-color-2 rounded-4 pl-5 pt-10 pb-3 px-2 hover-shadow-2 mb-9 d-block w-100 text-center">
-                      <div className="text-white bg-orange square-70 rounded-4 mb-7 font-size-7 text-center mx-auto">
-                        <i className="fa fa-rocket" />
-                      </div>
-                      {/* Category Content */}
-                      <div>
-                        <h5 className="font-size-5 font-weight-semibold text-black-2 line-height-1">Marketing &amp; Management</h5>
-                        <p className="font-size-4 font-weight-normal text-gray"><span>415</span> Vacancy</p>
-                      </div>
-                    </a>
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-user"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                    />
                   </div>
                   {/* End Single Category */}
                   {/* Single Category */}
                   <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <a href="#" className="bg-white border border-color-2 rounded-4 pl-5 pt-10 pb-3 px-2 hover-shadow-2 mb-9 d-block w-100 text-center">
-                      <div className="text-white bg-yellow square-70 rounded-4 mb-7 font-size-7 text-center mx-auto">
-                        <i className="fa fa-location-arrow" />
-                      </div>
-                      {/* Category Content */}
-                      <div>
-                        <h5 className="font-size-5 font-weight-semibold text-black-2 line-height-1">Sales &amp; Communication</h5>
-                        <p className="font-size-4 font-weight-normal text-gray"><span>415</span> Vacancy</p>
-                      </div>
-                    </a>
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-user"
+                      text = "Human Resource"
+                      subText = "415 Vacancy" />
                   </div>
                   {/* End Single Category */}
                   {/* Single Category */}
                   <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <a href="#" className="bg-white border border-color-2 rounded-4 pl-5 pt-10 pb-3 px-2 hover-shadow-2 mb-9 d-block w-100 text-center">
-                      <div className="text-white bg-turquoise square-70 rounded-4 mb-7 font-size-7 text-center mx-auto">
-                        <i className="icon icon-sidebar-2" />
-                      </div>
-                      {/* Category Content */}
-                      <div>
-                        <h5 className="font-size-5 font-weight-semibold text-black-2 line-height-1">Project Management</h5>
-                        <p className="font-size-4 font-weight-normal text-gray"><span>415</span> Vacancy</p>
-                      </div>
-                    </a>
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-user"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                    />
                   </div>
                   {/* End Single Category */}
                   {/* Single Category */}
                   <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <a href="#" className="bg-white border border-color-2 rounded-4 pl-5 pt-10 pb-3 px-2 hover-shadow-2 mb-9 d-block w-100 text-center">
-                      <div className="text-white bg-green square-70 rounded-4 mb-7 font-size-7 text-center mx-auto">
-                        <i className="fa fa-user" />
-                      </div>
-                      {/* Category Content */}
-                      <div>
-                        <h5 className="font-size-5 font-weight-semibold text-black-2 line-height-1">Human Resource </h5>
-                        <p className="font-size-4 font-weight-normal text-gray"><span>415</span> Vacancy</p>
-                      </div>
-                    </a>
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-user"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                    />
                   </div>
                   {/* End Single Category */}
                 </div>

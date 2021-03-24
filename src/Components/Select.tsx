@@ -10,13 +10,12 @@ const StyledSelect = () => {
     }),
     menu: (provided, state) => ({
       ...provided,
-      width: "110%",
-      left:"-10%",
+      width: "100%",
     }),
   };
   return (
     <Select
-      placeholder="City, state, zip code or (Remote)"
+      placeholder="Select.."
       styles={style}
       className='h-100 arrow-3'
       options={[
