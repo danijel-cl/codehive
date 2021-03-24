@@ -1321,6 +1321,14 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
   color: #00b074;
 }
 
+.no-border-button{
+  border: none;
+}
+
+.no-border-button:focus {
+    outline: 0 !important;
+}
+
 /* ---------------------------
   01.Component -> { Lists }
 ------------------------------*/

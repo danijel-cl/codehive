@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Post = () => {
+const GridPost = () => {
   return (
     <div className="col-12 col-lg-6">
       {/* Start Feature One */}
@@ -31,4 +31,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default GridPost;
