@@ -26,7 +26,8 @@ export const DashboardPage = () => {
                 classNames = {categoryClassNames}
                 icon = "fas fa-mouse-pointer"
                 text = "18.6%"
-                subText = "Applied Rate"/>
+                subText = "Applied Rate"
+              />
             </div>
             <div className="col-xxl-3 col-xl-4 col-lg-6 col-sm-6">
               <Category
