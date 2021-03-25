@@ -1,6 +1,7 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
-const GridPost = () => {
+const GridPost = (props) => {
   return (
     <div className="col-12 col-lg-6">
       {/* Start Feature One */}
@@ -9,7 +10,7 @@ const GridPost = () => {
           <a href="#"><img src={process.env.PUBLIC_URL +"/resources/image/l1/png/feature-brand-1.png"} alt="" /></a>
         </div>
         <a href="#" className="font-size-3 d-block mb-0 text-gray">Google INC</a>
-        <h2 className="mt-n4"><a className="font-size-7 text-black-2 font-weight-bold mb-4" href="./jobdetails.html">Product Designer</a></h2>
+        <h2 className="mt-n4"><a className="font-size-7 text-black-2 font-weight-bold mb-4" href="./jobdetails.html">{props.post.position}</a></h2>
         <ul className="list-unstyled mb-1 card-tag-list">
           <li><a className="bg-regent-opacity-15 text-denim font-size-3 rounded-3">
               <i className="icon icon-pin-3 mr-2 font-weight-bold" /> Berlyn
@@ -23,7 +24,7 @@ const GridPost = () => {
         </ul>
         <p className="mb-7 font-size-4 text-gray">We are looking for Enrollment Advisors who are looking to take 30-35 appointments per week. All leads are pre-scheduled.</p>
         <div className="card-btn-group">
-          <a className="btn btn-green text-uppercase btn-medium rounded-3" href="#">Apply Now</a>
+          <Link to={`/posts/${props.id}`} className="btn btn-green text-uppercase btn-medium rounded-3">Apply Now</Link>
         </div>
       </div>
       {/* End Feature One */}

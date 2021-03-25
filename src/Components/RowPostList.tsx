@@ -1,11 +1,12 @@
 import React from 'react';
 import RowPost from "../Components/RowPost"
 
-const RowPostList = () => {
+const RowPostList = (props) => {
   return (
     <div>
-      <RowPost />
-      <RowPost />
+      {props.posts.map((post, index) => (
+        <RowPost id={index} post={post} />
+      ))}
     </div>
   );
 };

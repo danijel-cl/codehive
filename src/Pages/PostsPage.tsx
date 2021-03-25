@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer"
-import Widget from "../Components/Widget"
+import CheckBoxList from "../Components/CheckBoxList"
 import Slider from "../Components/Slider"
 import StyledSelect from "../Components/Select"
 import GridPostList from "../Components/GridPostList"
@@ -9,6 +9,16 @@ import RowPostList from "../Components/RowPostList"
 import Search from "../Components/Search"
 
 export const PostsPage = () => {
+  const posts =[{
+    "position":"Product Designer",
+  },{
+    "position":"Software Developer",
+  },{
+    "position":"Data Scientist",
+  },{
+    "position":"DevOps Engineer",
+  }];
+
   const jobTypes = [
     { name: 'Full Time' },
     { name: 'Part Time' },
@@ -30,24 +40,30 @@ export const PostsPage = () => {
     { name: 'Last 2 weeks' },
     { name: 'Last month' },
   ];
+
+  const [choice, setChoice] = useState(false);
+
+  const renderPosts = () => {
+    if (choice) {
+      return <RowPostList posts = {posts} />
+    } else {
+      return <GridPostList posts = {posts} />
+    }
+  }
   return (
     <div className="site-wrapper overflow-hidden ">
-    {/* Header start  */}
     {/* Navbar- */}
     <Navbar />
-    {/* Login Modal */}
-    {/* Sign Up Modal */}
-    {/* Header end */}
     {/* Main Content Start */}
     <div className="bg-default-1 pt-26 pt-lg-28 pb-13 pb-lg-25">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-4 col-xs-8">
             {/* Sidebar Start */}
-            <Widget name="Job Type" items={jobTypes} />
+            <CheckBoxList name="Job Type" items={jobTypes} />
             <Slider />
-            <Widget name="Experience Level" items={experienceTypes} />
-            <Widget name="Posted Time" items={postedTypes} />
+            <CheckBoxList name="Experience Level" items={experienceTypes} />
+            <CheckBoxList name="Posted Time" items={postedTypes} />
             {/* Sidebar End */}
           </div>
           <div className="col-12 col-md-8 col-xs-12 ">
@@ -75,20 +91,18 @@ export const PostsPage = () => {
             <div className="pt-12 ml-lg-0 ml-md-15">
               <div className="d-flex align-items-center justify-content-between">
                 <h5 className="font-size-4 font-weight-normal text-default-color">
-                  <span className="heading-default-color">120</span>
-                  results for <span className="heading-default-color">UI Designer</span>
+                  <span className="heading-default-color">120&nbsp;</span>results for <span className="heading-default-color">UI Designer</span>
                 </h5>
                 <div className="d-flex align-items-center result-view-type">
-                  <button className="heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button active">
+                  <button onClick={() => setChoice(true)} className="heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button">
                     <i className="fa fa-list-ul" />
                   </button>
-                  <button className="heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button">
+                  <button onClick={() => setChoice(false)} className="heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button">
                     <i className="fa fa-th-large" />
                   </button>
                 </div>
               </div>
-              <GridPostList />
-              <RowPostList />
+              {renderPosts()}
               <div className="text-center pt-5 pt-lg-13">
                 <a className="text-green font-weight-bold text-uppercase font-size-3 d-flex align-items-center justify-content-center" href="#">Load More <i className="fas fa-sort-down ml-3 mt-n2 font-size-4" />
                 </a>
