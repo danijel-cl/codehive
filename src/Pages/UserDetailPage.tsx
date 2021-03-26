@@ -1,5 +1,6 @@
 import Navbar from "../Components/Navbar"
 import Footer from "../Components/Footer"
+import {Link} from "react-router-dom";
 
 export const UserDetailPage = () => {
   return (
@@ -15,8 +16,8 @@ export const UserDetailPage = () => {
          <div className="row justify-content-center">
            <div className="col-12 dark-mode-texts">
              <div className="mb-9">
-               <a className="d-flex align-items-center ml-4" href="dashboard-main.html"> <i className="icon icon-small-left bg-white circle-40 mr-5 font-size-7 text-black font-weight-bold shadow-8">
-                 </i><span className="text-uppercase font-size-3 font-weight-bold text-gray">Back</span></a>
+               <Link className="d-flex align-items-center ml-4" to="/home"> <i className="icon icon-small-left bg-white circle-40 mr-5 font-size-7 text-black font-weight-bold shadow-8">
+               </i><span className="text-uppercase font-size-3 font-weight-bold text-gray">Back</span></Link>
              </div>
            </div>
          </div>
@@ -28,7 +29,7 @@ export const UserDetailPage = () => {
                {/* Top Start */}
                <div className="bg-white shadow-9 rounded-4">
                  <div className="px-5 py-11 text-center border-bottom border-mercury">
-                   <a className="mb-4" href="#"><img className="circle-54" src="./image/l3/png/pro-img.png" alt="" /></a>
+                   <a className="mb-4" href="#"><img className="circle-54" src={process.env.PUBLIC_URL + "/resources/image/l3/png/pro-img.png"} alt="" /></a>
                    <h4 className="mb-0"><a className="text-black-2 font-size-6 font-weight-semibold" href="#">David Henricks</a></h4>
                    <p className="mb-8"><a className="text-gray font-size-4" href="#">Product Designer</a></p>
                    <div className="icon-link d-flex align-items-center justify-content-center flex-wrap">
@@ -52,7 +53,7 @@ export const UserDetailPage = () => {
                    {/* Single List */}
                    <div className="mb-7">
                      <p className="font-size-4 mb-0">E-mail</p>
-                     <h5 className="font-size-4 font-weight-semibold mb-0"><a className="text-black-2 text-break" href="mailto:name_ac@gmail.com">name_ac@gmail.com</a></h5>
+                     <h5 className="font-size-4 font-weight-semibold mb-0"><a className="text-black-2 text-break">name_ac@gmail.com</a></h5>
                    </div>
                    {/* Single List */}
                    {/* Single List */}
@@ -124,7 +125,7 @@ export const UserDetailPage = () => {
                      <div className="w-100">
                        <div className="d-flex align-items-center pr-11 mb-9 flex-wrap flex-sm-nowrap">
                          <div className="square-72 d-block mr-8 mb-7 mb-sm-0">
-                           <img src="./image/l2/png/featured-job-logo-1.png" alt="" />
+                           <img src={process.env.PUBLIC_URL + "/resources/image/l2/png/featured-job-logo-1.png"} alt="" />
                          </div>
                          <div className="w-100 mt-n2">
                            <h3 className="mb-0">
@@ -134,7 +135,7 @@ export const UserDetailPage = () => {
                            <div className="d-flex align-items-center justify-content-md-between flex-wrap">
                              <a className="font-size-4 text-gray mr-5">Jun 2017 - April 2020- 3 years</a>
                              <a className="font-size-3 text-gray">
-                               <span className="mr-4" style={{marginTop: '-2px'}}><img src="./image/svg/icon-loaction-pin-black.svg" alt="" /></span>New York, USA</a>
+                               <span className="mr-4" style={{marginTop: '-2px'}}><img src={process.env.PUBLIC_URL + "/resources/image/svg/icon-loaction-pin-black.svg"} alt="" /></span>New York, USA</a>
                            </div>
                          </div>
                        </div>
@@ -144,7 +145,7 @@ export const UserDetailPage = () => {
                      <div className="w-100">
                        <div className="d-flex align-items-center pr-11 mb-9 flex-wrap flex-sm-nowrap">
                          <div className="square-72 d-block mr-8 mb-7 mb-sm-0">
-                           <img src="./image/l1/png/feature-brand-1.png" alt="" />
+                           <img src={process.env.PUBLIC_URL + "/resources/image/l1/png/feature-brand-1.png"} alt="" />
                          </div>
                          <div className="w-100 mt-n2">
                            <h3 className="mb-0">
@@ -154,7 +155,7 @@ export const UserDetailPage = () => {
                            <div className="d-flex align-items-center justify-content-md-between flex-wrap">
                              <a className="font-size-3 text-gray mr-5">Jun 2017 - April 2020- 3 years</a>
                              <a className="font-size-3 text-gray">
-                               <span className="mr-4" style={{marginTop: '-2px'}}><img src="./image/svg/icon-loaction-pin-black.svg" alt="" /></span>New York, USA</a>
+                               <span className="mr-4" style={{marginTop: '-2px'}}><img src={process.env.PUBLIC_URL + "/resources/image/svg/icon-loaction-pin-black.svg"} alt="" /></span>New York, USA</a>
                            </div>
                          </div>
                        </div>
@@ -169,7 +170,7 @@ export const UserDetailPage = () => {
                      <div className="w-100">
                        <div className="d-flex align-items-center pr-11 mb-9 flex-wrap flex-sm-nowrap">
                          <div className="square-72 d-block mr-8 mb-7 mb-sm-0">
-                           <img src="./image/svg/harvard.svg" alt="" />
+                           <img src={process.env.PUBLIC_URL + "/resources/image/svg/harvard.svg"} alt="" />
                          </div>
                          <div className="w-100 mt-n2">
                            <h3 className="mb-0">
@@ -179,7 +180,7 @@ export const UserDetailPage = () => {
                            <div className="d-flex align-items-center justify-content-md-between flex-wrap">
                              <a className="font-size-3 text-gray mr-5">Jun 2017 - April 2020- 3 years</a>
                              <a className="font-size-3 text-gray">
-                               <span className="mr-4" style={{marginTop: '-2px'}}><img src="./image/svg/icon-loaction-pin-black.svg" alt="" /></span>Brylin, USA</a>
+                               <span className="mr-4" style={{marginTop: '-2px'}}><img src={process.env.PUBLIC_URL + "/resources/image/svg/icon-loaction-pin-black.svg"} alt="" /></span>Brylin, USA</a>
                            </div>
                          </div>
                        </div>
@@ -189,7 +190,7 @@ export const UserDetailPage = () => {
                      <div className="w-100">
                        <div className="d-flex align-items-center pr-11 mb-9 flex-wrap flex-sm-nowrap">
                          <div className="square-72 d-block mr-8 mb-7 mb-sm-0">
-                           <img src="./image/svg/mit.svg" alt="" />
+                           <img src={process.env.PUBLIC_URL + "/resources/image/svg/mit.svg"} alt="" />
                          </div>
                          <div className="w-100 mt-n2">
                            <h3 className="mb-0">
@@ -199,7 +200,7 @@ export const UserDetailPage = () => {
                            <div className="d-flex align-items-center justify-content-md-between flex-wrap">
                              <a className="font-size-3 text-gray mr-5">Fed 2012 - April 2016 - 4 years</a>
                              <a className="font-size-3 text-gray">
-                               <span className="mr-4" style={{marginTop: '-2px'}}><img src="./image/svg/icon-loaction-pin-black.svg" alt="" /></span>New York, USA</a>
+                               <span className="mr-4" style={{marginTop: '-2px'}}><img src={process.env.PUBLIC_URL + "/resources/image/svg/icon-loaction-pin-black.svg"}/></span>New York, USA</a>
                            </div>
                          </div>
                        </div>

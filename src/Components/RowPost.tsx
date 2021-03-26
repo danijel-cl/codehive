@@ -3,8 +3,7 @@ import {Link} from "react-router-dom";
 
 const RowPost = (props) => {
   return (
-    <Link to={`/posts/${props.id}`}>
-      <div className="mb-8">
+      <div className="mb-8 mt-5">
         <div className="pt-9 px-xl-9 px-lg-7 px-7 pb-7 light-mode-texts bg-white rounded hover-shadow-3 ">
           <div className="row">
             <div className="col-md-6">
@@ -13,8 +12,8 @@ const RowPost = (props) => {
                   <img src={process.env.PUBLIC_URL +"/resources/image/l2/png/featured-job-logo-1.png"} alt="" />
                 </div>
                 <div>
-                  <h3 className="mb-0"><a className="font-size-6 heading-default-color" href="#">{props.position}</a></h3>
-                  <a href="#" className="font-size-3 text-default-color line-height-2">AirBnb</a>
+                  <h3 className="mb-0"><Link to={`/posts/${props.id}`} className="font-size-6 heading-default-color">{props.post.position}</Link></h3>
+                  <Link to="/companies/:id" className="font-size-3 text-default-color line-height-2">AirBnb</Link>
                 </div>
               </div>
             </div>
@@ -60,7 +59,6 @@ const RowPost = (props) => {
           </div>
         </div>
       </div>
-    </Link>
   );
 };
 

@@ -9,8 +9,8 @@ const GridPost = (props) => {
         <div className="d-block mb-7">
           <a href="#"><img src={process.env.PUBLIC_URL +"/resources/image/l1/png/feature-brand-1.png"} alt="" /></a>
         </div>
-        <a href="#" className="font-size-3 d-block mb-0 text-gray">Google INC</a>
-        <h2 className="mt-n4"><a className="font-size-7 text-black-2 font-weight-bold mb-4" href="./jobdetails.html">{props.post.position}</a></h2>
+        <Link to="/companies/:id" className="font-size-3 d-block mb-0 text-gray">Google INC</Link>
+        <h2 className="mt-n4"><Link className="font-size-7 text-black-2 font-weight-bold mb-4" to={`/posts/${props.id}`}>{props.post.position}</Link></h2>
         <ul className="list-unstyled mb-1 card-tag-list">
           <li><a className="bg-regent-opacity-15 text-denim font-size-3 rounded-3">
               <i className="icon icon-pin-3 mr-2 font-weight-bold" /> Berlyn

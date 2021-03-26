@@ -1,5 +1,6 @@
 import Navbar from "../Components/Navbar"
 import Footer from "../Components/Footer"
+import {Link} from "react-router-dom";
 
 export const PostDetailPage = () => {
   return (
@@ -15,8 +16,8 @@ export const PostDetailPage = () => {
             {/* back Button */}
             <div className="col-xl-10 col-lg-11 mt-4 ml-xxl-32 ml-xl-15 dark-mode-texts">
               <div className="mb-9">
-                <a className="d-flex align-items-center ml-4" href="./search-grid.html"> <i className="icon icon-small-left bg-white circle-40 mr-5 font-size-7 text-black font-weight-bold shadow-8">
-                  </i><span className="text-uppercase font-size-3 font-weight-bold text-gray">Back to jobs</span></a>
+                <Link className="d-flex align-items-center ml-4" to="/posts"> <i className="icon icon-small-left bg-white circle-40 mr-5 font-size-7 text-black font-weight-bold shadow-8">
+                </i><span className="text-uppercase font-size-3 font-weight-bold text-gray">Back to jobs</span></Link>
               </div>
             </div>
             {/* back Button End */}

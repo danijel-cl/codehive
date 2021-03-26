@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -7,19 +8,19 @@ const Navbar = () => {
           <nav className="navbar site-navbar offcanvas-active navbar-expand-lg  px-0 py-0">
             {/* Brand Logo*/}
             <div className="brand-logo">
-              <a href="./index.html">
+              <Link to="/">
                 {/* light version logo (logo must be black)*/}
                 <img src={process.env.PUBLIC_URL + '/resources/image/logo-main-black.png'} alt="" className="light-version-logo default-logo" />
-              </a>
+              </Link>
             </div>
             <div className="collapse navbar-collapse" id="mobile-menu">
               <div className="navbar-nav-wrapper">
                 <ul className="navbar-nav main-menu">
                   <li className="nav-item">
-                    <a className="nav-link" href="./index.html">Home</a>
+                    <Link className="nav-link" to="/">Home</Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="./search-grid.html">Jobs</a>
+                    <Link className="nav-link" to="/posts/">Jobs</Link>
                   </li>
                 </ul>
               </div>
@@ -51,11 +52,10 @@ const Navbar = () => {
                     <i className="fas fa-chevron-down heading-default-color ml-6" />
                   </a>
                   <div className="dropdown-menu gr-menu-dropdown dropdown-right border-0 border-width-2 py-2 w-auto bg-default" aria-labelledby="dropdownMenuLink">
-                    <a className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" href="./candidate-jobs.html">My jobs</a>
-                    <a className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" href="./candidate-profile.html">Profile</a>
-                    <a className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" href="./candidate-settings-dashboard.html">Settings</a>
-                    <a className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" href="./dashboard-main.html">Dashboard</a>
-                    <a className="dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase" href="#">Log Out</a>
+                    <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/users/:id/jobs">My jobs</Link>
+                    <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/users/:id/">Profile</Link>
+                    <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/companies/:id/dashboard">Dashboard</Link>
+                    <Link className="dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/">Log Out</Link>
                   </div>
                 </div>
               </div>
