@@ -10,6 +10,7 @@ import { CompanyDetailPage } from '../Pages/CompanyDetailPage';
 import { UserDetailPage } from '../Pages/UserDetailPage';
 import { UserJobsPage } from '../Pages/UserJobsPage';
 import { DashboardPage } from '../Pages/DashboardPage';
+import { TasksPage } from '../Pages/TasksPage';
 import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 import { RegistrationPage } from '../Pages/RegistrationPage';
 
@@ -27,6 +28,7 @@ export const PublicRouter = () => {
       <Route exact path="/companies/:id/dashboard" component={DashboardPage} />
       <Route exact path="/users/:id" component={UserDetailPage} />
       <Route exact path="/users/:id/jobs" component={UserJobsPage} />
+      <Route exact path="/tasks/" component={TasksPage} />
       <Redirect from="*" to="/" />
     </Switch>
   );
