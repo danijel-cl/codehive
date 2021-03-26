@@ -165,7 +165,7 @@ export const PostDetailPage = () => {
                             <span className="d-inline-block mr-7">•</span>Ship a TON of product improvements and features
                           </li>
                         </ul>
-                        <a className="btn btn-green text-uppercase btn-medium w-180 h-px-48 rounded-3 mr-4 mt-6" href="#">Apply to this job</a>
+                        <Link className="btn btn-green text-uppercase btn-medium w-180 h-px-48 rounded-3 mr-4 mt-6" to="/posts/:id/tasks">Apply to this job</Link>
                       </div>
                     </div>
                   </div>

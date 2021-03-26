@@ -1,6 +1,7 @@
 import Task from "../Components/Task"
 import Navbar from "../Components/Navbar";
 import TabPane from "../Components/TabPane";
+import ScrollToTop from "../Components/ScrollToTop";
 import React, { useState, useEffect } from 'react';
 
 
@@ -23,6 +24,7 @@ export const TasksPage = () => {
 
   return (
     <div className="site-wrapper overflow-hidden ">
+        <ScrollToTop />
         <Navbar />
         <div className="bg-default-1 pb-13 pb-xl-30 pb-13 mt-12 mt-lg-20 pt-15 pt-lg-15 position-relative overflow-hidden">
           <div className="container">

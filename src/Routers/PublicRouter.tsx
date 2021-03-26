@@ -28,7 +28,7 @@ export const PublicRouter = () => {
       <Route exact path="/companies/:id/dashboard" component={DashboardPage} />
       <Route exact path="/users/:id" component={UserDetailPage} />
       <Route exact path="/users/:id/jobs" component={UserJobsPage} />
-      <Route exact path="/tasks/" component={TasksPage} />
+      <Route exact path="/posts/:id/tasks/" component={TasksPage} />
       <Redirect from="*" to="/" />
     </Switch>
   );
