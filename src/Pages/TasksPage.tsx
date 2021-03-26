@@ -37,7 +37,7 @@ export const TasksPage = () => {
                 <div className="Left">
                   <div className="justify-content-center search-nav-tab nav nav-tabs border-bottom-0" id="search-nav-tab" role="tablist">
                     {tasks.map((task, index) => (
-                      <Task task={task} index={index} key = {index}/>
+                      <Task task={task} index ={index} action = {setActiveTask} activeTask={activeTask} key = {index}/>
                     ))}
                   </div>
                   <div className="text-center pt-5 pt-lg-13">
@@ -50,7 +50,7 @@ export const TasksPage = () => {
               {/* Right Section */}
               <div className="col-12 col-xxl-4 col-xl-5 col-lg-10 position-static">
                 <div className="tab-content" id="serachlist-tab">
-                  <TabPane task= {tasks[0]}/>
+                  <TabPane task= {tasks[activeTask]}/>
                 </div>
               </div>
             </div>

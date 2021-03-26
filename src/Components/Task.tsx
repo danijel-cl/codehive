@@ -1,18 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 export const Task = (props) => {
+  const [activeClass, setActiveClass] = useState(false)
+  useEffect(() => {
+    console.log("changed")
+    if(props.index==props.activeTask){
+      setActiveClass(true)
+    }else{
+      setActiveClass(false)
+    }
+  });
   return (
-    <a className="mb-8 p-0 w-100 nav-link" key={props.index}>
+    <a className={`mb-8 p-0 w-100 ${activeClass ? 'active':''}`} key={props.index}>
       {/* Single Featured Job */}
-      <div className="pt-9 px-xl-9 px-lg-7 px-7 pb-7 light-mode-texts bg-white rounded hover-shadow-3 hover-border-green">
+      <div className="pt-9 px-xl-9 px-lg-7 px-7 pb-7 light-mode-texts bg-white rounded hover-shadow-3 hover-border-green" onClick={() => props.action(props.index)}>
         <div className="row">
           <div className="col-md-6">
             <div className="media align-items-center">
-              <div className="square-72 d-block mr-8">
-                <img src="./image/l2/png/featured-job-logo-1.png" alt="" />
-              </div>
               <div>
-                <h3 className="mb-0 font-size-6 heading-default-color">Product Designer</h3>
+                <h3 className="mb-0 font-size-6 heading-default-color">{props.task.name}</h3>
                 <span className="font-size-3 text-default-color line-height-2 d-block">AirBnb</span>
               </div>
             </div>
@@ -22,7 +28,7 @@ export const Task = (props) => {
               <div className="image mr-5 mt-2">
                 <img src="./image/svg/icon-fire-rounded.svg" alt="" />
               </div>
-              <p className="font-weight-bold font-size-7 text-hit-gray mb-0"><span className="text-black-2">80-90K PLN</span> PLN</p>
+              <p className="font-weight-bold font-size-7 text-hit-gray mb-0"><span className="text-black-2">50 min</span></p>
             </div>
           </div>
         </div>

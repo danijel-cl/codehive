@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const TabPane = (props) => {
-  console.log(props.task.name)
   return (
     <div className="tab-pane fade show active">
       <div className=" bg-white rounded-4 border border-mercury shadow-9 pos-abs-xl ml-xl-8 overflow-y-scroll mt-9 mt-xl-0">
@@ -10,15 +9,11 @@ export const TabPane = (props) => {
           <div className="row">
             <div className="col-12">
               {/* media start */}
-              <div className="media align-items-center">
-                {/* media logo start */}
-                <div className="square-72 d-block mr-8">
-                  <img src="./image/l2/png/featured-job-logo-1.png" alt="" />
-                </div>
+              <div className="media">
                 {/* media logo end */}
                 {/* media texts start */}
                 <div>
-                  <h3 className="font-size-6 mb-0">Product Designer</h3>
+                  <h3 className="font-size-6 mb-0">{props.task.name}</h3>
                   <span className="font-size-3 text-gray line-height-2">AirBnb</span>
                 </div>
                 {/* media texts end */}
