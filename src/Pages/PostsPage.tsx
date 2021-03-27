@@ -7,6 +7,7 @@ import StyledSelect from "../Components/Select"
 import GridPostList from "../Components/GridPostList"
 import RowPostList from "../Components/RowPostList"
 import Search from "../Components/Search"
+import ScrollToTop from "../Components/ScrollToTop";
 
 export const PostsPage = () => {
   const posts =[{
@@ -53,6 +54,7 @@ export const PostsPage = () => {
   return (
     <div className="site-wrapper overflow-hidden ">
     {/* Navbar- */}
+    <ScrollToTop />
     <Navbar />
     {/* Main Content Start */}
     <div className="bg-default-1 pt-26 pt-lg-28 pb-13 pb-lg-25">

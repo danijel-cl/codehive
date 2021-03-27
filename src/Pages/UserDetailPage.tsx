@@ -1,5 +1,6 @@
 import Navbar from "../Components/Navbar"
 import Footer from "../Components/Footer"
+import ScrollToTop from "../Components/ScrollToTop";
 import {Link} from "react-router-dom";
 
 export const UserDetailPage = () => {
@@ -7,6 +8,7 @@ export const UserDetailPage = () => {
     <div className="site-wrapper overflow-hidden ">
      {/* Header start  */}
      {/* Navbar- */}
+     <ScrollToTop />
      <Navbar />
      {/* Header end */}
      {/* Main Content Start */}

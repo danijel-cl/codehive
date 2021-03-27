@@ -3,6 +3,7 @@ import AppliedList from "../Components/AppliedList"
 import JobList from "../Components/JobList"
 import Category from "../Components/Category"
 import Dashboard from "../Components/Dashboard"
+import ScrollToTop from "../Components/ScrollToTop";
 
 export const DashboardPage = () => {
   const categoryClassNames = {
@@ -15,6 +16,7 @@ export const DashboardPage = () => {
     <div className="site-wrapper overflow-hidden bg-default-2">
       {/* Header start  */}
       {/* Navbar- */}
+      <ScrollToTop />
       <Navbar />
       {/* Header end */}
       <Dashboard />

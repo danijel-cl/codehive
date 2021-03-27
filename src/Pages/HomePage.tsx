@@ -5,6 +5,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer"
 import Search from "../Components/Search"
 import Category from "../Components/Category"
+import ScrollToTop from "../Components/ScrollToTop";
 
 export const HomePage = () => {
   Aos.init();
@@ -16,6 +17,7 @@ export const HomePage = () => {
   }
   return (
     <div>
+        <ScrollToTop />
         <Navbar />
         <div className="site-wrapper overflow-hidden ">
           <div className="position-relative z-index-1 bg-squeeze pt-26 dark-mode-texts">
