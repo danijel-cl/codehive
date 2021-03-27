@@ -29,12 +29,12 @@ const Navbar = () => {
               </button>
             </div>
             <div className="header-btns header-btn-devider ml-auto pr-2 ml-lg-6 d-none d-xs-flex">
-              <a className="btn btn-transparent text-uppercase font-size-3 heading-default-color focus-reset" href="javacript:" data-toggle="modal" data-target="#login">
+              <button className="btn btn-transparent text-uppercase font-size-3 heading-default-color focus-reset" >
                 Log in
-              </a>
-              <a className="btn btn-primary text-uppercase font-size-3" href="javacript:" data-toggle="modal" data-target="#signup">
+              </button>
+              <button className="btn btn-primary text-uppercase font-size-3"  >
                 Sign up
-              </a>
+              </button>
             </div>
             <div className="header-btn-devider ml-auto ml-lg-5 pl-2 d-none d-xs-flex align-items-center">
               <div>
