@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Aos from 'aos';
 import StyledSelect from "../Components/Select";
 import Navbar from "../Components/Navbar";
@@ -7,8 +7,12 @@ import Search from "../Components/Search"
 import Category from "../Components/Category"
 import ScrollToTop from "../Components/ScrollToTop";
 import { SignUpModal } from '../Components/SignUpModal';
+import { LoginModal } from '../Components/LoginModal';
 
 export const HomePage = () => {
+  const [loginClicked, setLoginClicked] = useState(false);
+  const [signupClicked, setSignupClicked] = useState(false);
+
   Aos.init();
   const categoryClassNames = {
     category:"bg-white border border-color-2 rounded-4 pl-5 pt-10 pb-3 px-2 hover-shadow-2 mb-9 d-block w-100 text-center",
@@ -19,10 +23,10 @@ export const HomePage = () => {
   return (
     <div>
         <ScrollToTop />
-        <Navbar />
+        <Navbar setLoginClicked={setLoginClicked} loginClicked={loginClicked} setSignupClicked={setSignupClicked} signupClicked={signupClicked}/>
         <div className="site-wrapper overflow-hidden ">
-          {/* <LoginModal /> */}
-          <SignUpModal />
+          <LoginModal loginClicked={loginClicked} setLoginClicked={setLoginClicked}/>
+          <SignUpModal signupClicked={signupClicked} setSignupClicked={setSignupClicked}/>
           <div className="position-relative z-index-1 bg-squeeze pt-26 dark-mode-texts">
             <div className="pos-abs-tr h-100">
               <img src={process.env.PUBLIC_URL + "resources/image/patterns/globe-pattern.png"} alt="" className="h-100" />
