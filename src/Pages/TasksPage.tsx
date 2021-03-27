@@ -23,18 +23,18 @@ export const TasksPage = () => {
   const [activeTask, setActiveTask] = useState(0);
 
   return (
-    <div className="site-wrapper overflow-hidden ">
+    <div className="site-wrapper">
         <ScrollToTop />
         <Navbar />
-        <div className="bg-default-1 pb-13 pb-xl-30 pb-13 mt-12 mt-lg-20 pt-15 pt-lg-15 position-relative overflow-hidden">
-          <div className="container">
+        <div className="bg-default-1 pb-13 pb-xl-30 pb-13 mt-12 mt-lg-20 pt-15 pt-lg-15 position-relative">
+          <div className="container-fluid">
             <div className="row justify-content-center">
-              <div className="col-12 col-lg-10 col-xl-12">
+              <div className="col-8">
                 <h2 className="font-size-8 mb-6">Task List</h2>
               </div>
             </div>
             <div className="row justify-content-center position-static">
-              <div className="col-12 col-xxl-8 col-xl-7 col-lg-10">
+              <div className="offset-2 col-6">
                 {/* Left Section */}
                 <div className="Left">
                   <div className="justify-content-center search-nav-tab nav nav-tabs border-bottom-0" id="search-nav-tab" role="tablist">
@@ -50,8 +50,8 @@ export const TasksPage = () => {
                 {/* form end */}
               </div>
               {/* Right Section */}
-              <div className="col-12 col-xxl-4 col-xl-5 col-lg-10 position-static">
-                <div className="tab-content">
+              <div className="col-4">
+                <div className="tab-content" style={{position: "sticky",top: "10vh"}}>
                   <TabPane task= {tasks[activeTask]}/>
                 </div>
               </div>
