@@ -11,7 +11,7 @@ export const Task = (props) => {
     }
   });
   return (
-    <a className={`mb-8 p-0 w-100 ${activeClass ? 'active':''}`} key={props.index}>
+    <a className={`mb-8 p-0 w-100 ${activeClass ? 'active':''}`} style={{cursor: 'pointer'}} key={props.index}>
       {/* Single Featured Job */}
       <div className="pt-9 px-xl-9 px-lg-7 px-7 pb-7 light-mode-texts bg-white rounded hover-shadow-3 hover-border-green" onClick={() => props.action(props.index)}>
         <div className="row">

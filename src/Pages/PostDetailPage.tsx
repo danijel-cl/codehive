@@ -1,5 +1,6 @@
 import Navbar from "../Components/Navbar"
 import Footer from "../Components/Footer"
+import JobBoxes from "../Components/JobBoxes"
 import ScrollToTop from "../Components/ScrollToTop";
 import {Link} from "react-router-dom";
 
@@ -179,73 +180,7 @@ export const PostDetailPage = () => {
               <div className="col-12 col-xl-3 col-lg-4 col-md-5 col-sm-6">
                 <div className="pt-11 pt-lg-0 pl-lg-5">
                   <h4 className="font-size-6 font-weight-semibold mb-0">Similar jobs</h4>
-                  <ul className="list-unstyled">
-                    {/* Single List */}
-                    <li className="border-bottom">
-                      <a className="media align-items-center py-9" href="#">
-                        <div className="mr-7">
-                          <img className="square-72 rounded-5" src={process.env.PUBLIC_URL + "/resources/image/l1/png/feature-brand-1.png"} alt="" />
-                        </div>
-                        <div className="mt-n4">
-                          <h4 className="mb-0 font-size-6 font-weight-semibold">AirBnb</h4>
-                          <p className="mb-0 font-size-4">Software developer</p>
-                        </div>
-                      </a>
-                    </li>
-                    {/* Single List End */}
-                    {/* Single List */}
-                    <li className="border-bottom">
-                      <a className="media align-items-center py-9" href="#">
-                        <div className="mr-7">
-                          <img className="square-72 rounded-5" src={process.env.PUBLIC_URL + "/resources/image/l1/png/feature-brand-4.png"} alt="" />
-                        </div>
-                        <div className="mt-n4">
-                          <h4 className="mb-0 font-size-6 font-weight-semibold">AirBnb</h4>
-                          <p className="mb-0 font-size-4">Data scientist</p>
-                        </div>
-                      </a>
-                    </li>
-                    {/* Single List End */}
-                    {/* Single List */}
-                    <li className="border-bottom">
-                      <a className="media align-items-center py-9" href="#">
-                        <div className="mr-7">
-                          <img className="square-72 rounded-5" src={process.env.PUBLIC_URL + "/resources/image/l1/png/feature-brand-5.png"} alt="" />
-                        </div>
-                        <div className="mt-n4">
-                          <h4 className="mb-0 font-size-6 font-weight-semibold">Facebook</h4>
-                          <p className="mb-0 font-size-4">Software developer</p>
-                        </div>
-                      </a>
-                    </li>
-                    {/* Single List End */}
-                    {/* Single List */}
-                    <li className="border-bottom">
-                      <a className="media align-items-center py-9" href="#">
-                        <div className="mr-5">
-                          <img className="square-72 rounded-5" src={process.env.PUBLIC_URL + "/resources/image/l3/png/github-mark.png"} alt="" />
-                        </div>
-                        <div className="mt-n4">
-                          <h4 className="mb-0 font-size-6 font-weight-semibold">GitHub</h4>
-                          <p className="mb-0 font-size-4">DevOps engineer</p>
-                        </div>
-                      </a>
-                    </li>
-                    {/* Single List End */}
-                    {/* Single List */}
-                    <li>
-                      <a className="media align-items-center py-9" href="#">
-                        <div className="mr-7">
-                          <img className="square-72 rounded-5" src={process.env.PUBLIC_URL + "/resources/image/l3/png/universal.png"} alt="" />
-                        </div>
-                        <div className="mt-n4">
-                          <h4 className="mb-0 font-size-6 font-weight-semibold">Uniliver</h4>
-                          <p className="mb-0 font-size-4">Designer</p>
-                        </div>
-                      </a>
-                    </li>
-                    {/* Single List End */}
-                  </ul>
+                  <JobBoxes />
                 </div>
               </div>
               {/* end Sidebar */}
