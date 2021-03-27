@@ -39,6 +39,10 @@ const JobsList = (props) => {
               <JobRow />
               <JobRow />
               <JobRow />
+              <JobRow />
+              <JobRow />
+              <JobRow />
+              <JobRow />
             </tbody>
           </table>
         </div>
