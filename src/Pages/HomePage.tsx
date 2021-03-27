@@ -5,7 +5,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer"
 import Search from "../Components/Search"
 import Category from "../Components/Category"
-import { LoginModal } from '../Components/LoginModal';
+import ScrollToTop from "../Components/ScrollToTop";
 import { SignUpModal } from '../Components/SignUpModal';
 
 export const HomePage = () => {
@@ -18,6 +18,7 @@ export const HomePage = () => {
   }
   return (
     <div>
+        <ScrollToTop />
         <Navbar />
         <div className="site-wrapper overflow-hidden ">
           {/* <LoginModal /> */}

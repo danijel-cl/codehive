@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 export const TabPane = (props) => {
   return (
-    <div key={Math.random()} className="tab-pane active animate__animated animate__slow animate__fadeIn">
+    <div key={Math.random()} className="tab-pane active animate__animated animate__slower animate__fadeIn">
       <div className="bg-white rounded-4 border border-mercury shadow-9 pos-abs-xl ml-xl-8 overflow-y-scroll mt-9 mt-xl-0">
         {/* Single Featured Job */}
         <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
@@ -56,8 +56,7 @@ export const TabPane = (props) => {
                     <span className="d-inline-block mr-7">•</span>Ship a TON of product improvements and features
                   </li>
                 </ul>
-                <Link to="/posts/id/tasks/id" className="btn btn-green text-uppercase btn-medium w-180 h-px-48 rounded-3 mr-4 mt-6">Apply to
-                  this job</Link>
+                <Link to="/posts/id/tasks/id" className="btn btn-green text-uppercase btn-medium w-180 h-px-48 rounded-3 mr-4 mt-6">Solve task</Link>
               </div>
             </div>
           </div>
