@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 export const TabPane = (props) => {
   return (
-    <div className="tab-pane fade show active">
-      <div className=" bg-white rounded-4 border border-mercury shadow-9 pos-abs-xl ml-xl-8 overflow-y-scroll mt-9 mt-xl-0">
+    <div key={Math.random()} className="tab-pane active animate__animated animate__slow animate__fadeIn">
+      <div className="bg-white rounded-4 border border-mercury shadow-9 pos-abs-xl ml-xl-8 overflow-y-scroll mt-9 mt-xl-0">
         {/* Single Featured Job */}
         <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
           <div className="row">
@@ -55,8 +56,8 @@ export const TabPane = (props) => {
                     <span className="d-inline-block mr-7">•</span>Ship a TON of product improvements and features
                   </li>
                 </ul>
-                <a className="btn btn-green text-uppercase btn-medium w-180 h-px-48 rounded-3 mr-4 mt-6" href="#">Apply to
-                  this job</a>
+                <Link to="/posts/id/tasks/id" className="btn btn-green text-uppercase btn-medium w-180 h-px-48 rounded-3 mr-4 mt-6">Apply to
+                  this job</Link>
               </div>
             </div>
           </div>

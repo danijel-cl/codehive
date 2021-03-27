@@ -51,7 +51,7 @@ export const TasksPage = () => {
               </div>
               {/* Right Section */}
               <div className="col-12 col-xxl-4 col-xl-5 col-lg-10 position-static">
-                <div className="tab-content" id="serachlist-tab">
+                <div className="tab-content">
                   <TabPane task= {tasks[activeTask]}/>
                 </div>
               </div>
