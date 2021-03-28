@@ -11,58 +11,9 @@ import { http } from '../api/http';
 import { TextField } from '../Components/TextField';
 import { SubmitError } from '../shared/SubmitError';
 import { useNavigation } from '../shared/hooks/useNavigation';
-import { styled } from '../utils/css';
 
-const loginPageContainer = styled.cssStyle`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-`;
 
-const loginContainer = styled.cssStyle`
-  display: flex;
-  flex-direction: column;
-  width: 340px;
-  margin-top: 96px;
-`;
-
-const loginPageTitle = styled.cssStyle`
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 34px;
-  line-height: 40px;
-  letter-spacing: 0.25px;
-  text-align: left;
-  width: 100%;
-  margin-bottom: 16px;
-`;
-
-const logoContainer = styled.cssStyle`
-  width: 100%;
-  height: 64px;
-  display: flex;
-  justify-content: center;
-`;
-
-const formContainer = styled.cssStyle`
-  width: 100%;
-  display: flex;
-  flex-direction: column
-`;
-
-const buttonContainer = styled.cssStyle`
-  width: 100%;
-  height: 36px;
-  margin-bottom: 24px;
-  margin-top: 10px;
-  text-transform: uppercase;
-  background-color: lightblue;
-  cursor: pointer;
-`;
-
-export const RegistrationPage = () => {
+export const RegistrationForm = () => {
   const queryClient = useQueryClient();
   const { toAccountActivation } = useNavigation();
   const [errorMessage, setErrorMessage] = useState<string>();
@@ -74,6 +25,7 @@ export const RegistrationPage = () => {
 
     try {
       data = await http.register(user);
+      console.log(data)
     } catch (error) {
       setErrorMessage('Registration failed. Check your credentials');
     }
@@ -94,14 +46,13 @@ export const RegistrationPage = () => {
     first_name: yup.string().required('This is a required field.'),
     last_name: yup.string().required('This is a required field.'),
     email: yup.string().required('This is a required field.'),
-    company: yup.boolean().required('This is a required field.'),
+    /* company: yup.boolean().required('This is a required field.'), */
     password: yup.string().required('This is a required field.'),
   });
   const methods = useForm({
     defaultValues: {
       first_name: '',
       last_name: '',
-      company: '',
       email: '',
       password: '',
     },
@@ -109,23 +60,42 @@ export const RegistrationPage = () => {
   });
 
   return (
-    <div style={loginPageContainer}>
-      <div style={logoContainer}>
-      </div>
-      <div style={loginContainer}>
-        <p style={loginPageTitle}>Register</p>
-        <FormProvider {...methods}>
-          <Form style={formContainer}>
+    <div>
+    <FormProvider {...methods}>
+      <Form action="/">
+        <div className="form-group">
+            <label htmlFor="firstName" className="font-size-4 text-black-2 font-weight-semibold line-height-reset">First Name</label>
             <TextField type="text" name="first_name" placeholder="First Name" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="lastName" className="font-size-4 text-black-2 font-weight-semibold line-height-reset">Last Name</label>
             <TextField type="text" name="last_name" placeholder="Last Name" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email2" className="font-size-4 text-black-2 font-weight-semibold line-height-reset">E-mail</label>
             <TextField type="text" name="email" placeholder="E-mail" />
-            <TextField type="text" name="company" placeholder="Company" />
-            <TextField type="password" name="password" placeholder="Password" />
-            <button style={buttonContainer} onClick={methods.handleSubmit(onSubmit)} >register</button>
-          </Form>
+          </div>
+          <div className="form-group">
+            <label htmlFor="password2" className="font-size-4 text-black-2 font-weight-semibold line-height-reset">Password</label>
+            <div className="position-relative">
+              <TextField type="password" name="password" placeholder="Password" />
+              <a href="#" className="show-password pos-abs-cr fas mr-6 text-black-2" data-show-pass="password2"></a>
+            </div>
+          </div>
+          <div className="form-group d-flex flex-wrap justify-content-between mb-1">
+            <label htmlFor="terms-check2" className="gr-check-input d-flex  mr-3">
+              <input className="d-none" type="checkbox" id="terms-check2" />
+              <span className="checkbox mr-5"></span>
+              <span className="font-size-3 mb-0 line-height-reset d-block">Agree to the <a className="text-primary">Terms & Conditions</a></span>
+            </label>
+            <a className="font-size-3 text-dodger line-height-reset">Forget Password?</a>
+          </div>
+          <div className="form-group mb-8">
+            <button className="btn btn-primary btn-medium w-100 rounded-5 text-uppercase" onClick={methods.handleSubmit(onSubmit)} >Sign Up </button>
+          </div>
+        </Form>
         </FormProvider>
         {errorMessage && <SubmitError message={errorMessage} />}
       </div>
-    </div>
   );
 };
