@@ -14,7 +14,7 @@ const Footer = () => {
               <img src="image/l1/png/message.png" className="align-self-center mr-3" alt="" />
               <div className="media-body pl-5">
                 <p className="mb-0 font-size-4 text-white">Contact us at</p>
-                <a className="mb-0 font-size-4 font-weight-bold" href="mailto:support@uxtheme.net">support@uxtheme.net</a>
+                <a className="mb-0 font-size-4 font-weight-bold">support@codehive.net</a>
               </div>
             </div>
             {/* media start */}

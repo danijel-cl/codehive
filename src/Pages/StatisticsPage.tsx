@@ -1,6 +1,5 @@
 import Category from "../Components/Category"
-import LineChart from "../Components/LineChart"
-import PieChart from "../Components/PieChart"
+import { LineChart, PieChart } from "../Components/Charts"
 import React from 'react'
 
 const StatisticsPage = (props) => {
@@ -17,25 +16,25 @@ const StatisticsPage = (props) => {
         <div className="col-xxl-3 col-xl-4 col-lg-6 col-sm-6">
           <Category
             classNames = {categoryClassNames}
-            icon = "fas fa-mouse-pointer"
-            text = "18.6%"
-            subText = "Applied Rate"
+            icon = "fas fa-briefcase"
+            text = "20"
+            subText = "Posted Jobs"
           />
         </div>
         <div className="col-xxl-3 col-xl-4 col-lg-6 col-sm-6">
           <Category
             classNames = {categoryClassNames}
-            icon = "fas fa-mouse-pointer"
-            text = "18.6%"
-            subText = "Applied Rate"
+            icon = "fas fa-user"
+            text = "200"
+            subText = "Total applicants"
           />
         </div>
         <div className="col-xxl-3 col-xl-4 col-lg-6 col-sm-6">
           <Category
             classNames = {categoryClassNames}
-            icon = "fas fa-mouse-pointer"
-            text = "18.6%"
-            subText = "Applied Rate"
+            icon = "fas fa-eye"
+            text = "1200"
+            subText = "Job Views"
           />
         </div>
         <div className="col-xxl-3 col-xl-4 col-lg-6 col-sm-6">
@@ -47,7 +46,7 @@ const StatisticsPage = (props) => {
           />
         </div>
       </div>
-      <div className="row">
+      <div className="row" style={{height:"40vh"}}>
         <LineChart />
         <PieChart />
       </div>
