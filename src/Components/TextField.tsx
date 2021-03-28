@@ -31,7 +31,7 @@ export const TextField = ({ type, name, placeholder, icon, defaultValue }: IProp
       style={textContainer}
       help={errors[`${name}`] ? errors[`${name}`]?.message : ''}>
       <Controller
-        as={type === 'password' ? <Input type='password' /> : <Input />}
+        as={type === 'password' ? <input className="form-control" type='password' /> : <input className="form-control" />}
         type={type}
         style={textfieldContainer}
         defaultValue={defaultValue}
