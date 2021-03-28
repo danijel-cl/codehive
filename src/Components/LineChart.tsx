@@ -8,7 +8,6 @@ const LineChart = (props) => {
       }],
       options: {
         chart: {
-          height: 350,
           type: 'line',
           zoom: {
             enabled: false
@@ -36,8 +35,8 @@ const LineChart = (props) => {
       },
     };
     return (
-      <div id="chart" className="col-6">
-        <ReactApexChart options={state.options} series={state.series} type="line"/>
+      <div id="chart" className="col-6 media bg-white rounded-4 hover-shadow-1 mb-9 shadow-8">
+        <ReactApexChart options={state.options} series={state.series} type="line" width="550px"/>
       </div>
     );
 };
