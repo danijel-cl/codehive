@@ -52,6 +52,14 @@ export const SignUpModal = (props) => {
                   <span className="font-size-3 line-height-reset">Or</span>
                 </div>
                 <form action="/">
+                <div className="form-group">
+                    <label htmlFor="firstName" className="font-size-4 text-black-2 font-weight-semibold line-height-reset">First Name</label>
+                    <input type="firstName" className="form-control" placeholder="First Name" id="firstName" />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="lastName" className="font-size-4 text-black-2 font-weight-semibold line-height-reset">Last Name</label>
+                    <input type="lastName" className="form-control" placeholder="Last Name" id="lastName" />
+                  </div>
                   <div className="form-group">
                     <label htmlFor="email2" className="font-size-4 text-black-2 font-weight-semibold line-height-reset">E-mail</label>
                     <input type="email" className="form-control" placeholder="example@gmail.com" id="email2" />
@@ -63,25 +71,17 @@ export const SignUpModal = (props) => {
                       <a href="#" className="show-password pos-abs-cr fas mr-6 text-black-2" data-show-pass="password2"></a>
                     </div>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="password23" className="font-size-4 text-black-2 font-weight-semibold line-height-reset">Confirm Password</label>
-                    <div className="position-relative">
-                      <input type="password" className="form-control" id="password23" placeholder="Enter password" />
-                      <a href="#" className="show-password pos-abs-cr fas mr-6 text-black-2" data-show-pass="password23"></a>
-                    </div>
-                  </div>
                   <div className="form-group d-flex flex-wrap justify-content-between mb-1">
                     <label htmlFor="terms-check2" className="gr-check-input d-flex  mr-3">
                       <input className="d-none" type="checkbox" id="terms-check2" />
                       <span className="checkbox mr-5"></span>
                       <span className="font-size-3 mb-0 line-height-reset d-block">Agree to the <a className="text-primary">Terms & Conditions</a></span>
                     </label>
-                    <a className="font-size-3 text-dodger line-height-reset">Forget Password</a>
+                    <a className="font-size-3 text-dodger line-height-reset">Forget Password?</a>
                   </div>
                   <div className="form-group mb-8">
                     <button className="btn btn-primary btn-medium w-100 rounded-5 text-uppercase">Sign Up </button>
                   </div>
-                  <p className="font-size-4 text-center heading-default-color">Don’t have an account? <a className="text-primary">Create a free account</a></p>
                 </form>
               </div>
             </div>
