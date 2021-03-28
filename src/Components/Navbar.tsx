@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const {loginClicked, setLoginClicked, signupClicked, setSignupClicked} = props;
   return (
     <header className="site-header site-header--menu-right bg-default py-7 py-lg-0 site-header--absolute site-header--sticky reveal-header">
         <div className="container">
@@ -29,10 +30,10 @@ const Navbar = () => {
               </button>
             </div>
             <div className="header-btns header-btn-devider ml-auto pr-2 ml-lg-6 d-none d-xs-flex">
-              <button className="btn btn-transparent text-uppercase font-size-3 heading-default-color focus-reset" >
+              <button className="btn btn-transparent text-uppercase font-size-3 heading-default-color focus-reset" onClick={() => setLoginClicked(!loginClicked)}>
                 Log in
               </button>
-              <button className="btn btn-primary text-uppercase font-size-3"  >
+              <button className="btn btn-primary text-uppercase font-size-3" onClick={() => setSignupClicked(!signupClicked)} >
                 Sign up
               </button>
             </div>

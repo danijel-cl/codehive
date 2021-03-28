@@ -4,9 +4,9 @@ const Dashboard = (props) => {
   return (
     <div className="dashboard-sidebar-wrapper pt-11" id="sidebar">
       <div className="brand-logo px-11">
-        <a href="">
+        <button>
           <img src="image/logo-main-black.png" alt="" />
-        </a>
+        </button>
       </div>
       <div className="my-15 px-11">
         <a href="#" className="btn btn-primary btn-xl w-100 text-uppercase"><span className="mr-5 d-inline-block">+</span>Post a new job</a>

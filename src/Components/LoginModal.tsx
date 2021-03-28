@@ -1,8 +1,9 @@
-export const LoginModal = () => {
+export const LoginModal = (props) => {
+  const {loginClicked, setLoginClicked} = props;
   return (
-    <div className="modal fade form-modal show" id="login" tabIndex={-1} aria-hidden="true">
+    <div className={`modal fade form-modal ${loginClicked ? "show" : ""}`} id="login" tabIndex={-1} aria-hidden="true">
       <div className="modal-dialog max-width-px-840 position-relative">
-        <button type="button" className="circle-32 btn-reset bg-white pos-abs-tr mt-md-n6 mr-lg-n6 focus-reset z-index-supper" data-dismiss="modal"><i className="fas fa-times"></i></button>
+        <button type="button" className="circle-32 btn-reset bg-white pos-abs-tr mt-md-n6 mr-lg-n6 focus-reset z-index-supper" onClick={() => setLoginClicked(!loginClicked)}><i className="fas fa-times"></i></button>
         <div className="login-modal-main bg-white rounded-8 overflow-hidden">
           <div className="row no-gutters">
             <div className="col-lg-5 col-md-6">
@@ -38,13 +39,13 @@ export const LoginModal = () => {
               <div className="bg-white-2 h-100 px-11 pt-11 pb-7">
                 <div className="row">
                   <div className="col-4 col-xs-12">
-                    <a href="" className="font-size-4 font-weight-semibold position-relative text-white bg-allports h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i className="fab fa-linkedin pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span className="d-none d-xs-block">Log in with LinkedIn</span></a>
+                    <button className="font-size-4 font-weight-semibold position-relative text-white bg-allports h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i className="fab fa-linkedin pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span className="d-none d-xs-block">Log in with LinkedIn</span></button>
                   </div>
                   <div className="col-4 col-xs-12">
-                    <a href="" className="font-size-4 font-weight-semibold position-relative text-white bg-poppy h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i className="fab fa-google pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span className="d-none d-xs-block">Log in with Google</span></a>
+                    <button className="font-size-4 font-weight-semibold position-relative text-white bg-poppy h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i className="fab fa-google pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span className="d-none d-xs-block">Log in with Google</span></button>
                   </div>
                   <div className="col-4 col-xs-12">
-                    <a href="" className="font-size-4 font-weight-semibold position-relative text-white bg-marino h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i className="fab fa-facebook-square pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span className="d-none d-xs-block">Log in with Facebook</span></a>
+                    <button className="font-size-4 font-weight-semibold position-relative text-white bg-marino h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i className="fab fa-facebook-square pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span className="d-none d-xs-block">Log in with Facebook</span></button>
                   </div>
                 </div>
                 <div className="or-devider">
@@ -68,12 +69,12 @@ export const LoginModal = () => {
                       <span className="checkbox mr-5"></span>
                       <span className="font-size-3 mb-0 line-height-reset mb-1 d-block">Remember password</span>
                     </label>
-                    <a href="" className="font-size-3 text-dodger line-height-reset">Forget Password</a>
+                    <a className="font-size-3 text-dodger line-height-reset">Forget Password</a>
                   </div>
                   <div className="form-group mb-8">
                     <button className="btn btn-primary btn-medium w-100 rounded-5 text-uppercase">Log in </button>
                   </div>
-                  <p className="font-size-4 text-center heading-default-color">Don’t have an account? <a href="" className="text-primary">Create a free account</a></p>
+                  <p className="font-size-4 text-center heading-default-color">Don’t have an account? <a className="text-primary">Create a free account</a></p>
                 </form>
               </div>
             </div>
