@@ -23,7 +23,7 @@ export const LineChart = (props) => {
           curve: 'straight'
         },
         title: {
-          text: 'Product Trends by Month',
+          text: 'Monthly clicks',
           align: 'left'
         },
         grid: {
@@ -55,7 +55,11 @@ export const PieChart = (props) => {
         chart: {
           type: 'pie',
         },
-        labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+        title: {
+          text: 'Applications by country',
+          align: 'left'
+        },
+        labels: ['Croatia', 'USA', 'UK', 'France', 'Italy'],
         responsive: [{
           breakpoint: 480,
           options: {

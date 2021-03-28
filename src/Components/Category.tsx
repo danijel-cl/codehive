@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Category = ({classNames, icon, text, subText}) => {
+const Category = ({classNames, icon, text, subText, color}) => {
   return (
     <div>
       {/* Single Category */}
       <a href="#" className={classNames.category}>
-        <div className={classNames.icon}>
+        <div className={classNames.icon+" "+color}>
           <i className={icon}/>
         </div>
         {/* Category Content */}

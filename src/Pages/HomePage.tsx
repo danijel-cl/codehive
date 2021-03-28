@@ -16,7 +16,7 @@ export const HomePage = () => {
   Aos.init();
   const categoryClassNames = {
     category:"bg-white border border-color-2 rounded-4 pl-5 pt-10 pb-3 px-2 hover-shadow-2 mb-9 d-block w-100 text-center",
-    icon:"text-white bg-green square-70 rounded-4 mb-7 font-size-7 text-center mx-auto",
+    icon:"text-white square-70 rounded-4 mb-7 font-size-7 text-center mx-auto",
     text:"font-size-5 font-weight-semibold text-black-2 line-height-1",
     subtext:"font-size-4 font-weight-normal text-gray"
   }
@@ -40,7 +40,7 @@ export const HomePage = () => {
                         #4923 jobs are available right now
                       </div>
                       <h1 className="font-size-11 mb-9 text-black-2">Find the most exciting jobs.</h1>
-                      <p className="font-size-5">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative to</p>
+                      <p className="font-size-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
                   </div>
                 </div>
@@ -105,9 +105,76 @@ export const HomePage = () => {
                   <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
                     <Category
                       classNames = {categoryClassNames}
-                      icon = "fa fa-user"
+                      icon = "fa fa-briefcase"
                       text = "Human Resource"
                       subText = "415 Vacancy"
+                      color = "bg-turquoise"
+                    />
+                  </div>
+                  {/* End Single Category */}
+                  {/* Single Category */}
+                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-headset"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                      color = "bg-red"
+                    />
+                  </div>
+                  {/* End Single Category */}
+                  {/* Single Category */}
+                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-layer-group"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                      color = "bg-spray"
+                    />
+                  </div>
+                  {/* End Single Category */}
+                  {/* Single Category */}
+                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-pen-nib"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                      color = "bg-green"
+                    />
+                  </div>
+                  {/* End Single Category */}
+                  {/* Single Category */}
+                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-rocket"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                      color = "bg-blue"
+                    />
+                  </div>
+                  {/* End Single Category */}
+                  {/* Single Category */}
+                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-comment"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                      color = "bg-coral"
+                    />
+                  </div>
+                  {/* End Single Category */}
+                  {/* Single Category */}
+                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
+                    <Category
+                      classNames = {categoryClassNames}
+                      icon = "fa fa-location-arrow"
+                      text = "Human Resource"
+                      subText = "415 Vacancy"
+                      color = "bg-yellow"
                     />
                   </div>
                   {/* End Single Category */}
@@ -118,65 +185,7 @@ export const HomePage = () => {
                       icon = "fa fa-user"
                       text = "Human Resource"
                       subText = "415 Vacancy"
-                    />
-                  </div>
-                  {/* End Single Category */}
-                  {/* Single Category */}
-                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <Category
-                      classNames = {categoryClassNames}
-                      icon = "fa fa-user"
-                      text = "Human Resource"
-                      subText = "415 Vacancy"
-                    />
-                  </div>
-                  {/* End Single Category */}
-                  {/* Single Category */}
-                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <Category
-                      classNames = {categoryClassNames}
-                      icon = "fa fa-user"
-                      text = "Human Resource"
-                      subText = "415 Vacancy"
-                    />
-                  </div>
-                  {/* End Single Category */}
-                  {/* Single Category */}
-                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <Category
-                      classNames = {categoryClassNames}
-                      icon = "fa fa-user"
-                      text = "Human Resource"
-                      subText = "415 Vacancy"
-                    />
-                  </div>
-                  {/* End Single Category */}
-                  {/* Single Category */}
-                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <Category
-                      classNames = {categoryClassNames}
-                      icon = "fa fa-user"
-                      text = "Human Resource"
-                      subText = "415 Vacancy" />
-                  </div>
-                  {/* End Single Category */}
-                  {/* Single Category */}
-                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <Category
-                      classNames = {categoryClassNames}
-                      icon = "fa fa-user"
-                      text = "Human Resource"
-                      subText = "415 Vacancy"
-                    />
-                  </div>
-                  {/* End Single Category */}
-                  {/* Single Category */}
-                  <div className="col-12 col-xl-3 col-lg-4 col-sm-6 col-xs-8">
-                    <Category
-                      classNames = {categoryClassNames}
-                      icon = "fa fa-user"
-                      text = "Human Resource"
-                      subText = "415 Vacancy"
+                      color = "bg-orange"
                     />
                   </div>
                   {/* End Single Category */}
