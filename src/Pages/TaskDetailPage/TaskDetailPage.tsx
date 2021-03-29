@@ -1,6 +1,4 @@
-import Navbar from "../../Components/Navbar";
 import AceEditor from 'react-ace';
-import ScrollToTop from "../../Components/ScrollToTop";
 import {Link} from "react-router-dom";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/theme-monokai";
@@ -30,11 +28,6 @@ export const TaskDetailPage = () => {
   const output ="\nRegarding the outputs we want the count of ipsum words in the text.\n"
   return (
     <div className="site-wrapper overflow-hidden bg-default-2">
-      {/* Header start  */}
-      {/* Navbar- */}
-      <ScrollToTop />
-      <Navbar />
-      {/* Header end */}
       <div className="row col-12" style={{ height:"91vh" ,marginTop:"9vh", maxHeight:"91vh"}}>
         <div className="col-3" style={{ backgroundColor:"#2E2E2E", overflow:"auto", maxHeight:"91vh"}}>
           <div className="h-10">

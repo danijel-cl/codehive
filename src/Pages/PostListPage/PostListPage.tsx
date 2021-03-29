@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import Navbar from "../../Components/Navbar";
-import Footer from "../../Components/Footer"
 import CheckBoxList from "./Components/CheckBoxList"
 import Slider from "./Components/Slider"
 import StyledSelect from "./Components/Select"
 import GridPostList from "./Components/GridPostList"
 import RowPostList from "./Components/RowPostList"
 import Search from "./Components/Search"
-import ScrollToTop from "../../Components/ScrollToTop";
 
 export const PostListPage = () => {
   const posts =[{
@@ -53,9 +50,6 @@ export const PostListPage = () => {
   }
   return (
     <div className="site-wrapper overflow-hidden ">
-    {/* Navbar- */}
-    <ScrollToTop />
-    <Navbar />
     {/* Main Content Start */}
     <div className="bg-default-1 pt-26 pt-lg-28 pb-13 pb-lg-25">
       <div className="container">
@@ -116,9 +110,6 @@ export const PostListPage = () => {
       </div>
     </div>
     {/* Main Content end */}
-    {/* footer area function start */}
-    <Footer />
-    {/* footer area function end */}
   </div>
   )
 }

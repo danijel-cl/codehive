@@ -1,14 +1,8 @@
-import Navbar from "../../Components/Navbar"
-import Footer from "../../Components/Footer"
-import ScrollToTop from "../../Components/ScrollToTop";
 import {Link} from "react-router-dom";
 
 export const UserPostListPage = () => {
   return (
     <div className="site-wrapper overflow-hidden ">
-      {/* Navbar- */}
-      <ScrollToTop />
-      <Navbar />
       {/* Main Content Start */}
       <div className="bg-default-2 pt-19 pt-lg-22 pb-7 pb-lg-23">
         <div className="container">
@@ -282,9 +276,6 @@ export const UserPostListPage = () => {
         </div>
       </div>
       {/* Main Content end */}
-      {/* footer area function start */}
-      <Footer />
-      {/* footer area function end */}
     </div>
   )
 }

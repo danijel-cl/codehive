@@ -1,6 +1,3 @@
-import Navbar from "../../Components/Navbar"
-import Footer from "../../Components/Footer"
-import ScrollToTop from "../../Components/ScrollToTop";
 import JobBoxes from "./Components/JobBoxes"
 import {Link} from "react-router-dom";
 
@@ -9,8 +6,6 @@ export const PostDetailPage = () => {
     <div className="site-wrapper overflow-hidden ">
       {/* Header start  */}
       {/* Navbar- */}
-      <ScrollToTop />
-      <Navbar />
       {/* Header end */}
       {/* jobDetails-section */}
       <div className="jobDetails-section bg-default-1 pt-28 pt-lg-27 pb-xl-25 pb-12">
@@ -188,9 +183,6 @@ export const PostDetailPage = () => {
           </div>
         </div>
       </div>
-      {/* footer area function start */}
-      <Footer />
-      {/* footer area function end */}
     </div>
   )
 }

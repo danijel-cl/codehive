@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import Aos from 'aos';
 import StyledSelect from "./Components/Select";
-import Navbar from "../../Components/Navbar";
-import Footer from "../../Components/Footer"
-import ScrollToTop from "../../Components/ScrollToTop";
-import { SignUpModal } from '../../Components/SignUpModal';
-import { LoginModal } from '../../Components/LoginModal';
 import Search from "./Components/Search"
 import Category from "./Components/Category"
 
@@ -22,11 +17,7 @@ export const HomePage = () => {
   }
   return (
     <div>
-        <ScrollToTop />
-        <Navbar setLoginClicked={setLoginClicked} loginClicked={loginClicked} setSignupClicked={setSignupClicked} signupClicked={signupClicked}/>
         <div className="site-wrapper overflow-hidden ">
-          <LoginModal loginClicked={loginClicked} setLoginClicked={setLoginClicked}/>
-          <SignUpModal signupClicked={signupClicked} setSignupClicked={setSignupClicked}/>
           <div className="position-relative z-index-1 bg-squeeze pt-26 dark-mode-texts">
             <div className="pos-abs-tr h-100">
               <img src={process.env.PUBLIC_URL + "resources/image/patterns/globe-pattern.png"} alt="" className="h-100" />
@@ -206,7 +197,6 @@ export const HomePage = () => {
         {/* Plugin's Scripts */}
         {/* Activation Script */}
         {/*  */}
-        <Footer />
       </div>
   );
 };

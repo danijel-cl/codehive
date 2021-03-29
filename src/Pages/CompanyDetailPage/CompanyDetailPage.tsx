@@ -1,15 +1,6 @@
-import Navbar from "../../Components/Navbar";
-import Footer from "../../Components/Footer"
-import ScrollToTop from "../../Components/ScrollToTop";
-
 export const CompanyDetailPage = () => {
   return (
     <div className="site-wrapper overflow-hidden ">
-      {/* Header start  */}
-      {/* Navbar- */}
-      <ScrollToTop />
-      <Navbar />
-      {/* Header end */}
       {/* Main Content Start */}
       <div className="bg-default-2 pt-16 pt-lg-22 pb-lg-27">
         <div className="container">
@@ -277,9 +268,6 @@ export const CompanyDetailPage = () => {
         </div>
       </div>
       {/* Main Content end */}
-      {/* footer area function start */}
-      <Footer />
-      {/* footer area function end */}
     </div>
   )
 }
