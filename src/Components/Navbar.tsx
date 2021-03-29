@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const Navbar = (props) => {
-  const {loginClicked, setLoginClicked, signupClicked, setSignupClicked} = props;
   return (
     <header className="site-header site-header--menu-right bg-default py-7 py-lg-0 site-header--absolute site-header--sticky reveal-header">
         <div className="container">
@@ -29,14 +28,18 @@ const Navbar = (props) => {
                 <i className="gr-cross-icon" />
               </button>
             </div>
-            <div className="header-btns header-btn-devider ml-auto pr-2 ml-lg-6 d-none d-xs-flex">
-              <button className="btn btn-transparent text-uppercase font-size-3 heading-default-color focus-reset" onClick={() => setLoginClicked(!loginClicked)}>
-                Log in
-              </button>
-              <button className="btn btn-primary text-uppercase font-size-3" onClick={() => setSignupClicked(!signupClicked)} >
-                Sign up
-              </button>
-            </div>
+            {!props.isLoggedIn ? (
+              <div className="header-btns header-btn-devider ml-auto pr-2 ml-lg-6 d-none d-xs-flex">
+                <button className="btn btn-transparent text-uppercase font-size-3 heading-default-color focus-reset">
+                  Log in
+                </button>
+                <button className="btn btn-primary text-uppercase font-size-3">
+                  Sign up
+                </button>
+              </div>
+            ) : (
+              null
+            )}
             <div className="header-btn-devider ml-auto ml-lg-5 pl-2 d-none d-xs-flex align-items-center">
               <div>
                 <a href="#" className="px-3 ml-7 font-size-7 notification-block flex-y-center position-relative">

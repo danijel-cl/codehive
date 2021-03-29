@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select'
 
-const StyledSelect = () => {
+const ReactSelect = () => {
   const style = {
     control: base => ({
       ...base,
@@ -26,4 +26,4 @@ const StyledSelect = () => {
   );
 };
 
-export default StyledSelect;
+export default ReactSelect;
