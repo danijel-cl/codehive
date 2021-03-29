@@ -1,6 +1,6 @@
 import React from 'react';
 import AppliedRow from './AppliedRow';
-import StyledSelect from './Select'
+import ReactSelect from './ReactSelect'
 
 const AppliedList = (props) => {
   return (
@@ -14,7 +14,7 @@ const AppliedList = (props) => {
             <p className="font-size-4 mb-0 mr-6 py-2">Filter by Job:</p>
             <div className="h-px-48">
               <div className="pl-7 h-100 arrow-3 arrow-3-black min-width-px-273 font-weight-semibold text-black-2">
-                <StyledSelect />
+                <ReactSelect />
               </div>
             </div>
           </div>

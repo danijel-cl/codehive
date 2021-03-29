@@ -1,7 +1,7 @@
-import Navbar from "../Components/Navbar"
-import Footer from "../Components/Footer"
-import JobBoxes from "../Components/JobBoxes"
-import ScrollToTop from "../Components/ScrollToTop";
+import Navbar from "../../Components/Navbar"
+import Footer from "../../Components/Footer"
+import ScrollToTop from "../../Components/ScrollToTop";
+import JobBoxes from "./Components/JobBoxes"
 import {Link} from "react-router-dom";
 
 export const PostDetailPage = () => {

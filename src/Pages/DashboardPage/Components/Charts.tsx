@@ -1,6 +1,6 @@
 import ReactApexChart from 'react-apexcharts'
 import React, { useRef } from 'react'
-import useContainerDimensions from '../shared/hooks/useContainerDimensions'
+import useContainerDimensions from '../../../shared/hooks/useContainerDimensions'
 
 export const LineChart = (props) => {
     const state = {

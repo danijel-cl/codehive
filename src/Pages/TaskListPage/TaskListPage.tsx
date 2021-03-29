@@ -1,11 +1,11 @@
-import Task from "../Components/Task"
-import Navbar from "../Components/Navbar";
-import TabPane from "../Components/TabPane";
-import ScrollToTop from "../Components/ScrollToTop";
+import Task from "./Components/Task"
+import Navbar from "../../Components/Navbar";
+import TabPane from "./Components/TabPane";
+import ScrollToTop from "../../Components/ScrollToTop";
 import React, { useState, useEffect } from 'react';
 
 
-export const TasksPage = () => {
+export const TaskListPage = () => {
   const tasks = [{
     "name": "JavaScript"
   },{

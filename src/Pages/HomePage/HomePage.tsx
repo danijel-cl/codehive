@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Aos from 'aos';
-import StyledSelect from "../Components/Select";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer"
-import Search from "../Components/Search"
-import Category from "../Components/Category"
-import ScrollToTop from "../Components/ScrollToTop";
-import { SignUpModal } from '../Components/SignUpModal';
-import { LoginModal } from '../Components/LoginModal';
+import StyledSelect from "./Components/Select";
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer"
+import ScrollToTop from "../../Components/ScrollToTop";
+import { SignUpModal } from '../../Components/SignUpModal';
+import { LoginModal } from '../../Components/LoginModal';
+import Search from "./Components/Search"
+import Category from "./Components/Category"
 
 export const HomePage = () => {
   const [loginClicked, setLoginClicked] = useState(false);

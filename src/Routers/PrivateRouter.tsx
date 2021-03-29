@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { HomePage } from '../Pages/HomePage';
+import { HomePage } from '../Pages/HomePage/HomePage';
 
 export const PrivateRouter = () => {
   return (

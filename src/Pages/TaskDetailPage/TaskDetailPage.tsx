@@ -1,6 +1,6 @@
-import Navbar from "../Components/Navbar";
+import Navbar from "../../Components/Navbar";
 import AceEditor from 'react-ace';
-import ScrollToTop from "../Components/ScrollToTop";
+import ScrollToTop from "../../Components/ScrollToTop";
 import {Link} from "react-router-dom";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/theme-monokai";

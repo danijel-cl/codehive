@@ -1,9 +1,9 @@
-import Navbar from "../Components/Navbar"
-import Footer from "../Components/Footer"
-import ScrollToTop from "../Components/ScrollToTop";
+import Navbar from "../../Components/Navbar"
+import Footer from "../../Components/Footer"
+import ScrollToTop from "../../Components/ScrollToTop";
 import {Link} from "react-router-dom";
 
-export const UserJobsPage = () => {
+export const UserPostListPage = () => {
   return (
     <div className="site-wrapper overflow-hidden ">
       {/* Navbar- */}

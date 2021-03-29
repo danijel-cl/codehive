@@ -1,6 +1,6 @@
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer"
-import ScrollToTop from "../Components/ScrollToTop";
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer"
+import ScrollToTop from "../../Components/ScrollToTop";
 
 export const CompanyDetailPage = () => {
   return (

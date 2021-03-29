@@ -1,10 +1,10 @@
-import Navbar from "../Components/Navbar";
-import AppliedList from "../Components/AppliedList"
-import JobList from "../Components/JobList"
-import Category from "../Components/Category"
-import Dashboard from "../Components/Dashboard"
-import ScrollToTop from "../Components/ScrollToTop";
-import StatisticsPage from "./StatisticsPage"
+import Navbar from "../../Components/Navbar";
+import AppliedList from "./Components/AppliedList"
+import JobList from "./Components/JobList"
+import Category from "./Components/Category"
+import Dashboard from "./Components/Dashboard"
+import ScrollToTop from "../../Components/ScrollToTop";
+import StatisticsPage from "./Components/Statistics"
 import {useState} from "react"
 
 export const DashboardPage = () => {

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer"
-import CheckBoxList from "../Components/CheckBoxList"
-import Slider from "../Components/Slider"
-import StyledSelect from "../Components/Select"
-import GridPostList from "../Components/GridPostList"
-import RowPostList from "../Components/RowPostList"
-import Search from "../Components/Search"
-import ScrollToTop from "../Components/ScrollToTop";
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer"
+import CheckBoxList from "./Components/CheckBoxList"
+import Slider from "./Components/Slider"
+import StyledSelect from "./Components/Select"
+import GridPostList from "./Components/GridPostList"
+import RowPostList from "./Components/RowPostList"
+import Search from "./Components/Search"
+import ScrollToTop from "../../Components/ScrollToTop";
 
-export const PostsPage = () => {
+export const PostListPage = () => {
   const posts =[{
     "position":"Product Designer",
   },{

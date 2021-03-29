@@ -1,6 +1,6 @@
 import React from 'react';
 import JobRow from './JobRow'
-import StyledSelect from "./Select"
+import StyledSelect from "./ReactSelect"
 
 const JobsList = (props) => {
   return (

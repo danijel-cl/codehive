@@ -1,8 +1,8 @@
-import Category from "../Components/Category"
-import { LineChart, PieChart } from "../Components/Charts"
+import Category from "./Category"
+import { LineChart, PieChart } from "./Charts"
 import React from 'react'
 
-const StatisticsPage = (props) => {
+const Statistics = (props) => {
 
   const categoryClassNames = {
     category:"media bg-white rounded-4 pl-8 pt-9 pb-9 pr-7 hover-shadow-1 mb-9 shadow-8",
@@ -58,4 +58,4 @@ const StatisticsPage = (props) => {
   )
 }
 
-export default StatisticsPage;
+export default Statistics;
