@@ -1,4 +1,20 @@
+import {Link} from "react-router-dom";
+
 export const CompanyDetailPage = () => {
+  const companyName = "Airbnb INC."
+  const companyLabel = "Software Company"
+  const companySize = "11-50"
+  const companyAge = "2010"
+  const companyLocation = "New York City"
+  const companyDescription = "If you’re like most of my clients, you know creative content marketing and\
+    killer copywriting are fundamental to the success of your business.\n\nBut with so much to do to keep \
+    your business growing, you don’t have time to learn how to write sales copy that actually sells, or \
+    create a content marketing strategy that resonates with your target audience.\n\nYou’ve been disappointed\
+    with your traffic and conversions so far, but with an overwhelming number of things to do, you’ve put off \
+    doing anything about it until now.\n\nSo you’ve come to Upwork, looking for someone that can craft creative\
+    content and killer sales copy to help you reach more people and make more sales.\n\n But your troubles aren’t \
+    over just yet; it isn’t easy to find someone who can create the high-quality content you need. But your \
+    troubles aren’t over just yet."
   return (
     <div className="site-wrapper overflow-hidden ">
       {/* Main Content Start */}
@@ -8,8 +24,11 @@ export const CompanyDetailPage = () => {
           <div className="row justify-content-center">
             <div className="col-12 mt-13 dark-mode-texts">
               <div className="mb-9">
-                <a className="d-flex align-items-center ml-4"> <i className="icon icon-small-left bg-white circle-40 mr-5 font-size-7 text-black font-weight-bold shadow-8">
-                  </i><span className="text-uppercase font-size-3 font-weight-bold text-gray">Back</span></a>
+                <a className="d-flex align-items-center ml-4">
+                  <i className="icon icon-small-left bg-white circle-40 mr-5 font-size-7 text-black font-weight-bold shadow-8">
+                  </i>
+                  <span className="text-uppercase font-size-3 font-weight-bold text-gray">Back</span>
+                </a>
               </div>
             </div>
           </div>
@@ -24,18 +43,18 @@ export const CompanyDetailPage = () => {
                   </a>
                   <div>
                     <h2 className="mt-xs-n5">
-                      <a className="font-size-6 text-black-2 font-weight-semibold">Airbnb INC.</a>
+                      <a className="font-size-6 text-black-2 font-weight-semibold">{companyName}</a>
                     </h2>
-                    <span className="mb-0 text-gray font-size-4">Online Marketplace</span>
+                    <span className="mb-0 text-gray font-size-4">{companyLabel}</span>
                   </div>
                 </div>
                 {/* Tab Section Start */}
                 <ul className="nav border-bottom border-mercury pl-12" id="myTab" role="tablist">
                   <li className="tab-menu-items nav-item pr-12">
-                    <a className="active text-uppercase font-size-3 font-weight-bold text-default-color py-3" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Company</a>
+                    <a className="active text-uppercase font-size-3 font-weight-bold text-default-color py-3">Company</a>
                   </li>
                   <li className="tab-menu-items nav-item pr-12">
-                    <a className="text-uppercase font-size-3 font-weight-bold text-default-color py-3" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Jobs</a>
+                    <Link to={"/posts?search="+companyName} className="text-uppercase font-size-3 font-weight-bold text-default-color py-3">Jobs</Link>
                   </li>
                 </ul>
                 {/* Tab Content */}
@@ -47,11 +66,11 @@ export const CompanyDetailPage = () => {
                       <div className="col-12 col-lg-4 col-md-4 col-xs-6">
                         <div className="mb-8">
                           <p className="font-size-4">Company size</p>
-                          <h5 className="font-size-4 font-weight-semibold text-black-2">11-50 employees</h5>
+                          <h5 className="font-size-4 font-weight-semibold text-black-2">{companySize} employees</h5>
                         </div>
                         <div className="mb-8">
                           <p className="font-size-4">Est. Since</p>
-                          <h5 className="font-size-4 font-weight-semibold text-black-2">2020</h5>
+                          <h5 className="font-size-4 font-weight-semibold text-black-2">{companyAge}</h5>
                         </div>
                       </div>
                       {/* Single Widgets End */}
@@ -84,31 +103,18 @@ export const CompanyDetailPage = () => {
                       <div className="col-12 col-lg-4 col-md-4 col-xs-6">
                         <div className="mb-8">
                           <p className="font-size-4">Location</p>
-                          <h5 className="font-size-4 font-weight-semibold text-black-2">New York City</h5>
+                          <h5 className="font-size-4 font-weight-semibold text-black-2">{companyLocation}</h5>
                         </div>
                       </div>
                       {/* Single Widgets End */}
                     </div>
                     {/* Middle Body End */}
                     {/* Excerpt Start */}
-                    <h4 className="font-size-6 mb-7 text-black-2 font-weight-semibold">About Airbnb</h4>
+                    <h4 className="font-size-6 mb-7 text-black-2 font-weight-semibold">About {companyName}</h4>
                     <div className="pt-5 ">
-                      <p className="font-size-4 mb-8">If you’re like most of my clients, you know creative content marketing and
-                        killer copywriting are
-                        fundamental to the success of your business.</p>
-                      <p className="font-size-4 mb-8">But with so much to do to keep your business growing, you don’t have time to
-                        learn how to write sales
-                        copy that actually sells, or create a content marketing strategy that resonates with your target
-                        audience.</p>
-                      <p className="font-size-4  mb-8">You’ve been disappointed with your traffic and conversions so far, but with
-                        an overwhelming number of
-                        things to do, you’ve put off doing anything about it until now.</p>
-                      <p className="font-size-4 mb-8">So you’ve come to Upwork, looking for someone that can craft creative
-                        content and killer sales copy
-                        to help you reach more people and make more sales.</p>
-                      <p className="font-size-4 mb-8">But your troubles aren’t over just yet; it isn’t easy to find someone who
-                        can create the high-quality
-                        content you need. But your troubles aren’t over just yet.</p>
+                      <p className="font-size-4 mb-8" style={{whiteSpace: "pre-line"}}>
+                        {companyDescription}
+                      </p>
                     </div>
                     {/* Excerpt End */}
                   </div>
