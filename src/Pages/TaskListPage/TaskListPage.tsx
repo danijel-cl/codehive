@@ -31,7 +31,6 @@ export const TaskListPage = () => {
             </div>
             <div className="row justify-content-center position-static">
               <div className="offset-2 col-6">
-                {/* Left Section */}
                 <div className="Left">
                   <div className="justify-content-center search-nav-tab nav nav-tabs border-bottom-0" id="search-nav-tab" role="tablist">
                     {tasks.map((task, index) => (
@@ -39,13 +38,11 @@ export const TaskListPage = () => {
                     ))}
                   </div>
                   <div className="text-center pt-5 pt-lg-13">
-                    <a className="text-green font-weight-bold text-uppercase font-size-3 d-flex align-items-center justify-content-center" href="#">Load More <i className="fas fa-sort-down ml-3 mt-n2 font-size-4" />
+                    <a className="text-green font-weight-bold text-uppercase font-size-4 d-flex align-items-center justify-content-center" href="#">Load More <i className="fas fa-sort-down ml-3 mt-n2 font-size-4" />
                     </a>
                   </div>
                 </div>
-                {/* form end */}
               </div>
-              {/* Right Section */}
               <div className="col-4">
                 <div className="tab-content" style={{position: "sticky",top: "10vh"}}>
                   <TabPane task= {tasks[activeTask]}/>

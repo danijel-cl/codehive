@@ -10,11 +10,11 @@ import { PublicRouter } from './PublicRouter';
 
 export const AuthRouter = () => {
   const isLoggedIn = false;
-
+  var path = window.location.pathname;
   const renderFooter = () => {
     if(
-      window.location.pathname.includes("tasks")
-      || window.location.pathname.includes("dashboard")
+      path.includes("tasks")
+      || path.includes("dashboard")
     ){
       return null;
     } else {
