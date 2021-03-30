@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const JobBoxes = () => {
+const PostBoxes = () => {
   const items = [{
     name:"AirBnb",
     role:"Software Developer"
@@ -35,4 +35,4 @@ const JobBoxes = () => {
   );
 };
 
-export default JobBoxes;
+export default PostBoxes;
