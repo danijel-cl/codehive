@@ -1,10 +1,10 @@
 /* Package imports */
 import Aos from 'aos';
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 /* Component imports */
 import Category from "./Components/Category"
-import ReactSelect from "./Components/ReactSelect";
-import Search from "./Components/Search"
+import SearchSelectForm from "./Components/SearchSelectForm"
 
 export const HomePage = () => {
   Aos.init();
@@ -28,20 +28,7 @@ export const HomePage = () => {
               </div>
             </div>
             <div className="col-lg-11 col-12 translateY-50 pos-abs-bl">
-              <form action="/" className="search-form" data-aos="fade-up" data-aos-duration={800} data-aos-once="true">
-                <div className="filter-search-form-2 bg-white rounded-sm shadow-7 pr-8 py-7 pl-6">
-                  <div className="filter-inputs">
-                    <Search />
-                    <div className="pl-13 form-group position-relative">
-                      <ReactSelect />
-                      <span className="h-100 w-px-50 pos-abs-tl d-flex align-items-center justify-content-center font-size-6"><i className="icon icon-pin-3 text-primary font-weight-bold" /></span>
-                    </div>
-                  </div>
-                  <div className="button-block">
-                    <button className="btn btn-primary line-height-reset h-100 btn-submit w-100 text-uppercase">Search</button>
-                  </div>
-                </div>
-              </form>
+              <SearchSelectForm/>
             </div>
           </div>
         </div>
@@ -141,7 +128,7 @@ export const HomePage = () => {
             <div className="row">
               <div className="col-12">
                 <div className="text-center pt-5 pt-lg-13">
-                  <a className="btn btn-outline-black-2 btn-lg text-uppercase" href="#">Explore All</a>
+                  <Link className="btn btn-outline-black-2 btn-lg text-uppercase" to="/posts">Explore All</Link>
                 </div>
               </div>
             </div>

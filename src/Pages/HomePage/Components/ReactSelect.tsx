@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select'
 
-const ReactSelect = () => {
+const ReactSelect = ({ setSelectText }) => {
   const style = {
     control: base => ({
       ...base,
@@ -23,6 +23,7 @@ const ReactSelect = () => {
       styles={style}
       className='h-100 arrow-3'
       options={options}
+      onChange={(option)=>setSelectText(option.value)}
     />
   );
 };
