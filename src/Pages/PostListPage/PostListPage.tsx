@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CheckBoxList from "./Components/CheckBoxList"
-import Slider from "./Components/Slider"
+import ReactSlider from "./Components/ReactSlider"
 import StyledSelect from "./Components/Select"
 import GridPostList from "./Components/GridPostList"
 import RowPostList from "./Components/RowPostList"
@@ -62,7 +62,7 @@ export const PostListPage = () => {
           <div className="col-12 col-md-4 col-xs-8">
             {/* Sidebar Start */}
             <CheckBoxList name="Job Type" items={jobTypes} />
-            <Slider />
+            <ReactSlider />
             <CheckBoxList name="Experience Level" items={experienceTypes} />
             <CheckBoxList name="Posted Time" items={postedTypes} />
             {/* Sidebar End */}
