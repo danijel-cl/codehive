@@ -41,6 +41,11 @@ export const PostListPage = () => {
 
   const [choice, setChoice] = useState(false);
 
+  const updateChoice = (e, bool) => {
+    e.preventDefault();
+    setChoice(bool)
+  };
+
   const renderPosts = () => {
     if (choice) {
       return <RowPostList posts = {posts} />
@@ -90,12 +95,12 @@ export const PostListPage = () => {
                   <span className="heading-default-color">120&nbsp;</span>results for <span className="heading-default-color">UI Designer</span>
                 </h5>
                 <div className="d-flex align-items-center result-view-type">
-                  <button onClick={() => setChoice(true)} className="heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button">
+                  <a onClick={(e) => updateChoice(e,true)} className={`heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button ${choice ? 'active':''}`}>
                     <i className="fa fa-list-ul" />
-                  </button>
-                  <button onClick={() => setChoice(false)} className="heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button">
+                  </a>
+                  <a onClick={(e) => updateChoice(e,false)} className={`heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button ${!choice ? 'active':''}`}>
                     <i className="fa fa-th-large" />
-                  </button>
+                  </a>
                 </div>
               </div>
               {renderPosts()}

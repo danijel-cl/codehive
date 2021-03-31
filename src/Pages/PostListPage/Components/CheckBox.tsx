@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 
 const CheckBox = (props) => {
-  const [choice, setChoice] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();
-    setChoice(!choice)
-    console.log('The link for '+ props.index +' was clicked.' + choice);
+    props.setChecked({ ...props.checked, [props.index] : !props.checked[props.index] })
   };
   return (
-    <li className="mb-2" key={props.index}><a onClick={(e) => handleClick(e)} className={`toggle-item ${choice ? 'clicked':''}`}>{props.name}</a></li>
+    <li className="mb-2" key={props.index}><a onClick={(e) => handleClick(e)} className={`toggle-item ${props.checked[props.index] ? 'clicked':''}`}>{props.name}</a></li>
   );
 };
 

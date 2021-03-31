@@ -1328,7 +1328,6 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 .no-border-button:focus {
     outline: 0 !important;
 }
-
 /* ---------------------------
   01.Component -> { Lists }
 ------------------------------*/
