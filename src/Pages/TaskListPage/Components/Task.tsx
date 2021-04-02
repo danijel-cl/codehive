@@ -18,8 +18,9 @@ export const Task = (props) => {
     "Docker"
   ]
 
-  const taskDescription = "Gubagoo is a fast growing provider of messaging and commerce solutions for automotive dealers changing the future of how people find, buy and service their vehicles."
   const taskCompany = "AirBnb"
+  const taskLastSubmission = "2021-03-01"
+  const taskSolved = 0
 
   return (
     <a className={`mb-8 p-0 w-100 ${activeClass ? 'active':''}`} style={{cursor: 'pointer'}} key={props.index}>
@@ -46,11 +47,22 @@ export const Task = (props) => {
           </div>
         </div>
         <div className="row pt-8">
-          <div className="col-md-12 pr-30">
-            <p>
-              <span className="heading-default-color" style={{whiteSpace: "pre-wrap", fontWeight: 500}}>Task summary: </span>
-              {taskDescription}
-            </p>
+          <div className="col-6 pr-30">
+          {
+            (() =>{
+              if (taskSolved!==0){
+                return <p> Solved <i className="pl-4 fa  fa-check fa-xs" aria-hidden="true"></i></p>
+              }else if (taskSolved!==0){
+                return <p> Continue solving <i className="pl-4 fa  fa-spinner fa-xs" aria-hidden="true"></i></p>
+              }else{
+                return <p> Solve <i className="pl-4 fa  fa-coffee fa-xs" aria-hidden="true"></i></p>
+              }
+            })()
+          }
+          </div>
+          <div className="col-6 text-right">
+            <p className="font-size-2 mb-0">Last Submission:</p>
+            <p className="mt-0">{taskLastSubmission} </p>
           </div>
         </div>
       </div>

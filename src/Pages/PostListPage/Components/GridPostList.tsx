@@ -6,7 +6,7 @@ const GridPostList = (props) => {
     <div className="pt-6">
       <div className="row justify-content-center">
         {props.posts.map((post, index) => (
-          <GridPost key={index} id={index} post={post} />
+          <GridPost key={index} id={index} />
         ))}
       </div>
     </div>

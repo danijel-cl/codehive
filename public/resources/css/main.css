@@ -1328,6 +1328,33 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 .no-border-button:focus {
     outline: 0 !important;
 }
+
+.task-button{
+  height:5vh;
+  background-color:rgb(46, 46, 46);
+  border:none;
+  color:#fff;
+  border-bottom:1px solid;
+  border-bottom-color:#00b074;
+}
+.task-button:focus{
+  border-left:1px solid;
+  border-right:1px solid;
+  border-color:#00b074;
+  border-bottom:none;
+  outline: none;
+  color: #00b074;
+}
+.task-active{
+  border-left:1px solid;
+  border-right:1px solid;
+  border-color:#00b074;
+  border-bottom:none;
+  outline: none;
+  color: #00b074;
+}
+
+
 /* ---------------------------
   01.Component -> { Lists }
 ------------------------------*/
