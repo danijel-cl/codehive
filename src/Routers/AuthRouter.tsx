@@ -10,17 +10,6 @@ import { PublicRouter } from './PublicRouter';
 
 export const AuthRouter = () => {
   const isLoggedIn = false;
-  var path = window.location.pathname;
-  const renderFooter = () => {
-    if(
-      path.includes("tasks")
-      || path.includes("dashboard")
-    ){
-      return null;
-    } else {
-      return <Footer />
-    }
-  }
   return (
     <Fragment>
       <ScrollToTop />
@@ -30,7 +19,7 @@ export const AuthRouter = () => {
         {isLoggedIn && <Route path="/" component={PrivateRouter} />}
         <Redirect to={'/'} />
       </Switch>
-      { renderFooter() }
+      <Footer/>
     </Fragment>
   );
 };

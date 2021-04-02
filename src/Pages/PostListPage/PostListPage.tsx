@@ -39,7 +39,7 @@ export const PostListPage = () => {
     { name: 'Last month' },
   ];
 
-  const [choice, setChoice] = useState(false);
+  const [choice, setChoice] = useState(true);
 
   const updateChoice = (e, bool) => {
     e.preventDefault();
@@ -74,7 +74,7 @@ export const PostListPage = () => {
                 <div className="filter-inputs">
                   <Search />
                   {/* .select-city starts */}
-                  <div className="form-group position-relative w-lg-55 w-xl-60 w-xxl-55">
+                  <div className="form-group position-relative w-lg-50 w-xl-5 w-xxl-50">
                     <div  className="pl-13">
                       <StyledSelect />
                     </div>
@@ -95,10 +95,10 @@ export const PostListPage = () => {
                   <span className="heading-default-color">120&nbsp;</span>results for <span className="heading-default-color">UI Designer</span>
                 </h5>
                 <div className="d-flex align-items-center result-view-type">
-                  <a onClick={(e) => updateChoice(e,true)} className={`heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button ${choice ? 'active':''}`}>
+                  <a onClick={(e) => updateChoice(e,true)} className={`heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button ${choice ? 'active':''}`} style={{ cursor: 'pointer'}}>
                     <i className="fa fa-list-ul" />
                   </a>
-                  <a onClick={(e) => updateChoice(e,false)} className={`heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button ${!choice ? 'active':''}`}>
+                  <a onClick={(e) => updateChoice(e,false)} className={`heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button ${!choice ? 'active':''}`} style={{ cursor: 'pointer'}}>
                     <i className="fa fa-th-large" />
                   </a>
                 </div>

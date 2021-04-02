@@ -34,7 +34,7 @@ const Question = (props) => {
           {output}
         </p>
       </div>
-      <button style={{ height:"6vh", fontSize:"1.5vh"}} className="ml-13 mb-20 btn btn-primary btn-submit w-20 text-uppercase mt-10">Submit</button>
+      <button style={{ height:"6vh", fontSize:"1.5vh"}} className="ml-5 mb-20 btn btn-primary btn-submit w-20 text-uppercase mt-10">Submit</button>
     </div>
   );
 };
