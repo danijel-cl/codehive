@@ -7,8 +7,8 @@ import ScrollToTop from "../../Components/ScrollToTop";
 import Statistics from "./Components/Statistics"
 import {useState} from "react"
 
-export const DashboardPage = () => {
-  const [page, setPage] = useState(0);
+export const DashboardPage = (props) => {
+  const [page, setPage] = useState(props.location.state.initialPage||0);
   const renderPage = () => {
     if(page === 0){
       return <Statistics />;
