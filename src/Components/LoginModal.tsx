@@ -1,10 +1,16 @@
 import React from "react";
 import { LoginForm } from "../Pages/LoginForm";
 
+import { styled } from '../utils/css';
+
 export const LoginModal = (props) => {
   const {loginClicked, setLoginClicked} = props;
+const modalContainer = styled.cssStyle`
+  display: block ;
+  overflow: initial;
+`;
   return (
-    <div className={`modal fade form-modal ${loginClicked ? "show" : ""}`} id="login" tabIndex={-1} aria-hidden="true">
+    <div className={`modal fade form-modal ${loginClicked ? "show" : ""}`} style={modalContainer} id="login" tabIndex={-1} aria-hidden="true">
       <div className="modal-dialog max-width-px-840 position-relative">
         <button type="button" className="circle-32 btn-reset bg-white pos-abs-tr mt-md-n6 mr-lg-n6 focus-reset z-index-supper" onClick={() => setLoginClicked(!loginClicked)}><i className="fas fa-times"></i></button>
         <div className="login-modal-main bg-white rounded-8 overflow-hidden">

@@ -1978,7 +1978,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 @media only screen and (min-height: 775px) {
   .form-modal.modal {
     align-items: center;
-    display: flex !important;
+    display: flex ;
     pointer-events: none;
   }
   .form-modal.modal.show {
