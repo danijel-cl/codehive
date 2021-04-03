@@ -9,7 +9,6 @@ const ReactSlider = () => {
     <div className="widgets mb-11 ">
       <div className="d-flex align-items-center pr-10 pr-xs-0 pr-md-0 pr-xl-15">
         <h4 className="font-size-6 font-weight-semibold mb-6 col-7 pl-0">Salary Range</h4>
-        {/* Range Slider */}
         <div className="slider-price col-5 text-left pl-0">
           <p className="font-weight-bold">
             <span className="text-primary font-weight-semibold font-size-4 focus-reset">
