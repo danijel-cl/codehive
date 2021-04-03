@@ -28,6 +28,14 @@ export type RegParams = {
   password: string;
 };
 
+export type CompanyParams = {
+  address: string;
+  description: string;
+  image: string;
+  name: string;
+  user: number;
+}
+
 export const http = {
   login: async (loginParams: LoginParams) => {
     const response = await axiosAnonymous.post('/api/users/login', loginParams);
@@ -56,6 +64,27 @@ export const http = {
   },
   confirmPassword: async (passParams: confirmPassParams) => {
     const response = await axiosAnonymous.post('/api/users/password-reset-confirm', passParams);
+
+    return response.data;
+  },
+  getCompany: async (id: number) => {
+    const response = await axiosAnonymous.get(`/api/company/${id}`);
+
+    return response.data;
+  },
+  getAllCompanies: async () => {
+    const response = await axiosAnonymous.get('/api/company');
+
+    return response.data;
+  },
+  updateCompany: async (props) => {
+    const {id, companyParams} = props
+    const response = await axiosAnonymous.patch(`/api/company/${id}`, companyParams);
+
+    return response.data;
+  },
+  deleteCompany: async (id: number) => {
+    const response = await axiosAnonymous.delete(`/api/company/${id}`);
 
     return response.data;
   },
