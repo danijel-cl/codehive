@@ -44,7 +44,7 @@ export const ApplicationDetailPage = (props) => {
                   <a className="col-1 font-weight-semibold">CONTACT</a>
                   <a className="col-1 text-red font-weight-semibold">REJECT</a>
                 </div>
-                <ul className="nav border-bottom border-mercury pl-12" id="myTab" role="tablist">
+                <ul className="nav border-bottom border-mercury pl-12">
                   <li className="tab-menu-items nav-item pr-12">
                     <a style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,false)} className={`text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${!choice ? 'active':''}`}>
                       Candidate Tasks
