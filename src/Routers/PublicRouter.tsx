@@ -10,7 +10,7 @@ import { DashboardPage } from '../Pages/DashboardPage/DashboardPage';
 import { TaskDetailPage } from '../Pages/TaskDetailPage/TaskDetailPage';
 import { TaskListPage } from '../Pages/TaskListPage/TaskListPage';
 import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
-import { ApplicationProfilePage } from '../Pages/ApplicationProfilePage/ApplicationProfilePage';
+import { ApplicationDetailPage } from '../Pages/ApplicationDetailPage/ApplicationDetailPage';
 
 export const PublicRouter = () => {
   return (
@@ -26,7 +26,7 @@ export const PublicRouter = () => {
         <Route exact path="/users/:id/jobs" component={UserPostListPage} />
         <Route exact path="/posts/:id/tasks/" component={TaskListPage} />
         <Route exact path="/posts/:id/tasks/:id" component={TaskDetailPage} />
-        <Route exact path="/application-detail" component={ApplicationProfilePage} />
+        <Route exact path="/application-detail" component={ApplicationDetailPage} />
         <Redirect from="*" to="/" />
       </Switch>
   );

@@ -3,7 +3,7 @@ import Profile from "./Components/Profile"
 import { useState } from "react"
 import { Link } from "react-router-dom";
 
-export const ApplicationProfilePage = (props) => {
+export const ApplicationDetailPage = (props) => {
 
   const candidateName = "Filip Radović";
 
