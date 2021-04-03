@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const AppliedRow = (props) => {
   return (
@@ -18,7 +19,13 @@ const AppliedRow = (props) => {
         <h3 className="font-size-4 font-weight-normal text-black-2 mb-0">12 July, 2020</h3>
       </td>
       <td className="table-y-middle py-7 min-width-px-170 pr-0">
-        <div><a href="javacript:" className="font-size-3 font-weight-bold text-black-2 text-uppercase" data-toggle="modal" data-target="#employe-profile">View Application</a></div>
+        <h3 className="font-size-4 font-weight-normal text-black-2 mb-0">92%</h3>
+      </td>
+      <td className="table-y-middle py-7 min-width-px-170 pr-0">
+        <h3 className="font-size-4 font-weight-normal text-black-2 mb-0">85%</h3>
+      </td>
+      <td className="table-y-middle py-7 min-width-px-170 pr-0">
+        <div><Link to="/application-detail" className="font-size-3 font-weight-bold text-black-2 text-uppercase">View Application</Link></div>
       </td>
       <td className="table-y-middle py-7 min-width-px-110 pr-0">
         <div><a href="contact.html" className="font-size-3 font-weight-bold text-green text-uppercase">Contact</a></div>
