@@ -69,6 +69,7 @@ const Navbar = (props) => {
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/users/:id/jobs">My jobs</Link>
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/users/:id/">Profile</Link>
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/companies/:id/dashboard">Dashboard</Link>
+                    <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/companies/:id/post">Create Post</Link>
                     <Link className="dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/">Log Out</Link>
                   </div>
                 </div>

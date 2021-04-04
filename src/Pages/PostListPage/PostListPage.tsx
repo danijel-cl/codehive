@@ -6,38 +6,38 @@ import GridPostList from "./Components/GridPostList"
 import RowPostList from "./Components/RowPostList"
 import Search from "./Components/Search"
 
+export const posts =[{
+  "position":"Product Designer",
+},{
+  "position":"Software Developer",
+},{
+  "position":"Data Scientist",
+},{
+  "position":"DevOps Engineer",
+}];
+
+export const jobTypes = [
+  { name: 'Full Time' },
+  { name: 'Part Time' },
+  { name: 'Contract' },
+  { name: 'Internship' },
+  { name: 'Temporary' },
+];
+
+export const experienceTypes = [
+  { name: 'All' },
+  { name: 'Senior' },
+  { name: 'Mid' },
+  { name: 'Junior' },
+];
+
+export const postedTypes = [
+  { name: 'Anytime' },
+  { name: 'Last week' },
+  { name: 'Last 2 weeks' },
+  { name: 'Last month' },
+];
 export const PostListPage = () => {
-  const posts =[{
-    "position":"Product Designer",
-  },{
-    "position":"Software Developer",
-  },{
-    "position":"Data Scientist",
-  },{
-    "position":"DevOps Engineer",
-  }];
-
-  const jobTypes = [
-    { name: 'Full Time' },
-    { name: 'Part Time' },
-    { name: 'Contract' },
-    { name: 'Internship' },
-    { name: 'Temporary' },
-  ];
-
-  const experienceTypes = [
-    { name: 'All' },
-    { name: 'Senior' },
-    { name: 'Mid' },
-    { name: 'Junior' },
-  ];
-
-  const postedTypes = [
-    { name: 'Anytime' },
-    { name: 'Last week' },
-    { name: 'Last 2 weeks' },
-    { name: 'Last month' },
-  ];
 
   const [choice, setChoice] = useState(true);
 
