@@ -1,7 +1,7 @@
 import {Editor, EditorState, RichUtils} from 'draft-js';
 import 'draft-js/dist/Draft.css';
 import React, { useState } from 'react';
-import '../RichEditor.css';
+// import '../RichEditor.css';
 import CheckBoxList from './PostListPage/Components/CheckBoxList';
 import ReactSlider from './PostListPage/Components/ReactSlider';
 import { experienceTypes, jobTypes, postedTypes } from './PostListPage/PostListPage';
