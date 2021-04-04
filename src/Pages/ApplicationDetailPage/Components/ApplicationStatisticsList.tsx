@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { ProgressBar } from 'react-bootstrap';
 
-const StatisticsList = (props) => {
+const ApplicationStatisticsList = (props) => {
   const stats = [{
     name:"Python",
     score:95
@@ -18,7 +19,7 @@ const StatisticsList = (props) => {
   return (
     <div className="row col-11 pl-5 pr-5">
       {stats.map((stat, index) => (
-        <div className="col-4 pb-15" style={{ display:"flex", alignItems:"center"}}>
+        <div key={index} className="col-4 pb-15 d-flex align-items-center">
           <div className="col-4">
             <p className="mb-0">{stat.name}</p>
           </div>
@@ -34,4 +35,4 @@ const StatisticsList = (props) => {
   );
 };
 
-export default StatisticsList;
+export default ApplicationStatisticsList;

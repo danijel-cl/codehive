@@ -1,9 +1,10 @@
-import CandidateTasks from "./Components/CandidateTasks"
-import UserDetail from "./Components/UserDetail"
+import Application from "./Components/Application"
+import Profile from "./Components/Profile"
 import { useState } from "react"
 import { Link } from "react-router-dom";
 
 export const ApplicationDetailPage = (props) => {
+
   const candidateName = "Filip Radović";
 
   const [choice, setChoice] = useState(false);
@@ -12,11 +13,12 @@ export const ApplicationDetailPage = (props) => {
     e.preventDefault();
     setChoice(bool)
   };
+
   const renderChoice = () => {
     if (choice) {
-      return <UserDetail />
+      return <Profile />
     } else {
-      return <CandidateTasks />
+      return <Application />
     }
   }
   return (
@@ -42,12 +44,16 @@ export const ApplicationDetailPage = (props) => {
                   <a className="col-1 font-weight-semibold">CONTACT</a>
                   <a className="col-1 text-red font-weight-semibold">REJECT</a>
                 </div>
-                <ul className="nav border-bottom border-mercury pl-12" id="myTab" role="tablist">
+                <ul className="nav border-bottom border-mercury pl-12">
                   <li className="tab-menu-items nav-item pr-12">
-                    <a style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,false)} className={`text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${!choice ? 'active':''}`}>Candidate Tasks</a>
+                    <a style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,false)} className={`text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${!choice ? 'active':''}`}>
+                      Candidate Tasks
+                    </a>
                   </li>
                   <li className="tab-menu-items nav-item pr-12">
-                    <a style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,true)} className={`text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${choice ? 'active':''}`}>Candidate Profile</a>
+                    <a style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,true)} className={`text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${choice ? 'active':''}`}>
+                      Candidate Profile
+                    </a>
                   </li>
                 </ul>
                 {renderChoice()}

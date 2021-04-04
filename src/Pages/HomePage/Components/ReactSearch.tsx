@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Search = ({searchText, setSearchText}) => {
+const ReactSearch = ({searchText, setSearchText}) => {
   return (
     <div className="form-group position-relative w-lg-45 w-xl-40 w-xxl-45">
       <input value = {searchText} onChange={(e)=>setSearchText(e.target.value)} className="form-control focus-reset pl-13" type="text" placeholder="Position" />
@@ -11,4 +11,4 @@ const Search = ({searchText, setSearchText}) => {
   );
 };
 
-export default Search;
+export default ReactSearch;

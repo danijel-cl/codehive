@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 /* Component imports */
 import Category from "./Components/Category"
-import SearchSelectForm from "./Components/SearchSelectForm"
+import ReactSearchSelect from "./Components/ReactSearchSelect"
 
 export const HomePage = () => {
   Aos.init();
@@ -28,7 +28,7 @@ export const HomePage = () => {
               </div>
             </div>
             <div className="col-lg-11 col-12 translateY-50 pos-abs-bl">
-              <SearchSelectForm/>
+              <ReactSearchSelect/>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select'
 
-const ReactSelect = () => {
+const ReactSelect = ({ setSelectText }) => {
   const style = {
     control: base => ({
       ...base,
@@ -13,15 +13,17 @@ const ReactSelect = () => {
       width: "100%",
     }),
   };
+  const options = [
+    { value: 'United States of America', label: 'United States of America'},
+    { value: 'United Arab Emirates', label: 'United Arab Emirates' }
+  ]
   return (
     <Select
       placeholder="Select.."
       styles={style}
       className='h-100 arrow-3'
-      options={[
-        { value: 'United States of America', label: 'United States of America'},
-        { value: 'United Arab Emirates', label: 'United Arab Emirates' }
-      ]}
+      options={options}
+      onChange={(option)=>setSelectText(option.value)}
     />
   );
 };

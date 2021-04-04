@@ -1,5 +1,5 @@
 import React from 'react';
-import CompanyElement from "./CompanyElement"
+import CompanyRow from "./CompanyRow"
 
 const CompanyList = (props) => {
   const companies = [
@@ -27,7 +27,7 @@ const CompanyList = (props) => {
   return (
     <ul className="list-unstyled">
       {companies.map((company, index) => (
-        <CompanyElement id={index} company={company} />
+        <CompanyRow id={index} key={index} company={company} />
       ))}
     </ul>
   );

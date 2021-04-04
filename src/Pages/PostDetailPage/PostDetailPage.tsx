@@ -29,8 +29,12 @@ export const PostDetailPage = () => {
           <div className="row justify-content-center">
             <div className="col-xl-12 col-lg-11 mt-4 dark-mode-texts">
               <div className="mb-9">
-                <Link className="d-flex align-items-center ml-10" to="/posts"> <i className="icon icon-small-left bg-white circle-40 mr-5 font-size-7 text-black font-weight-bold shadow-8">
-                </i><span className="text-uppercase font-size-3 font-weight-bold text-gray">Back to jobs</span></Link>
+                <Link className="d-flex align-items-center ml-10" to="/posts">
+                  <i className="icon icon-small-left bg-white circle-40 mr-5 font-size-7 text-black font-weight-bold shadow-8"></i>
+                  <span className="text-uppercase font-size-3 font-weight-bold text-gray">
+                    Back to jobs
+                  </span>
+                </Link>
               </div>
             </div>
             <div className="row ">
@@ -91,7 +95,7 @@ export const PostDetailPage = () => {
                           <h6 className="font-size-5 text-black-2 font-weight-semibold mb-9">{postPositionLevel}</h6>
                         </div>
                         <div className="tags">
-                          <p className="font-size-4 text-gray mb-0">Soft Skill</p>
+                          <p className="font-size-4 text-gray mb-0">Soft Skills</p>
                           <ul className="list-unstyled mr-n3 mb-0">
                             {postSoftSkills.map((skill, index)=>(
                               <li key={index} className="d-block font-size-4 text-black-2 mt-2">
@@ -107,7 +111,7 @@ export const PostDetailPage = () => {
                           <h6 className="font-size-5 text-black-2 font-weight-semibold mb-9">{postCompanyType}</h6>
                         </div>
                         <div className="tags">
-                          <p className="font-size-4 text-gray mb-3">Technical Skill</p>
+                          <p className="font-size-4 text-gray mb-3">Technical Skills</p>
                           <ul className="d-flex list-unstyled flex-wrap pr-sm-25 pr-md-0">
                             {postTehnicalSkills.map((skill, index)=>(
                               <li key={index} className="bg-regent-opacity-15 mr-3 h-px-33 text-center flex-all-center rounded-3 px-5 font-size-3 text-black-2 mt-2">
@@ -129,7 +133,7 @@ export const PostDetailPage = () => {
                     <div className="row">
                       <div className="col-xl-11 col-md-12 pr-xxl-9 pr-xl-10 pr-lg-20">
                         <div>
-                          <p className="mb-4 font-size-4 text-gray">Job Description</p>
+                          <p className="font-size-4 font-weight-semibold text-black-2 mb-7">Job Description</p>
                           <p className="font-size-4 text-black-2 mb-7">{postDescription}</p>
                         </div>
                         <div>
