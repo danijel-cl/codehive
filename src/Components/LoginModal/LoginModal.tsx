@@ -1,6 +1,6 @@
 import React from "react";
 import { LoginForm } from "./Components/LoginForm";
-import { styled } from './utils/css';
+import { styled } from '../../utils/css';
 
 export const LoginModal = (props) => {
   const {loginClicked, setLoginClicked} = props;

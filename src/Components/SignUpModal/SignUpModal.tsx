@@ -1,5 +1,5 @@
 import { RegistrationForm } from "./Components/RegistrationForm"
-import { styled } from './utils/css';
+import { styled } from '../../utils/css';
 
 export const SignUpModal = (props) => {
   const {signupClicked, setSignupClicked} = props
