@@ -9,7 +9,7 @@ const RichEditor = (props) => {
     () => EditorState.createEmpty(),
   );
 
-  let options = ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'embedded', 'emoji', 'remove', 'history'];
+  let options = ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'embedded', 'emoji', 'history'];
 
   return (
     <div>

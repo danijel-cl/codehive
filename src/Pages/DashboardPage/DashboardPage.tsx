@@ -5,6 +5,7 @@ import Category from "./Components/Category"
 import Dashboard from "./Components/Dashboard"
 import ScrollToTop from "../../Components/ScrollToTop";
 import Statistics from "./Components/Statistics"
+import UpdateForm from "./Components/UpdateForm"
 import {useState} from "react"
 
 export const DashboardPage = (props) => {
@@ -18,10 +19,16 @@ export const DashboardPage = (props) => {
           <AppliedList />
         </div>
       );
-    } else {
+    } else if (page===2) {
       return (
         <div className="mb-18">
           <JobList />
+        </div>
+      );
+    } else {
+      return (
+        <div className="mb-18">
+          <UpdateForm />
         </div>
       );
     }

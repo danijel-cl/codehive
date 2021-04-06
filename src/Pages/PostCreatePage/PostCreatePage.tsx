@@ -25,9 +25,17 @@ export const PostCreatePage = (props) => {
                         <ReactSlider />
                       </div>
                       <CheckBoxList name="Experience Level" items={experienceTypes} />
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Technical Skills</h4>
-                      <div className="col-12 pl-0">
-                        <RichEditor />
+                      <div className="pb-10">
+                        <h4 className="font-size-6 font-weight-semibold mb-6">Job Description</h4>
+                        <div className="col-12 pl-0">
+                          <RichEditor />
+                        </div>
+                      </div>
+                      <div className="pb-10">
+                        <h4 className="font-size-6 font-weight-semibold mb-6">Your Role</h4>
+                        <div className="col-12 pl-0">
+                          <RichEditor />
+                        </div>
                       </div>
                     </div>
                   </div>
