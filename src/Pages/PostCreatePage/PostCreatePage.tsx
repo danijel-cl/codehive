@@ -1,20 +1,34 @@
-import {Editor, EditorState, RichUtils} from 'draft-js';
-import 'draft-js/dist/Draft.css';
-import React, { useState } from 'react';
-// import '../RichEditor.css';
-import CheckBoxList from './PostListPage/Components/CheckBoxList';
-import ReactSlider from './PostListPage/Components/ReactSlider';
-import { experienceTypes, jobTypes, postedTypes } from './PostListPage/PostListPage';
-import { styled } from '../utils/css';
+import CheckBoxList from '../PostListPage/Components/CheckBoxList';
+import ReactSlider from '../PostListPage/Components/ReactSlider';
+import { experienceTypes, jobTypes, postedTypes } from '../PostListPage/PostListPage';
+import { styled } from '../../utils/css';
+import { CustomPostField } from './CustomPostFields';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 const modalContainer = styled.cssStyle`
-  width: 800px;
+  width: 1000px;
 `;
 
-export const PostForm = (props) => {
-  const [editorState, setEditorState] = useState(
-    () => EditorState.createEmpty(),
-  );
+// const schema = yup.object().shape({
+//   first_name: yup.string().required('This is a required field.'),
+//   last_name: yup.string().required('This is a required field.'),
+//   email: yup.string().required('This is a required field.'),
+//   /* company: yup.boolean().required('This is a required field.'), */
+//   password: yup.string().required('This is a required field.'),
+// });
+// const methods = useForm({
+//   defaultValues: {
+//     first_name: '',
+//     last_name: '',
+//     email: '',
+//     password: '',
+//   },
+//   resolver: yupResolver(schema),
+// });
+
+export const PostCreatePage = (props) => {
   return (
     <div className="site-wrapper overflow-hidden " >
       <div className="jobDetails-section bg-default-1 pt-28 pt-lg-27 pb-xl-25 pb-12">
@@ -35,6 +49,10 @@ export const PostForm = (props) => {
                       <CheckBoxList name="Posted Time" items={postedTypes} />
                       <h4 className="font-size-6 font-weight-semibold mb-6">Technical Skills</h4>
                       <textarea name="techskill" placeholder="Technical Skills" />
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Your Role:</h4>
+                      <textarea name="role" placeholder="Your Role:" />
+                      <h4 className="font-size-6 font-weight-semibold mb-6">What you will be doing:</h4>
+                      {/* <CustomPostField /> */}
                     </div>  
                         {/* <div className="RichEditor-root">
                       <Editor editorState={editorState} onChange={setEditorState} wrapperClassName="wrapper-class"
