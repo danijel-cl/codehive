@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
-import { LoginModal } from './LoginModal';
-import { SignUpModal } from './SignUpModal';
+import { LoginModal } from './LoginModal/LoginModal';
+import { SignUpModal } from './SignUpModal/SignUpModal';
 
 const Navbar = (props) => {
   const [loginClicked, setLoginClicked] = useState(false);

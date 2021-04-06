@@ -1354,6 +1354,14 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
   color: #00b074;
 }
 
+.editor-button{
+  background-color:white;
+  color:#00b074;
+  border-color: #00b074;
+  border-width:1px;
+  outline:0px;
+  border-bottom: none;
+}
 
 /* ---------------------------
   01.Component -> { Lists }
@@ -2149,12 +2157,28 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 /* ---------------------------
-  01.Component -> { Sidebar }
+  01.Component -> { Select }
 ------------------------------*/
 
 .custom-select{
   border:0 !important;
   box-shadow: none !important;
+}
+
+/* ---------------------------
+  01.Component -> { Editor }
+------------------------------*/
+
+.DraftEditor-root {
+  border: 1px solid #00b074;
+  background-color: white;
+  max-height: 500px;
+  font-size:20px;
+  overflow:scroll;
+}
+.DraftEditor-editorContainer,
+.public-DraftEditor-content {
+  min-height: 200px;
 }
 
 /* ---------------------------

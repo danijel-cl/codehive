@@ -12,7 +12,6 @@ import { TaskListPage } from '../Pages/TaskListPage/TaskListPage';
 import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 import { ApplicationDetailPage } from '../Pages/ApplicationDetailPage/ApplicationDetailPage';
 import { PostCreatePage } from '../Pages/PostCreatePage/PostCreatePage';
-
 export const PublicRouter = () => {
   return (
       <Switch>
