@@ -30,7 +30,17 @@ export const Task = (props) => {
             <div className="media align-items-center">
               <div>
                 <h3 className="mb-0 font-size-6 heading-default-color">{props.task.name}</h3>
-                <span  style={{color:"#00b074"}} className="font-size-3 line-height-2 d-block">{taskCompany}</span>
+                {
+                  (() =>{
+                    if (taskSolved===0){
+                      return <span  style={{color:"#00b074"}} className="font-size-3 line-height-2 d-block"> Solved <i className="pl-4 fa  fa-check fa-xs" aria-hidden="true"></i></span>
+                    }else if (taskSolved!==0){
+                      return <span  style={{color:"#00b074"}} className="font-size-3 line-height-2 d-block"> Continue solving <i className="pl-4 fa  fa-spinner fa-xs" aria-hidden="true"></i></span>
+                    }else{
+                      return <span  style={{color:"#00b074"}} className="font-size-3 line-height-2 d-block"> Solve <i className="pl-4 fa  fa-coffee fa-xs" aria-hidden="true"></i></span>
+                    }
+                  })()
+                }
               </div>
             </div>
           </div>
@@ -44,25 +54,6 @@ export const Task = (props) => {
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-        <div className="row pt-8">
-          <div className="col-6 pr-30">
-          {
-            (() =>{
-              if (taskSolved!==0){
-                return <p> Solved <i className="pl-4 fa  fa-check fa-xs" aria-hidden="true"></i></p>
-              }else if (taskSolved!==0){
-                return <p> Continue solving <i className="pl-4 fa  fa-spinner fa-xs" aria-hidden="true"></i></p>
-              }else{
-                return <p> Solve <i className="pl-4 fa  fa-coffee fa-xs" aria-hidden="true"></i></p>
-              }
-            })()
-          }
-          </div>
-          <div className="col-6 text-right">
-            <p className="font-size-2 mb-0">Last Submission:</p>
-            <p className="mt-0">{taskLastSubmission} </p>
           </div>
         </div>
       </div>

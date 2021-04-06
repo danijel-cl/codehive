@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useQueryClient } from 'react-query';
 import * as yup from 'yup';
-import { cacheKeys } from '../api/api';
-import { LoginParams } from '../api/http';
-import { http } from '../api/http';
+import { cacheKeys } from '../../../api/api';
+import { LoginParams } from '../../../api/http';
+import { http } from '../../../api/http';
 
-import { TextField } from '../Components/TextField';
-import { SubmitError } from '../shared/SubmitError';
-import { useNavigation } from '../shared/hooks/useNavigation';
+import { TextField } from './TextField';
+import { SubmitError } from '../../../shared/SubmitError';
+import { useNavigation } from '../../../shared/hooks/useNavigation';
 
 
 export const LoginForm = () => {

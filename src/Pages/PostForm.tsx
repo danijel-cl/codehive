@@ -35,7 +35,7 @@ export const PostForm = (props) => {
                       <CheckBoxList name="Posted Time" items={postedTypes} />
                       <h4 className="font-size-6 font-weight-semibold mb-6">Technical Skills</h4>
                       <textarea name="techskill" placeholder="Technical Skills" />
-                    </div>  
+                    </div>
                         {/* <div className="RichEditor-root">
                       <Editor editorState={editorState} onChange={setEditorState} wrapperClassName="wrapper-class"
         editorClassName="editor-class"

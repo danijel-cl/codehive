@@ -1,5 +1,5 @@
 import React from "react";
-import { LoginForm } from "../Pages/LoginForm";
+import { LoginForm } from "../Pages/LoginPage/Components/LoginForm";
 
 import { styled } from '../utils/css';
 
@@ -68,4 +68,4 @@ const modalContainer = styled.cssStyle`
       </div>
     </div>
   )
-} 
+}
