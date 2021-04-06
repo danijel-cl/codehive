@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 const Footer = () => {
   const [render, setRender] = useState(true);
   let location = useLocation()
-  let paths = ["tasks", "dashboard", "login"]
+  let paths = ["tasks", "dashboard"]
   useEffect(() => {
     if (paths.some(path => location.pathname.includes(path))) {
       setRender(false)

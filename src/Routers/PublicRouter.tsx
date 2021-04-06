@@ -12,7 +12,6 @@ import { TaskListPage } from '../Pages/TaskListPage/TaskListPage';
 import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 import { ApplicationDetailPage } from '../Pages/ApplicationDetailPage/ApplicationDetailPage';
 import { PostForm } from '../Pages/PostForm';
-import { LoginPage} from '../Pages/LoginPage/LoginPage';
 export const PublicRouter = () => {
   return (
       <Switch>
@@ -29,7 +28,6 @@ export const PublicRouter = () => {
         <Route exact path="/posts/:id/tasks/" component={TaskListPage} />
         <Route exact path="/posts/:id/tasks/:id" component={TaskDetailPage} />
         <Route exact path="/application-detail" component={ApplicationDetailPage} />
-        <Route exact path="/login" component={LoginPage} />
         <Redirect from="*" to="/" />
       </Switch>
   );

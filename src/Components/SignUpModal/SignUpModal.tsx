@@ -1,14 +1,17 @@
-import { RegistrationForm } from "../Pages/RegistrationForm"
-import { styled } from '../utils/css';
+import { RegistrationForm } from "./Components/RegistrationForm"
+import { styled } from './utils/css';
 
 export const SignUpModal = (props) => {
   const {signupClicked, setSignupClicked} = props
   const modalContainer = styled.cssStyle`
   display: block ;
   overflow: initial;
+  height: 100vh;
+  width:100vw;
+  background-color:rgba(0,0,0,0.3);
 `;
   return (
-    <div className={`modal fade form-modal ${signupClicked ? "show" : ""}`} style={modalContainer} id="signup" tabIndex={-1} aria-hidden="true">
+    <div className={`modal fade form-modal pt-15 ${signupClicked ? "show" : ""}`} style={modalContainer} id="signup" tabIndex={-1} aria-hidden="true">
       <div className="modal-dialog max-width-px-840 position-relative">
         <button type="button" className="circle-32 btn-reset bg-white pos-abs-tr mt-n6 mr-lg-n6 focus-reset shadow-10" style={{zIndex: 1}} onClick={() => setSignupClicked(!signupClicked)}><i className="fas fa-times"></i></button>
         <div className="login-modal-main bg-white rounded-8 overflow-hidden">

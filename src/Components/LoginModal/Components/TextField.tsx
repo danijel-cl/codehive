@@ -3,7 +3,7 @@ import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import Input from '@material-ui/core/Input';
 
-import { styled } from '../../../utils/css';
+import { styled } from '../utils/css';
 
 const textContainer = styled.cssStyle`
   margin-bottom: 0;
