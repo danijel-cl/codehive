@@ -6,7 +6,6 @@ export const LoginModal = (props) => {
   const {loginClicked, setLoginClicked} = props;
 
   const modalContainer = styled.cssStyle`
-    display: block;
     overflow: initial;
     height: 100vh;
     width:100vw;

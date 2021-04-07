@@ -4,7 +4,6 @@ import { styled } from '../../utils/css';
 export const SignUpModal = (props) => {
   const {signupClicked, setSignupClicked} = props
   const modalContainer = styled.cssStyle`
-  display: block ;
   overflow: initial;
   height: 100vh;
   width:100vw;

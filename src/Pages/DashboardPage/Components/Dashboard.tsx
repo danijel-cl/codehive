@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Dashboard = (props) => {
   return (
@@ -9,7 +10,7 @@ const Dashboard = (props) => {
         </button>
       </div>
       <div className="my-15 px-11">
-        <a href="#" className="btn btn-primary btn-xl w-100 text-uppercase"><span className="mr-5 d-inline-block">+</span>Post a new job</a>
+        <Link to="/companies/:id/post" className="btn btn-primary btn-xl w-100 text-uppercase"><span className="mr-5 d-inline-block">+</span>Post a new job</Link>
       </div>
       <ul className="list-unstyled dashboard-layout-sidebar">
         <li style={{cursor: 'pointer'}} onClick={()=>props.setPage(0)} className={(props.page === 0 ? "active" : "")}><a className="px-10 py-1 my-5 font-size-4 font-weight-semibold flex-y-center"><i className="icon icon-layout-11 mr-7" />Dashboard</a></li>
