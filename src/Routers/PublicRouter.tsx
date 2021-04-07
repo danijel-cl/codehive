@@ -12,6 +12,7 @@ import { TaskListPage } from '../Pages/TaskListPage/TaskListPage';
 import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 import { ApplicationDetailPage } from '../Pages/ApplicationDetailPage/ApplicationDetailPage';
 import { PostCreatePage } from '../Pages/PostCreatePage/PostCreatePage';
+import { CompanyUpdateProfile } from '../Pages/CompanyUpdateProfile/CompanyUpdateProfile';
 export const PublicRouter = () => {
   return (
       <Switch>
@@ -23,6 +24,7 @@ export const PublicRouter = () => {
         <Route exact path="/companies/:id" component={CompanyDetailPage} />
         <Route exact path="/companies/:id/dashboard" component={DashboardPage} />
         <Route exact path="/companies/:id/post" component={PostCreatePage} />
+        <Route exact path="/companies/:id/update" component={CompanyUpdateProfile} />
         <Route exact path="/users/:id" component={UserDetailPage} />
         <Route exact path="/users/:id/jobs" component={UserPostListPage} />
         <Route exact path="/posts/:id/tasks/" component={TaskListPage} />
