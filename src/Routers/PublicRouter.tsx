@@ -5,13 +5,13 @@ import { PostListPage } from '../Pages/PostListPage/PostListPage';
 import { PostDetailPage } from '../Pages/PostDetailPage/PostDetailPage';
 import { CompanyDetailPage } from '../Pages/CompanyDetailPage/CompanyDetailPage';
 import { UserDetailPage } from '../Pages/UserDetailPage/UserDetailPage';
-import { UserPostListPage } from '../Pages/UserPostListPage/UserPostListPage';
 import { DashboardPage } from '../Pages/DashboardPage/DashboardPage';
 import { TaskDetailPage } from '../Pages/TaskDetailPage/TaskDetailPage';
 import { TaskListPage } from '../Pages/TaskListPage/TaskListPage';
 import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 import { ApplicationDetailPage } from '../Pages/ApplicationDetailPage/ApplicationDetailPage';
 import { PostCreatePage } from '../Pages/PostCreatePage/PostCreatePage';
+import { AccountPage } from '../Pages/AccountPage/AccountPage';
 import { CompanyUpdateProfile } from '../Pages/CompanyUpdateProfile/CompanyUpdateProfile';
 export const PublicRouter = () => {
   return (
@@ -26,10 +26,10 @@ export const PublicRouter = () => {
         <Route exact path="/companies/:id/post" component={PostCreatePage} />
         <Route exact path="/companies/:id/update" component={CompanyUpdateProfile} />
         <Route exact path="/users/:id" component={UserDetailPage} />
-        <Route exact path="/users/:id/jobs" component={UserPostListPage} />
         <Route exact path="/posts/:id/tasks/" component={TaskListPage} />
         <Route exact path="/posts/:id/tasks/:id" component={TaskDetailPage} />
         <Route exact path="/application-detail" component={ApplicationDetailPage} />
+        <Route exact path="/users/:id/account" component={AccountPage} />
         <Redirect from="*" to="/" />
       </Switch>
   );
