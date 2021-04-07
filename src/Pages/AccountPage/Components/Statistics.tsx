@@ -9,8 +9,8 @@ const Statistics = (props) => {
         <div className="col-xxl-3 col-xl-4 col-lg-6 col-sm-6">
           <Category
             icon = "fas fa-briefcase"
-            text = "5"
-            subText = "Active Challanges"
+            text = "1005"
+            subText = "Points"
             color = "bg-coral"
           />
         </div>
@@ -18,15 +18,15 @@ const Statistics = (props) => {
           <Category
             icon = "fas fa-user"
             text = "200"
-            subText = "Total applicants"
+            subText = "Tasks solved"
             color = "bg-blue"
           />
         </div>
         <div className="col-xxl-3 col-xl-4 col-lg-6 col-sm-6">
           <Category
             icon = "fas fa-eye"
-            text = "1200"
-            subText = "Job Views"
+            text = "15%"
+            subText = "Monthly Improvement"
             color = "bg-red"
           />
         </div>
@@ -34,7 +34,7 @@ const Statistics = (props) => {
           <Category
             icon = "fas fa-mouse-pointer"
             text = "18.6%"
-            subText = "Applied Rate"
+            subText = "Rank Improvement"
             color = "bg-green"
           />
         </div>

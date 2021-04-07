@@ -3,7 +3,7 @@ export const UpdateForm = () => {
       <div className="mb-15 mb-lg-23">
         <div className="row">
           <div className="col-xxxl-9 px-lg-13 px-6">
-            <h5 className="font-size-6 font-weight-semibold mb-11">Update Company Profile</h5>
+            <h5 className="font-size-6 font-weight-semibold mb-11">Update User Profile</h5>
             <div className="contact-form bg-white shadow-8 rounded-4 pl-sm-10 pl-4 pr-sm-11 pr-4 pt-15 pb-13">
               <div className="upload-file mb-16 text-center">
                 <div id="userActions" className="square-144 m-auto px-6 mb-7">
