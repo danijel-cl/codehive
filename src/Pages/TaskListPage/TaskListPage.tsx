@@ -25,12 +25,12 @@ export const TaskListPage = () => {
         <div className="bg-default-1 pb-13 pb-xl-30 pb-13 mt-12 mt-lg-20 pt-15 pt-lg-15 position-relative">
           <div className="container-fluid">
             <div className="row justify-content-center">
-              <div className="col-8">
+              <div className="col-10">
                 <h2 className="font-size-8 mb-6">Task List</h2>
               </div>
             </div>
             <div className="row justify-content-center position-static">
-              <div className="offset-2 col-6">
+              <div className="col-6">
                 <div className="Left">
                   <div className="justify-content-center search-nav-tab nav nav-tabs border-bottom-0" id="search-nav-tab" role="tablist">
                     {tasks.map((task, index) => (
