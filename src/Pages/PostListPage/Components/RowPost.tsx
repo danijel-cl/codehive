@@ -12,7 +12,7 @@ const RowPost = (props) => {
   const postDate = "2017/01/01"
   return (
       <div className="mb-8 mt-5">
-        <div onClick={()=>props.setPost(props.index)} className="pt-7 px-xl-9 px-lg-4 px-4 pb-2 light-mode-texts bg-white rounded hover-shadow-3">
+        <div onClick={()=>props.setPost(props.index)} style={{cursor:"pointer"}} className="pt-7 px-xl-9 px-lg-4 px-4 pb-2 light-mode-texts bg-white rounded hover-shadow-3">
           <div className="row">
             <div className="col-md-6">
               <div className="media align-items-center">
@@ -21,9 +21,9 @@ const RowPost = (props) => {
                 </div>
                 <div>
                   <h3 className="mb-0">
-                    <Link to={`/posts/${props.index}`} className="font-size-6 heading-default-color">
+                    <a className="font-size-6 heading-default-color">
                       {props.post.position}
-                    </Link>
+                    </a>
                   </h3>
                   <Link to="/companies/:id" className="font-size-3 text-default-color line-height-2">
                     {postCompany}
