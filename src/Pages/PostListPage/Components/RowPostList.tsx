@@ -5,7 +5,7 @@ const RowPostList = (props) => {
   return (
     <div>
       {props.posts.map((post, index) => (
-        <RowPost key={index} id={index} post={post} />
+        <RowPost key={index} index={index} post={post} setPost={props.setPost}/>
       ))}
     </div>
   );

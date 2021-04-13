@@ -7,20 +7,10 @@ import ReactSearch from "./ReactSearch";
 const ReactSearchSelect = (props) => {
   const [searchText, setSearchText] = useState("");
   const [selectText, setSelectText] = useState("");
-  const getText= () =>{
-    if (searchText!=="" && selectText!==""){
-      return "?search="+searchText+"&select"+selectText;
-    } else if (searchText!=="" && selectText==="" ){
-      return "?search="+searchText;
-    } else if (searchText==="" && selectText!=="" ){
-      return "?select="+selectText;
-    } else{
-      return "";
-    }
-  };
+
   return (
     <form action="/" className="search-form search-2-adjustment ml-lg-0 ml-md-15">
-      <div className="filter-search-form-2 bg-white rounded-sm shadow-7 pr-6 py-6 pl-6">
+      <div className="filter-search-form-2 bg-white rounded-sm shadow-7 pr-4 py-2 pl-0">
         <div className="filter-inputs">
           <ReactSearch searchText={searchText} setSearchText={setSearchText}/>
           <div className="form-group position-relative w-lg-50 w-xl-5 w-xxl-50">
