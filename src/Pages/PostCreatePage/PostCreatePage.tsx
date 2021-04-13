@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 // import '../RichEditor.css';
 import CheckBoxList from './Components/CheckBoxList';
-import RichEditor from './Components/RichEditor'
+import RichEditor from './Components/RichEditor';
+import ReactSelect from './Components/ReactSelect';
+import TagInput from './Components/TagInput';
 import ReactSlider from '../PostListPage/Components/ReactSlider';
 import { experienceTypes, jobTypes, postedTypes } from '../PostListPage/PostListPage';
 import { styled } from '../../utils/css';
@@ -24,7 +26,23 @@ export const PostCreatePage = (props) => {
                       <div className="pl-0 col-8">
                         <ReactSlider />
                       </div>
+                      <div className="pl-0 pb-10 col-6">
+                        <h4 className="font-size-6 font-weight-semibold mb-6">Currency</h4>
+                        <ReactSelect />
+                      </div>
                       <CheckBoxList name="Experience Level" items={experienceTypes} />
+                      <div className="pl-0 pb-10 col-6">
+                        <h4 className="font-size-6 font-weight-semibold mb-6">Job Location</h4>
+                        <ReactSelect />
+                      </div>
+                      <div className="pl-0 pb-10 col-6">
+                        <h4 className="font-size-6 font-weight-semibold mb-6">Soft skills</h4>
+                        <TagInput />
+                      </div>
+                      <div className="pl-0 pb-10 col-6">
+                        <h4 className="font-size-6 font-weight-semibold mb-6">Tehnical skills</h4>
+                        <TagInput />
+                      </div>
                       <div className="pb-10">
                         <h4 className="font-size-6 font-weight-semibold mb-6">Job Description</h4>
                         <div className="col-12 pl-0">
