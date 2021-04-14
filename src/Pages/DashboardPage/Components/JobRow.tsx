@@ -2,8 +2,8 @@ import React from 'react';
 
 const JobRow = (props) => {
   return (
-    <tr className="border border-color-2">
-      <th scope="row" className="pl-6 border-0 py-7 min-width-px-235">
+    <tr className="shadow-8">
+      <th scope="row" className="pl-6 py-8 min-width-px-235">
         <div>
           <a href="jobdetails.html" className="font-size-4 mb-0 font-weight-semibold text-black-2">Senior Project Manager</a>
         </div>

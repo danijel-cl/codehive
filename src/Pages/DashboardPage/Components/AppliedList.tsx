@@ -7,7 +7,7 @@ const AppliedList = (props) => {
     <div>
       <div className="row mb-11 align-items-center">
         <div className="col-lg-6 mb-lg-0 mb-4">
-          <h3 className="font-size-6 mb-0">Applicants List (12)</h3>
+          <h3 className="font-size-6 mb-0">Applicants List</h3>
         </div>
         <div className="col-lg-6">
           <div className="d-flex flex-wrap align-items-center justify-content-lg-end">
@@ -20,10 +20,10 @@ const AppliedList = (props) => {
           </div>
         </div>
       </div>
-      <div className="bg-white shadow-8 pt-13 rounded pb-8 px-11">
-        <div className="table-responsive">
-          <table className="table table-striped">
-            <thead style={{backgroundColor:"#00b074"}} className="border-0 font-size-4 text-white">
+      <div className="bg-white pt-13 rounded-4 pb-8 px-11">
+        <div className="table-responsive" style={{ borderRadius:"5px"}}>
+          <table className="table table-striped table-borderless table-hover">
+            <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
               <tr>
                 <th scope="col" className="pl-17">Name</th>
                 <th scope="col">Applied as</th>

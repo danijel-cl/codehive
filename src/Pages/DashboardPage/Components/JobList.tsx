@@ -20,10 +20,10 @@ const JobsList = (props) => {
           </div>
         </div>
       </div>
-      <div className="bg-white shadow-8 pt-12 rounded pb-9 px-11">
-        <div className="table-responsive ">
-          <table className="table table-striped">
-            <thead style={{backgroundColor:"#00b074"}} className="border-0 font-size-4 text-white">
+      <div className="bg-white shadow-8 pt-12 rounded-4 pb-9 px-11">
+        <div className="table-responsive " style={{ borderRadius:"5px"}}>
+          <table className="table table-striped table-borderless table-hover">
+            <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
               <tr>
                 <th scope="col" className="pl-17">Name</th>
                 <th scope="col">Job Type</th>

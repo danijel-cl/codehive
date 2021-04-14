@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 
 const AppliedRow = (props) => {
   return (
-    <tr className="border border-color-2">
-      <th scope="row" className="pl-6 border-0 py-7 pr-0">
+    <tr className="shadow-8">
+      <th scope="row" className="pl-6 py-7 pr-0">
         <a href="candidate-profile.html" className="media min-width-px-235 align-items-center">
           <div className="mr-6">
             <img className="circle-36 w-100" src={process.env.PUBLIC_URL + "/resources/image/table-one-profile-image-1.png"}/>

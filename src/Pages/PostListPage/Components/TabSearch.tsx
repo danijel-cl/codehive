@@ -41,10 +41,18 @@ export const TabSearch = (props) => {
         <div className="pt-8 pl-sm-9 pl-6 pb-10 light-mode-texts overflow-y-scroll" style={{maxHeight:"68vh"}}>
           <div className="row">
             <div className="col-xxl-12 col-xl-9 pr-xxl-18 pr-xl-0 pr-11">
-              <CheckBoxList name="Job Type" items={jobTypes} />
-              <ReactSlider />
-              <CheckBoxList name="Experience Level" items={experienceTypes} />
-              <CheckBoxList name="Posted Time" items={postedTypes} />
+              <div className="col-12">
+                <CheckBoxList name="Job Type" items={jobTypes} />
+              </div>
+              <div className="col-12">
+                <CheckBoxList name="Experience Level" items={experienceTypes} />
+              </div>
+              <div className="col-12">
+                <ReactSlider />
+              </div>
+              <div className="col-12">
+                <CheckBoxList name="Posted Time" items={postedTypes} />
+              </div>
             </div>
           </div>
         </div>
