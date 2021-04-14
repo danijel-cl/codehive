@@ -29,15 +29,15 @@ export const TaskDetailPage = () => {
           }
         </div>
         <div className="col-9 pl-0" style={{ backgroundColor:"#2E2E2E"}}>
-          <div className="h-10">
-            <p className="ml-13 mt-4 font-size-7" style={{color:"#00b074"}}>Code <span style={{color:"#fff"}}>Editor</span><span style={{float:"right"}}>Python <i className="fa fa-genderless" aria-hidden="true"></i>
+          <div className="h-9">
+            <p className="ml-13 mt-7 mb-2 font-size-6" style={{color:"#00b074"}}>Code <span style={{color:"#fff"}}>Editor</span><span style={{float:"right"}}>Python <i className="fa fa-genderless" aria-hidden="true"></i>
             </span></p>
           </div>
           <AceEditor
             className="w-100"
             mode="python"
             theme="monokai"
-            fontSize="25px"
+            fontSize="23px"
             value	= {code}
             height="91vh"
           />

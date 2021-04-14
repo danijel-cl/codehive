@@ -26,7 +26,7 @@ export const Task = (props) => {
     <a className={`mb-8 p-0 w-100 ${activeClass ? 'active':''}`} style={{cursor: 'pointer'}} key={props.index}>
       <div className="pt-9 px-xl-9 px-lg-7 px-7 pb-7 light-mode-texts bg-white hover-shadow-3 hover-border-green" onClick={() => props.action(props.index)}>
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-4">
             <div className="media align-items-center">
               <div>
                 <h3 className="mb-0 font-size-6 heading-default-color">{props.task.name}</h3>
@@ -44,7 +44,7 @@ export const Task = (props) => {
               </div>
             </div>
           </div>
-          <div className="col-md-6 text-right pt-7 pt-md-5">
+          <div className="col-md-8 text-right pt-7 pt-md-5">
             <div className="media justify-content-md-end">
               <ul className="d-flex list-unstyled mr-n3 flex-wrap mr-n8 justify-content-md-end">
                 {tags.map((tag, index) => (

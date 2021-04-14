@@ -15,7 +15,7 @@ const Submissions = (props) => {
             <th className="font-weight-normal"></th>
           </tr>
         </thead>
-        <tbody className="font-size-5 font-weight-light">
+        <tbody className="font-size-4 font-weight-light">
           <tr>
             <td style={{color:"white"}}>Passed</td>
             <td style={{color:"white"}}>22.10.2021 15:30:21</td>
