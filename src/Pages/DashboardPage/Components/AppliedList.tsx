@@ -20,19 +20,19 @@ const AppliedList = (props) => {
           </div>
         </div>
       </div>
-      <div className="bg-white shadow-8 pt-7 rounded pb-8 px-11">
+      <div className="bg-white shadow-8 pt-13 rounded pb-8 px-11">
         <div className="table-responsive">
           <table className="table table-striped">
-            <thead>
+            <thead style={{backgroundColor:"#00b074"}} className="border-0 font-size-4 text-white">
               <tr>
-                <th scope="col" className="pl-0  border-0 font-size-4 font-weight-normal">Name</th>
-                <th scope="col" className="border-0 font-size-4 font-weight-normal">Applied as</th>
-                <th scope="col" className="border-0 font-size-4 font-weight-normal">Applied on</th>
-                <th scope="col" className="border-0 font-size-4 font-weight-normal">Tests Passed</th>
-                <th scope="col" className="border-0 font-size-4 font-weight-normal">Code Quality</th>
-                <th scope="col" className="border-0 font-size-4 font-weight-normal" />
-                <th scope="col" className="border-0 font-size-4 font-weight-normal" />
-                <th scope="col" className="border-0 font-size-4 font-weight-normal" />
+                <th scope="col" className="pl-17">Name</th>
+                <th scope="col">Applied as</th>
+                <th scope="col">Applied on</th>
+                <th scope="col">Tests Passed</th>
+                <th scope="col">Code Quality</th>
+                <th scope="col"/>
+                <th scope="col"/>
+                <th scope="col"/>
               </tr>
             </thead>
             <tbody>

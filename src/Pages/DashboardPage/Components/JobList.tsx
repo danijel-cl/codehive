@@ -7,7 +7,7 @@ const JobsList = (props) => {
     <div>
       <div className="row mb-11 align-items-center">
         <div className="col-lg-6 mb-lg-0 mb-4">
-          <h3 className="font-size-6 mb-0">Posted Jobs (4)</h3>
+          <h3 className="font-size-6 mb-0">Posted Jobs</h3>
         </div>
         <div className="col-lg-6">
           <div className="d-flex flex-wrap align-items-center justify-content-lg-end">
@@ -20,18 +20,18 @@ const JobsList = (props) => {
           </div>
         </div>
       </div>
-      <div className="bg-white shadow-8 pt-7 rounded pb-9 px-11">
+      <div className="bg-white shadow-8 pt-12 rounded pb-9 px-11">
         <div className="table-responsive ">
           <table className="table table-striped">
-            <thead>
+            <thead style={{backgroundColor:"#00b074"}} className="border-0 font-size-4 text-white">
               <tr>
-                <th scope="col" className="pl-0 border-0 font-size-4 font-weight-normal">Name</th>
-                <th scope="col" className="pl-4 border-0 font-size-4 font-weight-normal">Job Type</th>
-                <th scope="col" className="pl-4 border-0 font-size-4 font-weight-normal">City</th>
-                <th scope="col" className="pl-4 border-0 font-size-4 font-weight-normal">Created on</th>
-                <th scope="col" className="pl-4 border-0 font-size-4 font-weight-normal">Total Applicants</th>
-                <th scope="col" className="pl-4 border-0 font-size-4 font-weight-normal" />
-                <th scope="col" className="pl-4 border-0 font-size-4 font-weight-normal" />
+                <th scope="col" className="pl-17">Name</th>
+                <th scope="col">Job Type</th>
+                <th scope="col">City</th>
+                <th scope="col">Created on</th>
+                <th scope="col">Total Applicants</th>
+                <th scope="col"/>
+                <th scope="col"/>
               </tr>
             </thead>
             <tbody>
