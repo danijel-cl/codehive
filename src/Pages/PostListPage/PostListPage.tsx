@@ -18,7 +18,6 @@ export const posts =[{
 export const PostListPage = () => {
 
   const [post, setPost] = useState(-1);
-  console.log()
 
   const renderPost = () =>{
     if(post==-1){
@@ -33,7 +32,7 @@ export const PostListPage = () => {
       <div className="bg-default-1 pt-26 pt-lg-28 pb-13 pb-lg-25">
         <div className="container-fluid">
           <div className="row">
-            <div className="offset-1 col-12 col-md-6">
+            <div className="offset-1 col-12 col-md-5">
               <ReactSearchSelect />
               <div className="pt-12 ml-lg-0 ml-md-15">
                 <div className="d-flex align-items-center justify-content-between">
@@ -55,7 +54,7 @@ export const PostListPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-4 ">
+            <div className="col-12 col-md-5 ">
               <div className="tab-content" style={{position: "sticky",top: "15vh"}}>
                 {renderPost()}
               </div>

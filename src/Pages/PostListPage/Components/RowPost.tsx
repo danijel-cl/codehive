@@ -46,26 +46,20 @@ const RowPost = (props) => {
             </div>
           </div>
           <div className="row pt-6">
-            <div className="col-md-6">
+            <div className="col-md-7">
               <RowPostTags />
             </div>
-            <div className="row col-md-6 d-flex align-items-center">
-              <div className="col-4 font-size-small text-black-2">
+            <div className="row col-md-5 d-flex align-items-center">
+              <div className="col-6 font-size-small text-black-2">
                 <span className="font-weight-semibold">
                   <img className="mr-4" src={process.env.PUBLIC_URL +"/resources/image/svg/icon-loaction-pin-black.svg"} alt="" />
                   {postLocation}
                 </span>
               </div>
-              <div className="col-4 font-size-small text-black-2">
+              <div className="col-6 font-size-small text-black-2">
                 <span className="font-weight-semibold">
                   <img className="mr-4" src={process.env.PUBLIC_URL +"/resources/image/svg/icon-suitecase.svg"} alt="" />
                   {postPositionType}
-                </span>
-              </div>
-              <div className="col-4 font-size-small text-black-2">
-                <span className="font-weight-semibold">
-                  <img className="mr-4" src={process.env.PUBLIC_URL +"/resources/image/svg/icon-clock.svg"} alt="" />
-                  {postDate}
                 </span>
               </div>
             </div>

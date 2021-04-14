@@ -32,7 +32,7 @@ export const TabPost = (props) => {
                 <div className="col-12">
                   <div>
                     <h3 style={{display: "inline-block"}} className="pl-0 col-8 font-size-6 mb-0">{props.post.position}</h3>
-                    <Link to="/posts/id/tasks/id" className="btn btn-green col-4 text-uppercase rounded-3">Solve</Link>
+                    <Link to="/posts/:id/tasks/" className="btn btn-green col-4 text-uppercase rounded-3">Solve</Link>
                   </div>
                   <span className="font-size-4 text-gray line-height-2">{postCompany}</span>
                 </div>
@@ -44,7 +44,7 @@ export const TabPost = (props) => {
           <div className="job-details-content pt-8 pl-sm-9 pl-6 pr-sm-9 pr-6 pb-10 border-bottom border-width-1 border-default-color light-mode-texts">
             <div className="row mb-7">
               <div className="col-12">
-                <p className="font-size-5 text-gray mb-3">Job specifications</p>
+                <p className="font-size-5 text-gray font-weight-semibold mb-4">Job specifications</p>
               </div>
               <div className="col-md-6 mb-md-0 mb-6 pb-6">
                 <div className="media justify-content-md-start">
@@ -71,9 +71,9 @@ export const TabPost = (props) => {
                 </div>
               </div>
             </div>
-            <div className="row">
+            <div className="row mb-7">
               <div className="col-12">
-                <p className="font-size-5 text-gray mb-3">Job Adress</p>
+                <p className="font-size-5 text-gray font-weight-semibold mb-4">Job Adress</p>
               </div>
               <div className="col-md-6 pl-lg-0">
                 <div className="media col-md-12">
@@ -99,9 +99,9 @@ export const TabPost = (props) => {
             <div className="row pb-5">
               <div className="col-md-12">
                 <div className="tags">
-                  <p className="font-size-5 text-gray mb-3">Technical Skills</p>
+                  <p className="font-size-5 text-gray font-weight-semibold mb-4">Technical Skills</p>
                   <ul className="d-flex list-unstyled flex-wrap">
-                    {postSoftSkills.map((skill, index)=>(
+                    {postTehnicalSkills.map((skill, index)=>(
                       <li style={{  display:"inline"}} key={index} className="align-items-center bg-regent-opacity-15 mr-3 h-px-33 text-centernrounded-3 px-3 pt-1 font-size-3 text-black-2">
                         {skill}
                       </li>
@@ -113,7 +113,7 @@ export const TabPost = (props) => {
             <div className="row pb-5">
               <div className="col-md-12">
                 <div className="tags">
-                  <p className="font-size-5 text-gray mb-3">Soft Skills</p>
+                  <p className="font-size-5 text-gray font-weight-semibold mb-4">Soft Skills</p>
                   <ul className="d-flex list-unstyled flex-wrap">
                     {postSoftSkills.map((skill, index)=>(
                       <li style={{  display:"inline"}} key={index} className="align-items-center bg-regent-opacity-15 mr-3 h-px-33 text-centernrounded-3 px-3 pt-1 font-size-3 text-black-2">
@@ -144,7 +144,6 @@ export const TabPost = (props) => {
                     ))}
                   </ul>
                 </div>
-                <Link className="btn btn-green text-uppercase btn-medium w-180 h-px-48 rounded-3 mr-4 mt-6" to="/posts/:id/tasks">Apply to this job</Link>
               </div>
             </div>
           </div>
