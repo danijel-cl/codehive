@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 
 const SubmittedRow = (props) => {
   return (
-    <tr className="border border-color-2">
-      <th scope="row" className="pl-6 border-0 py-7 pr-0">
+    <tr className="shadow-8">
+      <th scope="row" className="pl-6 border-0 py-8 pr-0">
         <a href="candidate-profile.html" className="media min-width-px-235 align-items-center">
           <div className="circle-36 mr-6">
             <img src="./image/table-one-profile-image-1.png" alt="" className="w-100" />

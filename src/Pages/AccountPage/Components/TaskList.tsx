@@ -20,17 +20,17 @@ const TaskList = (props) => {
           </div>
         </div>
       </div>
-      <div className="bg-white shadow-8 pt-7 rounded pb-9 px-11">
-        <div className="table-responsive ">
-          <table className="table table-striped">
-            <thead>
+      <div className="bg-white shadow-8 pt-10 rounded pb-8 px-11">
+        <div className="table-responsive" style={{ borderRadius:"5px"}}>
+          <table className="table table-striped table-borderless table-hover">
+            <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
               <tr>
-                <th scope="col" className="pl-0 border-0 font-size-4 font-weight-normal">Time Submitted</th>
-                <th scope="col" className="pl-4 border-0 font-size-4 font-weight-normal">Company</th>
-                <th scope="col" className="pl-4 border-0 font-size-4 font-weight-normal">Position</th>
-                <th scope="col" className="pl-4 border-0 font-size-4 font-weight-normal">Title</th>
-                <th scope="col" className="pl-4 border-0 font-size-4 font-weight-normal">Integration score</th>
-                <th scope="col" className="pl-4 border-0 font-size-4 font-weight-semibold">Task</th>
+                <th scope="col" className="py-6">Time Submitted</th>
+                <th scope="col" className="py-6">Company</th>
+                <th scope="col" className="py-6">Position</th>
+                <th scope="col" className="py-6">Title</th>
+                <th scope="col" className="py-6">Integration score</th>
+                <th scope="col" className="py-6">Task</th>
               </tr>
             </thead>
             <tbody>

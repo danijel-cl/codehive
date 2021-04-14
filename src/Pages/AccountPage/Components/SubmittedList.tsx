@@ -20,17 +20,17 @@ const SubmittedList = (props) => {
           </div>
         </div>
       </div>
-      <div className="bg-white shadow-8 pt-7 rounded pb-8 px-11">
-        <div className="table-responsive">
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col" className="pl-0  border-0 font-size-4 font-weight-normal">Company</th>
-                <th scope="col" className="border-0 font-size-4 font-weight-normal">Applied as</th>
-                <th scope="col" className="border-0 font-size-4 font-weight-normal">Applied on</th>
-                <th scope="col" className="border-0 font-size-4 font-weight-normal">Ended on</th>
-                <th scope="col" className="border-0 font-size-4 font-weight-normal">Tests Passed</th>
-                <th scope="col" className="border-0 font-size-4 font-weight-semibold">Challenge</th>
+      <div className="bg-white shadow-8 pt-10 rounded pb-8 px-11">
+        <div className="table-responsive" style={{ borderRadius:"5px"}}>
+          <table className="table table-striped table-borderless table-hover">
+            <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
+              <tr className="pl-0 font-size-4 font-weight-normal">
+                <th scope="col" className="pl-15">Company</th>
+                <th scope="col">Applied as</th>
+                <th scope="col">Applied on</th>
+                <th scope="col">Ended on</th>
+                <th scope="col">Tests Passed</th>
+                <th scope="col">Challenge</th>
               </tr>
             </thead>
             <tbody>

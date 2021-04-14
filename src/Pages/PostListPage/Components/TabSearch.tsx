@@ -6,6 +6,7 @@ import ReactSlider from "./ReactSlider"
 export const TabSearch = (props) => {
 
   const jobTypes = [
+    { name: 'All' },
     { name: 'Full Time' },
     { name: 'Part Time' },
     { name: 'Contract' },
