@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import {Link} from "react-router-dom";
 import { LoginModal } from './LoginModal/LoginModal';
 import { SignUpModal } from './SignUpModal/SignUpModal';
+import { styled } from '../utils/css';
+
+const logoContainer = styled.cssStyle`
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 0;
+`;
 
 const Navbar = (props) => {
   const [loginClicked, setLoginClicked] = useState(false);
@@ -15,7 +24,7 @@ const Navbar = (props) => {
             <div className="brand-logo">
               <Link to="/">
                 {/* light version logo (logo must be black)*/}
-                <img src={process.env.PUBLIC_URL + '/resources/image/logo-main-black.png'} alt="" className="light-version-logo default-logo" />
+                <p style={logoContainer}><span style={{ color: "#00b074", marginRight: '2px'}}>code</span>hive</p>
               </Link>
             </div>
             <div className="collapse navbar-collapse" id="mobile-menu">
