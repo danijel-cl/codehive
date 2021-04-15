@@ -25,7 +25,7 @@ const TaskList = (props) => {
           <table className="table table-striped table-borderless table-hover">
             <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
               <tr>
-                <th scope="col" className="py-6">Time Submitted</th>
+                <th scope="col" className="py-6 pl-10">Time Submitted</th>
                 <th scope="col" className="py-6">Company</th>
                 <th scope="col" className="py-6">Position</th>
                 <th scope="col" className="py-6">Title</th>

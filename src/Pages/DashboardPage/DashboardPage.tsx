@@ -16,7 +16,7 @@ export const DashboardPage = (props) => {
     } else if (page===1) {
       return (
         <div className="mb-14">
-          <AppliedList />
+          <AppliedList title="Applicants"/>
         </div>
       );
     } else if (page===2) {

@@ -1,13 +1,13 @@
 import React from 'react';
-import SubmittedRow from './SubmittedRow';
+import FinishedRow from './FinishedRow';
 import ReactSelect from './ReactSelect'
 
-const SubmittedList = (props) => {
+const FinishedList = (props) => {
   return (
     <div>
       <div className="row mb-11 align-items-center">
         <div className="col-lg-6 mb-lg-0 mb-4">
-          <h3 className="font-size-6 mb-0">Submitted Challanges</h3>
+          <h3 className="font-size-6 mb-0">Finished Challanges</h3>
         </div>
         <div className="col-lg-6">
           <div className="d-flex flex-wrap align-items-center justify-content-lg-end">
@@ -34,12 +34,12 @@ const SubmittedList = (props) => {
               </tr>
             </thead>
             <tbody>
-              <SubmittedRow />
-              <SubmittedRow />
-              <SubmittedRow />
-              <SubmittedRow />
-              <SubmittedRow />
-              <SubmittedRow />
+              <FinishedRow />
+              <FinishedRow />
+              <FinishedRow />
+              <FinishedRow />
+              <FinishedRow />
+              <FinishedRow />
             </tbody>
           </table>
         </div>
@@ -69,4 +69,4 @@ const SubmittedList = (props) => {
   );
 };
 
-export default SubmittedList;
+export default FinishedList;

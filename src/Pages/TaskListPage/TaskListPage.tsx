@@ -23,16 +23,20 @@ export const TaskListPage = () => {
   const postPosition = "Software Developer"
   const postTaskDescription = "A talented professional with an academic background in IT and proven\
     commercial development experience as C++ developer since 1999. Has a sound knowledge of the software\
-    development life cycle. Was involved in more than 140 software development outsourcing projects."
+    development life cycle. Was involved in more than 140 software development outsourcing projects.Has a \
+    sound knowledge of the software development life cycle. Was involved in more than 140 software \
+    development outsourcing projects."
+  const postDifficulty = "Moderate"
   return (
     <div className="site-wrapper">
         <div className="bg-default-1 pb-13 mt-12 mt-lg-20 pt-15 pt-lg-15 position-relative">
           <div className="container-fluid">
             <div className="row">
               <div className="offset-1 col-6 pb-10">
-                <div className="bg-white shadow-9 rounded-4" style={{height:"20vh"}}>
+                <div className="bg-white shadow-9 rounded-4" style={{height:"25vh"}}>
                   <div className="pr-xl-0 pr-xxl-14 p-5 px-xs-12 pt-7 pb-5">
                     <div className="border-bottom border-width-1 border-default-color pb-2">
+                      <h3 className="font-size-6 mb-0">Hi Filip</h3>
                       <span className="font-size-5 text-gray line-height-2 pb-2">What we are looking for:</span>
                     </div>
                     <p className="font-size-4 mb-8 pt-4">{postTaskDescription}</p>
@@ -40,7 +44,7 @@ export const TaskListPage = () => {
                 </div>
               </div>
               <div className="col-4 pb-10 pl-10">
-                <div className="bg-white shadow-9 rounded-4" style={{height:"20vh"}}>
+                <div className="bg-white shadow-9 rounded-4" style={{height:"25vh"}}>
                   <div className="pr-xl-0 pr-xxl-14 p-5 px-xs-12 pt-7 pb-5">
                     <div className="border-bottom border-width-1 border-default-color">
                       <h3 className="font-size-6 mb-0">{postCompany}</h3>
@@ -48,6 +52,7 @@ export const TaskListPage = () => {
                     </div>
                     <p className="font-size-4 mb-3 mt-5 text-gray">Submissions:    {postSubmissions}</p>
                     <p className="font-size-4 mb-3 mt-5 text-gray">Completion ratio:    {postCompletion}</p>
+                    <p className="font-size-4 mb-3 mt-5 text-gray">Avarage difficulty:    {postDifficulty}</p>
                   </div>
                 </div>
               </div>

@@ -14,7 +14,7 @@ export const TaskDetailPage = () => {
       <div className="row col-12" style={{ height:"91vh" ,marginTop:"9vh", maxHeight:"91vh"}}>
         <div className="col-3" style={{ backgroundColor:"#2E2E2E", overflow:"auto", maxHeight:"91vh"}}>
           <div className="row mt-5 ml-5 mr-5 h-10">
-            <LinkButton to="/posts"><i className="fa fa-angle-left fa-lg" aria-hidden="true"></i></LinkButton>
+            <LinkButton to="/posts/id/tasks/"><i className="fa fa-angle-left fa-lg" aria-hidden="true"></i></LinkButton>
             <button className={"col-5 font-size-6 task-button "+(!menu ? "task-active" : "")} onClick={()=>setMenu(false)}>Question</button>
             <button className={"col-6 font-size-6 task-button "+(menu ? "task-active" : "")} onClick={()=>setMenu(true)}>Submissions</button>
           </div>

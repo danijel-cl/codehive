@@ -1,6 +1,6 @@
 import Navbar from "../../Components/Navbar";
 import ActiveList from "./Components/ActiveList"
-import SubmittedList from "./Components/SubmittedList"
+import FinishedList from "./Components/FinishedList"
 import TaskList from "./Components/TaskList"
 import Category from "./Components/Category"
 import Dashboard from "./Components/Dashboard"
@@ -17,16 +17,16 @@ export const AccountPage = (props) => {
     } else if (page===1) {
       return (
         <div className="mb-14">
-          <SubmittedList />
+          <FinishedList />
         </div>
       );
-    } else if (page===2) {
+    } else if (page===3) {
       return (
         <div className="mb-18">
           <Statistics />
         </div>
       );
-    }else if (page===3) {
+    }else if (page===2) {
       return (
         <div className="mb-18">
           <TaskList />
