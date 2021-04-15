@@ -12,7 +12,7 @@ const TaskTable = (props) => {
       <div className="row col-12 pb-5">
         <h4 className="col-2 font-size-6 font-weight-semibold mb-6 pl-0">Tasks</h4>
         <div className="col-2">
-          <a className="btn btn-primary text-uppercase">
+          <a href="/companies/:id/post/task" className="btn btn-primary text-uppercase">
             <span className="mr-5 d-inline-block">+</span>
             Add Task
           </a>
