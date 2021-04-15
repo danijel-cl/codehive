@@ -1,11 +1,11 @@
 import React, {useState, useCallback} from 'react';
 import ReactDOM from 'react-dom';
 
-import RichEditor from './RichEditor';
-import ReactSelect from './ReactSelect';
+import RichEditor from './Components/RichEditor';
+import ReactSelect from './Components/ReactSelect';
 import ImageUploader from "react-images-upload";
 
-const UpdateForm = (props) => {
+const CompanyUpdatePage = (props) => {
   const [picture, setPicture] = useState([]);
   const imageUploaded = () =>{
     console.log(picture)
@@ -112,4 +112,4 @@ const UpdateForm = (props) => {
   );
 }
 
-export default UpdateForm;
+export default CompanyUpdatePage;
