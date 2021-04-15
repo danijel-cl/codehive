@@ -5,8 +5,7 @@ const ReactSelect = () => {
   const style = {
     control: base => ({
       ...base,
-      border: 0,
-      boxShadow: "none",
+      height: 45,
     }),
     menu: (provided, state) => ({
       ...provided,
@@ -15,9 +14,8 @@ const ReactSelect = () => {
   };
   return (
     <Select
-      placeholder="Select.."
+      placeholder="Location.."
       styles={style}
-      className='h-100 arrow-3'
       options={[
         { value: 'United States of America', label: 'United States of America'},
         { value: 'United Arab Emirates', label: 'United Arab Emirates' }

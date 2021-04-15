@@ -5,7 +5,7 @@ import RichEditor from './RichEditor';
 import ReactSelect from './ReactSelect';
 import ImageUploader from "react-images-upload";
 
-const UpdateForm = (props) => {
+const CompanyForm = (props) => {
   const [picture, setPicture] = useState([]);
   const imageUploaded = () =>{
     console.log(picture)
@@ -104,7 +104,7 @@ const UpdateForm = (props) => {
             </div>
           </div>
           <div className="col-12 my-15">
-            <a className="btn btn-primary btn-xl w-10 text-uppercase"><span className="mr-5 d-inline-block">+</span>Update company</a>
+            <a className="btn btn-primary btn-xl w-10 text-uppercase"><span className="mr-5 d-inline-block">+</span>Create company</a>
           </div>
         </div>
       </div>
@@ -112,4 +112,4 @@ const UpdateForm = (props) => {
   );
 }
 
-export default UpdateForm;
+export default CompanyForm;
