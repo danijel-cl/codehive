@@ -12,6 +12,11 @@ const logoContainer = styled.cssStyle`
   margin-bottom: 0;
 `;
 
+const spanContainer = styled.cssStyle`
+  color: #00b074;
+  margin-right: 1px;
+`;
+
 const Navbar = (props) => {
   const [loginClicked, setLoginClicked] = useState(false);
   const [signupClicked, setSignupClicked] = useState(false);
@@ -24,7 +29,7 @@ const Navbar = (props) => {
             <div className="brand-logo">
               <Link to="/">
                 {/* light version logo (logo must be black)*/}
-                <p style={logoContainer}><span style={{ color: "#00b074", marginRight: '2px'}}>code</span>hive</p>
+                <p style={logoContainer}><span style={spanContainer}>code</span>hive</p>
               </Link>
             </div>
             <div className="collapse navbar-collapse" id="mobile-menu">
