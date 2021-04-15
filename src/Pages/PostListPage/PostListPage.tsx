@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import CheckBoxList from "./Components/CheckBoxList"
-import ReactSlider from "./Components/ReactSlider"
 import ReactSearchSelect from "./Components/ReactSearchSelect"
-import GridPostList from "./Components/GridPostList"
 import RowPostList from "./Components/RowPostList"
+import TabPost from "./Components/TabPost"
+import TabSearch from "./Components/TabSearch"
 
 export const posts =[{
   "position":"Product Designer",
@@ -15,55 +14,25 @@ export const posts =[{
   "position":"DevOps Engineer",
 }];
 
-export const jobTypes = [
-  { name: 'Full Time' },
-  { name: 'Part Time' },
-  { name: 'Contract' },
-  { name: 'Internship' },
-  { name: 'Temporary' },
-];
 
-export const experienceTypes = [
-  { name: 'All' },
-  { name: 'Senior' },
-  { name: 'Mid' },
-  { name: 'Junior' },
-];
-
-export const postedTypes = [
-  { name: 'Anytime' },
-  { name: 'Last week' },
-  { name: 'Last 2 weeks' },
-  { name: 'Last month' },
-];
 export const PostListPage = () => {
 
-  const [choice, setChoice] = useState(true);
+  const [post, setPost] = useState(-1);
 
-  const updateChoice = (e, bool) => {
-    e.preventDefault();
-    setChoice(bool)
-  };
-
-  const renderPosts = () => {
-    if (choice) {
-      return <RowPostList posts = {posts} />
-    } else {
-      return <GridPostList posts = {posts} />
+  const renderPost = () =>{
+    if(post==-1){
+      return <TabSearch/>
+    }else{
+      return <TabPost post = {posts[post]}/>
     }
   }
+
   return (
-    <div className="site-wrapper overflow-hidden ">
+    <div className="site-wrapper">
       <div className="bg-default-1 pt-26 pt-lg-28 pb-13 pb-lg-25">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
-            <div className="col-12 col-md-4 col-xs-8">
-              <CheckBoxList name="Job Type" items={jobTypes} />
-              <ReactSlider />
-              <CheckBoxList name="Experience Level" items={experienceTypes} />
-              <CheckBoxList name="Posted Time" items={postedTypes} />
-            </div>
-            <div className="col-12 col-md-8 col-xs-12 ">
+            <div className="offset-1 col-12 col-md-5">
               <ReactSearchSelect />
               <div className="pt-12 ml-lg-0 ml-md-15">
                 <div className="d-flex align-items-center justify-content-between">
@@ -71,21 +40,23 @@ export const PostListPage = () => {
                     <span className="heading-default-color">120&nbsp;</span>results for <span className="heading-default-color">UI Designer</span>
                   </h5>
                   <div className="d-flex align-items-center result-view-type">
-                    <a onClick={(e) => updateChoice(e,true)} className={`heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button ${choice ? 'active':''}`} style={{ cursor: 'pointer'}}>
-                      <i className="fa fa-list-ul" />
-                    </a>
-                    <a onClick={(e) => updateChoice(e,false)} className={`heading-default-color pl-5 font-size-6 hover-text-hitgray no-border-button ${!choice ? 'active':''}`} style={{ cursor: 'pointer'}}>
-                      <i className="fa fa-th-large" />
+                    <a onClick={()=>setPost(-1)} className="heading-default-color pr-2 font-size-6 hover-text-hitgray no-border-button" style={{ cursor: 'pointer'}}>
+                      <i className="fa fa-search" />
                     </a>
                   </div>
                 </div>
-                {renderPosts()}
+                <RowPostList posts = {posts} setPost = {setPost}/>
                 <div className="text-center pt-5 pt-lg-13">
                   <a className="text-green font-weight-bold text-uppercase font-size-3 d-flex align-items-center justify-content-center" href="#">
                     Load More
                     <i className="fas fa-sort-down ml-3 mt-n2 font-size-4" />
                   </a>
                 </div>
+              </div>
+            </div>
+            <div className="col-12 col-md-5 ">
+              <div className="tab-content" style={{position: "sticky",top: "15vh"}}>
+                {renderPost()}
               </div>
             </div>
           </div>

@@ -5,14 +5,14 @@ import RowPostTags from "./RowPostTags"
 
 const RowPost = (props) => {
   const postCompany = "AirBnb"
-  const postSalary = "80-90K"
-  const postCurrency = "$"
+  const postSalary = "80-90"
+  const postCurrency = "kuna/h"
   const postLocation = "Berlyn, UK"
   const postPositionType = "Full-time"
   const postDate = "2017/01/01"
   return (
       <div className="mb-8 mt-5">
-        <div className="pt-9 px-xl-9 px-lg-7 px-7 pb-7 light-mode-texts bg-white rounded hover-shadow-3">
+        <div onClick={()=>props.setPost(props.index)} style={{cursor:"pointer"}} className="pt-7 px-xl-9 px-lg-4 px-4 pb-2 light-mode-texts bg-white rounded hover-shadow-3">
           <div className="row">
             <div className="col-md-6">
               <div className="media align-items-center">
@@ -21,9 +21,9 @@ const RowPost = (props) => {
                 </div>
                 <div>
                   <h3 className="mb-0">
-                    <Link to={`/posts/${props.id}`} className="font-size-6 heading-default-color">
+                    <a className="font-size-6 heading-default-color">
                       {props.post.position}
-                    </Link>
+                    </a>
                   </h3>
                   <Link to="/companies/:id" className="font-size-3 text-default-color line-height-2">
                     {postCompany}
@@ -33,11 +33,11 @@ const RowPost = (props) => {
             </div>
             <div className="col-md-6 text-right pt-7 pt-md-5">
               <div className="media justify-content-md-end">
-                <div className="image mr-5 mt-2">
-                  <img src={process.env.PUBLIC_URL +"/resources/image/svg/icon-fire-rounded.svg"} alt="" />
+                <div className="image mr-5 font-size-5">
+                  <i className="fas fa-dollar-sign" style={{color:"#00b074"}}></i>
                 </div>
-                <p className="font-weight-bold font-size-7 text-hit-gray mb-0">
-                  <span className="text-black-2 pr-4">
+                <p className="font-size-5 mb-0 font-weight-bold text-black-2">
+                  <span className="pr-4">
                     {postSalary}
                   </span>
                   {postCurrency}
@@ -45,27 +45,21 @@ const RowPost = (props) => {
               </div>
             </div>
           </div>
-          <div className="row pt-8">
-            <div className="col-md-6">
+          <div className="row pt-6">
+            <div className="col-md-7">
               <RowPostTags />
             </div>
-            <div className="row col-md-6 d-flex align-items-center">
-              <div className="col-4 font-size-small text-black-2">
+            <div className="row col-md-5 d-flex align-items-center">
+              <div className="col-6 font-size-small text-black-2">
                 <span className="font-weight-semibold">
-                  <img className="mr-4" src={process.env.PUBLIC_URL +"/resources/image/svg/icon-loaction-pin-black.svg"} alt="" />
-                  {postLocation}
+                    <i className="fas fa-map-marker-alt mr-4" style={{color:"#00b074"}}></i>
+                    {postLocation}
                 </span>
               </div>
-              <div className="col-4 font-size-small text-black-2">
+              <div className="col-6 font-size-small text-black-2">
                 <span className="font-weight-semibold">
-                  <img className="mr-4" src={process.env.PUBLIC_URL +"/resources/image/svg/icon-suitecase.svg"} alt="" />
+                  <i className="fa fa-briefcase mr-4" style={{color:"#00b074"}}></i>
                   {postPositionType}
-                </span>
-              </div>
-              <div className="col-4 font-size-small text-black-2">
-                <span className="font-weight-semibold">
-                  <img className="mr-4" src={process.env.PUBLIC_URL +"/resources/image/svg/icon-clock.svg"} alt="" />
-                  {postDate}
                 </span>
               </div>
             </div>

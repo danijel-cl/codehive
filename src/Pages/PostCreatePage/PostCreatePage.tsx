@@ -5,7 +5,6 @@ import RichEditor from './Components/RichEditor';
 import ReactSelect from './Components/ReactSelect';
 import TagInput from './Components/TagInput';
 import ReactSlider from './Components/ReactSlider';
-import { experienceTypes, jobTypes, postedTypes } from '../PostListPage/PostListPage';
 import { styled } from '../../utils/css';
 import { Form } from 'antd';
 
@@ -14,6 +13,27 @@ export const PostCreatePage = (props) => {
     console.log('Received values of form: ', values);
   };
 
+  const jobTypes = [
+    { name: 'Full Time' },
+    { name: 'Part Time' },
+    { name: 'Contract' },
+    { name: 'Internship' },
+    { name: 'Temporary' },
+  ];
+
+  const experienceTypes = [
+    { name: 'All' },
+    { name: 'Senior' },
+    { name: 'Mid' },
+    { name: 'Junior' },
+  ];
+
+  const postedTypes = [
+    { name: 'Anytime' },
+    { name: 'Last week' },
+    { name: 'Last 2 weeks' },
+    { name: 'Last month' },
+  ];
   return (
     <div className="site-wrapper" >
       <div className="jobDetails-section bg-default-1 pt-28 pt-lg-27 pb-xl-25 pb-12">

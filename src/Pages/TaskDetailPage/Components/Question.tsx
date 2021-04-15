@@ -25,12 +25,12 @@ const Question = (props) => {
   return (
     <div>
       <div>
-        <p className="ml-5 mr-5 mt-4 font-size-5" style={{color:"#fff", whiteSpace: "pre-line"}}>
-          <span className="font-size-6 semibold" style={{color:"#00b074"}}>Description:</span>
+        <p className="ml-5 mr-5 mt-4 font-size-4" style={{color:"#fff", whiteSpace: "pre-line"}}>
+          <span className="font-size-6 semibold pb-6" style={{color:"#00b074"}}>Description:</span>
           {description}
-          <span className="font-size-5 semibold" style={{color:"#00b074"}}>Input:</span>
+          <span className="font-size-5 semibold pb-2 pt-8" style={{color:"#00b074"}}>Input:</span>
           {input}
-          <span className="font-size-5 semibold" style={{color:"#00b074"}}>Output:</span>
+          <span className="font-size-5 semibold pb-2" style={{color:"#00b074"}}>Output:</span>
           {output}
         </p>
       </div>

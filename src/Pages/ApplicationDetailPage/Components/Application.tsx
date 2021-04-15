@@ -10,7 +10,7 @@ const Application = (props) => {
     <>
       <div className={tabContentClassName}>
         <div className={tavPaneClassName}>
-          <h3 className="font-size-6 mb-0 pt-12">Candidate Skills Overview</h3>
+          <h3 className="font-size-6 mb-0 pb-10">Candidate Skills Overview</h3>
         </div>
         <div className="col-12 pb-10">
           <p>Candidate Skills </p>
