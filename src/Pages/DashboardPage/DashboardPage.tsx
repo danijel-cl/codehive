@@ -5,7 +5,7 @@ import Category from "./Components/Category"
 import Dashboard from "./Components/Dashboard"
 import ScrollToTop from "../../Components/ScrollToTop";
 import Statistics from "./Components/Statistics"
-import CompanyUpdatePage from "../CompanyUpdatePage/CompanyUpdatePage"
+import CompanyForm from "../CompanyCreatePage/Components/CompanyForm"
 import {useState} from "react"
 
 export const DashboardPage = (props) => {
@@ -28,7 +28,7 @@ export const DashboardPage = (props) => {
     } else {
       return (
         <div className="mb-18">
-          <CompanyUpdatePage />
+          <CompanyForm />
         </div>
       );
     }

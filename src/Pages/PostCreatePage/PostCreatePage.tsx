@@ -4,6 +4,7 @@ import CheckBoxList from './Components/CheckBoxList';
 import RichEditor from './Components/RichEditor';
 import ReactSelect from './Components/ReactSelect';
 import TagInput from './Components/TagInput';
+import TaskTable from './Components/TaskTable';
 import ReactSlider from '../PostListPage/Components/ReactSlider';
 import { styled } from '../../utils/css';
 
@@ -40,41 +41,63 @@ export const PostCreatePage = (props) => {
                   <h3 className="font-size-6 mb-0">Create Post</h3>
                 </div>
                 <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
-                  <div className="row">
-                    <div className="col-12">
-                      <CheckBoxList name="Job Type" items={jobTypes} />
-                      <div className="pl-0 col-8">
-                        <ReactSlider />
-                      </div>
-                      <div className="pl-0 pb-10 col-6">
-                        <h4 className="font-size-6 font-weight-semibold mb-6">Currency</h4>
+                  <div className="row pl-5 pr-5">
+                    <div className="col-8">
+                      <ReactSlider />
+                    </div>
+                    <div className="pb-10 col-6">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Currency</h4>
+                      <div className="pl-0 col-10">
                         <ReactSelect />
                       </div>
-                      <CheckBoxList name="Experience Level" items={experienceTypes} />
-                      <div className="pl-0 pb-10 col-6">
-                        <h4 className="font-size-6 font-weight-semibold mb-6">Job Location</h4>
+                    </div>
+                    <div className="pb-10 col-6">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Company Headquaters</h4>
+                      <div className="pl-0 col-10">
                         <ReactSelect />
                       </div>
-                      <div className="pl-0 pb-10 col-6">
-                        <h4 className="font-size-6 font-weight-semibold mb-6">Soft skills</h4>
+                    </div>
+                    <div className="pb-10 col-6">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Company Headquaters</h4>
+                      <div className="pl-0 col-10">
+                        <ReactSelect />
+                      </div>
+                    </div>
+                    <div className="pb-10 col-6">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Job Location</h4>
+                      <div className="pl-0 col-10">
+                        <ReactSelect />
+                      </div>
+                    </div>
+                    <div className="pb-10 col-6">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Soft skills</h4>
+                      <div className="pl-0 col-10">
                         <TagInput />
                       </div>
-                      <div className="pl-0 pb-10 col-6">
-                        <h4 className="font-size-6 font-weight-semibold mb-6">Tehnical skills</h4>
+                    </div>
+                    <div className="pb-10 col-6">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Tehnical skills</h4>
+                      <div className="pl-0 col-10">
                         <TagInput />
                       </div>
-                      <div className="pb-10">
-                        <h4 className="font-size-6 font-weight-semibold mb-6">Job Description</h4>
-                        <div className="col-12 pl-0">
-                          <RichEditor />
-                        </div>
-                      </div>
-                      <div className="pb-10">
-                        <h4 className="font-size-6 font-weight-semibold mb-6">Your Role</h4>
-                        <div className="col-12 pl-0">
-                          <RichEditor />
-                        </div>
-                      </div>
+                    </div>
+                    <div className="pb-20 col-12">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Tips for solving tasks</h4>
+                      <RichEditor />
+                    </div>
+                    <div className="pb-20 col-12">
+                      <TaskTable />
+                    </div>
+                    <div className="pb-10 col-12">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Job Description</h4>
+                      <RichEditor />
+                    </div>
+                    <div className="pb-10 col-12">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Your Role</h4>
+                      <RichEditor />
+                    </div>
+                    <div className="col-12 my-15">
+                      <a className="btn btn-primary btn-xl w-10 text-uppercase"><span className="mr-5 d-inline-block">+</span>Create Post</a>
                     </div>
                   </div>
                 </div>
