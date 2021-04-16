@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 import { Form } from 'antd';
-import TagInput from '../../TaskCreatePage/Components/TagInput';
 import { FileUploader } from './FileUploader';
 import { Link } from 'react-router-dom';
 import { styled } from '../utils/css';
+import TagInput from './TagInput';
 
 const backContainer = styled.cssStyle`
   position: absolute;
