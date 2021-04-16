@@ -2,20 +2,19 @@ import React, {useState, useCallback} from 'react';
 import ReactDOM from 'react-dom';
 
 const TaskTable = (props) => {
-  const rows = [{
-    title:"Hello world",
-    created:"2017-01-01"
-
-  }]
+  const {taskClicked, setTaskClicked} = props
   return (
     <>
       <div className="row col-12 pb-5">
         <h4 className="col-2 font-size-6 font-weight-semibold mb-6 pl-0">Tasks</h4>
         <div className="col-2">
-          <a href="/companies/:id/post/task" className="btn btn-primary text-uppercase">
+          <button onClick={() => {
+            window.scrollTo(0, 0);
+            setTaskClicked(!taskClicked)
+          }} className="btn btn-primary text-uppercase">
             <span className="mr-5 d-inline-block">+</span>
             Add Task
-          </a>
+          </button>
         </div>
       </div>
       <table className="table table-striped col-12">
