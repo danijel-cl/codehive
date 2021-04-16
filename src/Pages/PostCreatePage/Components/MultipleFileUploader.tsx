@@ -23,7 +23,7 @@ export const MultipleFileUploader = () => {
   return (
     <div style={fileUploadContainer}>
       <button style={{width: '65%'}} onClick={handleClick} className="btn btn-primary text-uppercase">
-        Upload a file
+        Upload files
       </button>
       <input type="file" onChange={handleChange} id="multiFileButton" style={{display:'none'}} /> 
       <span>{fileState.map((f) => <span>{f}</span>)}</span>
