@@ -5,6 +5,7 @@ import { FileUploader } from './FileUploader';
 import { Link } from 'react-router-dom';
 import { styled } from '../utils/css';
 import TagInput from './TagInput';
+import { MultipleFileUploader } from './MultipleFileUploader';
 
 const backContainer = styled.cssStyle`
   position: absolute;
@@ -74,7 +75,7 @@ export const TaskCreateForm = (props) => {
                       >
                       <h4 className="font-size-6 font-weight-semibold mb-6">Tests</h4>
                       <div className="pl-0 col-10">
-                        <FileUploader />
+                        <MultipleFileUploader />
                       </div>
                       </Form.Item>
                     </div>

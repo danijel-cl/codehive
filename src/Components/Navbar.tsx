@@ -10,6 +10,7 @@ const logoContainer = styled.cssStyle`
   font-family: "Inter", sans-serif;
   text-transform: uppercase;
   margin-bottom: 0;
+  letter-spacing: 1px;
 `;
 
 const spanContainer = styled.cssStyle`
