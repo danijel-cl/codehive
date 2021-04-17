@@ -3,6 +3,8 @@ import { PostCreateForm } from './Components/PostCreateForm';
 import { TaskCreateForm } from './Components/TaskCreateForm';
 
 export const PostCreatePage = (props) => {
+  const empty: string[] = []
+  const [taskTitles, setTaskTitles] = useState(empty)
   const [taskClicked, setTaskClicked] = useState(false);
   return (
     <div className="site-wrapper" >
@@ -11,7 +13,17 @@ export const PostCreatePage = (props) => {
           <div className="row justify-content-center">
             <div className="col-10">
               <div className="bg-white rounded-4 border border-mercury shadow-9">
-                {taskClicked ? <TaskCreateForm taskClicked={taskClicked} setTaskClicked={setTaskClicked} /> : <PostCreateForm taskClicked={taskClicked} setTaskClicked={setTaskClicked} />}
+                {taskClicked ? 
+                <TaskCreateForm 
+                  taskTitles={taskTitles} 
+                  setTaskTitles={setTaskTitles} 
+                  taskClicked={taskClicked} 
+                  setTaskClicked={setTaskClicked} /> : 
+                <PostCreateForm 
+                  taskTitles={taskTitles} 
+                  setTaskTitles={setTaskTitles}  
+                  taskClicked={taskClicked} 
+                  setTaskClicked={setTaskClicked} />}
               </div>
             </div>
           </div>

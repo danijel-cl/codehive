@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Form } from 'antd';
 import { FileUploader } from './FileUploader';
@@ -19,9 +19,9 @@ const buttonContainer = styled.cssStyle`
 `;
 
 export const TaskCreateForm = (props) => {
-  const {taskClicked, setTaskClicked} = props
+  const {taskClicked, setTaskClicked, taskTitles, setTaskTitles} = props
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+    setTaskTitles([...taskTitles, values.title], setTaskClicked(!taskClicked))
   };
 
   return (
@@ -46,40 +46,41 @@ export const TaskCreateForm = (props) => {
                     >
                     <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                     <div className="pb-10 col-6">
+                    <h4 className="font-size-6 font-weight-semibold mb-6">Code</h4>
                     <Form.Item
                         name="code"
                         hasFeedback
                         rules={[
                           {
-                            required: true,
+                            // required: true,
                             message: 'Please select your code!',
                           },
                         ]}
                       >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Code</h4>
                       <div className="pl-0 col-10">
                         <FileUploader />
                       </div>
                       </Form.Item>
                     </div>
                     <div className="pb-10 col-6">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Tests</h4>
                     <Form.Item
                         name="tests"
                         hasFeedback
                         rules={[
                           {
-                            required: true,
+                            // required: true,
                             message: 'Please select your tests!',
                           },
                         ]}
                       >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Tests</h4>
                       <div className="pl-0 col-10">
                         <MultipleFileUploader />
                       </div>
                       </Form.Item>
                     </div>
                     <div className="pb-10 col-6">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Title</h4>
                     <Form.Item
                         name="title"
                         hasFeedback
@@ -91,67 +92,66 @@ export const TaskCreateForm = (props) => {
                         ]}
                       >
 
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Title</h4>
                       <div className="col-10 pl-0">
                         <input className="form-control" placeholder="Title"/>
                       </div>
                     </Form.Item>
                     </div>
                     <div className="pb-10 col-6">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Description</h4>
                     <Form.Item
                         name="description"
                         hasFeedback
                         rules={[
                           {
-                            required: true,
+                            // required: true,
                             message: 'Please enter your description!',
                           },
                         ]}
                       >
 
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Description</h4>
                       <div className="col-10 pl-0">
                         <input className="form-control" placeholder="Description"/>
                       </div>
                     </Form.Item>
                     </div>
                     <div className="pb-10 col-6">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Language</h4>
                     <Form.Item
                         name="language"
                         hasFeedback
                         rules={[
                           {
-                            required: true,
+                            // required: true,
                             message: 'Please enter your language!',
                           },
                         ]}
                       >
 
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Language</h4>
                       <div className="col-10 pl-0">
                         <input className="form-control" placeholder="Language"/>
                       </div>
                     </Form.Item>
                     </div>
                     <div className="pb-10 col-6">
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Tags</h4>
                     <Form.Item
                         name="tags"
                         hasFeedback
                         rules={[
                           {
-                            required: true,
+                            // required: true,
                             message: 'Please select your tags!',
                           },
                         ]}
                       >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Tags</h4>
                       <div className="pl-0 col-10">
                         <TagInput />
                       </div>
                       </Form.Item>
                     </div>
                     <div className="col-12 my-15">
-                      <a className="btn btn-primary btn-xl w-10 text-uppercase" type="submit"><span className="mr-5 d-inline-block">+</span>Create Task</a>
+                      <button className="btn btn-primary btn-xl w-10 text-uppercase" type="submit"><span className="mr-5 d-inline-block">+</span>Create Task</button>
                     </div>
                     </div>
                     </Form>

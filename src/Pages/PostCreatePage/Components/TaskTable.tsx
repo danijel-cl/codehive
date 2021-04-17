@@ -1,8 +1,22 @@
 import React, {useState, useCallback} from 'react';
 import ReactDOM from 'react-dom';
+import { styled } from '../utils/css';
+
+const tableTitleStyle = styled.cssStyle`
+  width: 25%;
+`;
+
+const buttonStyle = styled.cssStyle`
+  border: none;
+`;
 
 const TaskTable = (props) => {
-  const {taskClicked, setTaskClicked} = props
+  const {taskClicked, setTaskClicked, taskTitles, setTaskTitles} = props
+
+  const removeTask = (e, index) => {
+    e.preventDefault()
+    setTaskTitles(taskTitles.filter((title, i) => i !== index))
+  }
   return (
     <>
       <div className="row col-12 pb-5">
@@ -20,37 +34,23 @@ const TaskTable = (props) => {
       <table className="table table-striped col-12">
         <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
           <tr>
-            <th scope="col">Task</th>
-            <th scope="col">Title</th>
-            <th scope="col">Created</th>
-            <th scope="col">Edit</th>
+            <th style={tableTitleStyle} scope="col">Task</th>
+            <th style={tableTitleStyle} scope="col">Title</th>
+            <th style={tableTitleStyle} scope="col"></th>
+            <th style={tableTitleStyle} scope="col"></th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          {taskTitles.map((title, index) => {
+            return (
+            <tr>
+              <th scope="row">{index}</th>
+              <td>{title}</td>
+              <td><button style={buttonStyle} className="text-green font-weight-semibold">EDIT</button></td>
+              <td><button onClick={(e) => removeTask(e, index)} style={buttonStyle} className="text-red font-weight-semibold">REMOVE</button></td>
+            </tr>
+            )
+          })}
         </tbody>
       </table>
     </>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import '../RichEditor.css';
 import CheckBoxList from './CheckBoxList';
 import RichEditor from './RichEditor';
@@ -10,7 +10,7 @@ import { styled } from '../../../utils/css';
 import { Form } from 'antd';
 
 export const PostCreateForm = (props) => {
-  let {taskClicked, setTaskClicked} = props;
+  let {taskClicked, setTaskClicked, taskTitles, setTaskTitles} = props;
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
@@ -161,7 +161,11 @@ export const PostCreateForm = (props) => {
                       </Form.Item>
                     </div>
                     <div className="pb-20 col-12">
-                      <TaskTable taskClicked={taskClicked} setTaskClicked={setTaskClicked} />
+                      <TaskTable 
+                        taskClicked={taskClicked} 
+                        setTaskClicked={setTaskClicked}
+                        taskTitles={taskTitles} 
+                        setTaskTitles={setTaskTitles}/>
                     </div>
                     <div className="pb-10 col-12">
                     <Form.Item
