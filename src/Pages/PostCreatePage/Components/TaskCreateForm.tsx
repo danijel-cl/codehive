@@ -19,9 +19,15 @@ const buttonContainer = styled.cssStyle`
 `;
 
 export const TaskCreateForm = (props) => {
-  const {taskClicked, setTaskClicked, taskTitles, setTaskTitles} = props
+  const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, taskIndex, setTaskIndex} = props
   const onFinish = (values) => {
-    setTaskTitles([...taskTitles, values.title], setTaskClicked(!taskClicked))
+    if(taskIndex !== null) {
+      taskTitles[taskIndex] = values
+      setTaskTitles(taskTitles, setTaskClicked(!taskClicked))
+      setTaskIndex(null)
+    } else {
+      setTaskTitles([...taskTitles, values], setTaskClicked(!taskClicked))
+    }
   };
 
   return (
@@ -42,7 +48,6 @@ export const TaskCreateForm = (props) => {
                   <Form
                       name="create_post"
                       onFinish={onFinish}
-                      
                     >
                     <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                     <div className="pb-10 col-6">
@@ -93,7 +98,7 @@ export const TaskCreateForm = (props) => {
                       >
 
                       <div className="col-10 pl-0">
-                        <input className="form-control" placeholder="Title"/>
+                        <input defaultValue={taskTitles[taskIndex]?.title} className="form-control" placeholder="Title"/>
                       </div>
                     </Form.Item>
                     </div>
@@ -104,14 +109,14 @@ export const TaskCreateForm = (props) => {
                         hasFeedback
                         rules={[
                           {
-                            // required: true,
+                            required: true,
                             message: 'Please enter your description!',
                           },
                         ]}
                       >
 
                       <div className="col-10 pl-0">
-                        <input className="form-control" placeholder="Description"/>
+                        <input defaultValue={taskTitles[taskIndex]?.desciption} className="form-control" placeholder="Description"/>
                       </div>
                     </Form.Item>
                     </div>
@@ -122,14 +127,14 @@ export const TaskCreateForm = (props) => {
                         hasFeedback
                         rules={[
                           {
-                            // required: true,
+                            required: true,
                             message: 'Please enter your language!',
                           },
                         ]}
                       >
 
                       <div className="col-10 pl-0">
-                        <input className="form-control" placeholder="Language"/>
+                        <input value={taskTitles[taskIndex]?.language} className="form-control" placeholder="Language"/>
                       </div>
                     </Form.Item>
                     </div>

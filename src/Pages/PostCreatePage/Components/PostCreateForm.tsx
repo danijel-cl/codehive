@@ -10,7 +10,7 @@ import { styled } from '../../../utils/css';
 import { Form } from 'antd';
 
 export const PostCreateForm = (props) => {
-  let {taskClicked, setTaskClicked, taskTitles, setTaskTitles} = props;
+  let {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props;
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
@@ -165,7 +165,8 @@ export const PostCreateForm = (props) => {
                         taskClicked={taskClicked} 
                         setTaskClicked={setTaskClicked}
                         taskTitles={taskTitles} 
-                        setTaskTitles={setTaskTitles}/>
+                        setTaskTitles={setTaskTitles}
+                        setTaskIndex={setTaskIndex}/>
                     </div>
                     <div className="pb-10 col-12">
                     <Form.Item

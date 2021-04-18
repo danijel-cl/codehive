@@ -4,6 +4,7 @@ import { TaskCreateForm } from './Components/TaskCreateForm';
 
 export const PostCreatePage = (props) => {
   const empty: string[] = []
+  const [taskIndex, setTaskIndex] = useState(null)
   const [taskTitles, setTaskTitles] = useState(empty)
   const [taskClicked, setTaskClicked] = useState(false);
   return (
@@ -18,12 +19,15 @@ export const PostCreatePage = (props) => {
                   taskTitles={taskTitles} 
                   setTaskTitles={setTaskTitles} 
                   taskClicked={taskClicked} 
-                  setTaskClicked={setTaskClicked} /> : 
+                  setTaskClicked={setTaskClicked}
+                  taskIndex={taskIndex}
+                  setTaskIndex={setTaskIndex} /> : 
                 <PostCreateForm 
                   taskTitles={taskTitles} 
                   setTaskTitles={setTaskTitles}  
                   taskClicked={taskClicked} 
-                  setTaskClicked={setTaskClicked} />}
+                  setTaskClicked={setTaskClicked}
+                  setTaskIndex={setTaskIndex} />}
               </div>
             </div>
           </div>

@@ -8,14 +8,21 @@ const tableTitleStyle = styled.cssStyle`
 
 const buttonStyle = styled.cssStyle`
   border: none;
+  background: none;
 `;
 
 const TaskTable = (props) => {
-  const {taskClicked, setTaskClicked, taskTitles, setTaskTitles} = props
-
+  const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props
+  
   const removeTask = (e, index) => {
     e.preventDefault()
     setTaskTitles(taskTitles.filter((title, i) => i !== index))
+  }
+
+  const editTask = (e, index) => {
+    e.preventDefault()
+    window.scrollTo(0, 0);
+    setTaskIndex(index, setTaskClicked(!taskClicked))
   }
   return (
     <>
@@ -41,12 +48,12 @@ const TaskTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          {taskTitles.map((title, index) => {
+          {taskTitles.map((task, index) => {
             return (
             <tr>
               <th scope="row">{index}</th>
-              <td>{title}</td>
-              <td><button style={buttonStyle} className="text-green font-weight-semibold">EDIT</button></td>
+              <td>{task.title}</td>
+              <td><button onClick={(e) => editTask(e, index)} style={buttonStyle} className="text-green font-weight-semibold">EDIT</button></td>
               <td><button onClick={(e) => removeTask(e, index)} style={buttonStyle} className="text-red font-weight-semibold">REMOVE</button></td>
             </tr>
             )
