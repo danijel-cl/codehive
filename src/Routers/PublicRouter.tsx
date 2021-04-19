@@ -12,7 +12,11 @@ import { TaskListPage } from '../Pages/TaskListPage/TaskListPage';
 import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 import { ApplicationDetailPage } from '../Pages/ApplicationDetailPage/ApplicationDetailPage';
 import { PostCreatePage } from '../Pages/PostCreatePage/PostCreatePage';
-import { AccountPage } from '../Pages/AccountPage/AccountPage';
+import { AccountUpdatePage } from '../Pages/AccountUpdatePage/AccountUpdatePage';
+import { AccountFinishedListPage } from '../Pages/AccountFinishedListPage/AccountFinishedListPage';
+import { AccountTaskListPage } from '../Pages/AccountTaskListPage/AccountTaskListPage';
+import { AccountStatisticsPage } from '../Pages/AccountStatisticsPage/AccountStatisticsPage';
+import { AccountActiveListPage } from '../Pages/AccountActiveListPage/AccountActiveListPage';
 export const PublicRouter = () => {
   return (
       <Switch>
@@ -29,7 +33,11 @@ export const PublicRouter = () => {
         <Route exact path="/posts/:id/tasks/" component={TaskListPage} />
         <Route exact path="/posts/:id/tasks/:id" component={TaskDetailPage} />
         <Route exact path="/application-detail" component={ApplicationDetailPage} />
-        <Route exact path="/users/:id/account" component={AccountPage} />
+        <Route exact path="/users/:id/account/active" component={AccountActiveListPage} />
+        <Route exact path="/users/:id/account/finished" component={AccountFinishedListPage} />
+        <Route exact path="/users/:id/account/statistics" component={AccountStatisticsPage} />
+        <Route exact path="/users/:id/account/tasks" component={AccountTaskListPage} />
+        <Route exact path="/users/:id/account/update" component={AccountUpdatePage} />
         <Redirect from="*" to="/" />
       </Switch>
   );
