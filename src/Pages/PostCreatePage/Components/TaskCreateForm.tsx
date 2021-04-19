@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { styled } from '../utils/css';
 import TagInput from './TagInput';
 import { MultipleFileUploader } from './MultipleFileUploader';
+import { UploadFile } from 'antd/lib/upload/interface';
 
 const backContainer = styled.cssStyle`
   position: absolute;
@@ -19,15 +20,23 @@ const buttonContainer = styled.cssStyle`
 `;
 
 export const TaskCreateForm = (props) => {
+  const empty: UploadFile[] = []
+  const [fileState, setFileState] = useState(empty)
   const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, taskIndex, setTaskIndex} = props
   const onFinish = (values) => {
+    console.log(values)
     if(taskIndex !== null) {
       taskTitles[taskIndex] = values
       setTaskTitles(taskTitles, setTaskClicked(!taskClicked))
       setTaskIndex(null)
     } else {
+      values.tests = fileState
       setTaskTitles([...taskTitles, values], setTaskClicked(!taskClicked))
     }
+  };
+
+  const onBack = () => {
+    setTaskIndex(null, setTaskClicked(!taskClicked))
   };
 
   return (
@@ -35,7 +44,7 @@ export const TaskCreateForm = (props) => {
     <div style={backContainer} className="row justify-content-center">
            <div className="col-12 dark-mode-texts">
              <div className="mb-9">
-               <button style={buttonContainer} className="d-flex align-items-center ml-4" onClick={() => setTaskClicked(!taskClicked)} > <i className="icon icon-small-left bg-white circle-40 mr-5 font-size-7 text-black font-weight-bold shadow-8">
+               <button style={buttonContainer} className="d-flex align-items-center ml-4" onClick={onBack} > <i className="icon icon-small-left bg-white circle-40 mr-5 font-size-7 text-black font-weight-bold shadow-8">
                </i><span className="text-uppercase font-size-3 font-weight-bold text-gray">Back</span></button>
              </div>
            </div>
@@ -55,6 +64,7 @@ export const TaskCreateForm = (props) => {
                     <Form.Item
                         name="code"
                         hasFeedback
+                        initialValue={taskTitles[taskIndex]?.code}
                         rules={[
                           {
                             // required: true,
@@ -63,7 +73,7 @@ export const TaskCreateForm = (props) => {
                         ]}
                       >
                       <div className="pl-0 col-10">
-                        <FileUploader />
+                        <FileUploader taskTitles={taskTitles} taskIndex={taskIndex} />
                       </div>
                       </Form.Item>
                     </div>
@@ -72,15 +82,16 @@ export const TaskCreateForm = (props) => {
                     <Form.Item
                         name="tests"
                         hasFeedback
+                        initialValue={taskTitles[taskIndex]?.tests}
                         rules={[
                           {
-                            // required: true,
+                            required: true,
                             message: 'Please select your tests!',
                           },
                         ]}
                       >
                       <div className="pl-0 col-10">
-                        <MultipleFileUploader />
+                        <MultipleFileUploader taskTitles={taskTitles} taskIndex={taskIndex} fileState={fileState} setFileState={setFileState}  />
                       </div>
                       </Form.Item>
                     </div>
@@ -89,9 +100,10 @@ export const TaskCreateForm = (props) => {
                     <Form.Item
                         name="title"
                         hasFeedback
+                        initialValue={taskTitles[taskIndex]?.title}
                         rules={[
                           {
-                            required: true,
+                            // required: true,
                             message: 'Please enter your title!',
                           },
                         ]}
@@ -107,16 +119,17 @@ export const TaskCreateForm = (props) => {
                     <Form.Item
                         name="description"
                         hasFeedback
+                        initialValue={taskTitles[taskIndex]?.description}
                         rules={[
                           {
-                            required: true,
+                            // required: true,
                             message: 'Please enter your description!',
                           },
                         ]}
                       >
 
                       <div className="col-10 pl-0">
-                        <input defaultValue={taskTitles[taskIndex]?.desciption} className="form-control" placeholder="Description"/>
+                        <input defaultValue={taskTitles[taskIndex]?.description} className="form-control" placeholder="Description"/>
                       </div>
                     </Form.Item>
                     </div>
@@ -125,9 +138,10 @@ export const TaskCreateForm = (props) => {
                     <Form.Item
                         name="language"
                         hasFeedback
+                        initialValue={taskTitles[taskIndex]?.language}
                         rules={[
                           {
-                            required: true,
+                            // required: true,
                             message: 'Please enter your language!',
                           },
                         ]}
