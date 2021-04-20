@@ -6,8 +6,14 @@ const fileUploadContainer = styled.cssStyle`
   flex-direction: column;
 `;
 
-export const FileUploader = () => {
-  const [fileState, setFileState] = useState('')
+export const FileUploader = (props) => {
+  const {taskClicked, setTaskClicked, taskTitles, taskIndex, setTaskIndex} = props
+  const [fileState, setFileState] = useState(taskIndex? taskTitles[taskIndex].code : '')
+  let defaultFile = '';
+  // if(taskIndex !== null) {
+  //   defaultFile = taskTitles[taskIndex].code.split('\\');
+  //   defaultFile = defaultFile[defaultFile.length - 1]
+  // }
   
   const handleClick = (e) => {
     e.preventDefault();
@@ -25,7 +31,7 @@ export const FileUploader = () => {
         Upload a file
       </button>
       <input type="file" onChange={handleChange} id="fileButton" style={{display:'none'}} /> 
-      <span>{fileState}</span>
+      <span>{fileState? fileState : defaultFile}</span>
     </div>
   );
 };
