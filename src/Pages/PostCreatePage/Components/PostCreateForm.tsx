@@ -25,7 +25,7 @@ export const PostCreateForm = (props) => {
                   <Form
                       name="create_post"
                       onFinish={onFinish}
-                      
+
                     >
                       <Form.Item
                         name="salaryrange"
@@ -71,7 +71,7 @@ export const PostCreateForm = (props) => {
                           },
                         ]}
                       >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Company Headquaters</h4>
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Position Type</h4>
                       <div className="pl-0 col-10">
                         <ReactSelect />
                       </div>
@@ -88,7 +88,7 @@ export const PostCreateForm = (props) => {
                           },
                         ]}
                       >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Company Headquaters</h4>
+                      <h4 className="font-size-6 font-weight-semibold mb-6">Experience Level</h4>
                       <div className="pl-0 col-10">
                         <ReactSelect />
                       </div>
@@ -161,10 +161,10 @@ export const PostCreateForm = (props) => {
                       </Form.Item>
                     </div>
                     <div className="pb-20 col-12">
-                      <TaskTable 
-                        taskClicked={taskClicked} 
+                      <TaskTable
+                        taskClicked={taskClicked}
                         setTaskClicked={setTaskClicked}
-                        taskTitles={taskTitles} 
+                        taskTitles={taskTitles}
                         setTaskTitles={setTaskTitles}
                         setTaskIndex={setTaskIndex}/>
                     </div>
