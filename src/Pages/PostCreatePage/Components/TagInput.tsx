@@ -1,13 +1,18 @@
 import React, {useState, useCallback} from 'react';
 
 const TagInput = (props) => {
-  const [skills, setSkills] = useState(Array());
+  const {skills, setSkills, taskTitles, taskIndex} = props
   const [text, setText] = useState('');
+
+  if (taskIndex != null ) {
+    setSkills(taskTitles[taskIndex].tags)
+  }
 
   const addText = (e) =>{
     if(text!=="" && !skills.includes(text)){
-      setSkills([...skills, text]);
+      setSkills([...skills, text], console.log(skills));
     }
+
     setText("");
   };
 
@@ -21,7 +26,7 @@ const TagInput = (props) => {
       </div>
       <div>
         <ul>
-          {skills.map((skill, index) => (
+          {skills?.map((skill, index) => (
             <li key={index} className="font-size-5">
               {skill}
               <i onClick={(e)=>setSkills(skills.filter(item=>item!==skill))} className="pl-10 fa fa-times"></i>

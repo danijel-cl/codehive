@@ -21,16 +21,20 @@ const buttonContainer = styled.cssStyle`
 
 export const TaskCreateForm = (props) => {
   const empty: UploadFile[] = []
-  const [fileState, setFileState] = useState(empty)
+  const [fileState, setFileState] = useState('')
+  const [multipleFiles, setMultipleFiles] = useState(empty)
+  const [skills, setSkills] = useState([]);
   const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, taskIndex, setTaskIndex} = props
   const onFinish = (values) => {
-    console.log(values)
+    values.tests = multipleFiles
+    values.tags = skills
     if(taskIndex !== null) {
       taskTitles[taskIndex] = values
+      console.log(values)
       setTaskTitles(taskTitles, setTaskClicked(!taskClicked))
       setTaskIndex(null)
     } else {
-      values.tests = fileState
+      console.log(values)
       setTaskTitles([...taskTitles, values], setTaskClicked(!taskClicked))
     }
   };
@@ -59,7 +63,7 @@ export const TaskCreateForm = (props) => {
                       onFinish={onFinish}
                     >
                     <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                    <div className="pb-10 col-6">
+                    {/* <div className="pb-10 col-6">
                     <h4 className="font-size-6 font-weight-semibold mb-6">Code</h4>
                     <Form.Item
                         name="code"
@@ -67,13 +71,13 @@ export const TaskCreateForm = (props) => {
                         initialValue={taskTitles[taskIndex]?.code}
                         rules={[
                           {
-                            // required: true,
+                            required: true,
                             message: 'Please select your code!',
                           },
                         ]}
                       >
                       <div className="pl-0 col-10">
-                        <FileUploader taskTitles={taskTitles} taskIndex={taskIndex} />
+                        <FileUploader taskTitles={taskTitles} taskIndex={taskIndex} fileState={fileState} setFileState={setFileState} />
                       </div>
                       </Form.Item>
                     </div>
@@ -91,10 +95,10 @@ export const TaskCreateForm = (props) => {
                         ]}
                       >
                       <div className="pl-0 col-10">
-                        <MultipleFileUploader taskTitles={taskTitles} taskIndex={taskIndex} fileState={fileState} setFileState={setFileState}  />
+                        <MultipleFileUploader taskTitles={taskTitles} taskIndex={taskIndex} multipleFiles={multipleFiles} setMultipleFiles={setMultipleFiles}  />
                       </div>
                       </Form.Item>
-                    </div>
+                    </div> */}
                     <div className="pb-10 col-6">
                       <h4 className="font-size-6 font-weight-semibold mb-6">Title</h4>
                     <Form.Item
@@ -165,7 +169,7 @@ export const TaskCreateForm = (props) => {
                         ]}
                       >
                       <div className="pl-0 col-10">
-                        <TagInput />
+                        <TagInput skills={skills} setSkills={setSkills} taskIndex={taskIndex} taskTitles={taskTitles} />
                       </div>
                       </Form.Item>
                     </div>

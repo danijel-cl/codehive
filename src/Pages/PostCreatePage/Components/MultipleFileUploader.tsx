@@ -8,13 +8,13 @@ const fileUploadContainer = styled.cssStyle`
 `;
 
 export const MultipleFileUploader = (props) => {
-  const { taskTitles, taskIndex, fileState, setFileState} = props
+  const { taskTitles, taskIndex, multipleFiles, setMultipleFiles} = props
   let defaultFiles: UploadFile[] = [];
   if(taskIndex !== null) {
     taskTitles[taskIndex].tests?.forEach((file: UploadFile) => {
       defaultFiles.push(file)
     })
-    setFileState(taskTitles[taskIndex].tests)
+    setMultipleFiles(taskTitles[taskIndex].tests)
   }
 
   const handleClick = (e) => {
@@ -29,11 +29,11 @@ export const MultipleFileUploader = (props) => {
       }
       return file;
     });
-    setFileState(files)
+    setMultipleFiles(files)
   };
 
   return (
-    <Upload multiple onChange={handleChange} fileList={fileState !== [] ? fileState : defaultFiles} style={fileUploadContainer}>
+    <Upload multiple onChange={handleChange} action="https://www.mocky.io/v2/5cc8019d300000980a055e76" fileList={multipleFiles !== [] ? multipleFiles : defaultFiles} style={fileUploadContainer}>
       <button style={{width: '65%'}} onClick={handleClick} className="btn btn-primary text-uppercase">
         Upload files
       </button>
