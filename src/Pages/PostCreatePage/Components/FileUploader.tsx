@@ -1,6 +1,7 @@
-import { Upload } from 'antd';
+import { Form, Upload } from 'antd';
 import { UploadFile } from 'antd/lib/upload/interface';
 import React, {useState} from 'react';
+import { Controller, useFormContext } from 'react-hook-form';
 import { styled } from '../../../utils/css';
 
 const fileUploadContainer = styled.cssStyle`
@@ -8,29 +9,26 @@ const fileUploadContainer = styled.cssStyle`
   flex-direction: column;
 `;
 
-export const FileUploader = (props) => {
-  const {fileState, setFileState, taskTitles, taskIndex, setTaskIndex} = props
-  let defaultFile = '';
-  if(taskIndex !== null) {
-    console.log(fileState)
-    defaultFile = taskTitles[taskIndex].code.split('\\');
-    defaultFile = defaultFile[defaultFile.length - 1]
-    console.log(defaultFile)
-    setFileState(taskTitles[taskIndex].code)
-  }
+export const FileUploader = ({name}) => {
+  const { errors, control } = useFormContext();
   
-  const handleClick = (e) => {
-    e.preventDefault();
-  };
-
   return (
-    <>
-      <Upload maxCount={1} style={fileUploadContainer}>
-        <button style={{width: '65%'}} onClick={handleClick} className="btn btn-primary text-uppercase">
-          Upload a file
-        </button>
-      </Upload>
-      {defaultFile}
-    </>
+    <Form.Item
+      validateStatus={errors[`${name}`] ? 'error' : 'success'}
+      help={errors[`${name}`] ? errors[`${name}`]?.message : ''}>
+      <Controller
+        control={control}
+        name={name}
+        render={({ onChange, value }) => {
+          return (
+            <Upload maxCount={1} style={fileUploadContainer}>
+              <button type="button" style={{width: '65%'}} className="btn btn-primary text-uppercase">
+                Upload a file
+              </button>
+            </Upload>
+          )
+        }}
+      />
+    </Form.Item>
   );
 };
