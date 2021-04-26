@@ -3,30 +3,29 @@ import {Link} from "react-router-dom";
 import CheckBoxList from "./CheckBoxList"
 import ReactSlider from "./ReactSlider"
 
+export const jobTypes = [
+  { name: 'All' },
+  { name: 'Full Time' },
+  { name: 'Part Time' },
+  { name: 'Contract' },
+  { name: 'Internship' },
+  { name: 'Temporary' },
+];
+
+export const experienceTypes = [
+  { name: 'Senior' },
+  { name: 'Mid' },
+  { name: 'Junior' },
+];
+
+export const postedTypes = [
+  { name: 'Anytime' },
+  { name: 'Last week' },
+  { name: 'Last 2 weeks' },
+  { name: 'Last month' },
+];
 export const TabSearch = (props) => {
 
-  const jobTypes = [
-    { name: 'All' },
-    { name: 'Full Time' },
-    { name: 'Part Time' },
-    { name: 'Contract' },
-    { name: 'Internship' },
-    { name: 'Temporary' },
-  ];
-
-  const experienceTypes = [
-    { name: 'All' },
-    { name: 'Senior' },
-    { name: 'Mid' },
-    { name: 'Junior' },
-  ];
-
-  const postedTypes = [
-    { name: 'Anytime' },
-    { name: 'Last week' },
-    { name: 'Last 2 weeks' },
-    { name: 'Last month' },
-  ];
   return (
     <div className="tab-pane active animate__animated animate__slower animate__fadeIn">
       <div className="col-12 bg-white rounded-4 border border-mercury shadow-9 pos-abs-xl ml-xl-8 mt-9 mt-xl-0">

@@ -11,8 +11,8 @@ import { MultipleFileUploader } from './MultipleFileUploader';
 import { UploadFile } from 'antd/lib/upload/interface';
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { TextField } from '@material-ui/core';
 import { SubmitError } from '../../../shared/SubmitError';
+import { TextField } from './TextField';
 
 const backContainer = styled.cssStyle`
   position: absolute;
@@ -26,36 +26,45 @@ const buttonContainer = styled.cssStyle`
 `;
 
 export const TaskCreateForm = (props) => {
-  const empty: UploadFile[] = []
-  const [fileState, setFileState] = useState('')
-  const [multipleFiles, setMultipleFiles] = useState(empty)
+  const [fileState, setFileState] = useState(undefined)
+  const [multipleFiles, setMultipleFiles] = useState(undefined)
   const [errorMessage, setErrorMessage] = useState<string>();
   const [skills, setSkills] = useState([]);
   const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, taskIndex, setTaskIndex} = props
 
   const schema = yup.object().shape({
-    // code: yup.object().required('This is a required field.'),
+    code: yup.object().required('This is a required field.'),
     language: yup.string().required('This is a required field.'),
     title: yup.string().required('This is a required field.'),
     description: yup.string().required('This is a required field.'),
-    // tests: yup.array().required('This is a required field.'),
-    // tags: yup.array().required('This is a required field.')
+    tests: yup.array().required('This is a required field.'),
+    tags: yup.array().required('This is a required field.')
   });
   const methods = useForm({
-    // defaultValues: {
-    //   code: {},
-    //   tests: [],
-    //   language: '',
-    //   title: '',
-    //   description: '',
-    //   // tags: [],
-    // },
+    defaultValues: {
+      code: {},
+      tests: [],
+      language: '',
+      title: '',
+      description: '',
+      tags: [],
+    },
     resolver: yupResolver(schema),
   });
 
   const onSubmit = (values) => {
-    console.log(values)
-    debugger
+    values.code = fileState
+    values.tests = multipleFiles
+    if(taskIndex !== null) {
+      taskTitles[taskIndex] = values
+      console.log(values)
+      setTaskTitles(taskTitles, onBack())
+      setTaskIndex(null)
+    } else {
+      console.log(values)
+      setTaskTitles([...taskTitles, values], onBack())
+    }
+
   }
 
   const onBack = () => {
@@ -80,42 +89,42 @@ export const TaskCreateForm = (props) => {
             <FormProvider {...methods}>
               <Form>
                 <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                  {/* <div className="pb-10 col-6">
+                  <div className="pb-10 col-6">
                     <h4 className="font-size-6 font-weight-semibold mb-6">Code</h4>
                     <div className="pl-0 col-10">
-                      <FileUploader name="code" />
+                      <FileUploader fileState={fileState} setFileState={setFileState} name="code" />
                     </div>
                   </div>
                   <div className="pb-10 col-6">
                     <h4 className="font-size-6 font-weight-semibold mb-6">Tests</h4>
                     <div className="pl-0 col-10">
-                      <MultipleFileUploader name="tests" />
+                      <MultipleFileUploader name="tests" multipleFiles={multipleFiles} setMultipleFiles={setMultipleFiles} />
                     </div>
-                  </div> */}
+                  </div>
                   <div className="pb-10 col-6">
                     <h4 className="font-size-6 font-weight-semibold mb-6">Title</h4>
                     <div className="col-10 pl-0">
-                      <TextField name="title" defaultValue={taskTitles[taskIndex]?.title} className="form-control" placeholder="Title"/>
+                      <TextField name="title" defaultValue={taskTitles[taskIndex]?.title} placeholder="Title"/>
                     </div>
                   </div>
                   <div className="pb-10 col-6">
                     <h4 className="font-size-6 font-weight-semibold mb-6">Description</h4>
                     <div className="col-10 pl-0">
-                      <TextField name="description" defaultValue={taskTitles[taskIndex]?.description} className="form-control" placeholder="Description"/>
+                      <TextField name="description" defaultValue={taskTitles[taskIndex]?.description} placeholder="Description"/>
                     </div>
                   </div>
                   <div className="pb-10 col-6">
                     <h4 className="font-size-6 font-weight-semibold mb-6">Language</h4>
                     <div className="col-10 pl-0">
-                      <TextField name="language" value={taskTitles[taskIndex]?.language} className="form-control" placeholder="Language"/>
+                      <TextField name="language" defaultValue={taskTitles[taskIndex]?.language} placeholder="Language"/>
                     </div>
                   </div>
-                  {/* <div className="pb-10 col-6">
+                  <div className="pb-10 col-6">
                     <h4 className="font-size-6 font-weight-semibold mb-6">Tags</h4>
                     <div className="pl-0 col-10">
-                      <TagInput skills={skills} setSkills={setSkills} taskIndex={taskIndex} taskTitles={taskTitles} />
+                      <TagInput name="tags" defaultValue={taskTitles[taskIndex]?.tags} skills={skills} setSkills={setSkills} taskIndex={taskIndex} taskTitles={taskTitles} />
                     </div>
-                  </div> */}
+                  </div>
                   <div className="col-12 my-15">
                     <button className="btn btn-primary btn-xl w-10 text-uppercase" onClick={methods.handleSubmit(onSubmit)} ><span className="mr-5 d-inline-block">+</span>Create Task</button>
                   </div>

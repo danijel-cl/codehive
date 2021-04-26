@@ -2,12 +2,18 @@ import React, { useEffect, useState } from 'react';
 // import '../RichEditor.css';
 import CheckBoxList from './CheckBoxList';
 import RichEditor from './RichEditor';
+import * as yup from 'yup';
+
 import ReactSelect from './ReactSelect';
 import TagInput from './TagInput';
 import TaskTable from './TaskTable';
 import ReactSlider from '../../PostListPage/Components/ReactSlider';
 import { styled } from '../../../utils/css';
 import { Form } from 'antd';
+import { FormProvider, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { TextField } from './TextField';
+import { experienceTypes } from '../../PostListPage/Components/TabSearch';
 
 export const PostCreateForm = (props) => {
   let {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props;
@@ -15,196 +21,107 @@ export const PostCreateForm = (props) => {
     console.log('Received values of form: ', values);
   };
 
+  const schema = yup.object().shape({
+    tasks: yup.array().required('This is a required field.'),
+    salary_low: yup.string().required('This is a required field.'),
+    salary_high: yup.string().required('This is a required field.'),
+    position: yup.string().required('This is a required field.'),
+    experience: yup.string().required('This is a required field.'),
+    post_description: yup.string().required('This is a required field.'),
+    location: yup.string().required('This is a required field.'),
+    tasks_summary: yup.string().required('This is a required field.'),
+    ends: yup.string().required('This is a required field.'),
+    company: yup.number().required('This is a required field.'),
+    post_role_description: yup.string().required('This is a required field.'),
+    currency: yup.string().required('This is a required field.'),
+  });
+
+  const methods = useForm({
+    defaultValues: {
+      company: 1
+    },
+    resolver: yupResolver(schema),
+  });
+
   return (
     <>
-                <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
-                  <h3 className="font-size-6 mb-0">Create Post</h3>
-                </div>
-                <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
-                  <div className="row pl-5 pr-5">
-                  <Form
-                      name="create_post"
-                      onFinish={onFinish}
-
-                    >
-                      <Form.Item
-                        name="salaryrange"
-                        hasFeedback
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please select your salary range!',
-                          },
-                        ]}
-                      >
-
-                    <div className="col-8">
-                      <ReactSlider />
-                    </div>
-                    </Form.Item>
-                    <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                    <div className="pb-10 col-6">
-                    <Form.Item
-                        name="currency"
-                        hasFeedback
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please select your currency!',
-                          },
-                        ]}
-                      >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Currency</h4>
-                      <div className="pl-0 col-10">
-                        <ReactSelect />
-                      </div>
-                      </Form.Item>
-                    </div>
-                    <div className="pb-10 col-6">
-                    <Form.Item
-                        name="companyHead"
-                        hasFeedback
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please select your company headquarters!',
-                          },
-                        ]}
-                      >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Position Type</h4>
-                      <div className="pl-0 col-10">
-                        <ReactSelect />
-                      </div>
-                      </Form.Item>
-                    </div>
-                    <div className="pb-10 col-6">
-                    <Form.Item
-                        name="companyH"
-                        hasFeedback
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please select your company headquarters!',
-                          },
-                        ]}
-                      >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Experience Level</h4>
-                      <div className="pl-0 col-10">
-                        <ReactSelect />
-                      </div>
-                      </Form.Item>
-                    </div>
-                    <div className="pb-10 col-6">
-                    <Form.Item
-                        name="jobLoc"
-                        hasFeedback
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please select your job location!',
-                          },
-                        ]}
-                      >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Job Location</h4>
-                      <div className="pl-0 col-10">
-                        <ReactSelect />
-                      </div>
-                      </Form.Item>
-                    </div>
-                    <div className="pb-10 col-6">
-                    <Form.Item
-                        name="softSkills"
-                        hasFeedback
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please select your soft skills!',
-                          },
-                        ]}
-                      >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Soft skills</h4>
-                      <div className="pl-0 col-10">
-                        <TagInput />
-                      </div>
-                      </Form.Item>
-                    </div>
-                    <div className="pb-10 col-6">
-                    <Form.Item
-                        name="techSkills"
-                        hasFeedback
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please select your technical skills!',
-                          },
-                        ]}
-                      >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Technical skills</h4>
-                      <div className="pl-0 col-10">
-                        <TagInput />
-                      </div>
-                      </Form.Item>
-                    </div>
-                    <div className="pb-20 col-12">
-                    <Form.Item
-                        name="tipsSolvingTasks"
-                        hasFeedback
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please select your tips for solving tasks!',
-                          },
-                        ]}
-                      >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Tips for solving tasks</h4>
-                      <RichEditor />
-                      </Form.Item>
-                    </div>
-                    <div className="pb-20 col-12">
-                      <TaskTable
-                        taskClicked={taskClicked}
-                        setTaskClicked={setTaskClicked}
-                        taskTitles={taskTitles}
-                        setTaskTitles={setTaskTitles}
-                        setTaskIndex={setTaskIndex}/>
-                    </div>
-                    <div className="pb-10 col-12">
-                    <Form.Item
-                        name="jobDesc"
-                        hasFeedback
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please select your tips for job description!',
-                          },
-                        ]}
-                      >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Job Description</h4>
-                      <RichEditor />
-                      </Form.Item>
-                    </div>
-                    <div className="pb-10 col-12">
-                    <Form.Item
-                        name="yourRole"
-                        hasFeedback
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please select your tips for your role!',
-                          },
-                        ]}
-                      >
-                      <h4 className="font-size-6 font-weight-semibold mb-6">Your Role</h4>
-                      <RichEditor />
-                      </Form.Item>
-                    </div>
-                    <div className="col-12 my-15">
-                      <a className="btn btn-primary btn-xl w-10 text-uppercase"><span className="mr-5 d-inline-block">+</span>Create Post</a>
-                    </div>
-                    </div>
-                    </Form>
+      <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
+        <h3 className="font-size-6 mb-0">Create Post</h3>
+      </div>
+        <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
+          <div className="row pl-5 pr-5">
+          <FormProvider {...methods}>
+            <Form>
+              <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                <div className="pb-10 col-6">
+                <h4 className="font-size-6 font-weight-semibold mb-6">Minimum salary</h4>
+                  <div className="pl-0 col-10">
+                    <TextField name="salary_low" defaultValue="" placeholder="Minimum salary"/>
                   </div>
                 </div>
-              </>
+                <div className="pb-10 col-6">
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Maximum salary</h4>
+                  <div className="pl-0 col-10">
+                    <TextField name="salary_high" defaultValue="" placeholder="Maximum salary"/>
+                  </div>
+                </div>
+                <div className="pb-10 col-6">
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Currency</h4>
+                  <div className="pl-0 col-10">
+                    <TextField name="currency" defaultValue="" placeholder="Currency"/>
+                  </div>
+                </div>
+                <div className="pb-10 col-6">
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Position</h4>
+                  <div className="pl-0 col-10">
+                    <TextField name="position" defaultValue="" placeholder="Position"/>
+                  </div>
+                </div>
+                <div className="pb-10 col-6">
+                  <div className="pl-0 col-10">
+                    <CheckBoxList name="Experience Level" items={experienceTypes} />
+                  </div>
+                </div>
+                <div className="pb-10 col-6">
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Location</h4>
+                  <div className="pl-0 col-10">
+                    <TextField name="location" defaultValue="" placeholder="Location"/>
+                  </div>
+                </div>
+                <div className="pb-20 col-12">
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Tasks summary</h4>
+                  <RichEditor />
+                </div>
+                <div className="pb-20 col-12">
+                  <TaskTable
+                    taskClicked={taskClicked}
+                    setTaskClicked={setTaskClicked}
+                    taskTitles={taskTitles}
+                    setTaskTitles={setTaskTitles}
+                    setTaskIndex={setTaskIndex}/>
+                </div>
+                <div className="pb-10 col-12">
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Job Description</h4>
+                  <RichEditor />
+                </div>
+                <div className="pb-10 col-12">
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Your Role</h4>
+                  <RichEditor />
+                </div>
+                <div className="pb-10 col-6">
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Ending date</h4>
+                  <div className="pl-0 col-10">
+                    <TextField name="ends" defaultValue="" placeholder="Ending date"/>
+                  </div>
+                </div>
+                <div className="col-12 my-15">
+                  <button className="btn btn-primary btn-xl w-10 text-uppercase"><span className="mr-5 d-inline-block">+</span>Create Post</button>
+                </div>
+              </div>
+            </Form>
+          </FormProvider>
+        </div>
+      </div>
+    </>
   )
 }

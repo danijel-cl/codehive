@@ -3,9 +3,9 @@ import React, {useState, useCallback} from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
 const TagInput = (props) => {
-  const {skills, setSkills, name} = props
+  const {skills, setSkills, name, defaultValue} = props
   const [text, setText] = useState('');
-  // const { errors, control } = useFormContext();
+  const { errors, control } = useFormContext();
 
   const addText = (e) =>{
     if(text!=="" && !skills.includes(text)){
@@ -17,12 +17,13 @@ const TagInput = (props) => {
 
   return (
     <div>
-      {/* <Form.Item
+      <Form.Item
       validateStatus={errors[`${name}`] ? 'error' : 'success'}
       help={errors[`${name}`] ? errors[`${name}`]?.message : ''}>
       <Controller
         control={control}
         name={name}
+        defaultValue={defaultValue}
         render={({ onChange, value }) => {
           return (
             <div className="input-group mb-3 pb-5">
@@ -44,7 +45,7 @@ const TagInput = (props) => {
             </li>
           ))}
         </ul>
-      </div> */}
+      </div>
     </div>
   );
 }

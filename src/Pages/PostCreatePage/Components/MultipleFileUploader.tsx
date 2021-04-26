@@ -9,8 +9,12 @@ const fileUploadContainer = styled.cssStyle`
   flex-direction: column;
 `;
 
-export const MultipleFileUploader = ({name}) => {
+export const MultipleFileUploader = (props) => {
+  const {name, multipleFiles, setMultipleFiles} = props
   const { errors, control } = useFormContext();
+  const handleupload = (info) => {
+    setMultipleFiles(info.fileList);
+  }
 
   return (
     <Form.Item
@@ -21,7 +25,7 @@ export const MultipleFileUploader = ({name}) => {
         name={name}
         render={({ onChange, value }) => {
           return (
-            <Upload multiple style={fileUploadContainer}>
+            <Upload multiple onChange={handleupload} style={fileUploadContainer}>
               <button type="button" style={{width: '65%'}} className="btn btn-primary text-uppercase">
                 Upload files
               </button>

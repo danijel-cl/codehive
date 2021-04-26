@@ -9,9 +9,13 @@ const fileUploadContainer = styled.cssStyle`
   flex-direction: column;
 `;
 
-export const FileUploader = ({name}) => {
+export const FileUploader = (props) => {
+  const {name, fileState, setFileState} = props
   const { errors, control } = useFormContext();
-  
+  const handleupload = (info) => {
+    console.log(info.fileList)
+    setFileState(info.fileList);
+  }
   return (
     <Form.Item
       validateStatus={errors[`${name}`] ? 'error' : 'success'}
@@ -21,7 +25,7 @@ export const FileUploader = ({name}) => {
         name={name}
         render={({ onChange, value }) => {
           return (
-            <Upload maxCount={1} style={fileUploadContainer}>
+            <Upload maxCount={1} onChange={handleupload} fileList={fileState} style={fileUploadContainer}>
               <button type="button" style={{width: '65%'}} className="btn btn-primary text-uppercase">
                 Upload a file
               </button>
