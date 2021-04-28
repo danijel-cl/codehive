@@ -26,28 +26,28 @@ const buttonContainer = styled.cssStyle`
 `;
 
 export const TaskCreateForm = (props) => {
-  const [fileState, setFileState] = useState(undefined)
-  const [multipleFiles, setMultipleFiles] = useState(undefined)
   const [errorMessage, setErrorMessage] = useState<string>();
-  const [skills, setSkills] = useState([]);
   const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, taskIndex, setTaskIndex} = props
+  const [multipleFiles, setMultipleFiles] = useState(taskIndex !== null ? taskTitles[taskIndex].tests : undefined)
+  const [fileState, setFileState] = useState(taskIndex !== null ? [...taskTitles[taskIndex].code] : undefined)
+  const [skills, setSkills] = useState(taskIndex !== null ? taskTitles[taskIndex].tags : []);
 
   const schema = yup.object().shape({
-    code: yup.object().required('This is a required field.'),
+    code: yup.array().required('This is a required field.'),
+    tests: yup.array().required('This is a required field.'),
     language: yup.string().required('This is a required field.'),
     title: yup.string().required('This is a required field.'),
     description: yup.string().required('This is a required field.'),
-    tests: yup.array().required('This is a required field.'),
     tags: yup.array().required('This is a required field.')
   });
   const methods = useForm({
     defaultValues: {
-      code: {},
-      tests: [],
-      language: '',
-      title: '',
-      description: '',
-      tags: [],
+      code: taskIndex !== null ? taskTitles[taskIndex].code : [],
+      tests: taskIndex !== null ? taskTitles[taskIndex].tests : [],
+      language: taskIndex !== null ? taskTitles[taskIndex].language : '',
+      title: taskIndex !== null ? taskTitles[taskIndex].title : '',
+      description: taskIndex !== null ? taskTitles[taskIndex].description : '',
+      tags: taskIndex !== null ? taskTitles[taskIndex].tags : [],
     },
     resolver: yupResolver(schema),
   });
@@ -55,6 +55,8 @@ export const TaskCreateForm = (props) => {
   const onSubmit = (values) => {
     values.code = fileState
     values.tests = multipleFiles
+    values.tags = skills
+    console.log(values)
     if(taskIndex !== null) {
       taskTitles[taskIndex] = values
       console.log(values)
@@ -64,7 +66,6 @@ export const TaskCreateForm = (props) => {
       console.log(values)
       setTaskTitles([...taskTitles, values], onBack())
     }
-
   }
 
   const onBack = () => {

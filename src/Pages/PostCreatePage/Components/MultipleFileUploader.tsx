@@ -25,7 +25,7 @@ export const MultipleFileUploader = (props) => {
         name={name}
         render={({ onChange, value }) => {
           return (
-            <Upload multiple onChange={handleupload} style={fileUploadContainer}>
+            <Upload multiple onChange={handleupload} fileList={multipleFiles} style={fileUploadContainer}>
               <button type="button" style={{width: '65%'}} className="btn btn-primary text-uppercase">
                 Upload files
               </button>

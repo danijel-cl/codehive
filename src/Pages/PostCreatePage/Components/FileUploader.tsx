@@ -11,10 +11,11 @@ const fileUploadContainer = styled.cssStyle`
 
 export const FileUploader = (props) => {
   const {name, fileState, setFileState} = props
+  console.log(fileState)
   const { errors, control } = useFormContext();
   const handleupload = (info) => {
     console.log(info.fileList)
-    setFileState(info.fileList);
+    setFileState([...info.fileList]);
   }
   return (
     <Form.Item

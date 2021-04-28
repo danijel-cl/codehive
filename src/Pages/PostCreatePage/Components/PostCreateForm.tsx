@@ -22,7 +22,7 @@ export const PostCreateForm = (props) => {
   };
 
   const schema = yup.object().shape({
-    tasks: yup.array().required('This is a required field.'),
+    // tasks: yup.array().required('This is a required field.'),
     salary_low: yup.string().required('This is a required field.'),
     salary_high: yup.string().required('This is a required field.'),
     position: yup.string().required('This is a required field.'),
@@ -42,6 +42,10 @@ export const PostCreateForm = (props) => {
     },
     resolver: yupResolver(schema),
   });
+
+  const onSubmit = (values) => {
+    console.log(values)
+  }
 
   return (
     <>
@@ -79,7 +83,7 @@ export const PostCreateForm = (props) => {
                 </div>
                 <div className="pb-10 col-6">
                   <div className="pl-0 col-10">
-                    <CheckBoxList name="Experience Level" items={experienceTypes} />
+                    <CheckBoxList title="Experience Level" name="experience" items={experienceTypes} />
                   </div>
                 </div>
                 <div className="pb-10 col-6">
@@ -90,7 +94,7 @@ export const PostCreateForm = (props) => {
                 </div>
                 <div className="pb-20 col-12">
                   <h4 className="font-size-6 font-weight-semibold mb-6">Tasks summary</h4>
-                  <RichEditor />
+                  <RichEditor name="tasks_summary" />
                 </div>
                 <div className="pb-20 col-12">
                   <TaskTable
@@ -102,11 +106,11 @@ export const PostCreateForm = (props) => {
                 </div>
                 <div className="pb-10 col-12">
                   <h4 className="font-size-6 font-weight-semibold mb-6">Job Description</h4>
-                  <RichEditor />
+                  <RichEditor name="post_description" />
                 </div>
                 <div className="pb-10 col-12">
                   <h4 className="font-size-6 font-weight-semibold mb-6">Your Role</h4>
-                  <RichEditor />
+                  <RichEditor name="post_role_description" />
                 </div>
                 <div className="pb-10 col-6">
                   <h4 className="font-size-6 font-weight-semibold mb-6">Ending date</h4>
@@ -115,7 +119,7 @@ export const PostCreateForm = (props) => {
                   </div>
                 </div>
                 <div className="col-12 my-15">
-                  <button className="btn btn-primary btn-xl w-10 text-uppercase"><span className="mr-5 d-inline-block">+</span>Create Post</button>
+                  <button className="btn btn-primary btn-xl w-10 text-uppercase" onClick={methods.handleSubmit(onSubmit)}><span className="mr-5 d-inline-block">+</span>Create Post</button>
                 </div>
               </div>
             </Form>
