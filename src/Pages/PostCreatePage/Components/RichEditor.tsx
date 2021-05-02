@@ -1,6 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import ReactDOM from 'react-dom';
-import { EditorState, RichUtils } from 'draft-js';
+import { EditorState, RichUtils, convertToRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { Form } from 'antd';
@@ -11,8 +11,14 @@ const RichEditor = (props) => {
   const [editorState, setEditorState] = useState(
     () => EditorState.createEmpty(),
   );
-  const { errors, control } = useFormContext();
-  console.log(editorState)
+  const { errors, control, setValue } = useFormContext();
+
+  const onStateChange = (value) => {
+    const blocks = convertToRaw(value.getCurrentContent()).blocks;
+    const text = blocks.map(block => (!block.text.trim() && '\n') || block.text).join('\n');
+    setValue(name, text)
+    setEditorState(value)
+  }
 
 
   let options = ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'embedded', 'emoji', 'history'];
@@ -24,11 +30,12 @@ const RichEditor = (props) => {
       <Controller
         control={control}
         name={name}
+        defaultValue=''
         render={({ onChange, value }) => {
           return (
             <Editor
               editorState={editorState}
-              onEditorStateChange={setEditorState}
+              onEditorStateChange={(value) => onStateChange(value)}
               editorStyle={{lineHeight:"1px"}}
               toolbar={{
                 options: options,

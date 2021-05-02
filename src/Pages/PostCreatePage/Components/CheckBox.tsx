@@ -1,12 +1,17 @@
 import React, {useState} from 'react';
+import { useFormContext } from 'react-hook-form';
 
 const CheckBox = (props) => {
+  const { setValue } = useFormContext();
+  
   const handleClick = (e) => {
     e.preventDefault();
     if (props.index===props.checked) {
       props.setChecked(-1)
+      setValue('experience', '')
     } else {
       props.setChecked(props.index)
+      setValue('experience', props.name)
     }
   };
   return (

@@ -16,6 +16,7 @@ export const experienceTypes = [
   { name: 'Senior' },
   { name: 'Mid' },
   { name: 'Junior' },
+  { name: 'All' },
 ];
 
 export const postedTypes = [

@@ -31,7 +31,7 @@ export const PostCreateForm = (props) => {
     location: yup.string().required('This is a required field.'),
     tasks_summary: yup.string().required('This is a required field.'),
     ends: yup.string().required('This is a required field.'),
-    company: yup.number().required('This is a required field.'),
+    // company: yup.number().required('This is a required field.'),
     post_role_description: yup.string().required('This is a required field.'),
     currency: yup.string().required('This is a required field.'),
   });
