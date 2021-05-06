@@ -4,6 +4,11 @@ import { LoginModal } from './LoginModal/LoginModal';
 import { SignUpModal } from './SignUpModal/SignUpModal';
 import { styled } from '../utils/css';
 
+const buttonContainer = styled.cssStyle`
+  border: none;
+  background-color: transparent;
+`;
+
 const logoContainer = styled.cssStyle`
   font-size: 24px;
   font-weight: 700;
@@ -67,10 +72,10 @@ const Navbar = (props) => {
             <SignUpModal signupClicked={signupClicked} setSignupClicked={setSignupClicked} />
             <div className="header-btn-devider ml-auto ml-lg-5 pl-2 d-none d-xs-flex align-items-center">
               <div>
-                <a href="#" className="px-3 ml-7 font-size-7 notification-block flex-y-center position-relative">
+                <button style={buttonContainer} className="px-3 ml-7 font-size-7 notification-block flex-y-center position-relative">
                   <i className="fas fa-bell heading-default-color" />
                   <span className="font-size-3 count font-weight-semibold text-white bg-primary circle-24 border border-width-3 border border-white">3</span>
-                </a>
+                </button>
               </div>
               <div>
                 <div className="dropdown show-gr-dropdown py-5">

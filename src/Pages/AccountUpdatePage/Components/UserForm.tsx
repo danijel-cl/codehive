@@ -1,13 +1,11 @@
-import React, {useState, useCallback} from 'react';
-import ReactDOM from 'react-dom';
+import React, {useState} from 'react';
 
 import TagInput from './TagInput';
-import RichEditor from './RichEditor';
-import ReactSelect from './ReactSelect';
 import ImageUploader from "react-images-upload";
 
 const UserForm = (props) => {
   const [picture, setPicture] = useState([]);
+  const [skills, setSkills] = useState([]);
   const imageUploaded = () =>{
     console.log(picture)
     if (picture.length===0){

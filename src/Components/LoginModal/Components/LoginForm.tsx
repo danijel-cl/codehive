@@ -10,12 +10,17 @@ import { http } from '../../../api/http';
 
 import { TextField } from './TextField';
 import { SubmitError } from '../../../shared/SubmitError';
-import { useNavigation } from '../../../shared/hooks/useNavigation';
+import { styled } from '../utils/css';
+// import { useNavigation } from '../../../shared/hooks/useNavigation';
 
+const buttonContainer = styled.cssStyle`
+    border: none;
+    background-color: transparent;
+`;
 
 export const LoginForm = () => {
   const queryClient = useQueryClient();
-  const { toRecoverPassword } = useNavigation();
+  // const { toRecoverPassword } = useNavigation();
   const [errorMessage, setErrorMessage] = useState<string>();
 
   const onSubmit = async (user: LoginParams) => {
@@ -36,9 +41,9 @@ export const LoginForm = () => {
     }
   };
 
-  const recoverPassword = () => {
-    toRecoverPassword();
-  };
+  // const recoverPassword = () => {
+  //   toRecoverPassword();
+  // };
 
   const schema = yup.object().shape({
     username: yup.string().required('This is a required field.'),
@@ -63,8 +68,7 @@ export const LoginForm = () => {
           <div className="form-group">
             <label htmlFor="password" className="font-size-4 text-black-2 font-weight-semibold line-height-reset">Password</label>
             <div className="position-relative">
-              <TextField type="text" name="password" placeholder="Password" />
-              <a href="#" className="show-password pos-abs-cr fas mr-6 text-black-2" data-show-pass="password"></a>
+              <TextField type="password" name="password" placeholder="Password" />
             </div>
           </div>
           <div className="form-group d-flex flex-wrap justify-content-between">
@@ -73,12 +77,12 @@ export const LoginForm = () => {
               <span className="checkbox mr-5"></span>
               <span className="font-size-3 mb-0 line-height-reset mb-1 d-block">Remember password</span>
             </label>
-            <a className="font-size-3 text-dodger line-height-reset">Forget Password</a>
+            <button style={buttonContainer} className="font-size-3 text-dodger line-height-reset">Forget Password</button>
           </div>
           <div className="form-group mb-8">
             <button className="btn btn-primary btn-medium w-100 rounded-5 text-uppercase" onClick={methods.handleSubmit(onSubmit)} >Log in</button>
           </div>
-          <p className="font-size-4 text-center heading-default-color">Don’t have an account? <a className="text-primary">Create a free account</a></p>
+          <p className="font-size-4 text-center heading-default-color">Don’t have an account? <button style={buttonContainer} className="text-primary">Create a free account</button></p>
         </Form>
       </FormProvider>
       {errorMessage && <SubmitError message={errorMessage} />}

@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
-// import '../RichEditor.css';
 import CheckBoxList from './CheckBoxList';
 import RichEditor from './RichEditor';
 import * as yup from 'yup';
 
-import ReactSelect from './ReactSelect';
-import TagInput from './TagInput';
 import TaskTable from './TaskTable';
-import ReactSlider from '../../PostListPage/Components/ReactSlider';
-import { styled } from '../../../utils/css';
 import { Form } from 'antd';
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -17,10 +11,7 @@ import { experienceTypes } from '../../PostListPage/Components/TabSearch';
 
 export const PostCreateForm = (props) => {
   let {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props;
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
-  };
-
+  
   const schema = yup.object().shape({
     // tasks: yup.array().required('This is a required field.'),
     salary_low: yup.string().required('This is a required field.'),

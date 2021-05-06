@@ -1,5 +1,5 @@
 import { Form } from 'antd';
-import React, {useState, useCallback} from 'react';
+import React, {useState} from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
 const TagInput = (props) => {

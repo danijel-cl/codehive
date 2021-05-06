@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 
 import { Form } from 'antd';
 import * as yup from 'yup';
 
 import { FileUploader } from './FileUploader';
-import { Link } from 'react-router-dom';
 import { styled } from '../utils/css';
 import TagInput from './TagInput';
 import { MultipleFileUploader } from './MultipleFileUploader';
-import { UploadFile } from 'antd/lib/upload/interface';
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { SubmitError } from '../../../shared/SubmitError';
