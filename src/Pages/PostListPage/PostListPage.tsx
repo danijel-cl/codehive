@@ -1,64 +1,93 @@
-import React, { useState } from 'react';
-import ReactSearchSelect from "./Components/ReactSearchSelect"
-import RowPostList from "./Components/RowPostList"
-import TabPost from "./Components/TabPost"
-import TabSearch from "./Components/TabSearch"
+import React, { useState, useEffect } from 'react';
 
-export const posts =[{
-  "position":"Product Designer",
-},{
-  "position":"Software Developer",
-},{
-  "position":"Data Scientist",
-},{
-  "position":"DevOps Engineer",
-}];
+import Post from "./Components/Post"
+import PostTab from "./Components/PostTab"
+import PostFilter from "./Components/PostFilter"
+
+import {http} from "../../api/http"
+
+
+const loadContentStyle = "text-center pt-13"
+const loadTextStyle = "text-green font-weight-bold text-uppercase font-size-3\
+                   d-flex align-items-center justify-content-center"
+const loadIconStyle = "fas fa-sort-down ml-3 mt-n2 font-size-4"
 
 
 export const PostListPage = () => {
 
-  const [post, setPost] = useState(-1);
+  const [post, setPost] = useState(0);
+  const [error, setError] = useState(null);
+  const [posts, setPosts] = useState([]);
 
-  const renderPost = () =>{
-    if(post==-1){
-      return <TabSearch/>
-    }else{
-      return <TabPost post = {posts[post]}/>
-    }
-  }
+  useEffect(() => {
+    http.getAllPosts()
+      .then(
+        (data) => {
+          setPosts(data);
+        },
+        (error) => {
+          setError(error);
+        }
+      )
+  }, [])
 
   return (
-    <div className="site-wrapper">
-      <div className="bg-default-1 pt-26 pt-lg-28 pb-13 pb-lg-25">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="offset-1 col-12 col-md-5">
-              <ReactSearchSelect />
-              <div className="pt-12 ml-lg-0 ml-md-15">
-                <div className="d-flex align-items-center justify-content-between">
-                  <h5 className="font-size-4 font-weight-normal text-default-color">
-                    <span className="heading-default-color">120&nbsp;</span>results for <span className="heading-default-color">UI Designer</span>
-                  </h5>
-                  <div className="d-flex align-items-center result-view-type">
-                    <a onClick={()=>setPost(-1)} className="heading-default-color pr-2 font-size-6 hover-text-hitgray no-border-button" style={{ cursor: 'pointer'}}>
-                      <i className="fa fa-search" />
-                    </a>
-                  </div>
-                </div>
-                <RowPostList posts = {posts} setPost = {setPost}/>
-                <div className="text-center pt-5 pt-lg-13">
-                  <a className="text-green font-weight-bold text-uppercase font-size-3 d-flex align-items-center justify-content-center" href="#">
-                    Load More
-                    <i className="fas fa-sort-down ml-3 mt-n2 font-size-4" />
-                  </a>
-                </div>
+    <div className="bg-default-1 pt-30 pb-10">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-12 col-md-6 offset-md-1">
+            <PostFilter />
+            <div className="pt-12">
+              <div className="row">
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+                {posts.map((post, index) => (
+                  <Post key={index} index={index} post={post} setPost={setPost}/>
+                ))}
+              </div>
+              <div className={loadContentStyle}>
+                <a className={loadTextStyle}>
+                  Load More
+                  <i className={loadIconStyle} />
+                </a>
               </div>
             </div>
-            <div className="col-12 col-md-5 ">
-              <div className="tab-content" style={{position: "sticky",top: "15vh"}}>
-                {renderPost()}
-              </div>
-            </div>
+          </div>
+          <div className="col-12 col-md-4" style={{ position: "sticky", top: "15vh"}}>
+            { posts.length !== 0 &&
+              <PostTab post = {posts[post]}/>
+            }
           </div>
         </div>
       </div>

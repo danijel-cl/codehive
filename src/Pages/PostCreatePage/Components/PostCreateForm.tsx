@@ -7,13 +7,11 @@ import * as yup from 'yup';
 import ReactSelect from './ReactSelect';
 import TagInput from './TagInput';
 import TaskTable from './TaskTable';
-import ReactSlider from '../../PostListPage/Components/ReactSlider';
 import { styled } from '../../../utils/css';
 import { Form } from 'antd';
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { TextField } from './TextField';
-import { experienceTypes } from '../../PostListPage/Components/TabSearch';
 
 export const PostCreateForm = (props) => {
   let {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props;
@@ -55,7 +53,6 @@ export const PostCreateForm = (props) => {
         <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
           <div className="row pl-5 pr-5">
           <FormProvider {...methods}>
-            <Form>
               <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                 <div className="pb-10 col-6">
                 <h4 className="font-size-6 font-weight-semibold mb-6">Minimum salary</h4>
@@ -83,7 +80,7 @@ export const PostCreateForm = (props) => {
                 </div>
                 <div className="pb-10 col-6">
                   <div className="pl-0 col-10">
-                    <CheckBoxList title="Experience Level" name="experience" items={experienceTypes} />
+                    <CheckBoxList title="Experience Level" name="experience" />
                   </div>
                 </div>
                 <div className="pb-10 col-6">
@@ -122,7 +119,6 @@ export const PostCreateForm = (props) => {
                   <button className="btn btn-primary btn-xl w-10 text-uppercase" onClick={methods.handleSubmit(onSubmit)}><span className="mr-5 d-inline-block">+</span>Create Post</button>
                 </div>
               </div>
-            </Form>
           </FormProvider>
         </div>
       </div>
