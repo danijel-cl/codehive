@@ -3,10 +3,12 @@ import {Link} from "react-router-dom";
 import { LoginModal } from './LoginModal/LoginModal';
 import { SignUpModal } from './SignUpModal/SignUpModal';
 import { styled } from '../utils/css';
+import { Button } from 'antd';
 
 const buttonContainer = styled.cssStyle`
   border: none;
   background-color: transparent;
+  outline: none;
 `;
 
 const logoContainer = styled.cssStyle`
@@ -26,6 +28,11 @@ const spanContainer = styled.cssStyle`
 const Navbar = (props) => {
   const [loginClicked, setLoginClicked] = useState(false);
   const [signupClicked, setSignupClicked] = useState(false);
+
+  const logOut = () => {
+    window.localStorage.removeItem('logtoken')
+    window.location.reload()
+  }
 
   return (
     <header className="site-header site-header--menu-right bg-default py-7 py-lg-0 site-header--absolute site-header--sticky reveal-header">
@@ -89,7 +96,7 @@ const Navbar = (props) => {
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/users/:id/">Profile</Link>
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/companies/:id/dashboard">Dashboard</Link>
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/users/:id/account/active">Account</Link>
-                    <Link className="dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/">Log Out</Link>
+                    {props.isLoggedIn && <Button style={buttonContainer} onClick={() => logOut()} className="dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase" >Log Out</Button>}
                   </div>
                 </div>
               </div>
