@@ -36,7 +36,7 @@ export const LoginForm = () => {
     if (data && data.token) {
       localStorage.setItem('logtoken', data.token);
       queryClient.refetchQueries(cacheKeys.me);
-      console.log(data.token)
+      window.location.reload()
     }
   };
 

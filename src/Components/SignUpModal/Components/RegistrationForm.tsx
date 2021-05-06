@@ -5,7 +5,6 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { useQueryClient } from 'react-query';
 import * as yup from 'yup';
 import { cacheKeys } from '../../../api/api';
-import { RegParams } from '../../../api/http';
 import { http } from '../../../api/http';
 
 import { TextField } from './TextField';
@@ -41,16 +40,16 @@ export const RegistrationForm = () => {
       
       if (data && data.token) {
         await http.activateAccount(values.email);
-        activateAccount()
+        // activateAccount()
         localStorage.setItem('regtoken', data.token);
         queryClient.refetchQueries(cacheKeys.me);
       }
     }
   };
 
-  const activateAccount = () => {
-    toAccountActivation();
-  };
+  // const activateAccount = () => {
+  //   toAccountActivation();
+  // };
 
   const schema = yup.object().shape({
     email: yup.string().required('This is a required field.'),
