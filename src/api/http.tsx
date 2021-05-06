@@ -5,7 +5,8 @@ const axiosAuthenticated = Axios.create({ baseURL: 'http://127.0.0.1:8000' });
 
 axiosAuthenticated.interceptors.request.use(function (config) {
   const token = localStorage.getItem('logtoken');
-  config.headers.Authorization = 'Bearer ' + token;
+  console.log("Token", token)
+  config.headers.Authorization = 'Token ' + token;
 
   return config;
 });
@@ -31,6 +32,39 @@ export type CompanyParams = {
   image: string;
   name: string;
   user: number;
+}
+
+export type SkillParams = {
+  name: string;
+  type: boolean;
+}
+
+export type SkillsParams = {
+    [key:string]: SkillParams;
+}
+
+export type TaskParams = {
+  name: string;
+  description: string;
+}
+
+export type TasksParams = {
+    [key:string]: TaskParams;
+}
+
+export type PostParams = {
+  skills: SkillsParams;
+  tasks: TasksParams;
+  currency: string;
+  ends: string;
+  experience: string;
+  location: string;
+  position: string;
+  salary_low: number;
+  salary_high: number;
+  post_description: string;
+  post_role_description: string;
+  type: string;
 }
 
 export const http = {
@@ -85,4 +119,16 @@ export const http = {
 
     return response.data;
   },
+  getAllPosts: async () => {
+    const response = await axiosAnonymous.get('/api/posts');
+
+    return response.data;
+  },
+  createPost: async (post: PostParams) => {
+    const response = await axiosAuthenticated.post('/api/posts', post);
+
+    return response.data;
+  },
+
+
 }

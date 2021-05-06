@@ -24,7 +24,6 @@ export const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState<string>();
 
   const onSubmit = async (user: LoginParams) => {
-    console.log('jsbjsjjs')
     setErrorMessage(undefined);
     let data;
 
@@ -49,6 +48,7 @@ export const LoginForm = () => {
     username: yup.string().required('This is a required field.'),
     password: yup.string().required('This is a required field.'),
   });
+  
   const methods = useForm({
     defaultValues: {
       username: '',
