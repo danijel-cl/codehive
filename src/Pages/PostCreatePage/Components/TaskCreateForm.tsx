@@ -44,7 +44,6 @@ export const TaskCreateForm = (props) => {
   });
 
   const onSubmit = (values) => {
-    console.log("Values",values)
     if(taskIndex !== null) {
       taskTitles[taskIndex] = values
       setTaskTitles(taskTitles, onBack())
