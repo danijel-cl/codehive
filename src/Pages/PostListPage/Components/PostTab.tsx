@@ -2,8 +2,10 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const tabAnimationStyle = "tab-pane active animate__animated animate__slower animate__fadeIn"
-const tabContentStyle = "bg-white rounded-4 border border-mercury shadow-9 pos-abs-xl ml-xl-8 mt-9 mt-xl-0"
-const upperTabContentStyle = "pt-9 pl-15 pr-15 pb-8 border-bottom border-width-1 border-default-color light-mode-texts"
+const tabContentStyle = "bg-white rounded-4 border border-mercury shadow-9 pos-abs-xl \
+                         ml-xl-8 mt-9 mt-xl-0"
+const upperTabContentStyle = "pt-9 pl-15 pr-15 pb-8 border-bottom border-width-1 \
+                              border-default-color light-mode-texts"
 const upperTabTitleStyle = "pl-0 col-8 font-size-6 mb-0"
 const upperTabSubTitleStyle = "font-size-4 text-gray line-height-2"
 const tabButtonStyle = "btn btn-green col-4 text-uppercase rounded-3"
@@ -35,7 +37,7 @@ export const PostTab = ({post}) => {
             </div>
           </div>
         </div>
-        <div className={bottomTabContentStyle} style={{maxHeight:"68vh"}}>
+        <div className={bottomTabContentStyle} style={{maxHeight:"69vh"}}>
           <div className="row">
             <p className={bottomTabTitleStyle}>Description</p>
             <p className={bottomTabTextStyle}>

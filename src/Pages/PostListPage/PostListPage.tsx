@@ -8,8 +8,8 @@ import {http} from "../../api/http"
 
 
 const loadContentStyle = "text-center pt-13"
-const loadTextStyle = "text-green font-weight-bold text-uppercase font-size-3\
-                   d-flex align-items-center justify-content-center"
+const loadTextStyle = "text-green font-weight-bold text-uppercase font-size-3 \
+                       d-flex align-items-center justify-content-center"
 const loadIconStyle = "fas fa-sort-down ml-3 mt-n2 font-size-4"
 
 

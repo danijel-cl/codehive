@@ -16,14 +16,14 @@ const tagStyle = "bg-regent-opacity-15 min-width-px-96 mr-3 text-center rounded-
 const Post = (props) => {
 
   const tags = ["Python","Django","React"]
-
+  console.log(props.post)
   return (
       <div className="col-6 mb-8 mt-5 pt-3">
         <div onClick={()=>props.setPost(props.index)} style={{cursor:"pointer"}} className={postContentStyle}>
           <div className="row">
             <div className={postUpperContentStyle}>
               <div className={postImageStyle}>
-                <img src={process.env.PUBLIC_URL + postImageUrl}/>
+                <img src={props.post.company.image} style={{ maxWidth:"90%", maxHeight:"90%"}}/>
               </div>
               <div>
                 <h3 className="mb-0">

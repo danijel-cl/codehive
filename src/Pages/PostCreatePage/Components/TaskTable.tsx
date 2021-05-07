@@ -1,19 +1,9 @@
 import React, {useState, useCallback} from 'react';
 import ReactDOM from 'react-dom';
-import { styled } from '../utils/css';
-
-const tableTitleStyle = styled.cssStyle`
-  width: 25%;
-`;
-
-const buttonStyle = styled.cssStyle`
-  border: none;
-  background: none;
-`;
 
 const TaskTable = (props) => {
   const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props
-  
+
   const removeTask = (e, index) => {
     e.preventDefault()
     setTaskTitles(taskTitles.filter((title, i) => i !== index))
@@ -41,10 +31,10 @@ const TaskTable = (props) => {
       <table className="table table-striped col-12">
         <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
           <tr>
-            <th style={tableTitleStyle} scope="col">Task</th>
-            <th style={tableTitleStyle} scope="col">Title</th>
-            <th style={tableTitleStyle} scope="col"></th>
-            <th style={tableTitleStyle} scope="col"></th>
+            <th scope="col">Task</th>
+            <th scope="col">Title</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
@@ -53,8 +43,8 @@ const TaskTable = (props) => {
             <tr>
               <th scope="row">{index}</th>
               <td>{task.title}</td>
-              <td><button onClick={(e) => editTask(e, index)} style={buttonStyle} className="text-green font-weight-semibold">EDIT</button></td>
-              <td><button onClick={(e) => removeTask(e, index)} style={buttonStyle} className="text-red font-weight-semibold">REMOVE</button></td>
+              <td><button onClick={(e) => editTask(e, index)} className="text-green font-weight-semibold">EDIT</button></td>
+              <td><button onClick={(e) => removeTask(e, index)} className="text-red font-weight-semibold">REMOVE</button></td>
             </tr>
             )
           })}

@@ -106,8 +106,8 @@ export const http = {
 
     return response.data;
   },
-  getAllCompanies: async () => {
-    const response = await axiosAnonymous.get('/api/company');
+  getAllSkills: async () => {
+    const response = await axiosAnonymous.get('/api/skills');
 
     return response.data;
   },
