@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 const TaskTable = (props) => {
   const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props
+  console.log(taskTitles)
   const removeTask = (e, index) => {
     e.preventDefault()
     setTaskTitles(taskTitles.filter((title, i) => i !== index))
@@ -27,28 +28,30 @@ const TaskTable = (props) => {
           </button>
         </div>
       </div>
-      <table className="table table-striped col-12">
-        <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
-          <tr>
-            <th scope="col">Task</th>
-            <th scope="col">Title</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          {taskTitles.map((task, index) => {
-            return (
+      { taskTitles.length !== 0 &&
+        <table className="table table-striped col-12">
+          <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
             <tr>
-              <th scope="row">{index}</th>
-              <td>{task.title}</td>
-              <td><button onClick={(e) => editTask(e, index)} className="text-green font-weight-semibold">EDIT</button></td>
-              <td><button onClick={(e) => removeTask(e, index)} className="text-red font-weight-semibold">REMOVE</button></td>
+              <th scope="col">Task</th>
+              <th scope="col">Title</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
             </tr>
-            )
-          })}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {taskTitles.map((task, index) => {
+              return (
+              <tr>
+                <th scope="row">{index}</th>
+                <td>{task.title}</td>
+                <td><button onClick={(e) => editTask(e, index)} className="text-green font-weight-semibold">EDIT</button></td>
+                <td><button onClick={(e) => removeTask(e, index)} className="text-red font-weight-semibold">REMOVE</button></td>
+              </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      }
     </>
   );
 }

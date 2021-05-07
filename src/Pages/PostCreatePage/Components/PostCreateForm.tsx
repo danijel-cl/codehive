@@ -30,7 +30,7 @@ export const PostCreateForm = (props) => {
   }
 
   return (
-    <div className="bg-white rounded-4 border border-mercury shadow-9">
+    <div className="bg-white rounded-4 border border-mercury shadow-9 pl-10 pr-10">
       <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
         <h3 className="font-size-6 mb-0">Create Post</h3>
       </div>

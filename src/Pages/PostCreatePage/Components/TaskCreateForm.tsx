@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import FormUploader from '../../../Components/Form/FormUploader';
 import FormEditor from '../../../Components/Form/FormEditor';
+import FormInput from '../../../Components/Form/FormInput';
 
 import {http} from "../../../api/http"
 
@@ -14,7 +15,7 @@ const backButtonIconStyle = "icon icon-small-left bg-white circle-40 mr-5 font-s
                              text-black font-weight-bold shadow-8"
 const backButtonTextStyle = "text-uppercase font-size-3 font-weight-bold text-gray"
 
-const containerContentStyle = "bg-white rounded-4 border border-mercury shadow-9"
+const containerContentStyle = "bg-white rounded-4 border border-mercury shadow-9 pl-10 pr-10"
 const upperContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom \
                                     border-width-1 border-default-color light-mode-texts"
 const lowerContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 light-mode-texts"
@@ -43,7 +44,7 @@ export const TaskCreateForm = (props) => {
   });
 
   const onSubmit = (values) => {
-    console.log(values)
+    console.log("Values",values)
     if(taskIndex !== null) {
       taskTitles[taskIndex] = values
       setTaskTitles(taskTitles, onBack())
@@ -59,7 +60,7 @@ export const TaskCreateForm = (props) => {
 
   return (
     <>
-      <div className="row justify-content-center pt-5 pl-5">
+      <div className="row justify-content-center pt-5">
         <div className="col-12 dark-mode-texts">
           <div className="mb-9">
             <a className={ backButtonContentStyle } onClick={onBack}>
@@ -78,30 +79,29 @@ export const TaskCreateForm = (props) => {
             <FormProvider {...methods}>
               <div className="row">
                 <div className="pb-10 col-6">
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Code</h4>
                   <FormUploader name="code"/>
                 </div>
                 <div className="pb-10 col-6">
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Tests</h4>
                   <FormUploader name="tests"/>
                 </div>
                 <div className="pb-10 col-6">
-                  <input
-                    className="form-control col-10"
-                    placeholder="title"
-                  />
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Title</h4>
+                  <FormInput name="title" />
                 </div>
                 <div className="pb-10 col-6">
-                  <input
-                    className="form-control col-10"
-                    placeholder="language"
-                  />
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Language</h4>
+                  <FormInput name="language" />
                 </div>
                 <div className="pb-10 col-12">
+                  <h4 className="font-size-6 font-weight-semibold mb-6">Description</h4>
                   <FormEditor name="description"/>
                 </div>
                 <div className="col-12 my-15">
                   <button
                     className="btn btn-primary btn-xl w-10 text-uppercase"
-                    onClick={methods.handleSubmit(onSubmit)} >
+                    onClick={methods.handleSubmit(onSubmit)}>
                     <span className="mr-5 d-inline-block">+</span>Create Task
                   </button>
                 </div>
