@@ -1,13 +1,11 @@
 import React, {useState } from 'react';
 
 import { FormProvider, useForm } from 'react-hook-form';
-import { Form } from 'antd';
-import { FormField } from './Fields/FormField';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { FileUploader } from './Fields/FileUploader';
-import RichEditor from './Fields/RichEditor';
+import FormUploader from '../../../Components/Form/FormUploader';
+import FormEditor from '../../../Components/Form/FormEditor';
 
 import {http} from "../../../api/http"
 
@@ -59,73 +57,55 @@ export const TaskCreateForm = (props) => {
     setTaskIndex(null, setTaskClicked(!taskClicked))
   };
 
-  const codeUpload = <FileUploader name="code"/>
-
-  const testsUpload = <FileUploader name="tests"/>
-
-  const titleTextField = <input
-    className="form-control col-10"
-    placeholder="title"
-  />
-
-  const languageTextField = <input
-    className="form-control col-10"
-    placeholder="language"
-  />
-
-  const description = <RichEditor name="description"/>
-
   return (
     <>
       <div className="row justify-content-center pt-5 pl-5">
         <div className="col-12 dark-mode-texts">
           <div className="mb-9">
-            <a className={backButtonContentStyle} onClick={onBack}>
-              <i className={backButtonIconStyle}></i>
-              <span className={backButtonTextStyle}>Back</span>
+            <a className={ backButtonContentStyle } onClick={onBack}>
+              <i className={ backButtonIconStyle }></i>
+              <span className={ backButtonTextStyle }>Back</span>
             </a>
           </div>
         </div>
       </div>
-      <div className={containerContentStyle}>
-        <div className={upperContainerContentStyle}>
+      <div className={ containerContentStyle }>
+        <div className={ upperContainerContentStyle }>
           <h3 className="font-size-6 mb-0">Create Task</h3>
         </div>
-        <div className={lowerContainerContentStyle}>
+        <div className={ lowerContainerContentStyle }>
           <div className="row pl-5 pr-5">
             <FormProvider {...methods}>
-              <Form>
-                <div className="row">
-                  <div className="pb-10 col-6">
-                    <FileUploader name="code"/>
-                  </div>
-                  <div className="pb-10 col-6">
-                    <FileUploader name="tests"/>
-                  </div>
-                  <div className="pb-10 col-6">
-                    <FormField
-                      name="title"
-                      component={titleTextField}
-                    />
-                  </div>
-                  <div className="pb-10 col-6">
-                    <FormField
-                      name="language"
-                      component={languageTextField}
-                    />
-                  </div>
-                  <div className="pb-10 col-12">
-                    <RichEditor name="description"/>
-                  </div>
-                  <div className="col-12 my-15">
-                    <button
-                      className="btn btn-primary btn-xl w-10 text-uppercase"
-                      onClick={methods.handleSubmit(onSubmit)} >
-                      <span className="mr-5 d-inline-block">+</span>Create Task
-                    </button>
-                  </div>
+              <div className="row">
+                <div className="pb-10 col-6">
+                  <FormUploader name="code"/>
                 </div>
-              </Form>
+                <div className="pb-10 col-6">
+                  <FormUploader name="tests"/>
+                </div>
+                <div className="pb-10 col-6">
+                  <input
+                    className="form-control col-10"
+                    placeholder="title"
+                  />
+                </div>
+                <div className="pb-10 col-6">
+                  <input
+                    className="form-control col-10"
+                    placeholder="language"
+                  />
+                </div>
+                <div className="pb-10 col-12">
+                  <FormEditor name="description"/>
+                </div>
+                <div className="col-12 my-15">
+                  <button
+                    className="btn btn-primary btn-xl w-10 text-uppercase"
+                    onClick={methods.handleSubmit(onSubmit)} >
+                    <span className="mr-5 d-inline-block">+</span>Create Task
+                  </button>
+                </div>
+              </div>
             </FormProvider>
           </div>
         </div>

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 const TaskTable = (props) => {
   const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props
-
   const removeTask = (e, index) => {
     e.preventDefault()
     setTaskTitles(taskTitles.filter((title, i) => i !== index))

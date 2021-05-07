@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Upload, Form } from 'antd';
 import { Controller, useFormContext } from 'react-hook-form';
 
-export const FileUploader = ({name}) => {
+export const FormUploader = ({name}) => {
 
   const { errors, control } = useFormContext();
 
@@ -27,3 +27,5 @@ export const FileUploader = ({name}) => {
     </>
   );
 };
+
+export default FormUploader;
