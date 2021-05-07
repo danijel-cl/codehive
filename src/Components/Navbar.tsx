@@ -3,6 +3,13 @@ import {Link} from "react-router-dom";
 import { LoginModal } from './LoginModal/LoginModal';
 import { SignUpModal } from './SignUpModal/SignUpModal';
 import { styled } from '../utils/css';
+import { Button } from 'antd';
+
+const buttonContainer = styled.cssStyle`
+  border: none;
+  background-color: transparent;
+  outline: none;
+`;
 
 const logoContainer = styled.cssStyle`
   font-size: 24px;
@@ -21,6 +28,11 @@ const spanContainer = styled.cssStyle`
 const Navbar = (props) => {
   const [loginClicked, setLoginClicked] = useState(false);
   const [signupClicked, setSignupClicked] = useState(false);
+
+  const logOut = () => {
+    window.localStorage.removeItem('logtoken')
+    window.location.reload()
+  }
 
   return (
     <header className="site-header site-header--menu-right bg-default py-7 py-lg-0 site-header--absolute site-header--sticky reveal-header">
@@ -67,10 +79,10 @@ const Navbar = (props) => {
             <SignUpModal signupClicked={signupClicked} setSignupClicked={setSignupClicked} />
             <div className="header-btn-devider ml-auto ml-lg-5 pl-2 d-none d-xs-flex align-items-center">
               <div>
-                <a href="#" className="px-3 ml-7 font-size-7 notification-block flex-y-center position-relative">
+                <button style={buttonContainer} className="px-3 ml-7 font-size-7 notification-block flex-y-center position-relative">
                   <i className="fas fa-bell heading-default-color" />
                   <span className="font-size-3 count font-weight-semibold text-white bg-primary circle-24 border border-width-3 border border-white">3</span>
-                </a>
+                </button>
               </div>
               <div>
                 <div className="dropdown show-gr-dropdown py-5">
@@ -84,7 +96,7 @@ const Navbar = (props) => {
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/users/:id/">Profile</Link>
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/companies/:id/dashboard">Dashboard</Link>
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/users/:id/account/active">Account</Link>
-                    <Link className="dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/">Log Out</Link>
+                    {props.isLoggedIn && <Button style={buttonContainer} onClick={() => logOut()} className="dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase" >Log Out</Button>}
                   </div>
                 </div>
               </div>

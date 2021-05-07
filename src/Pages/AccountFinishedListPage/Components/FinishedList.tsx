@@ -47,19 +47,19 @@ const FinishedList = (props) => {
           <nav aria-label="Page navigation example">
             <ul className="pagination pagination-hover-primary rounded-0 ml-n2">
               <li className="page-item rounded-0 flex-all-center">
-                <a className="page-link rounded-0 border-0 px-3active" href="#" aria-label="Previous">
+                <button className="page-link rounded-0 border-0 px-3active" aria-label="Previous">
                   <i className="fas fa-chevron-left" />
-                </a>
+                </button>
               </li>
-              <li className="page-item"><a className="page-link border-0 font-size-4 font-weight-semibold px-3" href="#">1</a></li>
-              <li className="page-item"><a className="page-link border-0 font-size-4 font-weight-semibold px-3" href="#">2</a></li>
-              <li className="page-item"><a className="page-link border-0 font-size-4 font-weight-semibold px-3" href="#">3</a></li>
-              <li className="page-item disabled"><a className="page-link border-0 font-size-4 font-weight-semibold px-3" href="#">...</a></li>
-              <li className="page-item "><a className="page-link border-0 font-size-4 font-weight-semibold px-3" href="#">7</a></li>
+              <li className="page-item"><button className="page-link border-0 font-size-4 font-weight-semibold px-3" >1</button></li>
+              <li className="page-item"><button className="page-link border-0 font-size-4 font-weight-semibold px-3" >2</button></li>
+              <li className="page-item"><button className="page-link border-0 font-size-4 font-weight-semibold px-3" >3</button></li>
+              <li className="page-item disabled"><button className="page-link border-0 font-size-4 font-weight-semibold px-3" >...</button></li>
+              <li className="page-item "><button className="page-link border-0 font-size-4 font-weight-semibold px-3" >7</button></li>
               <li className="page-item rounded-0 flex-all-center">
-                <a className="page-link rounded-0 border-0 px-3" href="#" aria-label="Next">
+                <button className="page-link rounded-0 border-0 px-3"  aria-label="Next">
                   <i className="fas fa-chevron-right" />
-                </a>
+                </button>
               </li>
             </ul>
           </nav>

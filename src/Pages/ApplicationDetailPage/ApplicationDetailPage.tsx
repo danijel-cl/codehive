@@ -40,20 +40,20 @@ export const ApplicationDetailPage = (props) => {
             <div className="col-12">
               <div className="bg-white rounded-4 pt-11 shadow-9">
                 <div className="row pl-12 pb-8">
-                  <a className="col-9 font-size-6 text-black-2 font-weight-semibold">{candidateName}</a>
-                  <a className="col-1 font-weight-semibold">CONTACT</a>
-                  <a className="col-1 text-red font-weight-semibold">REJECT</a>
+                  <button className="col-9 font-size-6 text-black-2 font-weight-semibold">{candidateName}</button>
+                  <button className="col-1 font-weight-semibold">CONTACT</button>
+                  <button className="col-1 text-red font-weight-semibold">REJECT</button>
                 </div>
                 <ul className="nav border-bottom border-mercury pl-12">
                   <li className="tab-menu-items nav-item pr-12">
-                    <a style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,false)} className={`text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${!choice ? 'active':''}`}>
+                    <button style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,false)} className={`text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${!choice ? 'active':''}`}>
                       Candidate Tasks
-                    </a>
+                    </button>
                   </li>
                   <li className="tab-menu-items nav-item pr-12">
-                    <a style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,true)} className={`text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${choice ? 'active':''}`}>
+                    <button style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,true)} className={`text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${choice ? 'active':''}`}>
                       Candidate Profile
-                    </a>
+                    </button>
                   </li>
                 </ul>
                 {renderChoice()}

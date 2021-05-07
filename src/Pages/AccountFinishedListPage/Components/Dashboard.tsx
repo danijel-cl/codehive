@@ -7,7 +7,7 @@ const Dashboard = (props) => {
   return (
     <div className="dashboard-sidebar-wrapper" style={{ paddingTop:"10vh"}}>
       <div className="pt-20" style={{textAlign:"center"}}>
-        <a className="mb-4" href="#"><img className="circle-79" src={process.env.PUBLIC_URL + "/resources/image/l3/png/pro-img.png"} alt="" /></a>
+        <button className="mb-4" ><img className="circle-79" src={process.env.PUBLIC_URL + "/resources/image/l3/png/pro-img.png"} alt="" /></button>
         <p>Welcome Filip </p>
       </div>
       <ul className="list-unstyled dashboard-layout-sidebar pt-15">

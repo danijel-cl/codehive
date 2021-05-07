@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
+import { styled } from '../utils/css';
+
+const buttonContainer = styled.cssStyle`
+  border: none;
+  background-color: transparent;
+`;
 
 const Footer = () => {
   const [render, setRender] = useState(true);
@@ -26,15 +32,15 @@ const Footer = () => {
                       <img src="image/l1/png/message.png" className="align-self-center mr-3" alt="" />
                       <div className="media-body pl-5">
                         <p className="mb-0 font-size-4 text-white">Contact us at</p>
-                        <a className="mb-0 font-size-4 font-weight-bold">support@codehive.net</a>
+                        <button style={buttonContainer} className="mb-0 font-size-4 font-weight-bold">support@codehive.net</button>
                       </div>
                     </div>
                     <div className="social-icons">
                       <ul className="pl-0 list-unstyled d-flex align-items-end ">
                         <li className="d-flex flex-column justify-content-center px-3 mr-3 font-size-4 heading-default-color">Follow us on:</li>
-                        <li className="d-flex flex-column justify-content-center px-3 mr-3"><a href="#" className="hover-color-primary heading-default-color"><i className="fab fa-facebook-f font-size-3 pt-2" /></a></li>
-                        <li className="d-flex flex-column justify-content-center px-3 mr-3"><a href="#" className="hover-color-primary heading-default-color"><i className="fab fa-twitter font-size-3 pt-2" /></a></li>
-                        <li className="d-flex flex-column justify-content-center px-3 mr-3"><a href="#" className="hover-color-primary heading-default-color"><i className="fab fa-linkedin-in font-size-3 pt-2" /></a></li>
+                        <li className="d-flex flex-column justify-content-center px-3 mr-3"><button style={buttonContainer} className="hover-color-primary heading-default-color"><i className="fab fa-facebook-f font-size-3 pt-2" /></button></li>
+                        <li className="d-flex flex-column justify-content-center px-3 mr-3"><button style={buttonContainer} className="hover-color-primary heading-default-color"><i className="fab fa-twitter font-size-3 pt-2" /></button></li>
+                        <li className="d-flex flex-column justify-content-center px-3 mr-3"><button style={buttonContainer} className="hover-color-primary heading-default-color"><i className="fab fa-linkedin-in font-size-3 pt-2" /></button></li>
                       </ul>
                     </div>
                   </div>
@@ -44,10 +50,10 @@ const Footer = () => {
                         <div className="footer-widget widget2 mb-md-0 mb-13">
                           <p className="widget-title font-size-4 text-gray mb-md-8 mb-7">Company</p>
                           <ul className="widget-links pl-0 list-unstyled list-hover-primary">
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">About us</a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Contact us</a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Careers</a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Press</a></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">About us</button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Contact us</button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Careers</button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Press</button></li>
                           </ul>
                         </div>
                       </div>
@@ -55,11 +61,11 @@ const Footer = () => {
                         <div className="footer-widget widget3 mb-sm-0 mb-13">
                           <p className="widget-title font-size-4 text-gray mb-md-8 mb-7">Product</p>
                           <ul className="widget-links pl-0 list-unstyled list-hover-primary">
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Features </a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Pricing</a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">News</a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Help desk</a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Support</a></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Features </button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Pricing</button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">News</button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Help desk</button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Support</button></li>
                           </ul>
                         </div>
                       </div>
@@ -67,10 +73,10 @@ const Footer = () => {
                         <div className="footer-widget widget4 mb-sm-0 mb-13">
                           <p className="widget-title font-size-4 text-gray mb-md-8 mb-7">Services</p>
                           <ul className="widget-links pl-0 list-unstyled list-hover-primary">
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Digital Marketing</a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">SEO for Business</a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Avasta Dash</a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">UI Design</a></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Digital Marketing</button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">SEO for Business</button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Avasta Dash</button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">UI Design</button></li>
                           </ul>
                         </div>
                       </div>
@@ -78,9 +84,9 @@ const Footer = () => {
                         <div className="footer-widget widget4">
                           <p className="widget-title font-size-4 text-gray mb-md-8 mb-7">Legal</p>
                           <ul className="widget-links pl-0 list-unstyled list-hover-primary">
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Privacy Policy</a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Terms &amp; Conditions</a></li>
-                            <li className="mb-6"><a className="heading-default-color font-size-4 font-weight-normal">Return Policy</a></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Privacy Policy</button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Terms &amp; Conditions</button></li>
+                            <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Return Policy</button></li>
                           </ul>
                         </div>
                       </div>
