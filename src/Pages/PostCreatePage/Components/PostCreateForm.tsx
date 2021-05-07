@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from 'react';
-
-=======
-import CheckBoxList from './CheckBoxList';
-import RichEditor from './RichEditor';
-import * as yup from 'yup';
-
-import TaskTable from './TaskTable';
->>>>>>> c8183fe804ce99500e67dde17c42ce214344f9df
 import { FormProvider, useForm } from 'react-hook-form';
 import { FormField } from './Fields/FormField';
 import * as yup from 'yup';
@@ -22,15 +12,7 @@ import {http} from "../../../api/http"
 
 export const PostCreateForm = (props) => {
   let {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props;
-<<<<<<< HEAD
 
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
-  };
-
-=======
-  
->>>>>>> c8183fe804ce99500e67dde17c42ce214344f9df
   const schema = yup.object().shape({
     position: yup.string().required('This is a required field.'),
     experience: yup.string().required('This is a required field.'),

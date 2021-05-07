@@ -1,23 +1,9 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-=======
 import React, {useState } from 'react';
->>>>>>> c8183fe804ce99500e67dde17c42ce214344f9df
 
 import { FormProvider, useForm } from 'react-hook-form';
 import { Form } from 'antd';
 import { FormField } from './Fields/FormField';
 import * as yup from 'yup';
-<<<<<<< HEAD
-=======
-
-import { FileUploader } from './FileUploader';
-import { styled } from '../utils/css';
-import TagInput from './TagInput';
-import { MultipleFileUploader } from './MultipleFileUploader';
-import { FormProvider, useForm } from 'react-hook-form';
->>>>>>> c8183fe804ce99500e67dde17c42ce214344f9df
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { FileUploader } from './Fields/FileUploader';
@@ -37,10 +23,11 @@ const lowerContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 light-mo
 
 
 const schema = yup.object().shape({
-  code: yup.mixed().required('This is a required field.'),
+  code: yup.mixed().required('This is a required kebab field.'),
   tests: yup.mixed().required('This is a required field.'),
-  language: yup.string().required('This is a required field.'),
+  language: yup.string().required('This is a kebab required field.'),
   title: yup.string().required('This is a required field.'),
+  description: yup.object().nullable().required('This is a required kebab field.'),
 });
 
 export const TaskCreateForm = (props) => {
@@ -128,10 +115,7 @@ export const TaskCreateForm = (props) => {
                     />
                   </div>
                   <div className="pb-10 col-12">
-                    <FormField
-                      name="description"
-                      component={<RichEditor />}
-                    />
+                    <RichEditor name="description"/>
                   </div>
                   <div className="col-12 my-15">
                     <button
