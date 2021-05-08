@@ -22,6 +22,7 @@
     "emotion": "^11.0.0",
     "html-to-react": "^1.4.5",
     "node-modules": "^0.0.1",
+    "object-to-formdata": "^4.1.0",
     "package.json": "^2.0.1",
     "postcss": "^8.2.6",
     "postcss-js": "^3.0.3",

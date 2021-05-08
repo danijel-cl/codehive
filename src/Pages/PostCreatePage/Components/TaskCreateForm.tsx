@@ -23,7 +23,7 @@ const lowerContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 light-mo
 
 const schema = yup.object().shape({
   code: yup.mixed().required('This is a required kebab field.'),
-  tests: yup.mixed().required('This is a required field.'),
+  test: yup.mixed().required('This is a required field.'),
   language: yup.string().required('This is a kebab required field.'),
   title: yup.string().required('This is a required field.'),
   description: yup.object().nullable().required('This is a required kebab field.'),
@@ -35,7 +35,7 @@ export const TaskCreateForm = (props) => {
   const methods = useForm({
     defaultValues: {
       code: taskIndex !== null ? taskStates[taskIndex].code : null,
-      tests: taskIndex !== null ? taskStates[taskIndex].tests : null,
+      test: taskIndex !== null ? taskStates[taskIndex].test : null,
       language: taskIndex !== null ? taskStates[taskIndex].language : '',
       title: taskIndex !== null ? taskStates[taskIndex].title : '',
       description: taskIndex !== null ? taskStates[taskIndex].description : ''
@@ -82,7 +82,7 @@ export const TaskCreateForm = (props) => {
               </div>
               <div className="pb-10 col-6">
                 <h4 className="font-size-6 font-weight-semibold mb-6">Tests</h4>
-                <FormUploader name="tests"/>
+                <FormUploader name="test"/>
               </div>
               <div className="pb-10 col-6">
                 <h4 className="font-size-6 font-weight-semibold mb-6">Title</h4>

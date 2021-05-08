@@ -37,9 +37,10 @@ export const PostCreateForm = (props) => {
     post["position"] = post["position"].value
     tasks.map((task)=>{
       task["description"] = JSON.stringify(convertToRaw(task["description"].getCurrentContent()))
+      task["code"] = task["code"].fileList[0]["originFileObj"]
+      task["test"] = task["test"].fileList[0]["originFileObj"]
     })
-    post["tasks"] = tasks
-    http.createPost(post)
+    http.createPost(post, tasks)
   }
 
   return (
