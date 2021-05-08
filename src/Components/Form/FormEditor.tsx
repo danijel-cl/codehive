@@ -7,19 +7,10 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 const FormEditor = ({name}) => {
 
-  const { errors, getValues, control } = useFormContext();
+  const { errors, control } = useFormContext();
 
-  const [editorState, setEditorState] = useState(
-    () => EditorState.createEmpty(),
-  );
   let options = ['inline', 'blockType', 'fontSize', 'fontFamily', 'list',
                   'textAlign', 'colorPicker', 'link', 'embedded', 'emoji', 'history'];
-
-  const handleChange = (value, onChange) =>{
-    const text = JSON.stringify(convertToRaw(value.getCurrentContent()));
-    onChange(text)
-    setEditorState(value)
-  }
 
   return (
     <Controller
@@ -28,8 +19,8 @@ const FormEditor = ({name}) => {
       render={({ onChange, value }) => (
         <>
           <Editor
-            editorState={editorState}
-            onEditorStateChange={(value)=>handleChange(value, onChange)}
+            editorState={value}
+            onEditorStateChange={onChange}
             editorStyle={{lineHeight:"1px"}}
             toolbar={{
               options: options,

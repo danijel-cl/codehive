@@ -10,14 +10,14 @@ import FormInput from '../../../Components/Form/FormInput';
 
 import {http} from "../../../api/http"
 
-const backButtonContentStyle = "d-flex align-items-center ml-4"
-const backButtonIconStyle = "icon icon-small-left bg-white circle-40 mr-5 font-size-7 \
-                             text-black font-weight-bold shadow-8"
-const backButtonTextStyle = "text-uppercase font-size-3 font-weight-bold text-gray"
 
+
+const backButtonContentStyle = "d-flex align-items-center ml-4"
+const backButtonIconStyle = "icon icon-small-left bg-white circle-40 mr-5 font-size-7 \                             text-black font-weight-bold shadow-8"
+const backButtonTextStyle = "text-uppercase font-size-3 font-weight-bold text-gray"
 const containerContentStyle = "bg-white rounded-4 border border-mercury shadow-9 pl-10 pr-10"
 const upperContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom \
-                                    border-width-1 border-default-color light-mode-texts"
+                                  border-width-1 border-default-color light-mode-texts"
 const lowerContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 light-mode-texts"
 
 
@@ -30,26 +30,26 @@ const schema = yup.object().shape({
 });
 
 export const TaskCreateForm = (props) => {
-  const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, taskIndex, setTaskIndex} = props
+  const {taskClicked, setTaskClicked, taskStates, setTaskStates, taskIndex, setTaskIndex} = props
 
   const methods = useForm({
     defaultValues: {
-      code: taskIndex !== null ? taskTitles[taskIndex].code : null,
-      tests: taskIndex !== null ? taskTitles[taskIndex].tests : null,
-      language: taskIndex !== null ? taskTitles[taskIndex].language : '',
-      title: taskIndex !== null ? taskTitles[taskIndex].title : '',
-      description: taskIndex !== null ? taskTitles[taskIndex].description : ''
+      code: taskIndex !== null ? taskStates[taskIndex].code : null,
+      tests: taskIndex !== null ? taskStates[taskIndex].tests : null,
+      language: taskIndex !== null ? taskStates[taskIndex].language : '',
+      title: taskIndex !== null ? taskStates[taskIndex].title : '',
+      description: taskIndex !== null ? taskStates[taskIndex].description : ''
     },
     resolver: yupResolver(schema),
   });
 
   const onSubmit = (values) => {
     if(taskIndex !== null) {
-      taskTitles[taskIndex] = values
-      setTaskTitles(taskTitles, onBack())
+      taskStates[taskIndex] = values
+      setTaskStates(taskStates, onBack())
       setTaskIndex(null)
     } else {
-      setTaskTitles([...taskTitles, values], onBack())
+      setTaskStates(taskStates =>[...taskStates, values], onBack())
     }
   }
 
@@ -76,34 +76,32 @@ export const TaskCreateForm = (props) => {
         <div className={ lowerContainerContentStyle }>
           <div className="row pl-5 pr-5">
             <FormProvider {...methods}>
-              <div className="row">
-                <div className="pb-10 col-6">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Code</h4>
-                  <FormUploader name="code"/>
-                </div>
-                <div className="pb-10 col-6">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Tests</h4>
-                  <FormUploader name="tests"/>
-                </div>
-                <div className="pb-10 col-6">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Title</h4>
-                  <FormInput name="title" />
-                </div>
-                <div className="pb-10 col-6">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Language</h4>
-                  <FormInput name="language" />
-                </div>
-                <div className="pb-10 col-12">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Description</h4>
-                  <FormEditor name="description"/>
-                </div>
-                <div className="col-12 my-15">
-                  <button
-                    className="btn btn-primary btn-xl w-10 text-uppercase"
-                    onClick={methods.handleSubmit(onSubmit)}>
-                    <span className="mr-5 d-inline-block">+</span>Create Task
-                  </button>
-                </div>
+              <div className="pb-10 col-6">
+                <h4 className="font-size-6 font-weight-semibold mb-6">Code</h4>
+                <FormUploader name="code"/>
+              </div>
+              <div className="pb-10 col-6">
+                <h4 className="font-size-6 font-weight-semibold mb-6">Tests</h4>
+                <FormUploader name="tests"/>
+              </div>
+              <div className="pb-10 col-6">
+                <h4 className="font-size-6 font-weight-semibold mb-6">Title</h4>
+                <FormInput name="title" />
+              </div>
+              <div className="pb-10 col-6">
+                <h4 className="font-size-6 font-weight-semibold mb-6">Language</h4>
+                <FormInput name="language" />
+              </div>
+              <div className="pb-10 col-12">
+                <h4 className="font-size-6 font-weight-semibold mb-6">Description</h4>
+                <FormEditor name="description"/>
+              </div>
+              <div className="col-12 my-15">
+                <button
+                  className="btn btn-primary btn-xl w-10 text-uppercase"
+                  onClick={methods.handleSubmit(onSubmit)}>
+                  <span className="mr-5 d-inline-block">+</span>Create Task
+                </button>
               </div>
             </FormProvider>
           </div>

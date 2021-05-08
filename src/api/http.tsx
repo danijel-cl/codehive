@@ -44,8 +44,11 @@ export type SkillsParams = {
 }
 
 export type TaskParams = {
-  name: string;
+  task: string;
+  language: string;
   description: string;
+  code: object;
+  tests: object;
 }
 
 export type TasksParams = {
@@ -53,18 +56,10 @@ export type TasksParams = {
 }
 
 export type PostParams = {
-  skills: SkillsParams;
   tasks: TasksParams;
-  currency: string;
-  ends: string;
   experience: string;
-  location: string;
   position: string;
-  salary_low: number;
-  salary_high: number;
-  post_description: string;
-  post_role_description: string;
-  type: string;
+  description: string;
 }
 
 export const http = {

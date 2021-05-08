@@ -1,17 +1,21 @@
 import React, {useState, useCallback} from 'react';
 import ReactDOM from 'react-dom';
+import { useFormContext } from 'react-hook-form';
 
 const TaskTable = (props) => {
-  const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props
-  console.log(taskTitles)
+  const {taskClicked, setTaskClicked, taskStates, setTaskStates, setTaskIndex, setPostState} = props
+
+  const { getValues } = useFormContext();
+
   const removeTask = (e, index) => {
     e.preventDefault()
-    setTaskTitles(taskTitles.filter((title, i) => i !== index))
+    setTaskStates(taskStates.filter((title, i) => i !== index))
   }
 
   const editTask = (e, index) => {
     e.preventDefault()
     window.scrollTo(0, 0);
+    setPostState(getValues())
     setTaskIndex(index, setTaskClicked(!taskClicked))
   }
   return (
@@ -21,6 +25,7 @@ const TaskTable = (props) => {
         <div className="col-2">
           <button type="button" onClick={() => {
             window.scrollTo(0, 0);
+            setPostState(getValues())
             setTaskClicked(!taskClicked)
           }} className="btn btn-primary text-uppercase">
             <span className="mr-5 d-inline-block">+</span>
@@ -28,7 +33,7 @@ const TaskTable = (props) => {
           </button>
         </div>
       </div>
-      { taskTitles.length !== 0 &&
+      { taskStates.length !== 0 &&
         <table className="table table-striped col-12">
           <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
             <tr>
@@ -39,7 +44,7 @@ const TaskTable = (props) => {
             </tr>
           </thead>
           <tbody>
-            {taskTitles.map((task, index) => {
+            {taskStates.map((task, index) => {
               return (
               <tr>
                 <th scope="row">{index}</th>

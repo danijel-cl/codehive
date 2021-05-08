@@ -1,3 +1,5 @@
+import { convertToRaw, convertFromRaw, EditorState } from 'draft-js';
+
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -19,14 +21,25 @@ export const PostCreateForm = (props) => {
 
   const methods = useForm({
     defaultValues: {
-      company: 1
+      position: props.postState !== null ? props.postState.position : '',
+      experience: props.postState !== null ? props.postState.experience : '',
+      description: props.postState !== null ? props.postState.description : ''
     },
     resolver: yupResolver(schema),
   });
 
 
   const onSubmit = (values) => {
-    console.log(values)
+    let tasks = props.taskStates.map(task => Object.assign({}, task))
+    let post = Object.assign({}, values)
+    post["description"] = JSON.stringify(convertToRaw(post["description"].getCurrentContent()))
+    post["experience"] = post["experience"].value
+    post["position"] = post["position"].value
+    tasks.map((task)=>{
+      task["description"] = JSON.stringify(convertToRaw(task["description"].getCurrentContent()))
+    })
+    post["tasks"] = tasks
+    http.createPost(post)
   }
 
   return (
