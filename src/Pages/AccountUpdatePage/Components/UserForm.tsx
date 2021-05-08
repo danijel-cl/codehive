@@ -21,7 +21,7 @@ const UserForm = (props) => {
   return (
     <div className="bg-white rounded-4 border border-mercury shadow-9">
       <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
-        <h3 className="font-size-6 mb-0">Create Company</h3>
+        <h3 className="font-size-6 mb-0">Update User</h3>
       </div>
       <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
         <div className="row pl-10 pr-10">
@@ -45,49 +45,49 @@ const UserForm = (props) => {
           <div className="pb-10 col-6">
             <h4 className="font-size-6 font-weight-semibold mb-6">First Name</h4>
             <div className="col-10 pl-0">
-              <input className="form-control" placeholder="Adam..."/>
+              <input className="form-control" placeholder="First name"/>
             </div>
           </div>
           <div className="pb-10 col-6">
             <h4 className="font-size-6 font-weight-semibold mb-6">Last Name</h4>
             <div className="col-10 pl-0">
-              <input className="form-control" placeholder="Sandler..."/>
+              <input className="form-control" placeholder="Last name"/>
             </div>
           </div>
           <div className="pb-10 col-6">
             <h4 className="font-size-6 font-weight-semibold mb-6">Location</h4>
             <div className="col-10 pl-0">
-              <input className="form-control" placeholder="Zagreb.."/>
+              <input className="form-control" placeholder="Location"/>
             </div>
           </div>
           <div className="pb-10 col-6">
             <h4 className="font-size-6 font-weight-semibold mb-6">E-mail</h4>
             <div className="col-10 pl-0">
-              <input className="form-control" placeholder="Harvard.."/>
+              <input className="form-control" placeholder="E-mail"/>
             </div>
           </div>
           <div className="pb-10 col-6">
             <h4 className="font-size-6 font-weight-semibold mb-6">Phone</h4>
             <div className="col-10 pl-0">
-              <input className="form-control" placeholder="2015.."/>
+              <input className="form-control" placeholder="Phone"/>
             </div>
           </div>
           <div className="pb-10 col-6">
             <h4 className="font-size-6 font-weight-semibold mb-6">GitHub</h4>
             <div className="col-10 pl-0">
-              <input className="form-control" placeholder="2021.."/>
+              <input className="form-control" placeholder="GitHub"/>
             </div>
           </div>
           <div className="pb-10 col-6">
             <h4 className="font-size-6 font-weight-semibold mb-6">Linkedin</h4>
             <div className="col-10 pl-0">
-              <input className="form-control" placeholder="2010"/>
+              <input className="form-control" placeholder="Linkedin"/>
             </div>
           </div>
           <div className="pb-10 col-6">
             <h4 className="font-size-6 font-weight-semibold mb-6">Website</h4>
             <div className="col-10 pl-0">
-              <input className="form-control" placeholder="2010"/>
+              <input className="form-control" placeholder="Website"/>
             </div>
           </div>
           <div className="pb-10 col-6">

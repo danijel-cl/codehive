@@ -77,11 +77,11 @@ const Navbar = (props) => {
             )}
             <LoginModal loginClicked={loginClicked} setLoginClicked={setLoginClicked} />
             <SignUpModal signupClicked={signupClicked} setSignupClicked={setSignupClicked} />
-            <div className="header-btn-devider ml-auto ml-lg-5 pl-2 d-none d-xs-flex align-items-center">
+            {props.isLoggedIn && <div className="header-btn-devider ml-auto ml-lg-5 pl-2 d-none d-xs-flex align-items-center">
               <div>
                 <button style={buttonContainer} className="px-3 ml-7 font-size-7 notification-block flex-y-center position-relative">
                   <i className="fas fa-bell heading-default-color" />
-                  <span className="font-size-3 count font-weight-semibold text-white bg-primary circle-24 border border-width-3 border border-white">3</span>
+                  <span className="font-size-3 count font-weight-semibold text-white bg-primary circle-24 border border-width-3 border border-white">0</span>
                 </button>
               </div>
               <div>
@@ -96,11 +96,11 @@ const Navbar = (props) => {
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/users/:id/">Profile</Link>
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/companies/:id/dashboard">Dashboard</Link>
                     <Link className="dropdown-item py-2 font-size-3 font-weight-semibold line-height-1p2 text-uppercase" to="/users/:id/account/active">Account</Link>
-                    {props.isLoggedIn && <Button style={buttonContainer} onClick={() => logOut()} className="dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase" >Log Out</Button>}
+                    <Button style={buttonContainer} onClick={() => logOut()} className="dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase" >Log Out</Button>
                   </div>
                 </div>
               </div>
-            </div>
+            </div>}
             {/* Mobile Menu Hamburger*/}
             <button className="navbar-toggler btn-close-off-canvas  hamburger-icon border-0" type="button" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation">
               {/* <i class="icon icon-simple-remove icon-close"></i> */}
