@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { serialize } from 'object-to-formdata';
 
 const axiosAnonymous = Axios.create({ baseURL: 'http://127.0.0.1:8000' });
 const axiosAuthenticated = Axios.create({ baseURL: 'http://127.0.0.1:8000' });
@@ -44,8 +45,11 @@ export type SkillsParams = {
 }
 
 export type TaskParams = {
-  name: string;
+  task: string;
+  language: string;
   description: string;
+  code: File;
+  tests: File;
 }
 
 export type TasksParams = {
@@ -53,18 +57,9 @@ export type TasksParams = {
 }
 
 export type PostParams = {
-  skills: SkillsParams;
-  tasks: TasksParams;
-  currency: string;
-  ends: string;
   experience: string;
-  location: string;
   position: string;
-  salary_low: number;
-  salary_high: number;
-  post_description: string;
-  post_role_description: string;
-  type: string;
+  description: string;
 }
 
 export const http = {
@@ -103,8 +98,8 @@ export const http = {
 
     return response.data;
   },
-  getAllCompanies: async () => {
-    const response = await axiosAnonymous.get('/api/company');
+  getAllSkills: async () => {
+    const response = await axiosAnonymous.get('/api/skills');
 
     return response.data;
   },
@@ -124,8 +119,22 @@ export const http = {
 
     return response.data;
   },
-  createPost: async (post: PostParams) => {
-    const response = await axiosAuthenticated.post('/api/posts', post);
+  createPost: async (post: PostParams, tasks) => {
+    console.log("Post", post)
+    console.log("Tasks", tasks)
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data"
+      }
+    };
+    console.log("serialize", serialize(post))
+    const response = await axiosAuthenticated.post('/api/posts/',post);
+    console.log(response.data.id)
+    console.log(tasks)
+    tasks.forEach((task)=>{
+      task.post = response.data.id;
+      axiosAuthenticated.post('/api/tasks/',serialize(task), config)
+    })
 
     return response.data;
   },

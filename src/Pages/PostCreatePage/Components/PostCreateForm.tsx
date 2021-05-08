@@ -1,118 +1,77 @@
-import CheckBoxList from './CheckBoxList';
-import RichEditor from './RichEditor';
+import { convertToRaw, convertFromRaw, EditorState } from 'draft-js';
+
+import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+import FormEditor from '../../../Components/Form/FormEditor';
+import FormSelect from '../../../Components/Form/FormSelect';
 
 import TaskTable from './TaskTable';
-import { FormProvider, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { TextField } from './TextField';
+
+import {http} from "../../../api/http"
 
 export const PostCreateForm = (props) => {
-  let {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props;
-  
+
   const schema = yup.object().shape({
-    // tasks: yup.array().required('This is a required field.'),
-    salary_low: yup.string().required('This is a required field.'),
-    salary_high: yup.string().required('This is a required field.'),
-    position: yup.string().required('This is a required field.'),
-    experience: yup.string().required('This is a required field.'),
-    post_description: yup.string().required('This is a required field.'),
-    location: yup.string().required('This is a required field.'),
-    tasks_summary: yup.string().required('This is a required field.'),
-    ends: yup.string().required('This is a required field.'),
-    // company: yup.number().required('This is a required field.'),
-    post_role_description: yup.string().required('This is a required field.'),
-    currency: yup.string().required('This is a required field.'),
+    position: yup.object().nullable().required('This is a required field.'),
+    experience: yup.object().nullable().required('This is a required field.'),
+    description: yup.object().nullable().required('This is a required field.'),
   });
 
   const methods = useForm({
     defaultValues: {
-      company: 1
+      position: props.postState !== null ? props.postState.position : '',
+      experience: props.postState !== null ? props.postState.experience : '',
+      description: props.postState !== null ? props.postState.description : ''
     },
     resolver: yupResolver(schema),
   });
 
+
   const onSubmit = (values) => {
-    console.log(values)
+    let tasks = props.taskStates.map(task => Object.assign({}, task))
+    let post = Object.assign({}, values)
+    post["description"] = JSON.stringify(convertToRaw(post["description"].getCurrentContent()))
+    post["experience"] = post["experience"].value
+    post["position"] = post["position"].value
+    tasks.map((task)=>{
+      task["description"] = JSON.stringify(convertToRaw(task["description"].getCurrentContent()))
+      task["code"] = task["code"].fileList[0]["originFileObj"]
+      task["test"] = task["test"].fileList[0]["originFileObj"]
+    })
+    http.createPost(post, tasks)
   }
 
   return (
-    <>
+    <div className="bg-white rounded-4 border border-mercury shadow-9 pl-10 pr-10">
       <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
         <h3 className="font-size-6 mb-0">Create Post</h3>
       </div>
         <div className="pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-bottom border-width-1 border-default-color light-mode-texts">
           <div className="row pl-5 pr-5">
           <FormProvider {...methods}>
-              <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                <div className="pb-10 col-6">
-                <h4 className="font-size-6 font-weight-semibold mb-6">Minimum salary</h4>
-                  <div className="pl-0 col-10">
-                    <TextField name="salary_low" defaultValue="" placeholder="Minimum salary"/>
-                  </div>
-                </div>
-                <div className="pb-10 col-6">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Maximum salary</h4>
-                  <div className="pl-0 col-10">
-                    <TextField name="salary_high" defaultValue="" placeholder="Maximum salary"/>
-                  </div>
-                </div>
-                <div className="pb-10 col-6">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Currency</h4>
-                  <div className="pl-0 col-10">
-                    <TextField name="currency" defaultValue="" placeholder="Currency"/>
-                  </div>
-                </div>
-                <div className="pb-10 col-6">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Position</h4>
-                  <div className="pl-0 col-10">
-                    <TextField name="position" defaultValue="" placeholder="Position"/>
-                  </div>
-                </div>
-                <div className="pb-10 col-6">
-                  <div className="pl-0 col-10">
-                    <CheckBoxList title="Experience Level" name="experience" />
-                  </div>
-                </div>
-                <div className="pb-10 col-6">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Location</h4>
-                  <div className="pl-0 col-10">
-                    <TextField name="location" defaultValue="" placeholder="Location"/>
-                  </div>
-                </div>
-                <div className="pb-20 col-12">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Tasks summary</h4>
-                  <RichEditor name="tasks_summary" />
-                </div>
-                <div className="pb-20 col-12">
-                  <TaskTable
-                    taskClicked={taskClicked}
-                    setTaskClicked={setTaskClicked}
-                    taskTitles={taskTitles}
-                    setTaskTitles={setTaskTitles}
-                    setTaskIndex={setTaskIndex}/>
-                </div>
-                <div className="pb-10 col-12">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Job Description</h4>
-                  <RichEditor name="post_description" />
-                </div>
-                <div className="pb-10 col-12">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Your Role</h4>
-                  <RichEditor name="post_role_description" />
-                </div>
-                <div className="pb-10 col-6">
-                  <h4 className="font-size-6 font-weight-semibold mb-6">Ending date</h4>
-                  <div className="pl-0 col-10">
-                    <TextField name="ends" defaultValue="" placeholder="Ending date"/>
-                  </div>
-                </div>
-                <div className="col-12 my-15">
-                  <button className="btn btn-primary btn-xl w-10 text-uppercase" onClick={methods.handleSubmit(onSubmit)}><span className="mr-5 d-inline-block">+</span>Create Post</button>
-                </div>
-              </div>
+            <div className="pb-15 col-12">
+              <h4 className="font-size-6 font-weight-semibold mb-6">Description</h4>
+              <FormEditor name="description"/>
+            </div>
+            <div className="pb-10 col-5">
+              <h4 className="font-size-6 font-weight-semibold mb-6">Position</h4>
+              <FormSelect query={http.getAllSkills} name="position"/>
+            </div>
+            <div className="pb-20 offset-1 col-5">
+              <h4 className="font-size-6 font-weight-semibold mb-6">Experience</h4>
+              <FormSelect query={http.getAllSkills} name="experience"/>
+            </div>
+            <div className="pb-20 col-12">
+              <TaskTable {...props} />
+            </div>
+            <div className="col-12 my-15">
+              <button className="btn btn-primary btn-xl w-10 text-uppercase" onClick={methods.handleSubmit(onSubmit)}><span className="mr-5 d-inline-block">+</span>Create Post</button>
+            </div>
           </FormProvider>
         </div>
       </div>
-    </>
+    </div>
   )
 }
