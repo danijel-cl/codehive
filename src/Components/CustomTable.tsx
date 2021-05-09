@@ -19,7 +19,7 @@ const tableClassname = styled.cssClassName`
     border-bottom: 3px inset;
   }
   .ant-table-thead {
-    background-color:rgba(0, 176, 116, 0.7);
+    background-color:rgba(176, 53, 0, 1);
     color: white;
     height: 40px;
   }
@@ -35,7 +35,7 @@ const tableClassname = styled.cssClassName`
   }
 
   .ant-table-tbody tr:hover {
-    background-color:rgba(0, 176, 116, 0.3) !important;
+    background-color:rgba(176, 53, 0, 0.5) !important;
   }
 
   .ant-table-tbody tr:nth-of-type(odd) {
