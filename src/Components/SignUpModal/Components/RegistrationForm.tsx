@@ -32,7 +32,7 @@ export const RegistrationForm = () => {
       let data;
       
       try {
-        data = await http.register({email: values.email, password: values.password});
+        data = await http.register({password: values.password, email: values.email});
         console.log(data)
       } catch (error) {
         setErrorMessage('Registration failed. Check your credentials');
