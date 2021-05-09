@@ -12,6 +12,7 @@ import { TaskListPage } from '../Pages/TaskListPage/TaskListPage';
 import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 import { ApplicationDetailPage } from '../Pages/ApplicationDetailPage/ApplicationDetailPage';
 import { PostCreatePage } from '../Pages/PostCreatePage/PostCreatePage';
+import { PostUpdatePage } from '../Pages/PostCreatePage/PostUpdatePage';
 import { AccountUpdatePage } from '../Pages/AccountUpdatePage/AccountUpdatePage';
 import { AccountFinishedListPage } from '../Pages/AccountFinishedListPage/AccountFinishedListPage';
 import { AccountTaskListPage } from '../Pages/AccountTaskListPage/AccountTaskListPage';
@@ -24,11 +25,12 @@ export const PublicRouter = () => {
         <Route exact path="/recover-password" component={RecoverPasswordPage} />
         <Route exact path="/account-activation" component={AccountActivationPage} />
         <Route exact path="/posts" component={PostListPage} />
+        <Route exact path="/posts/create" component={PostCreatePage} />
         <Route exact path="/posts/:id" component={PostDetailPage} />
+        <Route exact path="/posts/update/:id" component={PostUpdatePage} />
         <Route exact path="/companies/create" component={CompanyCreatePage} />
         <Route exact path="/companies/:id" component={CompanyDetailPage} />
         <Route exact path="/companies/:id/dashboard" component={DashboardPage} />
-        <Route exact path="/companies/:id/post" component={PostCreatePage} />
         <Route exact path="/users/:id" component={UserDetailPage} />
         <Route exact path="/posts/:id/tasks/" component={TaskListPage} />
         <Route exact path="/posts/:id/tasks/:id" component={TaskDetailPage} />

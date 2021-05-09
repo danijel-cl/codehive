@@ -120,17 +120,12 @@ export const http = {
     return response.data;
   },
   createPost: async (post: PostParams, tasks) => {
-    console.log("Post", post)
-    console.log("Tasks", tasks)
     const config = {
       headers: {
         "content-type": "multipart/form-data"
       }
     };
-    console.log("serialize", serialize(post))
     const response = await axiosAuthenticated.post('/api/posts/',post);
-    console.log(response.data.id)
-    console.log(tasks)
     tasks.forEach((task)=>{
       task.post = response.data.id;
       axiosAuthenticated.post('/api/tasks/',serialize(task), config)
@@ -138,6 +133,15 @@ export const http = {
 
     return response.data;
   },
-
+  getPost: async (id: number) => {
+    const data = await axiosAnonymous.get(`/api/posts/${id}`).then(response => response.data);
+    return data;
+  },
+  getPostTasks: async (id: number) => {
+    const response = await axiosAnonymous.get(`/api/tasks/?post=${id}`);
+    const data: Array<TaskParams> = response.data;
+    console.log(data);
+    return data;
+  },
 
 }

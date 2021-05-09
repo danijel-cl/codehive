@@ -15,7 +15,7 @@ const Dashboard = (props) => {
         <li style={{cursor: 'pointer'}} onClick={()=>props.setPage(3)} className={(props.page === 3 ? "active" : "")}><a className="px-10 py-1 my-5 font-size-4 font-weight-semibold flex-y-center"><i className="fas fa-cog mr-7" />Settings</a></li>
       </ul>
       <div className="my-15 px-11 pt-30">
-        <Link to="/companies/:id/post" className="btn btn-primary btn-xl w-100 text-uppercase"><span className="mr-5 d-inline-block">+</span>Post a new job</Link>
+        <Link to="/posts/create" className="btn btn-primary btn-xl w-100 text-uppercase"><span className="mr-5 d-inline-block">+</span>Post a new job</Link>
       </div>
     </div>
   );

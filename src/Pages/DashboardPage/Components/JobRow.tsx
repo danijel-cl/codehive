@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const JobRow = (props) => {
   return (
@@ -21,7 +22,7 @@ const JobRow = (props) => {
         <h3 className="font-size-4 font-weight-bold text-black-2 mb-0">47</h3>
       </td>
       <td className="table-y-middle py-7 min-width-px-80">
-        <a className="font-size-3 font-weight-bold text-green text-uppercase">Edit</a>
+        <Link to="/posts/:id/update" className="font-size-3 font-weight-bold text-green text-uppercase">Edit</Link>
       </td>
       <td className="table-y-middle py-7 min-width-px-100">
         <a className="font-size-3 font-weight-bold text-red-2 text-uppercase">Delete</a>
