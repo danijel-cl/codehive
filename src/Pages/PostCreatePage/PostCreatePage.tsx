@@ -3,9 +3,9 @@ import { PostCreateForm } from './Components/PostCreateForm';
 import { TaskCreateForm } from './Components/TaskCreateForm';
 
 export const PostCreatePage = (props) => {
-  const empty: string[] = []
+  const [postState, setPostState] = useState(null)
+  const [taskStates, setTaskStates] = useState(Array())
   const [taskIndex, setTaskIndex] = useState(null)
-  const [taskTitles, setTaskTitles] = useState(empty)
   const [taskClicked, setTaskClicked] = useState(false);
   return (
     <div className="site-wrapper" >
@@ -15,15 +15,18 @@ export const PostCreatePage = (props) => {
             <div className="col-10">
                 {taskClicked ?
                 <TaskCreateForm
-                  taskTitles={taskTitles}
-                  setTaskTitles={setTaskTitles}
+                  setPostState = {setPostState}
+                  taskStates={taskStates}
+                  setTaskStates={setTaskStates}
                   taskClicked={taskClicked}
                   setTaskClicked={setTaskClicked}
                   taskIndex={taskIndex}
                   setTaskIndex={setTaskIndex} /> :
                 <PostCreateForm
-                  taskTitles={taskTitles}
-                  setTaskTitles={setTaskTitles}
+                  postState = {postState}
+                  setPostState = {setPostState}
+                  taskStates={taskStates}
+                  setTaskStates={setTaskStates}
                   taskClicked={taskClicked}
                   setTaskClicked={setTaskClicked}
                   setTaskIndex={setTaskIndex} />

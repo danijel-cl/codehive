@@ -5,10 +5,10 @@ import { styled } from '../utils/css';
 
 export const LoginModal = (props) => {
   const {loginClicked, setLoginClicked} = props;
-const modalContainer = styled.cssStyle`
-  display: block ;
-  overflow: initial;
-`;
+  const modalContainer = styled.cssStyle`
+    display: block ;
+    overflow: initial;
+  `;
   return (
     <div className={`modal fade form-modal ${loginClicked ? "show" : ""}`} style={modalContainer} id="login" tabIndex={-1} aria-hidden="true">
       <div className="modal-dialog max-width-px-840 position-relative">
@@ -68,4 +68,4 @@ const modalContainer = styled.cssStyle`
       </div>
     </div>
   )
-} 
+}

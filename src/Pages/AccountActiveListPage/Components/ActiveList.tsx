@@ -1,6 +1,107 @@
+import { Button, Space } from 'antd';
 import React from 'react';
-import ActiveRow from './ActiveRow';
+import { CustomTable } from '../../../Components/CustomTable';
+import { styled } from '../../../utils/css';
 import ReactSelect from './ReactSelect'
+
+const buttonContainer = styled.cssStyle`
+  border: none;
+  outline: none;
+  color: rgba(0, 176, 116, 0.9);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: transparent;
+`;
+
+const dataSource = [
+  {
+    key: '1',
+    company: 'Google',
+    position: 'Software developer',
+    appliedOn: '12 July, 2020',
+    timeLeft: '2 weeks',
+    integrationScore: '92%',
+    challenge: 'VIEW',
+  },
+  {
+    key: '2',
+    company: 'Google',
+    position: 'Software developer',
+    appliedOn: '12 July, 2020',
+    timeLeft: '2 weeks',
+    integrationScore: '92%',
+    challenge: 'VIEW',
+  },
+  {
+    key: '3',
+    company: 'Google',
+    position: 'Software developer',
+    appliedOn: '12 July, 2020',
+    timeLeft: '2 weeks',
+    integrationScore: '92%',
+    challenge: 'VIEW',
+  },
+  {
+    key: '4',
+    company: 'Google',
+    position: 'Software developer',
+    appliedOn: '12 July, 2020',
+    timeLeft: '2 weeks',
+    integrationScore: '92%',
+    challenge: 'VIEW',
+  },
+  {
+    key: '5',
+    company: 'Google',
+    position: 'Software developer',
+    appliedOn: '12 July, 2020',
+    timeLeft: '2 weeks',
+    integrationScore: '92%',
+    challenge: 'VIEW',
+  },
+  {
+    key: '6',
+    company: 'Google',
+    position: 'Software developer',
+    appliedOn: '12 July, 2020',
+    timeLeft: '2 weeks',
+    integrationScore: '92%',
+    challenge: 'VIEW',
+  },
+];
+
+const columns = [
+  {
+    title: 'Company',
+    dataIndex: 'company',
+  },
+  {
+    title: 'Position',
+    dataIndex: 'position',
+  },
+  {
+    title: 'Applied on',
+    dataIndex: 'appliedOn',
+  },
+  {
+    title: 'Time left',
+    dataIndex: 'timeLeft',
+  },
+  {
+    title: 'Integration score',
+    dataIndex: 'integrationScore',
+  },
+  {
+    title: 'Challenge',
+    dataIndex: 'challenge',
+    render: (text, record) => (
+      <Space size="middle">
+        <Button style={buttonContainer}>{text}</Button>
+      </Space>
+    ),
+  },
+];
 
 const ActiveList = (props) => {
   return (
@@ -21,49 +122,7 @@ const ActiveList = (props) => {
         </div>
       </div>
       <div className="bg-white shadow-8 pt-10 rounded pb-8 px-11">
-        <div className="table-responsive" style={{ borderRadius:"5px"}}>
-          <table className="table table-striped table-borderless table-hover">
-            <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
-              <tr className="pl-0 font-size-4 font-weight-normal">
-                <th scope="col" className="pl-15">Company</th>
-                <th scope="col">Position</th>
-                <th scope="col">Applied on</th>
-                <th scope="col">Time Left</th>
-                <th scope="col">Integration score</th>
-                <th scope="col">Challenge</th>
-              </tr>
-            </thead>
-            <tbody>
-              <ActiveRow />
-              <ActiveRow />
-              <ActiveRow />
-              <ActiveRow />
-              <ActiveRow />
-              <ActiveRow />
-            </tbody>
-          </table>
-        </div>
-        <div className="pt-2">
-          <nav aria-label="Page navigation example">
-            <ul className="pagination pagination-hover-primary rounded-0 ml-n2">
-              <li className="page-item rounded-0 flex-all-center">
-                <button className="page-link rounded-0 border-0 px-3active" aria-label="Previous">
-                  <i className="fas fa-chevron-left" />
-                </button>
-              </li>
-              <li className="page-item"><button className="page-link border-0 font-size-4 font-weight-semibold px-3" >1</button></li>
-              <li className="page-item"><button className="page-link border-0 font-size-4 font-weight-semibold px-3" >2</button></li>
-              <li className="page-item"><button className="page-link border-0 font-size-4 font-weight-semibold px-3" >3</button></li>
-              <li className="page-item disabled"><button className="page-link border-0 font-size-4 font-weight-semibold px-3" >...</button></li>
-              <li className="page-item "><button className="page-link border-0 font-size-4 font-weight-semibold px-3" >7</button></li>
-              <li className="page-item rounded-0 flex-all-center">
-                <button className="page-link rounded-0 border-0 px-3" aria-label="Next">
-                  <i className="fas fa-chevron-right" />
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <CustomTable dataSource={dataSource} columns={columns} />
       </div>
     </div>
   );

@@ -1,6 +1,129 @@
 import React from 'react';
-import AppliedRow from './AppliedRow';
 import ReactSelect from './ReactSelect'
+import { Button, Space } from 'antd';
+import { styled } from '../../../utils/css';
+import { CustomTable } from '../../../Components/CustomTable';
+
+const buttonContainer = styled.cssStyle`
+  display: flex;
+  flex-direction: row;
+`;
+
+const viewButton = styled.cssStyle`
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  background-color: transparent;
+`;
+
+const editButton = styled.cssStyle`
+  color: rgba(0, 176, 116, 0.9);
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  background-color: transparent;
+`;
+
+const deleteButton = styled.cssStyle`
+  color: #FC3F3F;
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  background-color: transparent;
+`;
+
+const dataSource = [
+  {
+    key: '1',
+    name: 'John Doe',
+    appliedAs: 'Senior project manager',
+    appliedOn: '12 July, 2020',
+    testsPassed: '92%',
+    codeQuality: '85%',
+  },
+  {
+    key: '2',
+    name: 'John Doe',
+    appliedAs: 'Senior project manager',
+    appliedOn: '12 July, 2020',
+    testsPassed: '92%',
+    codeQuality: '85%',
+  },
+  {
+    key: '3',
+    name: 'John Doe',
+    appliedAs: 'Senior project manager',
+    appliedOn: '12 July, 2020',
+    testsPassed: '92%',
+    codeQuality: '85%',
+  },
+  {
+    key: '4',
+    name: 'John Doe',
+    appliedAs: 'Senior project manager',
+    appliedOn: '12 July, 2020',
+    testsPassed: '92%',
+    codeQuality: '85%',
+  },
+  {
+    key: '5',
+    name: 'John Doe',
+    appliedAs: 'Senior project manager',
+    appliedOn: '12 July, 2020',
+    testsPassed: '92%',
+    codeQuality: '85%',
+  },
+  {
+    key: '6',
+    name: 'John Doe',
+    appliedAs: 'Senior project manager',
+    appliedOn: '12 July, 2020',
+    testsPassed: '92%',
+    codeQuality: '85%',
+  },
+];
+
+const columns = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+  },
+  {
+    title: 'Applied as',
+    dataIndex: 'appliedAs',
+  },
+  {
+    title: 'Applied on',
+    dataIndex: 'appliedOn',
+  },
+  {
+    title: 'Tests passed',
+    dataIndex: 'testsPassed',
+  },
+  {
+    title: 'Code quality',
+    dataIndex: 'codeQuality',
+  },
+  {
+    title: '',
+    render: (text, record) => (
+      <Space style={buttonContainer} size="middle">
+        <Button style={viewButton}>View application</Button>
+        <Button style={editButton}>Contact</Button>
+        <Button style={deleteButton}>Reject</Button>
+      </Space>
+    ),
+  },
+];
 
 const AppliedList = (props) => {
   return (
@@ -21,51 +144,7 @@ const AppliedList = (props) => {
         </div>
       </div>
       <div className="bg-white pt-13 rounded-4 pb-8 px-11">
-        <div className="table-responsive" style={{ borderRadius:"5px"}}>
-          <table className="table table-striped table-borderless table-hover">
-            <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
-              <tr>
-                <th scope="col" className="pl-17">Name</th>
-                <th scope="col">Applied as</th>
-                <th scope="col">Applied on</th>
-                <th scope="col">Tests Passed</th>
-                <th scope="col">Code Quality</th>
-                <th scope="col"/>
-                <th scope="col"/>
-                <th scope="col"/>
-              </tr>
-            </thead>
-            <tbody>
-              <AppliedRow />
-              <AppliedRow />
-              <AppliedRow />
-              <AppliedRow />
-              <AppliedRow />
-              <AppliedRow />
-            </tbody>
-          </table>
-        </div>
-        <div className="pt-2">
-          <nav aria-label="Page navigation example">
-            <ul className="pagination pagination-hover-primary rounded-0 ml-n2">
-              <li className="page-item rounded-0 flex-all-center">
-                <a className="page-link rounded-0 border-0 px-3active" href="#" aria-label="Previous">
-                  <i className="fas fa-chevron-left" />
-                </a>
-              </li>
-              <li className="page-item"><a className="page-link border-0 font-size-4 font-weight-semibold px-3" href="#">1</a></li>
-              <li className="page-item"><a className="page-link border-0 font-size-4 font-weight-semibold px-3" href="#">2</a></li>
-              <li className="page-item"><a className="page-link border-0 font-size-4 font-weight-semibold px-3" href="#">3</a></li>
-              <li className="page-item disabled"><a className="page-link border-0 font-size-4 font-weight-semibold px-3" href="#">...</a></li>
-              <li className="page-item "><a className="page-link border-0 font-size-4 font-weight-semibold px-3" href="#">7</a></li>
-              <li className="page-item rounded-0 flex-all-center">
-                <a className="page-link rounded-0 border-0 px-3" href="#" aria-label="Next">
-                  <i className="fas fa-chevron-right" />
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <CustomTable dataSource={dataSource} columns={columns} />
       </div>
     </div>
   );

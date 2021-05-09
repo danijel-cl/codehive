@@ -1,10 +1,11 @@
-import React, {useState, useCallback} from 'react';
+import { useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
-import { EditorState, RichUtils, convertToRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
+import { convertToRaw, convertFromRaw, EditorState } from 'draft-js';
+
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-const RichEditor = ({name}) => {
+const FormEditor = ({name}) => {
 
   const { errors, control } = useFormContext();
 
@@ -19,7 +20,7 @@ const RichEditor = ({name}) => {
         <>
           <Editor
             editorState={value}
-            onEditorStateChange={(value) => onChange(value)}
+            onEditorStateChange={onChange}
             editorStyle={{lineHeight:"1px"}}
             toolbar={{
               options: options,
@@ -29,8 +30,7 @@ const RichEditor = ({name}) => {
         </>
       )}
     />
-
   );
 }
 
-export default RichEditor;
+export default FormEditor;

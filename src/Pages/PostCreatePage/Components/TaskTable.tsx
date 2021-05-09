@@ -1,17 +1,21 @@
 import React, {useState, useCallback} from 'react';
 import ReactDOM from 'react-dom';
+import { useFormContext } from 'react-hook-form';
 
 const TaskTable = (props) => {
-  const {taskClicked, setTaskClicked, taskTitles, setTaskTitles, setTaskIndex} = props
+  const {taskClicked, setTaskClicked, taskStates, setTaskStates, setTaskIndex, setPostState} = props
+
+  const { getValues } = useFormContext();
 
   const removeTask = (e, index) => {
     e.preventDefault()
-    setTaskTitles(taskTitles.filter((title, i) => i !== index))
+    setTaskStates(taskStates.filter((title, i) => i !== index))
   }
 
   const editTask = (e, index) => {
     e.preventDefault()
     window.scrollTo(0, 0);
+    setPostState(getValues())
     setTaskIndex(index, setTaskClicked(!taskClicked))
   }
   return (
@@ -21,6 +25,7 @@ const TaskTable = (props) => {
         <div className="col-2">
           <button type="button" onClick={() => {
             window.scrollTo(0, 0);
+            setPostState(getValues())
             setTaskClicked(!taskClicked)
           }} className="btn btn-primary text-uppercase">
             <span className="mr-5 d-inline-block">+</span>
@@ -28,28 +33,30 @@ const TaskTable = (props) => {
           </button>
         </div>
       </div>
-      <table className="table table-striped col-12">
-        <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
-          <tr>
-            <th scope="col">Task</th>
-            <th scope="col">Title</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          {taskTitles.map((task, index) => {
-            return (
+      { taskStates.length !== 0 &&
+        <table className="table table-striped col-12">
+          <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
             <tr>
-              <th scope="row">{index}</th>
-              <td>{task.title}</td>
-              <td><button onClick={(e) => editTask(e, index)} className="text-green font-weight-semibold">EDIT</button></td>
-              <td><button onClick={(e) => removeTask(e, index)} className="text-red font-weight-semibold">REMOVE</button></td>
+              <th scope="col">Task</th>
+              <th scope="col">Title</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
             </tr>
-            )
-          })}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {taskStates.map((task, index) => {
+              return (
+              <tr>
+                <th scope="row">{index}</th>
+                <td>{task.title}</td>
+                <td><button onClick={(e) => editTask(e, index)} className="text-green font-weight-semibold">EDIT</button></td>
+                <td><button onClick={(e) => removeTask(e, index)} className="text-red font-weight-semibold">REMOVE</button></td>
+              </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      }
     </>
   );
 }
