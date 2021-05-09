@@ -1,6 +1,18 @@
+import { Button, Space } from 'antd';
 import React from 'react';
 import { CustomTable } from '../../../Components/CustomTable';
+import { styled } from '../../../utils/css';
 import ReactSelect from './ReactSelect'
+
+const buttonContainer = styled.cssStyle`
+  border: none;
+  outline: none;
+  color: rgba(0, 176, 116, 0.9);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: transparent;
+`;
 
 const dataSource = [
   {
@@ -83,6 +95,11 @@ const columns = [
   {
     title: 'Challenge',
     dataIndex: 'challenge',
+    render: (text, record) => (
+      <Space size="middle">
+        <Button style={buttonContainer}>{text}</Button>
+      </Space>
+    ),
   },
 ];
 
@@ -106,7 +123,7 @@ const FinishedList = (props) => {
         </div>
       </div>
       <div className="bg-white shadow-8 pt-10 rounded pb-8 px-11">
-      <CustomTable dataSource={dataSource} columns={columns} />
+        <CustomTable dataSource={dataSource} columns={columns} />
       </div>
     </div>
   );
