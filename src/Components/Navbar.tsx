@@ -4,6 +4,7 @@ import { LoginModal } from './LoginModal/LoginModal';
 import { SignUpModal } from './SignUpModal/SignUpModal';
 import { styled } from '../utils/css';
 import { Button } from 'antd';
+import logo from './logo.png';
 
 const buttonContainer = styled.cssStyle`
   border: none;
@@ -12,17 +13,21 @@ const buttonContainer = styled.cssStyle`
 `;
 
 const logoContainer = styled.cssStyle`
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
   font-family: "Inter", sans-serif;
   text-transform: uppercase;
   margin-bottom: 0;
   letter-spacing: 1px;
+  color:#c0c5cf;
+  
 `;
 
 const spanContainer = styled.cssStyle`
-  color: #00b074;
+  color: #b03500;
   margin-right: 1px;
+  margin-left: 80px;
+  margin-top: 10px
 `;
 
 const Navbar = (props) => {
@@ -33,15 +38,17 @@ const Navbar = (props) => {
     window.localStorage.removeItem('logtoken')
     window.location.reload()
   }
-
+  console.log(logo);
   return (
     <header className="site-header site-header--menu-right bg-default py-7 py-lg-0 site-header--absolute site-header--sticky reveal-header">
         <div className="container">
           <nav className="navbar site-navbar offcanvas-active navbar-expand-lg  px-0 py-0">
             {/* Brand Logo*/}
-            <div className="brand-logo">
+            
+            <div className="navbar-letters">
               <Link to="/">
                 {/* light version logo (logo must be black)*/}
+                <img className = "logo" src={logo} alt="Logo" />
                 <p style={logoContainer}><span style={spanContainer}>code</span>hive</p>
               </Link>
             </div>
@@ -68,7 +75,7 @@ const Navbar = (props) => {
                 }} className="btn btn-transparent text-uppercase font-size-3 heading-default-color focus-reset">
                   Log in
                 </button>
-                <button onClick={() => setSignupClicked(!signupClicked)} className="btn btn-primary text-uppercase font-size-3">
+                <button onClick={() => setSignupClicked(!signupClicked)} className="btn btn-primary text-uppercase font-size-3 btn_red ">
                   Sign up
                 </button>
               </div>
