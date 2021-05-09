@@ -27,7 +27,7 @@ const spanContainer = styled.cssStyle`
   color: #b03500;
   margin-right: 1px;
   margin-left: 80px;
-  margin-top: 10px
+  margin-top: 10px;
 `;
 
 const Navbar = (props) => {
@@ -61,19 +61,21 @@ const Navbar = (props) => {
                   <li className="nav-item">
                     <Link className="nav-link" to="/posts/">Jobs</Link>
                   </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/users/:id/">Profile</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/companies/:id/dashboard">Dashboard</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/users/:id/account/active">Account</Link>
-                  </li>
                   {props.isLoggedIn && 
-                  <li className="nav-item">
-                    <Button style={buttonContainer} onClick={() => logOut()} className="nav-link" >Log Out</Button>
-                  </li>}
+                  <>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/users/:id/">Profile</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/companies/:id/dashboard">Dashboard</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/users/:id/account/active">Account</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Button style={buttonContainer} onClick={() => logOut()} className="nav-link" >Log Out</Button>
+                    </li>
+                  </>}
                 </ul>
               </div>
               <button className="d-block d-lg-none offcanvas-btn-close focus-reset" type="button" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="true" aria-label="Toggle navigation">
