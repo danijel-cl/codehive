@@ -1,6 +1,108 @@
 import React from 'react';
-import TaskRow from './TaskRow'
 import StyledSelect from "./ReactSelect"
+import { CustomTable } from '../../../Components/CustomTable';
+import { Button, Space } from 'antd';
+import { styled } from '../../../utils/css';
+
+
+const buttonContainer = styled.cssStyle`
+  border: none;
+  outline: none;
+  color: rgba(0, 176, 116, 0.9);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: transparent;
+`;
+
+const dataSource = [
+  {
+    key: '1',
+    timeSubmitted: '12 July, 2020',
+    company: 'Google',
+    position: 'Software developer',
+    title: '2 weeks',
+    integrationScore: '92%',
+    task: 'VIEW',
+  },
+  {
+    key: '2',
+    timeSubmitted: '12 July, 2020',
+    company: 'Google',
+    position: 'Software developer',
+    title: '2 weeks',
+    integrationScore: '92%',
+    task: 'VIEW',
+  },
+  {
+    key: '3',
+    timeSubmitted: '12 July, 2020',
+    company: 'Google',
+    position: 'Software developer',
+    title: '2 weeks',
+    integrationScore: '92%',
+    task: 'VIEW',
+  },
+  {
+    key: '4',
+    timeSubmitted: '12 July, 2020',
+    company: 'Google',
+    position: 'Software developer',
+    title: '2 weeks',
+    integrationScore: '92%',
+    task: 'VIEW',
+  },
+  {
+    key: '5',
+    timeSubmitted: '12 July, 2020',
+    company: 'Google',
+    position: 'Software developer',
+    title: '2 weeks',
+    integrationScore: '92%',
+    task: 'VIEW',
+  },
+  {
+    key: '6',
+    timeSubmitted: '12 July, 2020',
+    company: 'Google',
+    position: 'Software developer',
+    title: '2 weeks',
+    integrationScore: '92%',
+    task: 'VIEW',
+  },
+];
+
+const columns = [
+  {
+    title: 'Time submitted',
+    dataIndex: 'timeSubmitted',
+  },
+  {
+    title: 'Company',
+    dataIndex: 'company',
+  },
+  {
+    title: 'Position',
+    dataIndex: 'position',
+  },
+  {
+    title: 'Title',
+    dataIndex: 'title',
+  },
+  {
+    title: 'Integration score',
+    dataIndex: 'integrationScore',
+  },
+  {
+    title: 'Task',
+    dataIndex: 'task',
+    render: (text, record) => (
+      <Space size="middle">
+        <Button style={buttonContainer}>{text}</Button>
+      </Space>
+    ),
+  },
+];
 
 const TaskList = (props) => {
   return (
@@ -21,30 +123,7 @@ const TaskList = (props) => {
         </div>
       </div>
       <div className="bg-white shadow-8 pt-10 rounded pb-8 px-11">
-        <div className="table-responsive" style={{ borderRadius:"5px"}}>
-          <table className="table table-striped table-borderless table-hover">
-            <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
-              <tr>
-                <th scope="col" className="py-6 pl-10">Time Submitted</th>
-                <th scope="col" className="py-6">Company</th>
-                <th scope="col" className="py-6">Position</th>
-                <th scope="col" className="py-6">Title</th>
-                <th scope="col" className="py-6">Integration score</th>
-                <th scope="col" className="py-6">Task</th>
-              </tr>
-            </thead>
-            <tbody>
-              <TaskRow />
-              <TaskRow />
-              <TaskRow />
-              <TaskRow />
-              <TaskRow />
-              <TaskRow />
-              <TaskRow />
-              <TaskRow />
-            </tbody>
-          </table>
-        </div>
+      <CustomTable dataSource={dataSource} columns={columns} />
       </div>
   </div>
   );

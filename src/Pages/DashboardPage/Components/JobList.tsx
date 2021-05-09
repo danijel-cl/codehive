@@ -1,6 +1,116 @@
 import React from 'react';
-import JobRow from './JobRow'
+import { CustomTable } from '../../../Components/CustomTable';
 import StyledSelect from "./ReactSelect"
+import { Button, Space } from 'antd';
+import { styled } from '../../../utils/css';
+
+const buttonContainer = styled.cssStyle`
+  display: flex;
+  flex-direction: row;
+`;
+
+const editButton = styled.cssStyle`
+  color: rgba(0, 176, 116, 0.9);
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: transparent;
+`;
+
+const deleteButton = styled.cssStyle`
+  color: #FC3F3F;
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: transparent;
+`;
+
+const dataSource = [
+  {
+    key: '1',
+    position: 'Senior project manager',
+    jobType: 'Full-time',
+    city: 'Zagreb',
+    createdOn: '12 July, 2020',
+    totalApplicants: '47',
+  },
+  {
+    key: '2',
+    position: 'Senior project manager',
+    jobType: 'Full-time',
+    city: 'Zagreb',
+    createdOn: '12 July, 2020',
+    totalApplicants: '47',
+  },
+  {
+    key: '3',
+    position: 'Senior project manager',
+    jobType: 'Full-time',
+    city: 'Zagreb',
+    createdOn: '12 July, 2020',
+    totalApplicants: '47',
+  },
+  {
+    key: '4',
+    position: 'Senior project manager',
+    jobType: 'Full-time',
+    city: 'Zagreb',
+    createdOn: '12 July, 2020',
+    totalApplicants: '47',
+  },
+  {
+    key: '5',
+    position: 'Senior project manager',
+    jobType: 'Full-time',
+    city: 'Zagreb',
+    createdOn: '12 July, 2020',
+    totalApplicants: '47',
+  },
+  {
+    key: '6',
+    position: 'Senior project manager',
+    jobType: 'Full-time',
+    city: 'Zagreb',
+    createdOn: '12 July, 2020',
+    totalApplicants: '47',
+  },
+];
+
+const columns = [
+  {
+    title: 'Position',
+    dataIndex: 'position',
+  },
+  {
+    title: 'Job type',
+    dataIndex: 'jobType',
+  },
+  {
+    title: 'City',
+    dataIndex: 'city',
+  },
+  {
+    title: 'Created on',
+    dataIndex: 'createdOn',
+  },
+  {
+    title: 'Total applicants',
+    dataIndex: 'totalApplicants',
+  },
+  {
+    title: '',
+    render: (text, record) => (
+      <Space style={buttonContainer} size="middle">
+        <Button style={editButton}>Edit</Button>
+        <Button style={deleteButton}>Delete</Button>
+      </Space>
+    ),
+  },
+];
 
 const JobsList = (props) => {
   return (
@@ -21,31 +131,7 @@ const JobsList = (props) => {
         </div>
       </div>
       <div className="bg-white shadow-8 pt-12 rounded-4 pb-9 px-11">
-        <div className="table-responsive " style={{ borderRadius:"5px"}}>
-          <table className="table table-striped table-borderless table-hover">
-            <thead style={{backgroundColor:"rgba(0, 176, 116, 0.7)"}} className="font-size-4 text-white">
-              <tr>
-                <th scope="col" className="pl-17">Name</th>
-                <th scope="col">Job Type</th>
-                <th scope="col">City</th>
-                <th scope="col">Created on</th>
-                <th scope="col">Total Applicants</th>
-                <th scope="col"/>
-                <th scope="col"/>
-              </tr>
-            </thead>
-            <tbody>
-              <JobRow />
-              <JobRow />
-              <JobRow />
-              <JobRow />
-              <JobRow />
-              <JobRow />
-              <JobRow />
-              <JobRow />
-            </tbody>
-          </table>
-        </div>
+        <CustomTable dataSource={dataSource} columns={columns} />
       </div>
   </div>
   );

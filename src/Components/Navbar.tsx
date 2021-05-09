@@ -4,6 +4,7 @@ import { LoginModal } from './LoginModal/LoginModal';
 import { SignUpModal } from './SignUpModal/SignUpModal';
 import { styled } from '../utils/css';
 import { Button } from 'antd';
+import logo from './logo.png';
 
 const buttonContainer = styled.cssStyle`
   border: none;
@@ -12,17 +13,21 @@ const buttonContainer = styled.cssStyle`
 `;
 
 const logoContainer = styled.cssStyle`
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
   font-family: "Inter", sans-serif;
   text-transform: uppercase;
   margin-bottom: 0;
   letter-spacing: 1px;
+  color:#c0c5cf;
+  
 `;
 
 const spanContainer = styled.cssStyle`
-  color: #00b074;
+  color: #b03500;
   margin-right: 1px;
+  margin-left: 80px;
+  margin-top: 10px;
 `;
 
 const Navbar = (props) => {
@@ -33,15 +38,17 @@ const Navbar = (props) => {
     window.localStorage.removeItem('logtoken')
     window.location.reload()
   }
-
+  console.log(logo);
   return (
     <header className="site-header site-header--menu-right bg-default py-7 py-lg-0 site-header--absolute site-header--sticky reveal-header">
         <div className="container">
           <nav className="navbar site-navbar offcanvas-active navbar-expand-lg  px-0 py-0">
             {/* Brand Logo*/}
-            <div className="brand-logo">
+            
+            <div className="navbar-letters">
               <Link to="/">
                 {/* light version logo (logo must be black)*/}
+                <img className = "logo" src={logo} alt="Logo" />
                 <p style={logoContainer}><span style={spanContainer}>code</span>hive</p>
               </Link>
             </div>
@@ -54,13 +61,28 @@ const Navbar = (props) => {
                   <li className="nav-item">
                     <Link className="nav-link" to="/posts/">Jobs</Link>
                   </li>
+                  {props.isLoggedIn && 
+                  <>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/users/:id/">Profile</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/companies/:id/dashboard">Dashboard</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/users/:id/account/active">Account</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Button style={buttonContainer} onClick={() => logOut()} className="nav-link" >Log Out</Button>
+                    </li>
+                  </>}
                 </ul>
               </div>
               <button className="d-block d-lg-none offcanvas-btn-close focus-reset" type="button" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="true" aria-label="Toggle navigation">
                 <i className="gr-cross-icon" />
               </button>
             </div>
-            {!props.isLoggedIn ? (
+            {!props.isLoggedIn &&
               <div className="header-btns header-btn-devider ml-auto pr-2 ml-lg-6 d-none d-xs-flex">
                 <button onClick={() => {
                   setLoginClicked(!loginClicked)
@@ -68,13 +90,10 @@ const Navbar = (props) => {
                 }} className="btn btn-transparent text-uppercase font-size-3 heading-default-color focus-reset">
                   Log in
                 </button>
-                <button onClick={() => setSignupClicked(!signupClicked)} className="btn btn-primary text-uppercase font-size-3">
+                <button onClick={() => setSignupClicked(!signupClicked)} className="btn btn-primary text-uppercase font-size-3 btn_red ">
                   Sign up
                 </button>
-              </div>
-            ) : (
-              null
-            )}
+              </div>}
             <LoginModal loginClicked={loginClicked} setLoginClicked={setLoginClicked} />
             <SignUpModal signupClicked={signupClicked} setSignupClicked={setSignupClicked} />
             {props.isLoggedIn && <div className="header-btn-devider ml-auto ml-lg-5 pl-2 d-none d-xs-flex align-items-center">
@@ -84,7 +103,7 @@ const Navbar = (props) => {
                   <span className="font-size-3 count font-weight-semibold text-white bg-primary circle-24 border border-width-3 border border-white">0</span>
                 </button>
               </div>
-              <div>
+              {/* <div>
                 <div className="dropdown show-gr-dropdown py-5">
                   <a className="proile media ml-7 flex-y-center" href="./candidate-profile-main.html" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div className="circle-40">
@@ -99,7 +118,7 @@ const Navbar = (props) => {
                     <Button style={buttonContainer} onClick={() => logOut()} className="dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase" >Log Out</Button>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>}
             {/* Mobile Menu Hamburger*/}
             <button className="navbar-toggler btn-close-off-canvas  hamburger-icon border-0" type="button" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation">

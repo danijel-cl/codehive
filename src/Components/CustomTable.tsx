@@ -19,7 +19,7 @@ const tableClassname = styled.cssClassName`
     border-bottom: 3px inset;
   }
   .ant-table-thead {
-    background-color:rgba(0, 176, 116, 0.7);
+    background-color:rgba(176, 53, 0, 1);
     color: white;
     height: 40px;
   }
@@ -34,6 +34,10 @@ const tableClassname = styled.cssClassName`
     font-weight: 600;
   }
 
+  .ant-table-tbody tr:hover {
+    background-color:rgba(176, 53, 0, 0.5) !important;
+  }
+
   .ant-table-tbody tr:nth-of-type(odd) {
     background-color: #F4F5F8;
   }
@@ -42,11 +46,11 @@ const tableClassname = styled.cssClassName`
     height: 0 !important;
   }
   .ant-table-thead tr th:first-of-type {
-    padding-left: 30px;
+    padding-left: 50px;
   }
 
   .ant-table-tbody tr td:first-of-type {
-    padding-left: 30px;
+    padding-left: 50px;
   }
   .ant-pagination {
     display: none;

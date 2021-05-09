@@ -1,4 +1,5 @@
 "use strict";
+document.body.setAttribute('data-theme', 'dark');
 $(document).ready(function() {
     $("select").niceSelect();
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import LinkButton from "../../HomePage/Components/LinkButton";
 
 const postImageUrl = "/resources/image/l2/png/featured-job-logo-1.png"
 
@@ -12,6 +13,7 @@ const postImageStyle = "square-72 d-block mr-8"
 const tagListStyle = "d-flex list-unstyled mr-n3 flex-wrap"
 const tagStyle = "bg-regent-opacity-15 min-width-px-96 mr-3 text-center rounded-3 \
                   px-6 py-1 font-size-3 text-black-2 mt-2"
+const tabButtonStyle = "btn col-3 text-uppercase rounded-3"
 
 const Post = (props) => {
 
@@ -27,9 +29,7 @@ const Post = (props) => {
               </div>
               <div>
                 <h3 className="mb-0">
-                  <a className={postTitleStyle}>
-                    {props.post.position}
-                  </a>
+                <Link to="/posts/:id/tasks/" className = {postTitleStyle}>{props.post.position}</Link>
                 </h3>
                 <Link to="/companies/:id" className={postSubtitleStyle}>
                   {props.post.company.name}
@@ -46,6 +46,12 @@ const Post = (props) => {
                   </a>
                 </li>
               ))}
+            <div>
+              <br></br>
+            <LinkButton to="/posts/:id/tasks/" className={tabButtonStyle}>Apply</LinkButton>
+            </div>
+              
+  
             </ul>
           </div>
         </div>

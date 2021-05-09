@@ -6,6 +6,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+  --main: #b03500;
+  --main-hover: #632003;
   --blue: #4743db;
   --indigo: #5877be;
   --purple: #6f42c1;
@@ -13,22 +15,22 @@
   --red: #f71e3f;
   --orange: #fa5f1c;
   --yellow: #ffb300;
-  --green: #00b074;
+  --green: #b03500;
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #00b074;
+  --primary: #b03500;
   --secondary: #4743db;
-  --success: #00b074;
+  --success: #b03500;
   --info: #17a2b8;
   --warning: #ffb300;
   --danger: #f71e3f;
   --light: #f8f9fa;
   --dark: #343a40;
   --white: #fff;
-  --green: #00b074;
+  --green: #b03500;
   --blue: #4743db;
   --eastern: #2397af;
   --denim: #1a5aeb;
@@ -197,13 +199,13 @@ sup {
 }
 
 a {
-  color: #00b074;
+  color: #b03500;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #006442;
+  color: #632003;
   text-decoration: none;
 }
 
@@ -3554,7 +3556,7 @@ textarea.form-control {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
-  color: #00b074;
+  color: #b03500;
 }
 
 .valid-tooltip {
@@ -3581,7 +3583,7 @@ textarea.form-control {
 }
 
 .was-validated .form-control:valid, .form-control.is-valid {
-  border-color: #00b074;
+  border-color: #b03500;
   padding-right: calc(1.88em + 1.5rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2300b074' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
@@ -3590,7 +3592,7 @@ textarea.form-control {
 }
 
 .was-validated .form-control:valid:focus, .form-control.is-valid:focus {
-  border-color: #00b074;
+  border-color: #b03500;
   box-shadow: 0 0 0 0.2rem rgba(0, 176, 116, 0.25);
 }
 
@@ -3600,7 +3602,7 @@ textarea.form-control {
 }
 
 .was-validated .custom-select:valid, .custom-select.is-valid {
-  border-color: #00b074;
+  border-color: #b03500;
   padding-right: calc(0.75em + 3.0625rem);
   background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.9375rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2300b074' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") #fff no-repeat center right 1.9375rem/calc(0.94em + 0.75rem) calc(0.94em + 0.75rem);
 }
@@ -3611,7 +3613,7 @@ textarea.form-control {
 }
 
 .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
-  color: #00b074;
+  color: #b03500;
 }
 
 .was-validated .form-check-input:valid ~ .valid-feedback,
@@ -3621,11 +3623,11 @@ textarea.form-control {
 }
 
 .was-validated .custom-control-input:valid ~ .custom-control-label, .custom-control-input.is-valid ~ .custom-control-label {
-  color: #00b074;
+  color: #b03500;
 }
 
 .was-validated .custom-control-input:valid ~ .custom-control-label::before, .custom-control-input.is-valid ~ .custom-control-label::before {
-  border-color: #00b074;
+  border-color: #b03500;
 }
 
 .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before, .custom-control-input.is-valid:checked ~ .custom-control-label::before {
@@ -3638,15 +3640,15 @@ textarea.form-control {
 }
 
 .was-validated .custom-control-input:valid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-valid:focus:not(:checked) ~ .custom-control-label::before {
-  border-color: #00b074;
+  border-color: #b03500;
 }
 
 .was-validated .custom-file-input:valid ~ .custom-file-label, .custom-file-input.is-valid ~ .custom-file-label {
-  border-color: #00b074;
+  border-color: #b03500;
 }
 
 .was-validated .custom-file-input:valid:focus ~ .custom-file-label, .custom-file-input.is-valid:focus ~ .custom-file-label {
-  border-color: #00b074;
+  border-color: #b03500;
   box-shadow: 0 0 0 0.2rem rgba(0, 176, 116, 0.25);
 }
 
@@ -3861,20 +3863,20 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #00b074;
-  border-color: #00b074;
+  background-color: #b03500;
+  border-color: #b03500;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #008a5b;
-  border-color: #007d52;
+  background-color: #632003;
+  border-color: #5c2003;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #008a5b;
-  border-color: #007d52;
+  background-color: #632003;
+  border-color: #5c2003;
   box-shadow: 0 0 0 0.2rem rgba(38, 188, 137, 0.5);
 }
 
@@ -12667,7 +12669,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #00b074 !important;
+  background-color: #b03500 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -12687,7 +12689,7 @@ button.bg-secondary:focus {
 }
 
 .bg-success {
-  background-color: #00b074 !important;
+  background-color: #b03500 !important;
 }
 
 a.bg-success:hover, a.bg-success:focus,
@@ -12757,7 +12759,7 @@ button.bg-white:focus {
 }
 
 .bg-green {
-  background-color: #00b074 !important;
+  background-color: #b03500 !important;
 }
 
 a.bg-green:hover, a.bg-green:focus,
@@ -13195,7 +13197,7 @@ button.bg-conch:focus {
 }
 
 .border-primary {
-  border-color: #00b074 !important;
+  border-color: #b03500 !important;
 }
 
 .border-secondary {
@@ -13203,7 +13205,7 @@ button.bg-conch:focus {
 }
 
 .border-success {
-  border-color: #00b074 !important;
+  border-color: #b03500 !important;
 }
 
 .border-info {
@@ -13231,7 +13233,7 @@ button.bg-conch:focus {
 }
 
 .border-green {
-  border-color: #00b074 !important;
+  border-color: #b03500 !important;
 }
 
 .border-blue {
@@ -32154,11 +32156,11 @@ button.bg-conch:focus {
 }
 
 .text-primary {
-  color: #00b074 !important;
+  color: #b03500 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #006442 !important;
+  color: #632003 !important;
 }
 
 .text-secondary {
@@ -32170,11 +32172,11 @@ a.text-secondary:hover, a.text-secondary:focus {
 }
 
 .text-success {
-  color: #00b074 !important;
+  color: #b03500 !important;
 }
 
 a.text-success:hover, a.text-success:focus {
-  color: #006442 !important;
+  color: #632003 !important;
 }
 
 .text-info {
@@ -32226,7 +32228,7 @@ a.text-white:hover, a.text-white:focus {
 }
 
 .text-green {
-  color: #00b074 !important;
+  color: #b03500 !important;
 }
 
 a.text-green:hover, a.text-green:focus {
