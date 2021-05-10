@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const tabAnimationStyle = "tab-pane active animate__animated animate__slower animate__fadeIn"
-const tabContentStyle = "bg-white-opacity-4 rounded-4 border border-mercury shadow-9 pos-abs-xl \
+const tabContentStyle = " bg-white-opacity-4 rounded-4 border border-mercury shadow-9 pos-abs-xl \
                          ml-xl-8 mt-9 mt-xl-0"
 const upperTabContentStyle = "pt-9 pl-15 pr-15 pb-8 border-bottom border-width-1 \
                               border-default-color light-mode-texts"
@@ -21,6 +21,7 @@ export const PostTab = ({post}) => {
   var description = post.description;
   const tags_companies = ["Amazon","Google","Facebook", "Tesla", "CodeHive", "Porsche"]
   return (
+    <div className = "unmoveable">
     <div key={Math.random()} className={tabAnimationStyle}>
       <div className= {tabContentStyle} >
         <div className={upperTabContentStyle}>
@@ -37,7 +38,7 @@ export const PostTab = ({post}) => {
             </div>
           </div>
         </div>
-        <div className={bottomTabContentStyle} style={{maxHeight:"69vh"}}>
+        <div className={bottomTabContentStyle} style={{maxHeight:"39vh"}}>
           <div className="row">
             <p className={bottomTabTitleStyle}>Description</p>
             <p className={bottomTabTextStyle}>
@@ -46,6 +47,7 @@ export const PostTab = ({post}) => {
           </div>
         </div>
         </div>
+      </div>
       </div>
   );
 };

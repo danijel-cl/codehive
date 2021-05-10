@@ -7758,7 +7758,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 
 .logo {
   width: 80px;
-  height: 60px;
+  height: 64px;
   position: absolute;
 }
 .btn_red {
@@ -7777,14 +7777,9 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 .unmoveable {
   position: fixed;
+  width: 600px;
 
-}
-p{
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  max-width: 2000px;
-  text-overflow: ellipsis;
+
 
 }
 .rounded-right-0 {
