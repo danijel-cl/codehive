@@ -2,7 +2,7 @@ import { Form } from 'antd';
 import React, {useState} from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-const TagInput = (props) => {
+export const FormTagInput = (props) => {
   const {skills, setSkills, name, defaultValue} = props
   const [text, setText] = useState('');
   const { errors, control } = useFormContext();
@@ -11,15 +11,11 @@ const TagInput = (props) => {
     if(text!=="" && !skills.includes(text)){
       setSkills([...skills, text], console.log(skills));
     }
-    
     setText("");
   };
 
   return (
-    <div>
-      <Form.Item
-      validateStatus={errors[`${name}`] ? 'error' : 'success'}
-      help={errors[`${name}`] ? errors[`${name}`]?.message : ''}>
+    <>
       <Controller
         control={control}
         name={name}
@@ -35,7 +31,6 @@ const TagInput = (props) => {
           )
         }}
       />
-      </Form.Item>
       <div>
         <ul>
           {skills?.map((skill, index) => (
@@ -46,8 +41,6 @@ const TagInput = (props) => {
           ))}
         </ul>
       </div>
-    </div>
+    </>
   );
 }
-
-export default TagInput;

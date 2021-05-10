@@ -62,9 +62,6 @@ const Navbar = (props) => {
                   {props.isLoggedIn &&
                   <>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/users/:id/">Profile</Link>
-                    </li>
-                    <li className="nav-item">
                       <Link className="nav-link" to="/companies/:id/dashboard">Dashboard</Link>
                     </li>
                     <li className="nav-item">

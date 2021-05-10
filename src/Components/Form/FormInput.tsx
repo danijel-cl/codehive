@@ -8,7 +8,7 @@ const FormInput = ({name}) => {
   return (
     <>
       <input
-        className="form-control col-10"
+        className="form-control"
         placeholder={placeholder}
         name={name}
         ref={register}

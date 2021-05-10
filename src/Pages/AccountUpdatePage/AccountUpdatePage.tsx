@@ -1,5 +1,5 @@
 import Dashboard from "./Components/Dashboard"
-import UserForm from "./Components/UserForm"
+import {UserForm} from "./Components/UserForm"
 
 export const AccountUpdatePage = (props) => {
   return (
