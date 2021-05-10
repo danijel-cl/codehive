@@ -25,12 +25,12 @@ const tableClassname = styled.cssClassName`
   }
 
   .ant-table-thead tr {
-    height: 45px;
+    height: 70px;
     font-weight: 600;
   }
 
   .ant-table-tbody tr {
-    height: 60px;
+    height: 80px;
     font-weight: 600;
   }
 

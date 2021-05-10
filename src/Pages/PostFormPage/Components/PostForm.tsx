@@ -1,4 +1,6 @@
+import React, { useEffect } from 'react';
 import { convertToRaw, convertFromRaw, EditorState } from 'draft-js';
+import { useHistory } from "react-router-dom";
 
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -11,7 +13,13 @@ import TaskTable from './TaskTable';
 
 import {http} from "../../../api/http"
 
-export const PostCreateForm = (props) => {
+import { textToEditorState } from '../utils/utils'
+
+
+export const PostForm = (props) => {
+
+  let history = useHistory();
+  const id = props.id
 
   const schema = yup.object().shape({
     position: yup.object().nullable().required('This is a required field.'),
@@ -28,7 +36,6 @@ export const PostCreateForm = (props) => {
     resolver: yupResolver(schema),
   });
 
-
   const onSubmit = (values) => {
     let tasks = props.taskStates.map(task => Object.assign({}, task))
     let post = Object.assign({}, values)
@@ -37,11 +44,54 @@ export const PostCreateForm = (props) => {
     post["position"] = post["position"].value
     tasks.map((task)=>{
       task["description"] = JSON.stringify(convertToRaw(task["description"].getCurrentContent()))
-      task["code"] = task["code"].fileList[0]["originFileObj"]
-      task["test"] = task["test"].fileList[0]["originFileObj"]
+      if (typeof task["code"] !== 'string'){
+        task["code"] = task["code"].fileList[0]["originFileObj"]
+      }else{
+        delete task["code"];
+      }
+      if (typeof task["test"] !== 'string'){
+        task["test"] = task["test"].fileList[0]["originFileObj"]
+      }else{
+        delete task["test"];
+      }
+      history.push("/companies/:id/dashboard")
     })
-    http.createPost(post, tasks)
+    if(id){
+      http.updatePost(id, post, tasks)
+    }else{
+      http.createPost(post, tasks)
+    }
   }
+
+  useEffect(() => {
+    if (id && !props.postState){
+      http.getPost(id).then(
+        (post) => {
+            post.description = textToEditorState(post.description);
+            props.setPostState(post);
+            methods.setValue("description", post.description);
+            methods.setValue("experience", {
+              "value": post.experience ,
+              "label":post.experience
+            });
+            methods.setValue("position", {
+              "value": post.position ,
+              "label":post.position
+            });
+
+      });
+      http.getPostTasks(id).then(
+        (tasks)=>{
+           tasks.forEach(
+             (task)=>{
+                task.description = textToEditorState(task.description);
+              }
+           )
+           props.setTaskStates(tasks)
+        }
+      )
+    }
+  },[]);
 
   return (
     <div className="bg-white rounded-4 border border-mercury shadow-9 pl-10 pr-10">

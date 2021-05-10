@@ -46,12 +46,6 @@ const Post = (props) => {
                   </a>
                 </li>
               ))}
-            <div>
-              <br></br>
-            <LinkButton to="/posts/:id/tasks/" className={tabButtonStyle}>Apply</LinkButton>
-            </div>
-              
-  
             </ul>
           </div>
         </div>

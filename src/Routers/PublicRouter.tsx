@@ -3,6 +3,7 @@ import { AccountActivationPage } from '../Pages/AccountActivationPage';
 import { HomePage } from '../Pages/HomePage/HomePage';
 import { PostListPage } from '../Pages/PostListPage/PostListPage';
 import { PostDetailPage } from '../Pages/PostDetailPage/PostDetailPage';
+import { PostFormPage } from '../Pages/PostFormPage/PostFormPage';
 import { CompanyCreatePage } from '../Pages/CompanyCreatePage/CompanyCreatePage';
 import { CompanyDetailPage } from '../Pages/CompanyDetailPage/CompanyDetailPage';
 import { UserDetailPage } from '../Pages/UserDetailPage/UserDetailPage';
@@ -11,8 +12,6 @@ import { TaskDetailPage } from '../Pages/TaskDetailPage/TaskDetailPage';
 import { TaskListPage } from '../Pages/TaskListPage/TaskListPage';
 import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 import { ApplicationDetailPage } from '../Pages/ApplicationDetailPage/ApplicationDetailPage';
-import { PostCreatePage } from '../Pages/PostCreatePage/PostCreatePage';
-import { PostUpdatePage } from '../Pages/PostCreatePage/PostUpdatePage';
 import { AccountUpdatePage } from '../Pages/AccountUpdatePage/AccountUpdatePage';
 import { AccountFinishedListPage } from '../Pages/AccountFinishedListPage/AccountFinishedListPage';
 import { AccountTaskListPage } from '../Pages/AccountTaskListPage/AccountTaskListPage';
@@ -25,9 +24,9 @@ export const PublicRouter = () => {
         <Route exact path="/recover-password" component={RecoverPasswordPage} />
         <Route exact path="/account-activation" component={AccountActivationPage} />
         <Route exact path="/posts" component={PostListPage} />
-        <Route exact path="/posts/create" component={PostCreatePage} />
+        <Route exact path="/posts/create" component={PostFormPage} />
         <Route exact path="/posts/:id" component={PostDetailPage} />
-        <Route exact path="/posts/update/:id" component={PostUpdatePage} />
+        <Route exact path="/posts/update/:id" component={PostFormPage} />
         <Route exact path="/companies/create" component={CompanyCreatePage} />
         <Route exact path="/companies/:id" component={CompanyDetailPage} />
         <Route exact path="/companies/:id/dashboard" component={DashboardPage} />

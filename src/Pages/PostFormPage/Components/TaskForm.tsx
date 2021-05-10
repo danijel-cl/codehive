@@ -29,7 +29,7 @@ const schema = yup.object().shape({
   description: yup.object().nullable().required('This is a required kebab field.'),
 });
 
-export const TaskCreateForm = (props) => {
+export const TaskForm = (props) => {
   const {taskClicked, setTaskClicked, taskStates, setTaskStates, taskIndex, setTaskIndex} = props
 
   const methods = useForm({
@@ -45,6 +45,9 @@ export const TaskCreateForm = (props) => {
 
   const onSubmit = (values) => {
     if(taskIndex !== null) {
+      if(taskStates[taskIndex].id){
+        values.id = taskStates[taskIndex].id
+      }
       taskStates[taskIndex] = values
       setTaskStates(taskStates, onBack())
       setTaskIndex(null)

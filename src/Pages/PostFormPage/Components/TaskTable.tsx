@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from 'react';
 import ReactDOM from 'react-dom';
 import { useFormContext } from 'react-hook-form';
+import {http} from "../../../api/http"
 
 const TaskTable = (props) => {
   const {taskClicked, setTaskClicked, taskStates, setTaskStates, setTaskIndex, setPostState} = props
@@ -10,6 +11,9 @@ const TaskTable = (props) => {
   const removeTask = (e, index) => {
     e.preventDefault()
     setTaskStates(taskStates.filter((title, i) => i !== index))
+    if(taskStates[index].id){
+      http.deleteTask(taskStates[index].id)
+    }
   }
 
   const editTask = (e, index) => {

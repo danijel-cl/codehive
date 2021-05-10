@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { PostCreateForm } from './Components/PostCreateForm';
-import { TaskCreateForm } from './Components/TaskCreateForm';
+import { PostForm } from './Components/PostForm';
+import { TaskForm } from './Components/TaskForm';
 
-export const PostCreatePage = (props) => {
+export const PostFormPage = (props) => {
   const [postState, setPostState] = useState(null)
   const [taskStates, setTaskStates] = useState(Array())
   const [taskIndex, setTaskIndex] = useState(null)
   const [taskClicked, setTaskClicked] = useState(false);
+  const id = props.match.params.id||null
   return (
     <div className="site-wrapper" >
       <div className="jobDetails-section bg-default-1 pt-28 pt-lg-27 pb-xl-25 pb-12">
@@ -14,22 +15,26 @@ export const PostCreatePage = (props) => {
           <div className="row justify-content-center">
             <div className="col-10">
                 {taskClicked ?
-                <TaskCreateForm
+                <TaskForm
                   setPostState = {setPostState}
                   taskStates={taskStates}
                   setTaskStates={setTaskStates}
                   taskClicked={taskClicked}
                   setTaskClicked={setTaskClicked}
                   taskIndex={taskIndex}
-                  setTaskIndex={setTaskIndex} /> :
-                <PostCreateForm
+                  setTaskIndex={setTaskIndex}
+                  id={id}
+                /> :
+                <PostForm
                   postState = {postState}
                   setPostState = {setPostState}
                   taskStates={taskStates}
                   setTaskStates={setTaskStates}
                   taskClicked={taskClicked}
                   setTaskClicked={setTaskClicked}
-                  setTaskIndex={setTaskIndex} />
+                  setTaskIndex={setTaskIndex}
+                  id={id}
+                />
                 }
             </div>
           </div>

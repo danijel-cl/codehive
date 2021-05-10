@@ -133,6 +133,25 @@ export const http = {
 
     return response.data;
   },
+  deletePost: async (id) => {
+    await axiosAuthenticated.delete(`/api/posts/${id}/`);
+  },
+  updatePost: async (id, post , tasks) => {
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data"
+      }
+    };
+    axiosAuthenticated.put(`/api/posts/${id}/`,post)
+    tasks.forEach((task)=>{
+      if (task.id){
+        axiosAuthenticated.put(`/api/tasks/${task.id}/`,serialize(task), config)
+      }else{
+        task.post = id;
+        axiosAuthenticated.post('/api/tasks/',serialize(task), config)
+      }
+    })
+  },
   getPost: async (id: number) => {
     const data = await axiosAnonymous.get(`/api/posts/${id}`).then(response => response.data);
     return data;
@@ -142,6 +161,9 @@ export const http = {
     const data: Array<TaskParams> = response.data;
     console.log(data);
     return data;
+  },
+  deleteTask: async (id: number) => {
+    await axiosAuthenticated.delete(`/api/tasks/${id}`);
   },
 
 }

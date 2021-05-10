@@ -21,12 +21,8 @@ export const PostTab = ({post}) => {
   var description = post.post_description;
   const tags_companies = ["Amazon","Google","Facebook", "Tesla", "CodeHive", "Porsche"]
   return (
-    <div className = "unmoveable col-4">
-    <div id = "move">
     <div key={Math.random()} className={tabAnimationStyle}>
-      
       <div className= {tabContentStyle} >
-        
         <div className={upperTabContentStyle}>
           <div className="row">
             <div className="col-12">
@@ -51,38 +47,6 @@ export const PostTab = ({post}) => {
         </div>
         </div>
       </div>
-    </div>
-    <div className = "moveable">
-    <div key={Math.random()} className={tabAnimationStyle}>
-      
-      <div className= {tabContentStyle} >
-        
-        <div className={upperTabContentStyle}>
-          <div className="row">
-            <div className="col-12">
-              <div>
-                <h3 style={{display: "inline-block"}} className={upperTabTitleStyle}>
-                  Certificates
-                </h3>
-              </div>
-              <span className={upperTabSubTitleStyle}>
-                For every fucking occasion
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className={bottomTabContentStyle} style={{maxHeight:"69vh"}}>
-        <div className="row">
-            <p className={bottomTabTextStyle}>
-              Ovdje ukratko opisati zašto bi ljudi koristili naše certifikate i zašto bi se to isplatilo pri prijavljivanju na poslove
-            </p>
-          </div>
-        </div>
-        </div>
-      </div>
-      </div>
-      </div>
-  
   );
 };
 
