@@ -18,7 +18,7 @@ export const PostTab = ({post}) => {
 
   var name = post.company.name;
   var position = post.position;
-  var description = post.post_description;
+  var description = post.description;
   const tags_companies = ["Amazon","Google","Facebook", "Tesla", "CodeHive", "Porsche"]
   return (
     <div key={Math.random()} className={tabAnimationStyle}>
