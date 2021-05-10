@@ -4,7 +4,6 @@ import { LoginModal } from './LoginModal/LoginModal';
 import { SignUpModal } from './SignUpModal/SignUpModal';
 import { styled } from '../utils/css';
 import { Button } from 'antd';
-import logo from './logo.png';
 
 const buttonContainer = styled.cssStyle`
   border: none;
@@ -20,7 +19,7 @@ const logoContainer = styled.cssStyle`
   margin-bottom: 0;
   letter-spacing: 1px;
   color:#c0c5cf;
-  
+
 `;
 
 const spanContainer = styled.cssStyle`
@@ -38,17 +37,16 @@ const Navbar = (props) => {
     window.localStorage.removeItem('logtoken')
     window.location.reload()
   }
-  console.log(logo);
   return (
     <header className="site-header site-header--menu-right bg-default py-7 py-lg-0 site-header--absolute site-header--sticky reveal-header">
         <div className="container">
           <nav className="navbar site-navbar offcanvas-active navbar-expand-lg  px-0 py-0">
             {/* Brand Logo*/}
-            
+
             <div className="navbar-letters">
               <Link to="/">
                 {/* light version logo (logo must be black)*/}
-                <img className = "logo" src={logo} alt="Logo" />
+                <img className = "logo" src={process.env.PUBLIC_URL + "/logo.png"} alt="Logo" />
                 <p style={logoContainer}><span style={spanContainer}>code</span>hive</p>
               </Link>
             </div>
@@ -61,7 +59,7 @@ const Navbar = (props) => {
                   <li className="nav-item">
                     <Link className="nav-link" to="/posts/">Jobs</Link>
                   </li>
-                  {props.isLoggedIn && 
+                  {props.isLoggedIn &&
                   <>
                     <li className="nav-item">
                       <Link className="nav-link" to="/users/:id/">Profile</Link>

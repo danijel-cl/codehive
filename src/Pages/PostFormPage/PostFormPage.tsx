@@ -8,6 +8,7 @@ export const PostFormPage = (props) => {
   const [taskIndex, setTaskIndex] = useState(null)
   const [taskClicked, setTaskClicked] = useState(false);
   const id = props.match.params.id||null
+  
   return (
     <div className="site-wrapper" >
       <div className="jobDetails-section bg-default-1 pt-28 pt-lg-27 pb-xl-25 pb-12">

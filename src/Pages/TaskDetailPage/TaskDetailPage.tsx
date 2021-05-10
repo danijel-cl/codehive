@@ -1,5 +1,5 @@
 import AceEditor from 'react-ace';
-import LinkButton from "./Components/LinkButton"
+import LinkButton from "../../Components/LinkButton"
 import Question from "./Components/Question"
 import Submissions from "./Components/Submissions"
 import React, {useState} from 'react';

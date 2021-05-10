@@ -19,6 +19,7 @@ import { textToEditorState } from '../utils/utils'
 export const PostForm = (props) => {
 
   let history = useHistory();
+
   const id = props.id
 
   const schema = yup.object().shape({
