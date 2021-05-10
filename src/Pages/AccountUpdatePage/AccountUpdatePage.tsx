@@ -1,4 +1,4 @@
-import Dashboard from "./Components/Dashboard"
+import Dashboard from "../../Components/Dashboards/AccountDashboard"
 import {AccountForm} from "./Components/AccountForm"
 
 export const AccountUpdatePage = (props) => {

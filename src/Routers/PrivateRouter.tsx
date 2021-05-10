@@ -13,20 +13,34 @@ import { AccountTaskListPage } from '../Pages/AccountTaskListPage/AccountTaskLis
 import { AccountStatisticsPage } from '../Pages/AccountStatisticsPage/AccountStatisticsPage';
 import { AccountActiveListPage } from '../Pages/AccountActiveListPage/AccountActiveListPage';
 import { PostFormPage } from '../Pages/PostFormPage/PostFormPage';
+import { HomePage } from '../Pages/HomePage/HomePage';
+import { PostListPage } from '../Pages/PostListPage/PostListPage';
+import { PostDetailPage } from '../Pages/PostDetailPage/PostDetailPage';
+import { CompanyDetailPage } from '../Pages/CompanyDetailPage/CompanyDetailPage';
+import { TaskListPage } from '../Pages/TaskListPage/TaskListPage';
+import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 
 export const PrivateRouter = () => {
   const [id, setId] = useState(null)
-  console.log(id)
   useEffect(() => {
-    http.getUserId().then(({id})=>setId(id))
-    console.log(id)
+    http.getUserId().then(({id})=>{
+      localStorage.setItem('user-id', id);
+      setId(id);
+    })
   }, [])
   return (
       <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/recover-password" component={RecoverPasswordPage} />
+        <Route exact path="/account-activation" component={AccountActivationPage} />
+        <Route exact path="/posts" component={PostListPage} />
+        <Route exact path="/posts/:id" component={PostDetailPage} />
+        <Route exact path="/companies/:id" component={CompanyDetailPage} />
+        <Route exact path="/posts/:id/tasks/" component={TaskListPage} />
         <Route exact path="/users/:id" component={UserDetailPage} />
         <Route exact path="/posts/create" component={PostFormPage} />
         <Route exact path="/posts/update/:id" component={PostFormPage} />
-        <Route exact path="/companies/:id/dashboard" component={DashboardPage} />
+        <Route exact path={`/companies/${id}/dashboard`} component={DashboardPage} />
         <Route exact path="/posts/:id/tasks/:id" component={TaskDetailPage} />
         <Route exact path="/application-detail" component={ApplicationDetailPage} />
         <Route exact path="/users/:id/account/active" component={AccountActiveListPage} />
@@ -34,6 +48,7 @@ export const PrivateRouter = () => {
         <Route exact path="/users/:id/account/statistics" component={AccountStatisticsPage} />
         <Route exact path="/users/:id/account/tasks" component={AccountTaskListPage} />
         <Route exact path="/users/:id/account/update" component={AccountUpdatePage} />
+        <Redirect from="*" to="/" />
       </Switch>
   );
 };

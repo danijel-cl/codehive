@@ -16,8 +16,8 @@ export const AuthRouter = () => {
       <ScrollToTop />
       <Navbar isLoggedIn={token !== null} />
       <Switch>
-        {token && <Route exact path="/" component={PrivateRouter} />}
-        <Route path="/" component={PrivateRouter} />
+        {!token && <Route path="/" component={PrivateRouter} />}
+        {token && <Route path="/" component={PrivateRouter} />}
         <Redirect to={'/'} />
       </Switch>
       <Footer/>
