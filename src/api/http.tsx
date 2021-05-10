@@ -156,7 +156,7 @@ export const http = {
     const data = await axiosAnonymous.get(`/api/posts/${id}`).then(response => response.data);
     return data;
   },
-  getPostTasks: async (id: number) => {
+  getTasks: async (id: number) => {
     const response = await axiosAnonymous.get(`/api/tasks/?post=${id}`);
     const data: Array<TaskParams> = response.data;
     console.log(data);
@@ -165,5 +165,4 @@ export const http = {
   deleteTask: async (id: number) => {
     await axiosAuthenticated.delete(`/api/tasks/${id}`);
   },
-
 }

@@ -42,39 +42,6 @@ export const PostListPage = () => {
                 {posts.map((post, index) => (
                   <Post key={index} index={index} post={post} setPost={setPost}/>
                 ))}
-                {posts.map((post, index) => (
-                  <Post key={index} index={index} post={post} setPost={setPost}/>
-                ))}
-                {posts.map((post, index) => (
-                  <Post key={index} index={index} post={post} setPost={setPost}/>
-                ))}
-                {posts.map((post, index) => (
-                  <Post key={index} index={index} post={post} setPost={setPost}/>
-                ))}
-                {posts.map((post, index) => (
-                  <Post key={index} index={index} post={post} setPost={setPost}/>
-                ))}
-                {posts.map((post, index) => (
-                  <Post key={index} index={index} post={post} setPost={setPost}/>
-                ))}
-                {posts.map((post, index) => (
-                  <Post key={index} index={index} post={post} setPost={setPost}/>
-                ))}
-                {posts.map((post, index) => (
-                  <Post key={index} index={index} post={post} setPost={setPost}/>
-                ))}
-                {posts.map((post, index) => (
-                  <Post key={index} index={index} post={post} setPost={setPost}/>
-                ))}
-                {posts.map((post, index) => (
-                  <Post key={index} index={index} post={post} setPost={setPost}/>
-                ))}
-                {posts.map((post, index) => (
-                  <Post key={index} index={index} post={post} setPost={setPost}/>
-                ))}
-                {posts.map((post, index) => (
-                  <Post key={index} index={index} post={post} setPost={setPost}/>
-                ))}
               </div>
               <div className={loadContentStyle}>
                 <a className={loadTextStyle}>

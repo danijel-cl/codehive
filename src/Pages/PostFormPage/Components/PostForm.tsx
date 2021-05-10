@@ -1,19 +1,16 @@
 import React, { useEffect } from 'react';
-import { convertToRaw, convertFromRaw, EditorState } from 'draft-js';
 import { useHistory } from "react-router-dom";
 
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import FormEditor from '../../../Components/Form/FormEditor';
+import { FormEditor, editorStateToText, textToEditorState } from '../../../Components/Form/FormEditor';
 import FormSelect from '../../../Components/Form/FormSelect';
 
 import TaskTable from './TaskTable';
 
 import {http} from "../../../api/http"
-
-import { textToEditorState } from '../utils/utils'
 
 
 export const PostForm = (props) => {
@@ -40,11 +37,11 @@ export const PostForm = (props) => {
   const onSubmit = (values) => {
     let tasks = props.taskStates.map(task => Object.assign({}, task))
     let post = Object.assign({}, values)
-    post["description"] = JSON.stringify(convertToRaw(post["description"].getCurrentContent()))
+    post["description"] = editorStateToText(post["description"])
     post["experience"] = post["experience"].value
     post["position"] = post["position"].value
     tasks.map((task)=>{
-      task["description"] = JSON.stringify(convertToRaw(task["description"].getCurrentContent()))
+      task["description"] = editorStateToText(task["description"])
       if (typeof task["code"] !== 'string'){
         task["code"] = task["code"].fileList[0]["originFileObj"]
       }else{
@@ -81,7 +78,7 @@ export const PostForm = (props) => {
             });
 
       });
-      http.getPostTasks(id).then(
+      http.getTasks(id).then(
         (tasks)=>{
            tasks.forEach(
              (task)=>{

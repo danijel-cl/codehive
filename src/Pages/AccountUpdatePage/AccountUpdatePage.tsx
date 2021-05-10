@@ -1,5 +1,5 @@
 import Dashboard from "./Components/Dashboard"
-import {UserForm} from "./Components/UserForm"
+import {AccountForm} from "./Components/AccountForm"
 
 export const AccountUpdatePage = (props) => {
   return (
@@ -8,7 +8,7 @@ export const AccountUpdatePage = (props) => {
       <div className="dashboard-main-container mt-25 mt-lg-31" id="dashboard-body">
         <div className="container" style={{ minHeight:"85vh" }}>
           <div className="mb-18">
-            <UserForm />
+            <AccountForm />
           </div>
         </div>
       </div>

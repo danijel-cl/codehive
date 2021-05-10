@@ -10,8 +10,9 @@ import ExperienceForm from './ExperienceForm'
 
 import FormImageUploader from '../../../Components/Form/FormImageUploader';
 import FormUploader from '../../../Components/Form/FormUploader';
-import FormEditor from '../../../Components/Form/FormEditor';
+import { FormEditor, textToEditorState, editorStateToText } from '../../../Components/Form/FormEditor';
 import FormInput from '../../../Components/Form/FormInput';
+import FormTagInput from '../../../Components/Form/FormTagInput';
 
 import {http} from "../../../api/http"
 
@@ -25,7 +26,7 @@ const upperContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-b
                                   border-width-1 border-default-color light-mode-texts"
 const lowerContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 light-mode-texts"
 
-export const UserForm = (props) => {
+export const AccountForm = (props) => {
 
   const [educationStates, setEducationStates] = useState(Array())
   const [educationIndex,  setEducationIndex] = useState(-1)
@@ -37,14 +38,18 @@ export const UserForm = (props) => {
       image: Array(),
       first: '',
       last: '',
-      description: ''
+      about: ''
     },
   });
 
   const onSubmit = (values) => {
-    console.log(values)
-    console.log(educationStates)
-    console.log(experienceStates)
+    let education = Object.assign({}, educationStates)
+    let experiences = Object.assign({}, experienceStates)
+    let account = Object.assign({}, values)
+    account["about"] = editorStateToText(account["about"])
+    account["education"] = education
+    account["experiences"] = experiences
+    //http.updateProfile(id, account)
   }
 
   return (
@@ -80,7 +85,7 @@ export const UserForm = (props) => {
               </div>
               <div className="pb-10 col-12">
                 <h4 className="font-size-6 font-weight-semibold mb-6">Description</h4>
-                <FormEditor name="description"/>
+                <FormEditor name="about"/>
               </div>
               <div className="pb-10 col-6">
                 <h4 className="font-size-6 font-weight-semibold mb-6">Phone</h4>

@@ -5,7 +5,17 @@ import { convertToRaw, convertFromRaw, EditorState } from 'draft-js';
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-const FormEditor = ({name}) => {
+export const textToEditorState = (text) =>{
+  const contentState = convertFromRaw(JSON.parse(text))
+  return EditorState.createWithContent(contentState)
+}
+
+export const editorStateToText = (state) =>{
+  return JSON.stringify(convertToRaw(state.getCurrentContent()))
+}
+
+
+export const FormEditor = ({name}) => {
 
   const { errors, control } = useFormContext();
 
