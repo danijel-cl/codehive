@@ -26,7 +26,7 @@ const FormSelect = ({query, name}) => {
     query()
       .then(
         (data) => {
-          setOptions(data.map(({name})=>({"value":name,"label":name})));
+          setOptions(data.map((data)=>({"value":data.id,"label":data.name})));
         }
       )
   }, [])

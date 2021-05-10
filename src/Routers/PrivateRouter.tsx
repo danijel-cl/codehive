@@ -1,17 +1,39 @@
-import React from 'react';
+import { useEffect, useState } from 'react'
+import { http } from '../api/http'
 import { Redirect, Route, Switch } from 'react-router-dom';
-
-import { HomePage } from '../Pages/HomePage/HomePage';
+import { AccountActivationPage } from '../Pages/AccountActivationPage';
+import { CompanyCreatePage } from '../Pages/CompanyCreatePage/CompanyCreatePage';
+import { UserDetailPage } from '../Pages/UserDetailPage/UserDetailPage';
+import { DashboardPage } from '../Pages/DashboardPage/DashboardPage';
+import { TaskDetailPage } from '../Pages/TaskDetailPage/TaskDetailPage';
+import { ApplicationDetailPage } from '../Pages/ApplicationDetailPage/ApplicationDetailPage';
+import { AccountUpdatePage } from '../Pages/AccountUpdatePage/AccountUpdatePage';
+import { AccountFinishedListPage } from '../Pages/AccountFinishedListPage/AccountFinishedListPage';
+import { AccountTaskListPage } from '../Pages/AccountTaskListPage/AccountTaskListPage';
+import { AccountStatisticsPage } from '../Pages/AccountStatisticsPage/AccountStatisticsPage';
+import { AccountActiveListPage } from '../Pages/AccountActiveListPage/AccountActiveListPage';
+import { PostFormPage } from '../Pages/PostFormPage/PostFormPage';
 
 export const PrivateRouter = () => {
+  const [id, setId] = useState(null)
+  console.log(id)
+  useEffect(() => {
+    http.getUserId().then(({id})=>setId(id))
+    console.log(id)
+  }, [])
   return (
-    <div>
-      <div style={{ flexDirection: 'row', display: 'flex' }}>
-        <Switch>
-          <Route exact path="/home" component={HomePage} />
-          <Redirect from="*" to="/home" />
-        </Switch>
-      </div>
-    </div>
+      <Switch>
+        <Route exact path="/users/:id" component={UserDetailPage} />
+        <Route exact path="/posts/create" component={PostFormPage} />
+        <Route exact path="/posts/update/:id" component={PostFormPage} />
+        <Route exact path="/companies/:id/dashboard" component={DashboardPage} />
+        <Route exact path="/posts/:id/tasks/:id" component={TaskDetailPage} />
+        <Route exact path="/application-detail" component={ApplicationDetailPage} />
+        <Route exact path="/users/:id/account/active" component={AccountActiveListPage} />
+        <Route exact path="/users/:id/account/finished" component={AccountFinishedListPage} />
+        <Route exact path="/users/:id/account/statistics" component={AccountStatisticsPage} />
+        <Route exact path="/users/:id/account/tasks" component={AccountTaskListPage} />
+        <Route exact path="/users/:id/account/update" component={AccountUpdatePage} />
+      </Switch>
   );
 };

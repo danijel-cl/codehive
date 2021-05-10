@@ -62,6 +62,13 @@ export type PostParams = {
   description: string;
 }
 
+export type Education = {
+  title: string;
+  institution_id: number;
+  start_date: string;
+  end_date: string;
+}
+
 export const http = {
   login: async (loginParams: LoginParams) => {
     const response = await axiosAnonymous.post('/api/users/login', loginParams);
@@ -93,8 +100,18 @@ export const http = {
 
     return response.data;
   },
+  getUserId: async () => {
+    const response = await axiosAuthenticated.get('/api/users/token');
+
+    return response.data;
+  },
   getCompany: async (id: number) => {
-    const response = await axiosAnonymous.get(`/api/company/${id}`);
+    const response = await axiosAnonymous.get(`/api/companies/${id}`);
+
+    return response.data;
+  },
+  getAllCompanies: async (id: number) => {
+    const response = await axiosAnonymous.get(`/api/companies/`);
 
     return response.data;
   },
@@ -165,4 +182,79 @@ export const http = {
   deleteTask: async (id: number) => {
     await axiosAuthenticated.delete(`/api/tasks/${id}`);
   },
+  updateProfile: async (id, profile) => {
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data"
+      }
+    };
+    axiosAuthenticated.put(`/api/profiles/${id}/`,serialize(profile))
+  },
+  createProfile: async (profile) => {
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data"
+      }
+    };
+    axiosAuthenticated.post(`/api/profiles/`,serialize(profile))
+  },
+  updateOrCreateProfile: async (id, account, education, experiences) => {
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data"
+      }
+    };
+    let profile = axiosAuthenticated.get(`/api/profiles/?user_id=${id}`)
+    .then((profile)=>{
+      console.log(profile)
+      if (profile.data.length===0){
+        console.log("Create branch")
+        axiosAuthenticated.post(`/api/profiles/`,serialize(account))
+          .then((data)=>{
+            education.forEach((instance)=>{
+              axiosAuthenticated.post(`/api/profiles/${data.data[0].id}/education/`,instance)
+            })
+            experiences.forEach((instance)=>{
+              axiosAuthenticated.post(`/api/profiles/${data.data[0].id}/experiences/`,instance)
+            })
+          })
+      }else{
+        console.log("Update branch")
+        console.log(account)
+        axiosAuthenticated.put(`/api/profiles/${profile.data[0].id}/`,serialize(account))
+        education.forEach((instance)=>{
+          if(instance.id){
+            axiosAuthenticated.put(
+              `/api/profiles/${profile.data[0].id}/education/`,
+              instance
+            )
+          }else{
+            axiosAuthenticated.post(
+              `/api/profiles/${profile.data[0].id}/education/`,
+              instance
+            )
+          }
+        })
+        experiences.forEach((instance)=>{
+          if(instance.id){
+            axiosAuthenticated.put(
+              `/api/profiles/${profile.data[0].id}/experiences/`,
+              instance
+            )
+          }else{
+            axiosAuthenticated.post(
+              `/api/profiles/${profile.data[0].id}/experiences/`,
+              instance
+            )
+          }
+        })
+      }
+    })
+  },
+  getAllEducation: async () => {
+    const response = await axiosAnonymous.get('/api/institutions/');
+    console.log(response.data)
+    return response.data;
+  },
+
 }

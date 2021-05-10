@@ -12,20 +12,21 @@ const ExperienceForm = (props) => {
 
   const schema = yup.object().shape({
     title: yup.string().required('This is a required field.'),
-    company: yup.object().required('This is a required field.'),
+    company_id: yup.object().required('This is a required field.'),
   });
 
   const methods = useForm({
     defaultValues: {
       title: states[index] ? states[index].title : '',
-      company: states[index] ? states[index].company : '',
-      start: states[index] ? states[index].start : null,
-      end: states[index] ? states[index].end : null
+      company_id: states[index] ? states[index].company : null,
+      start_date: states[index] ? states[index].start : null,
+      end_date: states[index] ? states[index].end : null
     },
     resolver: yupResolver(schema),
   });
 
   const onSubmit = (values) => {
+    console.log(values)
     if(states[index]){
       states[index] = values
       setStates(states)
@@ -43,15 +44,15 @@ const ExperienceForm = (props) => {
       </div>
       <div className="pb-10 col-6">
         <h4 className="font-size-6 font-weight-semibold mb-6">Company</h4>
-        <FormSelect name="company" query={http.getAllSkills}/>
+        <FormSelect name="company_id" query={http.getAllCompanies}/>
       </div>
       <div className="pb-10 col-6">
         <h4 className="font-size-6 font-weight-semibold mb-6">Start date</h4>
-        <FormDatePicker name="start" />
+        <FormDatePicker name="start_date" />
       </div>
       <div className="pb-10 col-6">
         <h4 className="font-size-6 font-weight-semibold mb-6">End date</h4>
-        <FormDatePicker name="end" />
+        <FormDatePicker name="end_date" />
       </div>
       <div className="col-12">
         <button

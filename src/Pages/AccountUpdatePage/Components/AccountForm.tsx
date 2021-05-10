@@ -1,4 +1,5 @@
 import React, {useState } from 'react';
+import { EditorState } from 'draft-js';
 
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -26,7 +27,9 @@ const upperContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-b
                                   border-width-1 border-default-color light-mode-texts"
 const lowerContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 light-mode-texts"
 
-export const AccountForm = (props) => {
+export const AccountForm = ({id}) => {
+
+  console.log(id)
 
   const [educationStates, setEducationStates] = useState(Array())
   const [educationIndex,  setEducationIndex] = useState(-1)
@@ -38,18 +41,27 @@ export const AccountForm = (props) => {
       image: Array(),
       first: '',
       last: '',
-      about: ''
+      about: EditorState.createEmpty()
     },
   });
 
   const onSubmit = (values) => {
-    let education = Object.assign({}, educationStates)
-    let experiences = Object.assign({}, experienceStates)
+    let education = [...educationStates]
+    education.map((data)=>{
+      data.institution_id = data.institution_id.value
+      data.start_date = data.start_date.format('YYYY-MM-DD').toString()
+      data.end_date = data.end_date.format('YYYY-MM-DD').toString()
+    })
+    let experiences = [...experienceStates]
+    experiences.forEach((data)=>{
+      data.company_id = data.company_id.value
+      data.start_date = data.start_date.format('YYYY-MM-DD').toString()
+      data.end_date = data.end_date.format('YYYY-MM-DD').toString()
+    })
     let account = Object.assign({}, values)
     account["about"] = editorStateToText(account["about"])
-    account["education"] = education
-    account["experiences"] = experiences
-    //http.updateProfile(id, account)
+    account["image"] = account["image"][0]
+    http.updateOrCreateProfile(id, account, education, experiences)
   }
 
   return (
@@ -121,7 +133,7 @@ export const AccountForm = (props) => {
                   setEducationIndex = {setEducationIndex}
                 />
               }
-              <div className="pb-10 col-12">
+              <div className="pt-10 pb-10 col-12">
                 <EditTable
                   states = {experienceStates}
                   setStates = {setExperienceStates}
