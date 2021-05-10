@@ -9,7 +9,9 @@ export const AccountUpdatePage = (props) => {
       <div className="dashboard-main-container mt-25 mt-lg-31" id="dashboard-body">
         <div className="container" style={{ minHeight:"85vh" }}>
           <div className="mb-18">
-            <AccountForm id={id}/>
+            <AccountForm
+              id={id}
+            />
           </div>
         </div>
       </div>

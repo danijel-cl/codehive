@@ -23,8 +23,9 @@ import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 export const PrivateRouter = () => {
   const [id, setId] = useState(null)
   useEffect(() => {
-    http.getUserId().then(({id})=>{
+    http.getUserId().then(({id, is_company})=>{
       localStorage.setItem('user-id', id);
+      localStorage.setItem('user-is-company', is_company);
       setId(id);
     })
   }, [])
