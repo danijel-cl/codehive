@@ -54,13 +54,13 @@ export const AccountForm = ({id}) => {
   const onSubmit = (values) => {
     let education = educationStates.map(state => Object.assign({}, state));
     education.map((data)=>{
-      data.institution_id = data.institution_id?.value||data.id
+      data.institution_id = data.institution_id?.value||data.institution.id
       data.start_date = typeof data.start_date==="string" ? null : data.start_date.format('YYYY-MM-DD').toString()
       data.end_date = typeof data.end_date==="string" ? null : data.end_date.format('YYYY-MM-DD').toString()
     })
     let experiences =  experienceStates.map(state => Object.assign({}, state));
     experiences.forEach((data)=>{
-      data.company_id = data.company_id?.value||data.id
+      data.company_id = data.company_id?.value||data.company.id
       data.start_date = typeof data.start_date==="string" ? null : data.start_date.format('YYYY-MM-DD').toString()
       data.end_date = typeof data.end_date==="string" ? null : data.end_date.format('YYYY-MM-DD').toString()
     })

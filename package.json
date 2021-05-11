@@ -19,6 +19,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "draft-js": "^0.11.7",
+    "draft-js-export-html": "^1.4.1",
     "emotion": "^11.0.0",
     "html-to-react": "^1.4.5",
     "node-modules": "^0.0.1",
