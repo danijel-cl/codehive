@@ -8,7 +8,7 @@ export const FormImageUploader = ({name}) => {
 
   const imageUploaded = (picture) =>{
     console.log(picture)
-    if (picture.length===0){
+    if (!picture?.length){
       return "Upload Image"
     }else{
       return "Image Uploaded"
