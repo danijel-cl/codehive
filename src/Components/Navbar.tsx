@@ -35,9 +35,11 @@ const Navbar = (props) => {
 
   const id = localStorage.getItem('user-id')||null;
   const company = localStorage.getItem('user-is-company')||null;
-
+  console.log(company, typeof company, "true"===company)
   const logOut = () => {
     window.localStorage.removeItem('logtoken')
+    window.localStorage.removeItem('user-id')
+    window.localStorage.removeItem('user-is-company')
     window.location.href = '/'
   }
   return (
@@ -64,16 +66,14 @@ const Navbar = (props) => {
                   </li>
                   {props.isLoggedIn &&
                   <>
-                    { company &&
+                    {company==="true" ? (
                     <li className="nav-item">
                       <Link className="nav-link" to={`/companies/${id}/dashboard`}>Dashboard</Link>
-                    </li>
-                    }
-                    { !company &&
+                    </li> ) : (
                     <li className="nav-item">
                       <Link className="nav-link" to={`/users/${id}/account/active`}>Account</Link>
                     </li>
-                    }
+                    )}
                     <li className="nav-item">
                       <Button style={buttonContainer} onClick={() => logOut()} className="nav-link" >Log Out</Button>
                     </li>

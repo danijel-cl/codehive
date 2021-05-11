@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const LinkClass = "px-10 py-1 my-5 font-size-4 font-weight-semibold flex-y-center"
+const LinkClass = "px-10 py-1 my-5 flex-y-center"
 
 const Dashboard = (props) => {
   const id = localStorage.getItem('user-id')||null;
@@ -12,11 +12,11 @@ const Dashboard = (props) => {
         <p className = "welcome_letters">Welcome Filip </p>
       </div>
       <ul className="list-unstyled dashboard-layout-sidebar pt-15">
-        <li style={{cursor: 'pointer'}} className={(props.page === 0 ? "active" : "")}><Link to={`/users/${id}/account/active`} className={LinkClass}><i className="fas fa-briefcase mr-7" />Active Challanges</Link></li>
-        <li style={{cursor: 'pointer'}} className={(props.page === 1 ? "active" : "")}><Link to={`/users/${id}/account/finished`} className={LinkClass}><i className="fas fa-user mr-7" />Finished Challanges</Link></li>
-        <li style={{cursor: 'pointer'}} className={(props.page === 2 ? "active" : "")}><Link to={`/users/${id}/account/tasks`} className={LinkClass}><i className="fas fa-clock mr-7" />Task Submissions</Link></li>
-        <li style={{cursor: 'pointer'}} className={(props.page === 3 ? "active" : "")}><Link to={`/users/${id}/account/statistics`} className={LinkClass}><i className="icon icon-layout-11 mr-7" />Statistics</Link></li>
-        <li style={{cursor: 'pointer'}} className={(props.page === 4 ? "active" : "")}><Link to={`/users/${id}/account/update`} className={LinkClass}><i className="fas fa-cog mr-7" />Settings </Link></li>
+        <li style={{cursor: 'pointer', fontSize:"19px", color:"#DCDCDC"}} className={(props.page === 0 ? "active" : "")}><Link to={`/users/${id}/account/active`} className={LinkClass}><i className="fas fa-briefcase mr-7" />Active Challanges</Link></li>
+        <li style={{cursor: 'pointer', fontSize:"19px", color:"#DCDCDC"}} className={(props.page === 1 ? "active" : "")}><Link to={`/users/${id}/account/finished`} className={LinkClass}><i className="fas fa-user mr-7" />Finished Challanges</Link></li>
+        <li style={{cursor: 'pointer', fontSize:"19px", color:"#DCDCDC"}} className={(props.page === 2 ? "active" : "")}><Link to={`/users/${id}/account/tasks`} className={LinkClass}><i className="fas fa-clock mr-7" />Task Submissions</Link></li>
+        <li style={{cursor: 'pointer', fontSize:"19px", color:"#DCDCDC"}} className={(props.page === 3 ? "active" : "")}><Link to={`/users/${id}/account/statistics`} className={LinkClass}><i className="icon icon-layout-11 mr-7" />Statistics</Link></li>
+        <li style={{cursor: 'pointer', fontSize:"19px", color:"#DCDCDC"}} className={(props.page === 4 ? "active" : "")}><Link to={`/users/${id}/account/update`} className={LinkClass}><i className="fas fa-cog mr-7" />Settings </Link></li>
       </ul>
     </div>
   );

@@ -21,22 +21,29 @@ const tableClassname = styled.cssClassName`
 
   .ant-table-thead th {
     background-color:#9c2906;
-    color: white;
+    color: #F8F8F8;
     height: 40px;
+    font-size: 17px;
+    font-weight: 600;
   }
 
   .ant-table-thead tr {
     height: 70px;
-    font-weight: 700;
   }
- 
+
+  td {
+    color: #585858;
+  }
+
   .ant-table-tbody tr {
     height: 80px;
-    font-weight: 500;
+    font-weight: 600;
+    font-size:16px;
   }
- 
-  .ant-table-tbody tr:hover {
-    background-color:rgba(191, 111, 111, 0.5) !important;
+
+  .ant-table-tbody > tr:hover > td {
+    background-color:rgba(191, 111, 111, 0.4);
+    color: #202020;
   }
 
   .ant-table-tbody tr:nth-of-type(odd) {
