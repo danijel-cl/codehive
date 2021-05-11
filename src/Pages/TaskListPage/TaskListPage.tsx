@@ -17,6 +17,7 @@ export const TaskListPage = () => {
     http.getTasks(id)
       .then(
         (data) => {
+          data.forEach(d => d.description = textToHtml(d.description))
           console.log(data)
           setTasks(data);
         },
@@ -40,18 +41,6 @@ export const TaskListPage = () => {
       )
   }, [])
 
-
-  // const tasks = [{
-  //   "name": "Quiz App"
-  // },{
-  //   "name": "Model creation"
-  // },{
-  //   "name": "RESTful interface"
-  // },{
-  //   "name": "Snake Game"
-  // },{
-  //   "name": "Multiprocessing"
-  // }]
 
   const [activeTask, setActiveTask] = useState(0);
   const postSubmissions = 10;
@@ -112,7 +101,7 @@ export const TaskListPage = () => {
               </div>
               <div className="col-4">
                 <div className="tab-content" style={{position: "sticky",top: "14vh"}}>
-                  <TabPane task= {tasks[activeTask]}/>
+                  <TabPane task={tasks[activeTask]} post={post}/>
                 </div>
               </div>
             </div>

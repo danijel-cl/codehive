@@ -17,8 +17,17 @@ const tabButtonStyle = "btn col-3 text-uppercase rounded-3"
 
 const Post = (props) => {
 
-  const tags = ["Python","Django","React"]
-  return (
+  const tags = [
+    "Python",
+    "Django",
+    "Rest",
+    "Docker",
+    "C++",
+    "JS",
+    "C#",
+    "Go"
+  ];
+    return (
       <div className="col-6 mb-8 mt-5 pt-3">
         <div onClick={()=>props.setPost(props.index)} style={{cursor:"pointer"}} className={postContentStyle}>
           <div className="row">
@@ -38,13 +47,16 @@ const Post = (props) => {
           </div>
           <div className="row pt-10">
             <ul className={tagListStyle}>
-              {tags.map((tag, index) => (
-                <li>
-                  <a className = {tagStyle}>
-                    {tag}
-                  </a>
-                </li>
-              ))}
+            {tags.map((tag, index) => {
+                  if(Math.floor(Math.random() * 8) < 3) {
+                    return (
+                      <li>
+                        <a className = {tagStyle}>{tag}</a>                      
+                      </li>
+                    )
+                  }
+                }
+              )}
             </ul>
           </div>
         </div>

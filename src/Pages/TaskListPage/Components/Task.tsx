@@ -15,11 +15,13 @@ export const Task = (props) => {
     "Python",
     "Django",
     "Rest",
-    "Docker"
+    "Docker",
+    "C++",
+    "JS",
+    "C#",
+    "Go"
   ]
 
-  const taskCompany = "AirBnb"
-  const taskLastSubmission = "2021-03-01"
   const taskSolved = 0
 
   return (
@@ -29,7 +31,7 @@ export const Task = (props) => {
           <div className="col-md-4">
             <div className="media align-items-center">
               <div>
-                <h3 className="mb-0 font-size-6 heading-default-color">{props.task.name}</h3>
+                <h3 className="mb-0 font-size-6 heading-default-color">{props.task.title}</h3>
                 {
                   (() =>{
                     if (taskSolved===0){
@@ -47,11 +49,16 @@ export const Task = (props) => {
           <div className="col-md-8 text-right pt-7 pt-md-5">
             <div className="media justify-content-md-end">
               <ul className="d-flex list-unstyled mr-n3 flex-wrap mr-n8 justify-content-md-end">
-                {tags.map((tag, index) => (
-                  <li>
-                    <span className="bg-regent-opacity-15 min-width-px-96 mr-3 text-center rounded-3 px-6 py-1 font-size-3 text-black-2 mt-2 d-inline-block">{tag}</span>
-                  </li>
-                ))}
+                {tags.map((tag, index) => {
+                  if(Math.floor(Math.random() * 8) < 4) {
+                    return (
+                      <li>
+                        <span className="bg-regent-opacity-15 min-width-px-96 mr-3 text-center rounded-3 px-6 py-1 font-size-3 text-black-2 mt-2 d-inline-block">{tag}</span>
+                      </li>
+                    )
+                  }
+                }
+                )}
               </ul>
             </div>
           </div>
