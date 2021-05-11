@@ -11,6 +11,7 @@ export const TaskListPage = () => {
   const [error, setError] = useState(null);
   const [post, setPost] = useState<PostType>();
   const [tasks, setTasks] = useState<TaskParams[]>([]);
+  const [content, setContent] = useState(null)
 
   useEffect(() => {
     http.getTasks(id)
@@ -29,6 +30,7 @@ export const TaskListPage = () => {
     http.getPost(id)
       .then(
         (data) => {
+          data.description = textToHtml(data.description)
           console.log(data)
           setPost(data);
         },
@@ -54,7 +56,6 @@ export const TaskListPage = () => {
   const [activeTask, setActiveTask] = useState(0);
   const postSubmissions = 10;
   const postCompletion = "90%";
-  const content = textToHtml(post?.description)
   const postTaskDescription = "A talented professional with an academic background in IT and proven\
     commercial development experience as C++ developer since 1999. Has a sound knowledge of the software\
     development life cycle. Was involved in more than 140 software development outsourcing projects.Has a \
@@ -75,7 +76,7 @@ export const TaskListPage = () => {
                     </div>
                     <div
                       className="font-size-4 mb-8 pt-4"
-                      dangerouslySetInnerHTML={{__html: content}}
+                      dangerouslySetInnerHTML={{__html: post?.description||"<p>Loading..</p>"}}
                     />
                   </div>
                 </div>
