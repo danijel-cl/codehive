@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { http } from '../api/http'
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { AccountActivationPage } from '../Pages/AccountActivationPage';
-import { CompanyCreatePage } from '../Pages/CompanyCreatePage/CompanyCreatePage';
 import { UserDetailPage } from '../Pages/UserDetailPage/UserDetailPage';
 import { DashboardPage } from '../Pages/DashboardPage/DashboardPage';
 import { TaskDetailPage } from '../Pages/TaskDetailPage/TaskDetailPage';
