@@ -15,7 +15,7 @@ const CompanyForm = (props) => {
       return "Image Uploaded"
     }
   }
-
+  console.log(localStorage.getItem('user-is-company'))
   const onDrop = (picture) => {
     setPicture(picture);
   };
