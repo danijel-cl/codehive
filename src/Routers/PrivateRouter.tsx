@@ -21,7 +21,7 @@ import { RecoverPasswordPage } from '../Pages/RecoverPassowrdPage';
 
 export const PrivateRouter = () => {
   const [id, setId] = useState(null)
-  const [company, setCompany] = useState(null)
+  const [company, setCompany] = useState(false)
   useEffect(() => {
     http.getUserId().then(({id, is_company})=>{
       localStorage.setItem('user-id', id);
@@ -45,13 +45,11 @@ export const PrivateRouter = () => {
         {company && <Route exact path={`/companies/${id}/dashboard`} component={DashboardPage} />}
         <Route exact path="/posts/:id/tasks/:id" component={TaskDetailPage} />
         <Route exact path="/application-detail" component={ApplicationDetailPage} />
-        {!company &&
-        <Route exact path="/users/:id/account/active" component={AccountActiveListPage} /> &&
-        <Route exact path="/users/:id/account/finished" component={AccountFinishedListPage} /> &&
-        <Route exact path="/users/:id/account/statistics" component={AccountStatisticsPage} /> &&
-        <Route exact path="/users/:id/account/tasks" component={AccountTaskListPage} /> &&
-        <Route exact path="/users/:id/account/update" component={AccountUpdatePage} />
-        }
+        {!company && <Route exact path={`/users/${id}/account/active`} component={AccountActiveListPage} />}
+        {!company && <Route exact path={`/users/${id}/account/finished`} component={AccountFinishedListPage} />}
+        {!company && <Route exact path={`/users/${id}/account/statistics`} component={AccountStatisticsPage} />}
+        {!company && <Route exact path={`/users/${id}/account/tasks`} component={AccountTaskListPage} />}
+        {!company && <Route exact path={`/users/${id}/account/update`} component={AccountUpdatePage} />}
         <Redirect from="*" to="/" />
       </Switch>
   );

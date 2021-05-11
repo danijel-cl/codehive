@@ -7,6 +7,7 @@ import { stateToHTML } from 'draft-js-export-html';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 export const textToEditorState = (text) =>{
+  console.log(text)
   const contentState = convertFromRaw(JSON.parse(text))
   return EditorState.createWithContent(contentState)
 }

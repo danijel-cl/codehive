@@ -2,7 +2,7 @@ import Dashboard from "../../Components/Dashboards/AccountDashboard"
 import {AccountForm} from "./Components/AccountForm"
 
 export const AccountUpdatePage = (props) => {
-  const id = props.match.params.id||null
+  const id = localStorage.getItem('user-id')||null;
   return (
     <div className="site-wrapper overflow-hidden bg-default-2">
       <Dashboard page={4}/>

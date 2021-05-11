@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const LinkClass = "px-10 py-1 my-5 font-size-4 font-weight-semibold flex-y-center"
+const LinkClass = "px-10 py-1 my-5 font-size-5 font-weight-semibold flex-y-center"
 
 const Dashboard = (props) => {
   const id = localStorage.getItem('user-id')||null;

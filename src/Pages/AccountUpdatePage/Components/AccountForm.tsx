@@ -85,10 +85,12 @@ export const AccountForm = ({id}) => {
   useEffect(() => {
     if (!profile){
       http.getProfileId(id).then((id)=>{
+        console.log("ID",id)
         if(id){
           setProfile(id)
           http.getProfile(id).then(
             (profile)=>{
+              console.log("profile", profile)
               if(profile){
                 methods.setValue("first_name",profile.first_name)
                 methods.setValue("last_name",profile.last_name)
