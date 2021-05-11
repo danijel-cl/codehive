@@ -71,7 +71,7 @@ export const TaskListPage = () => {
                 </div>
               </div>
               <div className="col-4 pb-10 pl-10">
-                <div className="bg-white shadow-9 rounded-4" style={{height:"25vh"}}>
+                <div className="bg-white shadow-9 rounded-4" style={{height:"25vh", overflow: "auto"}}>
                   <div className="pr-xl-0 pr-xxl-14 p-5 px-xs-12 pt-7 pb-5">
                     <div className="border-bottom border-width-1 border-default-color">
                       <h3 className="font-size-6 mb-0">{post?.company?.name}</h3>

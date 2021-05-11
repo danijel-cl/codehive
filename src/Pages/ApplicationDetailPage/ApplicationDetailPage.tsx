@@ -40,18 +40,18 @@ export const ApplicationDetailPage = (props) => {
             <div className="col-12">
               <div className="bg-white rounded-4 pt-11 shadow-9">
                 <div className="row pl-12 pb-8">
-                  <button className="col-9 font-size-6 text-black-2 font-weight-semibold">{candidateName}</button>
-                  <button className="col-1 font-weight-semibold">CONTACT</button>
-                  <button className="col-1 text-red font-weight-semibold">REJECT</button>
+                  <button className="justify-content-start col-9 btn font-size-6 text-black-2 font-weight-semibold pl-8">{candidateName}</button>
+                  <button className="col-1 btn font-weight-semibold">CONTACT</button>
+                  <button className="col-1 btn text-red font-weight-semibold">REJECT</button>
                 </div>
                 <ul className="nav border-bottom border-mercury pl-12">
                   <li className="tab-menu-items nav-item pr-12">
-                    <button style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,false)} className={`text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${!choice ? 'active':''}`}>
+                    <button style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,false)} className={`btn text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${!choice ? 'active':''}`}>
                       Candidate Tasks
                     </button>
                   </li>
                   <li className="tab-menu-items nav-item pr-12">
-                    <button style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,true)} className={`text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${choice ? 'active':''}`}>
+                    <button style={{cursor:"pointer"}} onClick={(e) => updateChoice(e,true)} className={`btn text-uppercase font-size-3 font-weight-bold text-default-color py-3 ${choice ? 'active':''}`}>
                       Candidate Profile
                     </button>
                   </li>
