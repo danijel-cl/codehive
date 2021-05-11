@@ -12,7 +12,7 @@ export const TabPane = (props) => {
             <div className="col-12">
               <div className="media">
                 <div>
-                  <h3 className="font-size-6 mb-0">{props.task.name}</h3>
+                  {/* <h3 className="font-size-6 mb-0">{props.task.name}</h3> */}
                   <span className="font-size-3 text-gray line-height-2">{taskCompany}</span>
                 </div>
               </div>
