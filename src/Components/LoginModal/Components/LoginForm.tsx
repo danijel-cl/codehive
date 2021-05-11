@@ -28,6 +28,7 @@ export const LoginForm = () => {
     let data;
 
     try {
+      console.log(user)
       data = await http.login(user);
     } catch (error) {
       setErrorMessage('Login failed. Check your credentials');

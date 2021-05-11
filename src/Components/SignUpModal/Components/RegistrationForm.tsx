@@ -33,7 +33,8 @@ export const RegistrationForm = () => {
       
       try {
         data = await http.register({password: values.password, email: values.email});
-        console.log(data)
+        window.location.reload()
+
       } catch (error) {
         setErrorMessage('Registration failed. Check your credentials');
       }
@@ -41,8 +42,6 @@ export const RegistrationForm = () => {
       if (data && data.token) {
         await http.activateAccount(values.email);
         // activateAccount()
-        localStorage.setItem('regtoken', data.token);
-        queryClient.refetchQueries(cacheKeys.me);
       }
     }
   };
