@@ -38,8 +38,6 @@ export const TaskListPage = () => {
       )
   }, [])
 
-  console.log(tasks)
-  console.log('post', post)
 
   // const tasks = [{
   //   "name": "Quiz App"
@@ -56,7 +54,7 @@ export const TaskListPage = () => {
   const [activeTask, setActiveTask] = useState(0);
   const postSubmissions = 10;
   const postCompletion = "90%";
-  const content = textToHtml(post.description)
+  const content = textToHtml(post?.description)
   const postTaskDescription = "A talented professional with an academic background in IT and proven\
     commercial development experience as C++ developer since 1999. Has a sound knowledge of the software\
     development life cycle. Was involved in more than 140 software development outsourcing projects.Has a \
