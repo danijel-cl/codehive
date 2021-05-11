@@ -110,7 +110,7 @@ export const http = {
 
     return response.data;
   },
-  getAllCompanies: async (id: number) => {
+  getAllCompanies: async () => {
     const response = await axiosAnonymous.get(`/api/companies/`);
 
     return response.data;

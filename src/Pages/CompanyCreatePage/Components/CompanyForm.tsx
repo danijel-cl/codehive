@@ -20,7 +20,6 @@ const CompanyForm = (props) => {
       return "Image Uploaded"
     }
   }
-  console.log(localStorage.getItem('user-is-company'))
   const onSubmit = (values: any) => {
     console.log(values)
   }
