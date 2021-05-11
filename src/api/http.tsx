@@ -181,82 +181,66 @@ export const http = {
   deleteTask: async (id: number) => {
     await axiosAuthenticated.delete(`/api/tasks/${id}`);
   },
-  getProfile: async (id) => {
-    let profile = await axiosAuthenticated.get(`/api/profiles/?user_id=${id}`)
-    .then((profile)=>{
-      const id = profile.data[0].id
-      return axiosAuthenticated.get(`/api/profiles/${id}/`).then((response)=>{
-        console.log("Fetched user",response.data)
-        return response.data
-      })
+  getProfileId: async (id: number) => {
+    return await axiosAuthenticated.get(`/api/profiles/?user_id=${id}`).then((response)=>{
+      console.log(response.data[0])
+      console.log(response.data[0]?.id)
+      return response.data[0]?.id
     })
-    console.log("After fetched",profile)
-    return profile
   },
-  updateProfile: async (id, profile) => {
+  getProfile: async (id: number) => {
+    return axiosAuthenticated.get(`/api/profiles/${id}/`).then((response)=>{
+      console.log("Fetched user",response.data)
+      return response.data
+    })
+  },
+  createProfile: async (account, education, experiences) => {
     const config = {
       headers: {
         "content-type": "multipart/form-data"
       }
     };
-    axiosAuthenticated.put(`/api/profiles/${id}/`,serialize(profile))
-  },
-  createProfile: async (profile) => {
-    const config = {
-      headers: {
-        "content-type": "multipart/form-data"
-      }
-    };
-    axiosAuthenticated.post(`/api/profiles/`,serialize(profile))
-  },
-  updateOrCreateProfile: async (id, account, education, experiences) => {
-    const config = {
-      headers: {
-        "content-type": "multipart/form-data"
-      }
-    };
-    let profile = axiosAuthenticated.get(`/api/profiles/?user_id=${id}`)
-    .then((profile)=>{
-      if (profile.data.length===0){
-        axiosAuthenticated.post(`/api/profiles/`,serialize(account))
-          .then((data)=>{
-            education.forEach((instance)=>{
-              axiosAuthenticated.post(`/api/profiles/${data.data[0].id}/education/`,instance)
-            })
-            experiences.forEach((instance)=>{
-              axiosAuthenticated.post(`/api/profiles/${data.data[0].id}/experiences/`,instance)
-            })
-          })
-      }else{
-        console.log("here")
-        console.log(account)
-        axiosAuthenticated.put(`/api/profiles/${profile.data[0].id}/`,serialize(account))
+    axiosAuthenticated.post(`/api/profiles/`,serialize(account))
+      .then((data)=>{
         education.forEach((instance)=>{
-          if(instance.id){
-            axiosAuthenticated.put(
-              `/api/profiles/${profile.data[0].id}/education/`,
-              instance
-            )
-          }else{
-            axiosAuthenticated.post(
-              `/api/profiles/${profile.data[0].id}/education/`,
-              instance
-            )
-          }
+          axiosAuthenticated.post(`/api/profiles/${data.data[0].id}/education/`,instance)
         })
         experiences.forEach((instance)=>{
-          if(instance.id){
-            axiosAuthenticated.put(
-              `/api/profiles/${profile.data[0].id}/experiences/`,
-              instance
-            )
-          }else{
-            axiosAuthenticated.post(
-              `/api/profiles/${profile.data[0].id}/experiences/`,
-              instance
-            )
-          }
+          axiosAuthenticated.post(`/api/profiles/${data.data[0].id}/experiences/`,instance)
         })
+    })
+  },
+  updateProfile: async (id, account, education, experiences) => {
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data"
+      }
+    };
+    axiosAuthenticated.put(`/api/profiles/${id}/`,serialize(account))
+    education.forEach((instance)=>{
+      if(instance.id){
+        axiosAuthenticated.put(
+          `/api/profiles/${id}/education/${instance.id}`,
+          instance
+        )
+      }else{
+        axiosAuthenticated.post(
+          `/api/profiles/${id}/education/`,
+          instance
+        )
+      }
+    })
+    experiences.forEach((instance)=>{
+      if(instance.id){
+        axiosAuthenticated.put(
+          `/api/profiles/${id}/experiences/${instance.id}`,
+          instance
+        )
+      }else{
+        axiosAuthenticated.post(
+          `/api/profiles/${id}/experiences/`,
+          instance
+        )
       }
     })
   },
@@ -265,40 +249,22 @@ export const http = {
     return response.data;
   },
   getProfileEducation: async (id) => {
-    let education = await axiosAuthenticated.get(`/api/profiles/?user_id=${id}`)
-    .then((profile)=>{
-      const id = profile.data[0].id
-      return axiosAuthenticated.get(`/api/profiles/${id}/education/`).then((response)=>{
-        console.log("Fetched education",response.data)
-        return response.data
-      })
+    return axiosAuthenticated.get(`/api/profiles/${id}/education/`).then((response)=>{
+      console.log("Fetched education",response.data)
+      return response.data
     })
-    return education
   },
   deleteProfileEducation: async (id, education_id) => {
-    await axiosAuthenticated.get(`/api/profiles/?user_id=${id}`)
-    .then((profile)=>{
-      const id = profile.data[0].id
-      return axiosAuthenticated.delete(`/api/profiles/${id}/education/${education_id}/`)
-    })
+    return axiosAuthenticated.delete(`/api/profiles/${id}/education/${education_id}/`)
   },
   getProfileExperiences: async (id) => {
-    let experiences = await axiosAuthenticated.get(`/api/profiles/?user_id=${id}`)
-    .then((profile)=>{
-      const id = profile.data[0].id
-      return axiosAuthenticated.get(`/api/profiles/${id}/experiences/`).then((response)=>{
-        console.log("Fetched education",response.data)
-        return response.data
-      })
+    return axiosAuthenticated.get(`/api/profiles/${id}/experiences/`).then((response)=>{
+      console.log("Fetched education",response.data)
+      return response.data
     })
-    return experiences
   },
   deleteProfileExperiences: async (id, experiences_id) => {
-    await axiosAuthenticated.get(`/api/profiles/?user_id=${id}`)
-    .then((profile)=>{
-      const id = profile.data[0].id
-      return axiosAuthenticated.delete(`/api/profiles/${id}/experiences/${experiences_id}/`)
-    })
+    return axiosAuthenticated.delete(`/api/profiles/${id}/experiences/${experiences_id}/`)
   },
 
 }

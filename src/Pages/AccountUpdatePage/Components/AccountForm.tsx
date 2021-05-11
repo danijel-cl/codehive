@@ -29,7 +29,7 @@ const lowerContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 light-mo
 
 
 export const AccountForm = ({id}) => {
-  const [accountState, setAccountState] = useState(null)
+  const [profile, setProfile] = useState(null)
   const [educationStates, setEducationStates] = useState(Array())
   const [educationIndex,  setEducationIndex] = useState(-1)
   const [experienceStates, setExperienceStates] = useState(Array())
@@ -73,32 +73,43 @@ export const AccountForm = ({id}) => {
     }else{
       delete account["image"]
     }
-    http.updateOrCreateProfile(id, account, education, experiences)
+    http.getProfileId(id).then((id)=>{
+      if (id){
+        http.updateProfile(id, account, education, experiences)
+      }else{
+        http.createProfile(account, education, experiences)
+      }
+    })
   }
 
   useEffect(() => {
-    if (id && !accountState){
-      http.getProfile(id).then(
-        (profile)=>{
-           console.log("Profile", profile)
-           setAccountState(profile)
-           methods.setValue("first_name",profile.first_name)
-           methods.setValue("last_name",profile.last_name)
-           methods.setValue("location",profile.location)
-           methods.setValue("email",profile.user.email)
-           methods.setValue("image",profile.image)
-           methods.setValue("phone",profile.phone)
-           methods.setValue("github",profile.github)
-           methods.setValue("linkedin",profile.linkedin)
-           methods.setValue("website",profile.website)
-           methods.setValue("about",textToEditorState(profile.about))
+    if (!profile){
+      http.getProfileId(id).then((id)=>{
+        if(id){
+          setProfile(id)
+          http.getProfile(id).then(
+            (profile)=>{
+              if(profile){
+                methods.setValue("first_name",profile.first_name)
+                methods.setValue("last_name",profile.last_name)
+                methods.setValue("location",profile.location)
+                methods.setValue("email",profile.user.email)
+                methods.setValue("image",profile.image)
+                methods.setValue("phone",profile.phone)
+                methods.setValue("github",profile.github)
+                methods.setValue("linkedin",profile.linkedin)
+                methods.setValue("website",profile.website)
+                methods.setValue("about",textToEditorState(profile.about))
+              }
+            }
+          )
+          http.getProfileEducation(id).then((education)=>{
+            setEducationStates(education)
+          })
+          http.getProfileExperiences(id).then((experiences)=>{
+            setExperienceStates(experiences)
+          })
         }
-      )
-      http.getProfileEducation(id).then((education)=>{
-        setEducationStates(education)
-      })
-      http.getProfileExperiences(id).then((experiences)=>{
-        setExperienceStates(experiences)
       })
     }
   },[]);
@@ -162,7 +173,7 @@ export const AccountForm = ({id}) => {
                   setIndex = {setEducationIndex}
                   title = "title"
                   header="Education"
-                  id = {id}
+                  id = {profile}
                   deleteId = {http.deleteProfileEducation}
                 />
               </div>
@@ -182,7 +193,7 @@ export const AccountForm = ({id}) => {
                   setIndex = {setExperienceIndex}
                   title = "title"
                   header = "Experience"
-                  id = {id}
+                  id = {profile}
                   deleteId = {http.deleteProfileExperiences}
                 />
               </div>
