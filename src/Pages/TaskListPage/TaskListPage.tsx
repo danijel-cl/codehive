@@ -4,8 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { http, TaskParams } from "../../api/http";
 import { PostType } from "../../types/PostType";
-import { convertToRaw, convertFromRaw, EditorState } from 'draft-js';
-
+import { textToHtml } from '../../Components/Form/FormEditor';
 
 export const TaskListPage = () => {
   const { id } = useParams<any>();
@@ -57,6 +56,7 @@ export const TaskListPage = () => {
   const [activeTask, setActiveTask] = useState(0);
   const postSubmissions = 10;
   const postCompletion = "90%";
+  const content = textToHtml(post.description)
   const postTaskDescription = "A talented professional with an academic background in IT and proven\
     commercial development experience as C++ developer since 1999. Has a sound knowledge of the software\
     development life cycle. Was involved in more than 140 software development outsourcing projects.Has a \
@@ -75,7 +75,10 @@ export const TaskListPage = () => {
                       <h3 className="font-size-6 mb-0">Hi Filip</h3>
                       <span className="font-size-5 text-gray line-height-2 pb-2">What we are looking for:</span>
                     </div>
-                    <p className="font-size-4 mb-8 pt-4">{post?.description!}</p>
+                    <div
+                      className="font-size-4 mb-8 pt-4"
+                      dangerouslySetInnerHTML={{__html: content}}
+                    />
                   </div>
                 </div>
               </div>
