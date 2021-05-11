@@ -32,7 +32,7 @@ const Footer = () => {
                       <img src="image/l1/png/message.png" className="align-self-center mr-3" alt="" />
                       <div className="media-body pl-5">
                         <p className="mb-0 font-size-4 text-white">Contact us at</p>
-                        <button style={buttonContainer} className="mb-0 font-size-4 font-weight-bold">support@codehive.net</button>
+                        <button style={buttonContainer} className="mb-0 font-size-5 font-weight-bold text-white">support@codehive.net</button>
                       </div>
                     </div>
                     <div className="social-icons">
@@ -48,7 +48,7 @@ const Footer = () => {
                     <div className="row">
                       <div className="col-lg-3 col-md-6 col-sm-3 col-xs-6">
                         <div className="footer-widget widget2 mb-md-0 mb-13">
-                          <p className="widget-title font-size-4 text-gray mb-md-8 mb-7">Company</p>
+                          <p className="widget-title font-size-5 text-white mb-md-8 mb-7"><strong>Company</strong></p>
                           <ul className="widget-links pl-0 list-unstyled list-hover-primary">
                             <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">About us</button></li>
                             <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Contact us</button></li>
@@ -59,7 +59,7 @@ const Footer = () => {
                       </div>
                       <div className="col-lg-3 col-md-6 col-sm-3 col-xs-6">
                         <div className="footer-widget widget3 mb-sm-0 mb-13">
-                          <p className="widget-title font-size-4 text-gray mb-md-8 mb-7">Product</p>
+                          <p className="widget-title font-size-5 text-white mb-md-8 mb-7"><strong>Product</strong></p>
                           <ul className="widget-links pl-0 list-unstyled list-hover-primary">
                             <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Features </button></li>
                             <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Pricing</button></li>
@@ -71,7 +71,7 @@ const Footer = () => {
                       </div>
                       <div className="col-lg-3 col-md-6 col-sm-3 col-xs-6">
                         <div className="footer-widget widget4 mb-sm-0 mb-13">
-                          <p className="widget-title font-size-4 text-gray mb-md-8 mb-7">Services</p>
+                          <p className="widget-title font-size-5 text-white mb-md-8 mb-7"><strong>Services</strong></p>
                           <ul className="widget-links pl-0 list-unstyled list-hover-primary">
                             <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Digital Marketing</button></li>
                             <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">SEO for Business</button></li>
@@ -82,7 +82,7 @@ const Footer = () => {
                       </div>
                       <div className="col-lg-3 col-md-6 col-sm-3 col-xs-6">
                         <div className="footer-widget widget4">
-                          <p className="widget-title font-size-4 text-gray mb-md-8 mb-7">Legal</p>
+                          <p className="widget-title font-size-5 text-white mb-md-8 mb-7"><strong>Legal</strong></p>
                           <ul className="widget-links pl-0 list-unstyled list-hover-primary">
                             <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Privacy Policy</button></li>
                             <li className="mb-6"><button style={buttonContainer} className="heading-default-color font-size-4 font-weight-normal">Terms &amp; Conditions</button></li>

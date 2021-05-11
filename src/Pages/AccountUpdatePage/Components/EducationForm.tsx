@@ -12,15 +12,15 @@ const EducationForm = (props) => {
 
   const schema = yup.object().shape({
     title: yup.string().required('This is a required field.'),
-    institution: yup.object().required('This is a required field.'),
+    institution_id: yup.object().required('This is a required field.'),
   });
 
   const methods = useForm({
     defaultValues: {
       title: educationStates[educationIndex] ? educationStates[educationIndex].title : '',
-      institution: educationStates[educationIndex] ? educationStates[educationIndex].institution : '',
-      start: educationStates[educationIndex] ? educationStates[educationIndex].start : null,
-      end: educationStates[educationIndex] ? educationStates[educationIndex].end : null
+      institution_id: educationStates[educationIndex] ? educationStates[educationIndex].institution : '',
+      start_date: educationStates[educationIndex] ? educationStates[educationIndex].start : null,
+      end_date: educationStates[educationIndex] ? educationStates[educationIndex].end : null
     },
     resolver: yupResolver(schema),
   });
@@ -43,15 +43,15 @@ const EducationForm = (props) => {
       </div>
       <div className="pb-10 col-6">
         <h4 className="font-size-6 font-weight-semibold mb-6">Institution</h4>
-        <FormSelect name="institution" query={http.getAllSkills}/>
+        <FormSelect name="institution_id" query={http.getAllEducation}/>
       </div>
       <div className="pb-10 col-6">
         <h4 className="font-size-6 font-weight-semibold mb-6">Start date</h4>
-        <FormDatePicker name="start" />
+        <FormDatePicker name="start_date" />
       </div>
       <div className="pb-10 col-6">
         <h4 className="font-size-6 font-weight-semibold mb-6">End date</h4>
-        <FormDatePicker name="end" />
+        <FormDatePicker name="end_date" />
       </div>
       <div className="col-12">
         <button

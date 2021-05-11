@@ -1,4 +1,4 @@
-import Dashboard from "./Components/Dashboard"
+import Dashboard from "../../Components/Dashboards/AccountDashboard"
 import FinishedList from "./Components/FinishedList"
 
 export const AccountFinishedListPage = (props) => {

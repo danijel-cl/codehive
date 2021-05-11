@@ -33,6 +33,8 @@ const Navbar = (props) => {
   const [loginClicked, setLoginClicked] = useState(false);
   const [signupClicked, setSignupClicked] = useState(false);
 
+  const id = localStorage.getItem('user-id')||null;
+
   const logOut = () => {
     window.localStorage.removeItem('logtoken')
     window.location.href = '/'
@@ -62,10 +64,10 @@ const Navbar = (props) => {
                   {props.isLoggedIn &&
                   <>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/companies/:id/dashboard">Dashboard</Link>
+                      <Link className="nav-link" to={`/companies/${id}/dashboard`}>Dashboard</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/users/:id/account/active">Account</Link>
+                      <Link className="nav-link" to={`/users/${id}/account/active`}>Account</Link>
                     </li>
                     <li className="nav-item">
                       <Button style={buttonContainer} onClick={() => logOut()} className="nav-link" >Log Out</Button>

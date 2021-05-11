@@ -1,4 +1,5 @@
-import React, {useState } from 'react';
+import React, {useState, useEffect } from 'react';
+import { EditorState } from 'draft-js';
 
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -26,31 +27,81 @@ const upperContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 border-b
                                   border-width-1 border-default-color light-mode-texts"
 const lowerContainerContentStyle = "pt-9 pl-sm-9 pl-5 pr-sm-9 pr-5 pb-8 light-mode-texts"
 
-export const AccountForm = (props) => {
 
+export const AccountForm = ({id}) => {
+  const [accountState, setAccountState] = useState(null)
   const [educationStates, setEducationStates] = useState(Array())
   const [educationIndex,  setEducationIndex] = useState(-1)
   const [experienceStates, setExperienceStates] = useState(Array())
   const [experienceIndex, setExperienceIndex] = useState(-1)
 
+  const schema = yup.object().shape({
+    first_name: yup.string().required('This is a required field.'),
+    last_name: yup.string().required('This is a required field.'),
+    about: yup.object().required('This is a required field.')
+  });
+
   const methods = useForm({
     defaultValues: {
-      image: Array(),
-      first: '',
-      last: '',
-      about: ''
+      first_name: '',
+      last_name: '',
+      about: EditorState.createEmpty(),
+      image: Array()
     },
+    resolver: yupResolver(schema),
   });
 
   const onSubmit = (values) => {
-    let education = Object.assign({}, educationStates)
-    let experiences = Object.assign({}, experienceStates)
+    let education = educationStates.map(state => Object.assign({}, state));
+    education.map((data)=>{
+      data.institution_id = data.institution_id?.value||data.institution.id
+      data.start_date = typeof data.start_date==="string" ? null : data.start_date.format('YYYY-MM-DD').toString()
+      data.end_date = typeof data.end_date==="string" ? null : data.end_date.format('YYYY-MM-DD').toString()
+    })
+    let experiences =  experienceStates.map(state => Object.assign({}, state));
+    experiences.forEach((data)=>{
+      data.company_id = data.company_id?.value||data.company.id
+      data.start_date = typeof data.start_date==="string" ? null : data.start_date.format('YYYY-MM-DD').toString()
+      data.end_date = typeof data.end_date==="string" ? null : data.end_date.format('YYYY-MM-DD').toString()
+    })
     let account = Object.assign({}, values)
     account["about"] = editorStateToText(account["about"])
-    account["education"] = education
-    account["experiences"] = experiences
-    //http.updateProfile(id, account)
+    console.log(account.image)
+    if(typeof account.image!=="string"){
+      account["image"] = account["image"][0]
+      console.log("here",account.image)
+    }else{
+      delete account["image"]
+    }
+    http.updateOrCreateProfile(id, account, education, experiences)
   }
+
+  useEffect(() => {
+    if (id && !accountState){
+      http.getProfile(id).then(
+        (profile)=>{
+           console.log("Profile", profile)
+           setAccountState(profile)
+           methods.setValue("first_name",profile.first_name)
+           methods.setValue("last_name",profile.last_name)
+           methods.setValue("location",profile.location)
+           methods.setValue("email",profile.user.email)
+           methods.setValue("image",profile.image)
+           methods.setValue("phone",profile.phone)
+           methods.setValue("github",profile.github)
+           methods.setValue("linkedin",profile.linkedin)
+           methods.setValue("website",profile.website)
+           methods.setValue("about",textToEditorState(profile.about))
+        }
+      )
+      http.getProfileEducation(id).then((education)=>{
+        setEducationStates(education)
+      })
+      http.getProfileExperiences(id).then((experiences)=>{
+        setExperienceStates(experiences)
+      })
+    }
+  },[]);
 
   return (
     <>
@@ -69,11 +120,11 @@ export const AccountForm = (props) => {
               </div>
               <div className="pb-10 col-6">
                 <h4 className="font-size-6 font-weight-semibold mb-6">First name</h4>
-                <FormInput name="first" />
+                <FormInput name="first_name" />
               </div>
               <div className="pb-10 col-6">
                 <h4 className="font-size-6 font-weight-semibold mb-6">Last name</h4>
-                <FormInput name="last" />
+                <FormInput name="last_name" />
               </div>
               <div className="pb-10 col-6">
                 <h4 className="font-size-6 font-weight-semibold mb-6">Location</h4>
@@ -111,6 +162,8 @@ export const AccountForm = (props) => {
                   setIndex = {setEducationIndex}
                   title = "title"
                   header="Education"
+                  id = {id}
+                  deleteId = {http.deleteProfileEducation}
                 />
               </div>
               {educationIndex!==-1 &&
@@ -121,7 +174,7 @@ export const AccountForm = (props) => {
                   setEducationIndex = {setEducationIndex}
                 />
               }
-              <div className="pb-10 col-12">
+              <div className="pt-10 pb-10 col-12">
                 <EditTable
                   states = {experienceStates}
                   setStates = {setExperienceStates}
@@ -129,6 +182,8 @@ export const AccountForm = (props) => {
                   setIndex = {setExperienceIndex}
                   title = "title"
                   header = "Experience"
+                  id = {id}
+                  deleteId = {http.deleteProfileExperiences}
                 />
               </div>
               {experienceIndex!==-1 &&
@@ -141,9 +196,9 @@ export const AccountForm = (props) => {
               }
               <div className="col-12 my-15">
                 <button
-                  className="btn btn-primary btn-xl w-10 text-uppercase"
+                  className="btn btn-primary btn-lg w-10 text-uppercase"
                   onClick={methods.handleSubmit(onSubmit)}>
-                  <span className="mr-5 d-inline-block">+</span>Create Task
+                  Save
                 </button>
               </div>
             </FormProvider>

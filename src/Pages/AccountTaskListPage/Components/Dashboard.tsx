@@ -8,7 +8,7 @@ const Dashboard = (props) => {
     <div className="dashboard-sidebar-wrapper" style={{ paddingTop:"10vh"}}>
       <div className="pt-20" style={{textAlign:"center"}}>
         <a className="mb-4" href="#"><img className="circle-79" src={process.env.PUBLIC_URL + "/resources/image/l3/png/pro-img.png"} alt="" /></a>
-        <p>Welcome Filip </p>
+        <p className = "welcome_letters">Welcome Filip </p>
       </div>
       <ul className="list-unstyled dashboard-layout-sidebar pt-15">
         <li style={{cursor: 'pointer'}} className={(props.page === 0 ? "active" : "")}><Link to="/users/:id/account/active" className={LinkClass}><i className="fas fa-briefcase mr-7" />Active Challanges</Link></li>

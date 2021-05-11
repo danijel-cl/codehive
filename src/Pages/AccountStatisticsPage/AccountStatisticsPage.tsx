@@ -1,4 +1,4 @@
-import Dashboard from "./Components/Dashboard"
+import Dashboard from "../../Components/Dashboards/AccountDashboard"
 import Statistics from "./Components/Statistics"
 
 export const AccountStatisticsPage = (props) => {

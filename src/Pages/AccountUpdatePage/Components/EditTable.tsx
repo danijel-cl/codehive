@@ -5,11 +5,14 @@ import {http} from "../../../api/http"
 
 const EditTable = (props) => {
 
-  const {states, setStates, index, setIndex, header, title} = props
+  const {states, setStates, index, setIndex, header, title, deleteId, id} = props
 
   const remove = (e, index) => {
     e.preventDefault()
     setStates(states.filter((state, i) => i !== index))
+    if(states[index].id){
+      deleteId(id, states[index].id)
+    }
   }
 
   const edit = (e, index) => {
@@ -56,7 +59,7 @@ const EditTable = (props) => {
           <tbody>
             {states.map((state, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <th scope="row">{index}</th>
                   <td>{state[title]}</td>
                   <td><button onClick={(e) => edit(e, index)} className="text-green font-weight-semibold">EDIT</button></td>

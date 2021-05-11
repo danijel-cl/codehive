@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { Editor } from 'react-draft-wysiwyg';
 import { convertToRaw, convertFromRaw, EditorState } from 'draft-js';
+import { stateToHTML } from 'draft-js-export-html';
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
@@ -14,6 +15,9 @@ export const editorStateToText = (state) =>{
   return JSON.stringify(convertToRaw(state.getCurrentContent()))
 }
 
+export const textToHtml = (text) =>{
+  return stateToHTML(textToEditorState(text).getCurrentContent())
+}
 
 export const FormEditor = ({name}) => {
 

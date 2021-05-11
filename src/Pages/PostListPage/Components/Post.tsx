@@ -4,7 +4,7 @@ import LinkButton from "../../HomePage/Components/LinkButton";
 
 const postImageUrl = "/resources/image/l2/png/featured-job-logo-1.png"
 
-const postContentStyle = "pt-7 px-12 pb-2 light-mode-texts bg-white rounded hover-shadow-3"
+const postContentStyle = " pt-7 px-12 pb-2 light-mode-texts bg-white rounded hover-shadow-3"
 const postUpperContentStyle = "media align-items-center"
 const postTitleStyle = "font-size-6 heading-default-color"
 const postSubtitleStyle = "font-size-3 text-default-color line-height-2"

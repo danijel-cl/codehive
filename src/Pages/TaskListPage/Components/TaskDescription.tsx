@@ -26,7 +26,7 @@ const taskDescription = (props) => {
           </li>
         ))}
       </ul>
-      <Link to="/posts/id/tasks/id" className="btn btn-green text-uppercase btn-medium w-180 h-px-48 rounded-3 mr-4 mt-6">Solve task</Link>
+      <Link to="/posts/id/tasks/id" className="btn btn_red text-uppercase btn-medium w-180 h-px-48 rounded-3 mr-4 mt-6">Solve task</Link>
     </div>
   );
 };

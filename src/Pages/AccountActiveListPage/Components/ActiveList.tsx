@@ -7,7 +7,7 @@ import ReactSelect from './ReactSelect'
 const buttonContainer = styled.cssStyle`
   border: none;
   outline: none;
-  color: rgba(0, 176, 116, 0.9);
+  color: rgba(143, 33, 13, 0.75);
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 1rem;

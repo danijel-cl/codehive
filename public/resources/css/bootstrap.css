@@ -2151,23 +2151,23 @@ pre code {
 .table-primary,
 .table-primary > th,
 .table-primary > td {
-  background-color: #b8e9d8;
+  background-color: var(--main);
 }
 
 .table-primary th,
 .table-primary td,
 .table-primary thead th,
 .table-primary tbody + tbody {
-  border-color: #7ad6b7;
+  border-color: var(--main);
 }
 
 .table-hover .table-primary:hover {
-  background-color: #a5e3cd;
+  background-color: var(--main);
 }
 
 .table-hover .table-primary:hover > td,
 .table-hover .table-primary:hover > th {
-  background-color: #a5e3cd;
+  background-color: var(--main);
 }
 
 .table-secondary,
@@ -13049,7 +13049,7 @@ button.bg-gallery:focus {
 }
 
 .bg-squeeze {
-  background-color: #EDF8F5 !important;
+  background-color: #fffcf7 !important;
 }
 
 a.bg-squeeze:hover, a.bg-squeeze:focus,
