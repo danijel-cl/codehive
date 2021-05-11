@@ -20,10 +20,7 @@ const CompanyForm = (props) => {
       return "Image Uploaded"
     }
   }
-<<<<<<< HEAD
   console.log(localStorage.getItem('user-is-company'))
-=======
-
   const onSubmit = (values: any) => {
     console.log(values)
   }
@@ -43,7 +40,6 @@ const CompanyForm = (props) => {
     // },
     resolver: yupResolver(schema),
   });
->>>>>>> 35558fe605cb92a7da81bb3b73e533d1f950461c
   const onDrop = (picture) => {
     setPicture(picture);
   };
