@@ -17,6 +17,7 @@ const viewButton = styled.cssStyle`
   font-size: 0.9rem;
   text-transform: uppercase;
   background-color: transparent;
+  color: #505050;
 `;
 
 const editButton = styled.cssStyle`
@@ -117,7 +118,7 @@ const columns = [
     title: '',
     render: (text, record) => (
       <Space style={buttonContainer} size="middle">
-        <Button style={viewButton}>View application</Button>
+        <Button style={viewButton}>View</Button>
         <Button style={editButton}>Contact</Button>
         <Button style={deleteButton}>Reject</Button>
       </Space>
