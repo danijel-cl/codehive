@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import ReactSelect from './ReactSelect'
 import { Button, Space } from 'antd';
 import { styled } from '../../../utils/css';
@@ -118,7 +119,11 @@ const columns = [
     title: '',
     render: (text, record) => (
       <Space style={buttonContainer} size="middle">
-        <Button style={viewButton}>View</Button>
+        <Button style={viewButton}>
+          <Link to={"/application-detail"}>
+            View
+          </Link>
+        </Button>
         <Button style={editButton}>Contact</Button>
         <Button style={deleteButton}>Reject</Button>
       </Space>
