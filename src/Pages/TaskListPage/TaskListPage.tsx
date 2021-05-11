@@ -1,26 +1,62 @@
 import Task from "./Components/Task"
 import TabPane from "./Components/TabPane";
 import React, { useState, useEffect } from 'react';
-
+import { useParams } from "react-router-dom";
+import { http, TaskParams } from "../../api/http";
+import { PostType } from "../../types/PostType";
+import { textToHtml } from '../../Components/Form/FormEditor';
 
 export const TaskListPage = () => {
-  const tasks = [{
-    "name": "Quiz App"
-  },{
-    "name": "Model creation"
-  },{
-    "name": "RESTful interface"
-  },{
-    "name": "Snake Game"
-  },{
-    "name": "Multiprocessing"
-  }]
+  const { id } = useParams<any>();
+  const [error, setError] = useState(null);
+  const [post, setPost] = useState<PostType>();
+  const [tasks, setTasks] = useState<TaskParams[]>([]);
+
+  useEffect(() => {
+    http.getTasks(id)
+      .then(
+        (data) => {
+          console.log(data)
+          setTasks(data);
+        },
+        (error) => {
+          setError(error);
+        }
+      )
+  }, [])
+
+  useEffect(() => {
+    http.getPost(id)
+      .then(
+        (data) => {
+          console.log(data)
+          setPost(data);
+        },
+        (error) => {
+          setError(error);
+        }
+      )
+  }, [])
+
+  console.log(tasks)
+  console.log('post', post)
+
+  // const tasks = [{
+  //   "name": "Quiz App"
+  // },{
+  //   "name": "Model creation"
+  // },{
+  //   "name": "RESTful interface"
+  // },{
+  //   "name": "Snake Game"
+  // },{
+  //   "name": "Multiprocessing"
+  // }]
 
   const [activeTask, setActiveTask] = useState(0);
   const postSubmissions = 10;
   const postCompletion = "90%";
-  const postCompany = "AirBnb"
-  const postPosition = "Software Developer"
+  const content = textToHtml(post.description)
   const postTaskDescription = "A talented professional with an academic background in IT and proven\
     commercial development experience as C++ developer since 1999. Has a sound knowledge of the software\
     development life cycle. Was involved in more than 140 software development outsourcing projects.Has a \
@@ -39,7 +75,10 @@ export const TaskListPage = () => {
                       <h3 className="font-size-6 mb-0">Hi Filip</h3>
                       <span className="font-size-5 text-gray line-height-2 pb-2">What we are looking for:</span>
                     </div>
-                    <p className="font-size-4 mb-8 pt-4">{postTaskDescription}</p>
+                    <div
+                      className="font-size-4 mb-8 pt-4"
+                      dangerouslySetInnerHTML={{__html: content}}
+                    />
                   </div>
                 </div>
               </div>
@@ -47,8 +86,8 @@ export const TaskListPage = () => {
                 <div className="bg-white shadow-9 rounded-4" style={{height:"25vh"}}>
                   <div className="pr-xl-0 pr-xxl-14 p-5 px-xs-12 pt-7 pb-5">
                     <div className="border-bottom border-width-1 border-default-color">
-                      <h3 className="font-size-6 mb-0">{postCompany}</h3>
-                      <span className="font-size-4 text-gray line-height-2 pb-2">{postPosition}</span>
+                      <h3 className="font-size-6 mb-0">{post?.company?.name}</h3>
+                      <span className="font-size-4 text-gray line-height-2 pb-2">{post?.position}</span>
                     </div>
                     <p className="font-size-4 mb-3 mt-5 text-gray">Submissions:    {postSubmissions}</p>
                     <p className="font-size-4 mb-3 mt-5 text-gray">Completion ratio:    {postCompletion}</p>

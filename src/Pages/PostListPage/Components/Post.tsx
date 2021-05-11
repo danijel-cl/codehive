@@ -18,7 +18,6 @@ const tabButtonStyle = "btn col-3 text-uppercase rounded-3"
 const Post = (props) => {
 
   const tags = ["Python","Django","React"]
-  console.log(props.post)
   return (
       <div className="col-6 mb-8 mt-5 pt-3">
         <div onClick={()=>props.setPost(props.index)} style={{cursor:"pointer"}} className={postContentStyle}>
@@ -29,7 +28,7 @@ const Post = (props) => {
               </div>
               <div>
                 <h3 className="mb-0">
-                <Link to="/posts/:id/tasks/" className = {postTitleStyle}>{props.post.position}</Link>
+                <Link to={`/posts/${props.post.id}/tasks/`} className = {postTitleStyle}>{props.post.position}</Link>
                 </h3>
                 <Link to="/companies/:id" className={postSubtitleStyle}>
                   {props.post.company.name}
