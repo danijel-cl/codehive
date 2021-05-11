@@ -18,28 +18,29 @@ const tableClassname = styled.cssClassName`
   .ant-table {
     border-bottom: 3px inset;
   }
-  .ant-table-thead {
-    background-color:rgba(176, 53, 0, 1);
+
+  .ant-table-thead th {
+    background-color:#9c2906;
     color: white;
     height: 40px;
   }
 
   .ant-table-thead tr {
     height: 70px;
-    font-weight: 600;
+    font-weight: 700;
   }
-
+ 
   .ant-table-tbody tr {
     height: 80px;
-    font-weight: 600;
+    font-weight: 500;
   }
-
+ 
   .ant-table-tbody tr:hover {
-    background-color:rgba(176, 53, 0, 0.5) !important;
+    background-color:rgba(191, 111, 111, 0.5) !important;
   }
 
   .ant-table-tbody tr:nth-of-type(odd) {
-    background-color: #F4F5F8;
+    background-color: #E5E5E8;
   }
 
   .ant-table-tbody tr:first-of-type {
@@ -61,7 +62,7 @@ const tableClassname = styled.cssClassName`
 export const CustomTable = ({dataSource, columns}: IProps) => {
   return (
     <div className={tableClassname}>
-      <Table dataSource={dataSource} columns={columns} scroll={{ x: 1300 }} />
+      <Table dataSource={dataSource} columns={columns} scroll={{ x: 1000 }} />
     </div>
   );
 }

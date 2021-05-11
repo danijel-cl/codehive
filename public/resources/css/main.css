@@ -68,8 +68,8 @@ body[data-theme='light'], .light-bg, .light-mode-texts {
 }
 /* boje */
 body {
-  --bg:                  #19191b;
-  --bg-1:                #F2F2F2 ;
+  --bg:                  #2b2b2e;
+  --bg-1:                #f5f5f5;
   --bg-2:               #f4f5f8;
   --color-headings:      #c0c5cf;
   --color-texts:        #6b6e6f;
@@ -562,7 +562,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 
 .main-menu > li > .nav-link {
   color: var(--color-headings) !important;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
   position: relative;
@@ -2063,13 +2063,13 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 .dashboard-layout-sidebar li a {
-  color: #6b6e6f;
+  color: #fff;
   position: relative;
   transition: .4s;
 }
 
 [data-theme='dark'] .dashboard-layout-sidebar li a, .dark-mode-texts .dashboard-layout-sidebar li a {
-  color: #fff;
+  color: #b03500;
 }
 
 .dashboard-layout-sidebar li a:before {
@@ -2102,7 +2102,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
   [data-theme='dark'] .dashboard-layout-sidebar li a:hover, .dark-mode-texts .dashboard-layout-sidebar li a:hover {
     color: rgba(210, 220, 214, 0.5);
   }
-  .dashboard-layout-sidebar li a:hover > i {
+  .dashboard-layout-sidebar li a:hover  {
     color: #b03500;
   }
   .dashboard-layout-sidebar li a:hover:before {
@@ -2111,7 +2111,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 .dashboard-layout-sidebar li.active a {
-  color: #000;
+  color: #fff;
 }
 
 [data-theme='dark'] .dashboard-layout-sidebar li.active a, .dark-mode-texts .dashboard-layout-sidebar li.active a {
@@ -5884,7 +5884,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 }
 
 .gr-color-squeeze-opacity-visible {
-  color: #fff;
+  color: #edf8f5;
 }
 
 .gr-color-squeeze-opacity-1 {
@@ -6899,7 +6899,9 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 .flex-y-center {
   display: flex;
   align-items: center;
+  color:white;
 }
+
 
 .flex-x-center {
   display: flex;
@@ -7749,8 +7751,11 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
   border-bottom-left-radius: 0px;
 }
 /*Erik*/
+.welcome_letters {
+  color: white;
+}
 .navbar_letters {
-  color: #0f0f0f;
+  color: #0e0e0e;
 }
 .brand-logo {
   display: inline-block;
@@ -7764,6 +7769,7 @@ body[data-theme='light'] .dark-mode-texts .light-shape.default-shape, .light-mod
 .btn_red {
   background-color: #b03500;
   border-color: #b03500;
+  color: white;
 }
 .moveable {
   margin-top: 60%;
@@ -8146,7 +8152,7 @@ p {
 }
 
 .hover-shadow-3:hover {
-  box-shadow: 0 40px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 40px 60px rgba(105, 13, 13, 0.10);
 }
 
 .hover-shadow-hitgray {

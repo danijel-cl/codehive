@@ -1,4 +1,4 @@
-import Dashboard from "./Components/Dashboard"
+import Dashboard from "../../Components/Dashboards/AccountDashboard"
 import TaskList from "./Components/TaskList"
 
 export const AccountTaskListPage = (props) => {

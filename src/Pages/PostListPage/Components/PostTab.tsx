@@ -38,7 +38,7 @@ export const PostTab = ({post}) => {
             </div>
           </div>
         </div>
-        <div className={bottomTabContentStyle} style={{maxHeight:"39vh"}}>
+        <div className={bottomTabContentStyle} style={{maxHeight:"49vh"}}>
           <div className="row">
             <p className={bottomTabTitleStyle}>Description</p>
             <p className={bottomTabTextStyle}>

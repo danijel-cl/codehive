@@ -33,11 +33,11 @@ export const Task = (props) => {
                 {
                   (() =>{
                     if (taskSolved===0){
-                      return <span  style={{color:"#00b074"}} className="font-size-3 line-height-2 d-block"> Solved <i className="pl-4 fa  fa-check fa-xs" aria-hidden="true"></i></span>
+                      return <span  style={{color:"#0d6933"}} className="font-size-3 line-height-2 d-block"> Solved <i className="pl-4 fa  fa-check fa-xs" aria-hidden="true"></i></span>
                     }else if (taskSolved!==0){
-                      return <span  style={{color:"#00b074"}} className="font-size-3 line-height-2 d-block"> Continue solving <i className="pl-4 fa  fa-spinner fa-xs" aria-hidden="true"></i></span>
+                      return <span  style={{color:"#0d6933"}} className="font-size-3 line-height-2 d-block"> Continue solving <i className="pl-4 fa  fa-spinner fa-xs" aria-hidden="true"></i></span>
                     }else{
-                      return <span  style={{color:"#00b074"}} className="font-size-3 line-height-2 d-block"> Solve <i className="pl-4 fa  fa-coffee fa-xs" aria-hidden="true"></i></span>
+                      return <span  style={{color:"#0d6933"}} className="font-size-3 line-height-2 d-block"> Solve <i className="pl-4 fa  fa-coffee fa-xs" aria-hidden="true"></i></span>
                     }
                   })()
                 }
