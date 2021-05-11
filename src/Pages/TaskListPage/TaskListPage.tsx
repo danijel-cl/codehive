@@ -33,7 +33,7 @@ export const TaskListPage = () => {
           <div className="container-fluid">
             <div className="row">
               <div className="offset-1 col-6 pb-10">
-                <div className="bg-white shadow-9 rounded-4" style={{height:"25vh"}}>
+                <div className="bg-white shadow-9 rounded-4" style={{height:"25vh", overflow: "auto"}}>
                   <div className="pr-xl-0 pr-xxl-14 p-5 px-xs-12 pt-7 pb-5">
                     <div className="border-bottom border-width-1 border-default-color pb-2">
                       <h3 className="font-size-6 mb-0">Hi Filip</h3>

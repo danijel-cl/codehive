@@ -51,7 +51,7 @@ export const PostListPage = () => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-4" style={{ position: "sticky", top: "15vh"}}>
+          <div className="col-12 col-md-4">
             { posts.length !== 0 &&
               <PostTab post = {posts[post]}/>
             }

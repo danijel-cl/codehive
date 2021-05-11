@@ -36,7 +36,7 @@ export const LoginForm = () => {
 
     if (data && data.token) {
       localStorage.setItem('logtoken', data.token);
-      http.getUserId().then(({id, is_company})=>{
+      await http.getUserId().then(({id, is_company})=>{
         localStorage.setItem('user-id', id);
         localStorage.setItem('user-is-company', is_company);
         console.log("Values set", id, is_company)
