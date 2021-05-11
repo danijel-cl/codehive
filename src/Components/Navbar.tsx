@@ -35,7 +35,7 @@ const Navbar = (props) => {
 
   const logOut = () => {
     window.localStorage.removeItem('logtoken')
-    window.location.reload()
+    window.location.href = '/'
   }
   return (
     <header className="site-header site-header--menu-right bg-default py-7 py-lg-0 site-header--absolute site-header--sticky reveal-header">

@@ -55,7 +55,7 @@ export const TextField = ({ type, name, placeholder, icon, defaultValue }: IProp
       className={passwordClassName}
       help={errors[`${name}`] ? errors[`${name}`]?.message : ''}>
       <Controller
-        as={type === 'password' ? <Input.Password className="form-control" /> : <input className="form-control" />}
+        as={type === 'password' ? <input type="password" className="form-control" /> : <input className="form-control" />}
         type={type}
         style={textfieldContainer}
         defaultValue={defaultValue}
